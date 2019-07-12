@@ -1,0 +1,28 @@
+.navbar {
+  justify-content: space-between;
+  background: rgba($light-gray, .95);
+  height: 10vh;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .navbar-collapse {
+    flex-grow: 0;
+  }
+
+  .navbar-brand img {
+    height: 8vh;
+  }
+
+  .navbar-nav {
+    font-family: $headings-font-family;
+    text-transform: uppercase;
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+}
+
+
+
