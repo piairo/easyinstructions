@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-xl navbar-light">
   <%# LOGO %>
   <%= link_to "/", class: "navbar-brand" do %>
-    <%= image_tag "logo_flatter-rvb.png" %>
+    <%= image_tag "logo_easydirections.png" %>
   <% end %>
 
   <%# RESPONSIVE MENU BUTTON %>
@@ -17,15 +17,12 @@
       <li class="nav-item">
       <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
-      <% if user_signed_in? %>
-        <li class="nav-item">
-        <%= link_to "My dashboard", dashboard_path, class: "nav-link" %>
-        </li>
-      <% else %>
-        <li class="nav-item">
-        <span class="nav-link nav-logged"><%= link_to "Sign in", new_user_session_path %></span>
-        </li>
-      <% end %>
+
+
+<!-- *****ICI J'AI EFFACE DEVISE SIGN-IN****
+ -->
+
+
       <li class="nav-item">
         <button class="btn" type="button" data-toggle="canvas" data-target="#bs-canvas-right" aria-expanded="false" aria-controls="bs-canvas-right"><i class="fas fa-bars text-primary"></i></button>
       </li>
