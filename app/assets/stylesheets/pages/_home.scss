@@ -1,1 +1,40 @@
 // Specific CSS for your home-page
+.form-container {
+  width: 30%;
+  background-color: rgba($light-gray, .9);
+  padding: 25px;
+  color: $night;
+
+  h2 {
+    font-size: 2rem;
+
+    &:after {
+      content: '›';
+      font-weight: 100;
+      padding-left: .25em;
+      color: $primary;
+    }
+  }
+
+  a {
+    color: $night;
+    transition: $transition;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $primary;
+  }
+
+  form {
+    .btn[type="submit"], .btn.social-connect {
+      @extend .btn-block;
+    }
+
+    & + a {
+      display: inline-block;
+      margin-top: 1em;
+      font-size: .75em;
+    }
+  }
+}

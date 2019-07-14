@@ -1,11 +1,13 @@
 <div class="banner home">
-  <div class="container d-flex justify-content-between">
-    <div>
-      <h1><span><strong>easy instructions</strong><sup>&trade;</sup></span></h1>
-      <p class="lead">my home<strong id="typed" data-strings="<%= [", step by..", ", step!"].to_json  %>" data-speed="40" data-loop="true"></strong></p>
-
-      <%= link_to 'next', step_path(step_id = 1), class: 'btn btn-danger btn-lg' %>
-      <%= link_to 'Submit my application', '#', class: 'btn btn-outline-light btn-lg' %>
-    </div>
+  <div class="container">
+        <div class="col-6">
+          <h1><span><strong>easy instructions</strong><sup>&trade;</sup></span></h1>
+          <p class="lead">my home<strong id="typed" data-strings="<%= [", step by..", ", step!"].to_json  %>" data-speed="40" data-loop="true"></strong></p>
+        </div>
+        <br>
+        <br>
+      <div class="col-5" style="text-align: right;">
+     <%= link_to 'next', step_path(step_id = 1), class: 'btn btn-danger btn-lg' %>
+     </div>
   </div>
 </div>
