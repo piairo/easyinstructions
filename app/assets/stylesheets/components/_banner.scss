@@ -1,18 +1,22 @@
 .banner {
   // display: flex;
-  height: 90vh;
-  padding: 80px 0;
-  // background-size: cover;
-  // background-position: center;
+  // height: 90vh;
+  // width: 180vh;
+  vertical-align: top;
+  padding: 40px;
+  margin: 0vh 50vh 4vh 4vh;
+  background-size: cover;
+  background-position: center;
   // color: rgba($night, .95);  /// was white on night (black) banner
   color: white;
   border: 0px;
 
   &.home {
     background: linear-gradient(rgba($night, .8),rgba($night,0.4));
-    height: 50vh; // was 60vh
-    min-height: 400px; // was 600px
-    margin-top: 10px;
+    height: 25vh; // was 60vh
+    min-height: 200px; // was 600px
+    // margin-top: 10px;
+    border-radius: 15px;
   }
 
   h1 {
