@@ -1,25 +1,27 @@
-<h1><%= "Step#show#{@step.id}" %></h1>
-<p>Find me in app/views/steps/show.html.erb</p>
 
-
-
-<div class="container">
 
 <!-- TITLE -->
-    <div class="row" style= "display: flex; justify-content: space-between;">
-    </div>
+    <header class="dashboard">
+      <h2 class="d-flex justify-content-center"> <%= @step.id %> </h2>
 
-<!--   BUTTONS BACK & NEXT
- -->  <div class="row" style= "display: flex; justify-content: space-between;">
-    <% if @step.id <= 1 %>
-      <%= link_to "back", root_path, class: 'btn btn-secondary btn-lg' %>
-    <% else %>
-    <%= link_to "back", step_path(@step.id - 1), class: 'btn btn-secondary btn-lg' %>
-    <% end %>
-      <%= link_to 'next', step_path(@step.id + 1), class: 'btn btn-danger btn-lg' %>
+      <h2 class="d-flex justify-content-center"> <%= @step.description %> </h2>
+    </header>
+
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-8">
+    <%= image_tag "chocolate_step#{@step.id}.png"%>
       </div>
-  <%= @step.id %>
-  <%= @step.description %>
-
-
+    </div>
+<!--   BUTTONS BACK & NEXT -->
+    <div class="row justify-content-center">
+      <div class="col-10 d-flex justify-content-between">
+         <% if @step.id <= 1 %>
+            <%= link_to "back", root_path, class: 'btn btn-secondary btn-lg' %>
+          <% else %>
+          <%= link_to "back", step_path(@step.id - 1), class: 'btn btn-secondary btn-lg' %>
+          <% end %>
+            <%= link_to 'next', step_path(@step.id + 1), class: 'btn btn-danger btn-lg' %>
+        </div>
+    </div>
 </div>

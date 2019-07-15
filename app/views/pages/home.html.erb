@@ -5,9 +5,15 @@
           <p class="lead">my home<strong id="typed" data-strings="<%= [", step by..", ", step!"].to_json  %>" data-speed="40" data-loop="true"></strong></p>
         </div>
         <br>
-        <br>
       <div class="col-5" style="text-align: right;">
-     <%= link_to 'next', step_path(step_id = 1), class: 'btn btn-danger btn-lg' %>
+     <%= link_to 'start', step_path(step_id = 1), class: 'btn btn-danger btn-lg' %>
      </div>
   </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-left">
+      <div class="col-4">
+    <%= image_tag 'traveling.png'%>
+      </div>
 </div>
