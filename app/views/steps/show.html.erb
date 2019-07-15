@@ -2,9 +2,11 @@
 
 <!-- TITLE -->
     <header class="dashboard">
-      <h2 class="d-flex justify-content-center"> <%= @step.id %> </h2>
+      <h2 class="d-flex justify-content-center" style="color: grey;">
+        <%= @step.id%> /7
+      </h2>
 
-      <h2 class="d-flex justify-content-center"> <%= @step.description %> </h2>
+      <h2 id="typed" class="d-flex justify-content-center" data-strings="<%= ([] << @step.description).to_json  %>" data-speed="70" data-loop="false" style="color: #e91e63;"></h2>
     </header>
 
 <div class="container">
