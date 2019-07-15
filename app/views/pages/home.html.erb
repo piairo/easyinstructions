@@ -1,18 +1,26 @@
 <div class="banner home">
+
   <div class="container">
+    <div class="row align-items-center">
         <div class="col-8">
           <h1><span><strong>easy instructions</strong><sup>&trade;</sup></span></h1>
-          <p class="lead"><strong id="typed" data-strings="<%= ["step by step"].to_json  %>" data-speed="90" data-loop="true"></strong></p>
         </div>
-      <div class="col-6" style="text-align: right;">
-     <%= link_to 'start', step_path(step_id = 1), class: 'btn btn-danger btn-lg' %>
+        <div class="col-2">
+         <%= link_to 'start', step_path(step_id = 1), class: 'btn btn-lg btn-danger btn-block' %>
+        </div>
      </div>
-  </div>
-</div>
 
-<div class="container">
-    <div class="row justify-content-left">
-      <div class="col-5">
-    <%= image_tag 'undraw_travelers_qlt1.png'%>
-      </div>
+    <div class="row">
+        <div class="col-10">
+           <p class="lead"><strong id="typed" data-strings="<%= ["step by step"].to_json  %>" data-speed="90" data-loop="true"></strong></p>
+        </div>
+    </div>
+
+    <div class="row justify-content-end">
+         <div class="col-9">
+           <%= image_tag "undraw_travelers_qlt1.png" %>
+         </div>
+    </div>
+  </div>
+
 </div>
