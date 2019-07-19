@@ -1,6 +1,6 @@
 .navbar {
   justify-content: space-between;
-  background-color: white; //was background: rgba($light-grey, .95);
+  background-color: rgba($light-grey, .95);
   height: 10vh;
   position: sticky;
   top: 0;
@@ -12,6 +12,7 @@
 
   .navbar-brand img {
     height: 6vh;  // was 12vh ***
+    padding: 2px
   }
 
   .navbar-nav {
