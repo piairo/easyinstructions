@@ -3,28 +3,36 @@
 <!-- TITLE -->
     <header class="dashboard d-flex">
       <h3 class="col-2 d-flex justify-content-center" style="color: grey;">
-        <%= @step.id%> /7
+        <%= @step.number%> /8
       </h3>
 
-      <h2  class="col-8 d-flex justify-content-center" id="typed"data-strings="<%= ([] << @step.description).to_json  %>" data-speed="70" data-loop="false" style="color: #e91e63;"></h2>
+      <div class="col-8 d-flex justify-content-center align-items-center">
+        <h2 id="typed" data-strings="<%= ([] << @step.description).to_json  %>" data-speed="60" data-loop="false" style="color: #e91e63;"></h2>
+      </div>
     </header>
 
 <div class="container">
     <div class="row justify-content-center">
       <div class="col-8">
-    <%= image_tag "chocolate_step#{@step.id}.png", style:'border-radius: 15px'%>
+    <%= image_tag "chocolate_step#{@step.number}.png", style:'border-radius: 15px'%>
       </div>
     </div>
     <br>
-<!--   BUTTONS BACK & NEXT -->
+
     <div class="row justify-content-center">
       <div class="col-10 d-flex justify-content-between">
-         <% if @step.id <= 1 %>
+<!--   BUTTON BACK  --->
+         <% if @step.number <= 1 %>
             <%= link_to "back", root_path, class: 'btn btn-secondary btn-lg' %>
           <% else %>
-          <%= link_to "back", step_path(@step.id - 1), class: 'btn btn-secondary btn-lg' %>
+          <%= link_to "back", step_path(@step.number - 1), class: 'btn btn-secondary btn-lg' %>
           <% end %>
-            <%= link_to 'next', step_path(@step.id + 1), class: 'btn btn-danger btn-lg' %>
+<!--   BUTTON NEXT  --->
+          <% if @step.number <= 7 %>
+            <%= link_to "next", step_path(@step.number + 1), class: 'btn btn-secondary btn-lg' %>
+          <% else %>
+          <%= link_to "next", root_path, class: 'btn btn-secondary btn-lg' %>
+          <% end %>
         </div>
     </div>
 </div>

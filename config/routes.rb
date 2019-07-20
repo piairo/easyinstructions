@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'steps/:id', to: 'steps#show', as: :step
+  get 'step/:number', to: 'steps#show', as: :step
   get 'about', to: 'pages#about', as: :about
   get 'contact', to: 'pages#contact', as: :contact
   root to: 'pages#home'
