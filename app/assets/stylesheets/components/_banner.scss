@@ -6,13 +6,13 @@
   background-size: cover;
   background-position: center;
   // color: rgba($night, .95);  /// was white on night (black) banner
-  color: white;
+  color: #4a4a4a;
   border: 0px;
 
   &.home {
-    background: linear-gradient(rgba($night, 1),rgba(208, 221, 232, 0.7 ));
+    background: $quick-change;
     height: 90vh; // was 60vh
-    min-height: 400px; // was 600px
+    // min-height: 400px; // was 600px
     // margin-top: 10px;
     // border-radius: 15px;
   }

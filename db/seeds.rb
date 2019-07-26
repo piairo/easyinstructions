@@ -19,27 +19,90 @@ end
 puts 'Finished users!'
 
 
-puts 'Creating 10 fake flats...'
-10.times do
-  flat = Flat.new(
-    name:    Faker::Company.name,
-    address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
-    owner_id: rand(2..5),
+puts 'Creating "flat" - chocolate nest ...'
+
+  flat1 = Flat.new(
+    name:    "Chocolate nest",
+    address: "2A southborough Terrace, CV325BL Leamington spa, England",
+    owner_id: 1,
     )
-  flat.save!
-end
-puts 'Finished flats!'
+  flat1.save!
+
+puts 'Chocolate nest finished!'
 
 
-puts 'Creating 10 fake steps...'
-10.times do
-  step = Step.new(
-    number:   rand(0..10),
-    description: Faker::Food.description,
+puts 'Creating "8 steps" - for chocolate nest...'
+
+  step1 = Step.new(
+    number:   1,
+    description: "make sure you are here",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
-    status: [true, false].sample,
-    flat_id: rand(2..5),
+    status: false,
+    flat_id: 1,
     )
-  step.save!
-end
-puts 'Finished steps!'
+  step1.save!
+
+  step2 = Step.new(
+    number:   2,
+    description: "stand in front of the main door",
+    picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
+    status: false,
+    flat_id: 1,
+    )
+  step2.save!
+
+  step3 = Step.new(
+    number:   3,
+    description: "turn round to find the safe",
+    picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
+    status: false,
+    flat_id: 1,
+    )
+  step3.save!
+
+  step4 = Step.new(
+    number:   4,
+    description: "climb till 1st floor",
+    picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
+    status: false,
+    flat_id: 1,
+    )
+  step4.save!
+
+  step5 = Step.new(
+    number:   5,
+    description: "this is my flat",
+    picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
+    status: false,
+    flat_id: 1,
+    )
+  step5.save!
+
+ step6 = Step.new(
+    number:   6,
+    description: "welcome home!",
+    picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
+    status: false,
+    flat_id: 1,
+    )
+  step6.save!
+
+ step7 = Step.new(
+    number:   7,
+    description: "here is the free parking for resident",
+    picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
+    status: false,
+    flat_id: 1,
+    )
+  step7.save!
+
+ step8 = Step.new(
+    number:   8,
+    description: "you live in fron of the best coffee in town",
+    picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
+    status: false,
+    flat_id: 1,
+    )
+  step8.save!
+
+puts 'Finished 8 steps for chocolate nest!'
