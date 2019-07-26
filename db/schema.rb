@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_12_171301) do
+ActiveRecord::Schema.define(version: 2019_07_23_221900) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "attachements", force: :cascade do |t|
+    t.string "photo"
+    t.bigint "step_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["step_id"], name: "index_attachements_on_step_id"
+  end
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_07_12_171301) do
   create_table "flats", force: :cascade do |t|
     t.string "name"
     t.text "address"
-    t.integer "owner_id"
+    t.bigint "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_id"], name: "index_flats_on_owner_id"
@@ -29,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_07_12_171301) do
     t.text "description"
     t.string "picture_url"
     t.boolean "status"
-    t.integer "flat_id"
+    t.bigint "flat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["flat_id"], name: "index_steps_on_flat_id"
@@ -43,4 +54,7 @@ ActiveRecord::Schema.define(version: 2019_07_12_171301) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "attachements", "steps"
+  add_foreign_key "flats", "users", column: "owner_id"
+  add_foreign_key "steps", "flats"
 end

@@ -83,3 +83,4 @@ production:
   database: easyinstructions_production
   username: easyinstructions
   password:
+
