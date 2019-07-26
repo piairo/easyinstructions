@@ -23,13 +23,10 @@ ActiveRecord::Schema.define(version: 2019_07_23_221900) do
     t.index ["step_id"], name: "index_attachements_on_step_id"
   end
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "flats", force: :cascade do |t|
     t.string "name"
     t.text "address"
-    t.bigint "owner_id"
+    t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_id"], name: "index_flats_on_owner_id"
@@ -40,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_07_23_221900) do
     t.text "description"
     t.string "picture_url"
     t.boolean "status"
-    t.bigint "flat_id"
+    t.integer "flat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["flat_id"], name: "index_steps_on_flat_id"
@@ -55,6 +52,4 @@ ActiveRecord::Schema.define(version: 2019_07_23_221900) do
   end
 
   add_foreign_key "attachements", "steps"
-  add_foreign_key "flats", "users", column: "owner_id"
-  add_foreign_key "steps", "flats"
 end
