@@ -22,5 +22,8 @@ console.log('Hello World from Webpacker')
 // TYPEDJS
 import initTyped from '../plugins/init_typed';
 import { addFlashMessage } from '../plugins/init_flash_messages';
-initTyped()
+initTyped();
 
+//BANNER_WAGON
+import { initUpdateNavbarOnScroll } from '../plugins/navbar';
+initUpdateNavbarOnScroll();

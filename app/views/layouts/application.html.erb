@@ -6,11 +6,12 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
 
   <body>
  <%# NAVBAR %>
-    <%= render 'layouts/shared/navbar' %>
+    <%= render 'layouts/shared/navbar_wagon' %>
     <%= yield %>
   </body>
 </html>

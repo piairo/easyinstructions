@@ -1,21 +1,11 @@
-.banner {
-  // display: flex;
-  height: 90vh;
-  vertical-align: top;
-  padding: 40px;
-  background-size: cover;
-  background-position: center;
-  // color: rgba($night, .95);  /// was white on night (black) banner
+.home-banner {
+  // background-image: url('https://images.unsplash.com/photo-1499428665502-503f6c608263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2400&q=80');
+  height: 100vh;
+  max-width: 100%;
   color: #4a4a4a;
-  border: 0px;
-
-  &.home {
-    background: $quick-change;
-    height: 90vh; // was 60vh
-    // min-height: 400px; // was 600px
-    // margin-top: 10px;
-    // border-radius: 15px;
-  }
+  text-align: center;
+  padding-top: 40vh;
+}
 
   h1 {
     font-size: 3.2rem;
@@ -40,4 +30,3 @@
       font-weight: 900;
     }
   }
-}
