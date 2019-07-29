@@ -1,0 +1,10 @@
+.bottom-navbar {
+  height: 66px;
+  bottom: 0px;
+  position: fixed;
+  width: 100%;
+  .fas {
+    font-size: 30px;
+    color: $night;
+  }
+}
