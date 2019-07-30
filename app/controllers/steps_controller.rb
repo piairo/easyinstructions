@@ -1,18 +1,11 @@
 class StepsController < ApplicationController
 
 
-def index
-  end
-
-
   def show
     steps = Step.where(flat_id: 1)
     selectstep = steps.where(number: params[:number])
     @step = selectstep[0]
-
   end
-
-
 end
 
 

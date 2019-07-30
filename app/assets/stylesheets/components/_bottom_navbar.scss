@@ -8,3 +8,15 @@
     color: $night;
   }
 }
+
+
+.navbar-logos {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  align-items: center;
+  color: $night;
+  span {
+    font-size: 12px;
+  }
+}
