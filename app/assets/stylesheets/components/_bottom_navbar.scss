@@ -1,0 +1,22 @@
+.bottom-navbar {
+  height: 66px;
+  bottom: 0px;
+  position: fixed;
+  width: 100%;
+  .fas {
+    font-size: 30px;
+    color: $night;
+  }
+}
+
+
+.navbar-logos {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  align-items: center;
+  color: $night;
+  span {
+    font-size: 12px;
+  }
+}
