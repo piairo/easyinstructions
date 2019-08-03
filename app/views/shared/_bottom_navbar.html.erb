@@ -1,0 +1,23 @@
+
+<div class="bottom-navbar fixed-bottom">
+
+  <!--   BUTTON BACK  --->
+    <div>
+         <% if @step.number <= 1 %>
+            <%= link_to "back", root_path, class: 'btn mybutton-light mybutton-lg' %>
+          <% else %>
+          <%= link_to "back", step_path(@step.number - 1), class: 'btn mybutton-light mybutton-lg'%>
+          <% end %>
+    </div>
+ <!--   BUTTON INFO  --->
+
+    <div>
+ <!--   BUTTON NEXT  --->
+          <% if @step.number <= 6 %>
+            <%= link_to "next", step_path(@step.number + 1), class: 'btn btn-danger mybutton-lg' %>
+          <% else %>
+          <%= link_to "next", root_path, class: 'btn btn-danger mybutton-lg' %>
+          <% end %>
+    </div>
+</div>
+
