@@ -1,9 +1,11 @@
 .bottom-navbar {
   display: flex;
   justify-content: space-around;
-  height: 66px;
+  align-items: center;
+  height: 80px;
   bottom: 0px;
   width: 100%;
+  background-color: $night;
     .fas {
     font-size: 30px;
     color: $night;
