@@ -71,7 +71,7 @@ puts 'Creating "7 steps" - for chocolate nest...'
 
 
  step5 = Step.new(
-    number:   6,
+    number:   5,
     description: "welcome home!",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
@@ -80,7 +80,7 @@ puts 'Creating "7 steps" - for chocolate nest...'
   step5.save!
 
  step6 = Step.new(
-    number:   7,
+    number:   6,
     description: "here is the free parking for resident",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
@@ -89,7 +89,7 @@ puts 'Creating "7 steps" - for chocolate nest...'
   step6.save!
 
  step7 = Step.new(
-    number:   8,
+    number:   7,
     description: "you live in fron of the best coffee in town",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
@@ -97,4 +97,4 @@ puts 'Creating "7 steps" - for chocolate nest...'
     )
   step7.save!
 
-puts 'Finished 8 steps for chocolate nest!'
+puts 'Finished 7 steps for chocolate nest!'
