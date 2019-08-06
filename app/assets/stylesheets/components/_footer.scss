@@ -1,0 +1,11 @@
+.myfooter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 8vmax;
+  background-color: $night;
+    .fas {
+    font-size: 30px;
+    color: $night;
+  }
+}

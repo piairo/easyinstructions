@@ -31,7 +31,7 @@ puts 'Creating "flat" - chocolate nest ...'
 puts 'Chocolate nest finished!'
 
 
-puts 'Creating "8 steps" - for chocolate nest...'
+puts 'Creating "7 steps" - for chocolate nest...'
 
   step1 = Step.new(
     number:   1,
@@ -69,9 +69,10 @@ puts 'Creating "8 steps" - for chocolate nest...'
     )
   step4.save!
 
-  step5 = Step.new(
-    number:   5,
-    description: "this is my flat",
+
+ step5 = Step.new(
+    number:   6,
+    description: "welcome home!",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
     flat_id: 1,
@@ -79,8 +80,8 @@ puts 'Creating "8 steps" - for chocolate nest...'
   step5.save!
 
  step6 = Step.new(
-    number:   6,
-    description: "welcome home!",
+    number:   7,
+    description: "here is the free parking for resident",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
     flat_id: 1,
@@ -88,21 +89,12 @@ puts 'Creating "8 steps" - for chocolate nest...'
   step6.save!
 
  step7 = Step.new(
-    number:   7,
-    description: "here is the free parking for resident",
-    picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
-    status: false,
-    flat_id: 1,
-    )
-  step7.save!
-
- step8 = Step.new(
     number:   8,
     description: "you live in fron of the best coffee in town",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
     flat_id: 1,
     )
-  step8.save!
+  step7.save!
 
 puts 'Finished 8 steps for chocolate nest!'

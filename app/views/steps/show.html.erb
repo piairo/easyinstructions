@@ -2,18 +2,19 @@
 
 <!-- TITLE -->
     <header class="dashboard">
-        <h2 id="typed" data-strings="<%= ([] << @step.description).to_json  %>" data-speed="60" data-loop="false" style="color: #e91e63; display: inline;"></h2>
+        <h2 id="typed" data-strings="<%= ([] << @step.description).to_json  %>" data-speed="100" data-loop="false" style="color: #e91e63; display: inline;"></h2>
     </header>
 <br>
 <br>
- <div class="container">
-  <div class="row justify-content-center">
-<!--     <div class="col-8"> -->
-    <%= image_tag "chocolate_step#{@step.number}.png", style:"border-radius: 15px; width: 100vw;"%>
-<!--     </div> -->
+ <div class="container-fluid" style="padding:0;">
+
+      <div class="main-content">
+          <div class="col-12" style="padding:0;">
+        <%= image_tag "chocolate_step#{@step.number}.png", style:"border-radius: 15px;"%>
+          </div>
+    </div>
   </div>
-</div>
     <%# BOTTOM_NAVBAR %>
-    <%= render 'shared/bottom_navbar' %>
+    <%= render 'shared/footer' %>
 
 

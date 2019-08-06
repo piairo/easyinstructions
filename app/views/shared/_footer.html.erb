@@ -1,5 +1,5 @@
 
-<div class="bottom-navbar fixed-bottom">
+<footer class="myfooter fixed-bottom">
 
   <!--   BUTTON BACK  --->
     <div>
@@ -13,11 +13,11 @@
 
     <div>
  <!--   BUTTON NEXT  --->
-          <% if @step.number <= 6 %>
+          <% if @step.number <= 5 %>
             <%= link_to "next", step_path(@step.number + 1), class: 'btn btn-danger mybutton-lg' %>
           <% else %>
           <%= link_to "next", root_path, class: 'btn btn-danger mybutton-lg' %>
           <% end %>
     </div>
-</div>
+</footer>
 
