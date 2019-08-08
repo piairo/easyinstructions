@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'step/:number', to: 'steps#show', as: :step
   get 'about', to: 'pages#about', as: :about
   get 'contact', to: 'pages#contact', as: :contact
+  get 'sms', to: 'steps#send_sms'
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
