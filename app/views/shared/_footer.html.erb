@@ -16,7 +16,7 @@
           <% if @step.number <= 5 %>
             <%= link_to "next", step_path(@step.number + 1), class: 'btn btn-danger mybutton-lg' %>
           <% else %>
-          <%= link_to "next", root_path, class: 'btn btn-danger mybutton-lg' %>
+          <%= link_to "end", :controller => "steps", :action => "send_sms", class: 'btn btn-danger mybutton-lg' %>
           <% end %>
     </div>
 </footer>
