@@ -3,7 +3,9 @@
 
   <!--   BUTTON BACK  --->
     <div>
-         <% if @step.number <= 1 %>
+          <% if @step.nil? %>
+          <% %>
+         <% elsif @step.number <= 1 %>
             <%= link_to "back", root_path, class: 'btn mybutton-light mybutton-lg' %>
           <% else %>
           <%= link_to "back", step_path(@step.number - 1), class: 'btn mybutton-light mybutton-lg'%>
@@ -13,7 +15,9 @@
 
     <div>
  <!--   BUTTON NEXT  --->
-          <% if @step.number == 5 %>
+          <% if @step.nil? %>
+          <%= link_to "start", step_path(step_number = 1), class: 'btn btn-danger mybutton-lg' %>
+          <% elsif @step.number == 5 %>
            <%= link_to "next", sms_path, method: :get, class: 'btn btn-danger mybutton-lg'%>
            <% elsif @step.number == 6 %>
             <%= link_to "end", root_path, class: 'btn btn-danger mybutton-lg' %>
