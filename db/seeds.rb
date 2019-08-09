@@ -23,7 +23,7 @@ puts 'Creating "flat" - chocolate nest ...'
 
   flat1 = Flat.new(
     name:    "Chocolate nest",
-    address: "2A southborough Terrace, CV325BL Leamington spa, England",
+    address: "2A southborough terrace, cv31 2dt leamington",
     owner_id: 1,
     )
   flat1.save!
@@ -35,7 +35,7 @@ puts 'Creating "7 steps" - for chocolate nest...'
 
   step1 = Step.new(
     number:   1,
-    description: "make sure you are here",
+    description: "make sure you are at: cv312dt brunswick street",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
     flat_id: 1,

@@ -3,6 +3,7 @@ require 'twilio-ruby'
 class StepsController < ApplicationController
 
   def show
+    @flat = Flat.find(1)
     steps = Step.where(flat_id: 1)
     selectstep = steps.where(number: params[:number])
     @step = selectstep[0]
