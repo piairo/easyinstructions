@@ -16,7 +16,7 @@
     <div>
  <!--   BUTTON NEXT  --->
           <% if @step.nil? %>
-          <%= link_to "start", step_path(step_number = 1), class: 'btn btn-danger mybutton-lg' %>
+
           <% elsif @step.number == 5 %>
            <%= link_to "next", sms_path, method: :get, class: 'btn btn-danger mybutton-lg'%>
            <% elsif @step.number == 6 %>

@@ -1,4 +1,4 @@
-.home-banner {
+.banner {
   // background-image: url('https://images.unsplash.com/photo-1499428665502-503f6c608263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2400&q=80');
   height: 100vh;
   max-width: 100%;
@@ -7,23 +7,31 @@
   padding-top: 10vh; //was padding-top: 40vh
 }
 
+.banner img {
+  width: 25vmax;
+}
+
+.banner h1 {
+  font-size: 3.2vmax;
+}
+
   h1 {
-    font-size: 3.2rem;
+    font-size: 3.2vmax;
 
     span {
-      font-size: 4.0rem;
+      font-size: 4.0vmax;
       font-weight: 100;
       display: block;
 
       strong {
         font-weight: 900;
-        margin-right: .25rem;
+        margin-right: .25vmax;
       }
     }
   }
 
   p.lead {
-    font-size: 1.8rem;
+    font-size: 1.8vmax;
     opacity: .9;
 
     strong {

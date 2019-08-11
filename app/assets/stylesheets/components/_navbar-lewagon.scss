@@ -3,6 +3,13 @@
 //   background: white;
 // }
 
+.navbar-lewagon {
+  // [...]
+  justify-content: space-between;
+  background-color: transparent;
+  transition: 0.5s background-color ease;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -12,12 +19,7 @@
 }
 
 // ------- from challenge RAils front End ------
-.navbar-lewagon {
-  // [...]
-  justify-content: space-between;
-  background-color: transparent;
-  transition: 0.5s background-color ease;
-}
+
 
 .navbar-lewagon-white {
   background-color: white;

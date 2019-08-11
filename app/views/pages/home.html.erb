@@ -1,34 +1,26 @@
-<div class="home-banner">  <!-- was banner home -->
-
-  <div class="container">
-    <div class="row align-items-center">
-        <div class="col-9">
-          <h1><span><strong>instructions</strong><sup>&trade;</sup></span></h1>
-        </div>
-<!--         <div class="col-2">
-         <#%= link_to 'start', step_path(step_number = 1), class: 'btn btn-danger mybutton-lg' %>
-        </div> -->
-     </div>
-
-    <div class="row">
-        <div class="col-9">
-    <h3 id="typed" data-strings="<%= ["step by step"].to_json  %>" data-speed="90" data-loop="true" style="display: inline"></h3>
-        </div>
-    </div>
-  </div>
+<div class="banner">  <!-- was banner home -->
 
       <div class="container">
-        <div class="row">
-         <div class="col-9">
-          <%= link_to step_path(step_number = 1) do %>
-    <%= image_tag "undraw_travelers_qlt1.png", style:"width: 30vmax;"%>
-    <% end %>
-         </div>
+          <h1><span><strong>instructions</strong><sup>&trade;</sup></span></h1>
+          <h3 id="typed" data-strings="<%= ["step by step"].to_json  %>" data-speed="90" data-loop="true" style="display: inline"></h3>
+        </div>
+
+      <div class="container">
+          <div>
+            <%= link_to step_path(step_number = 1) do %>
+            <%= image_tag "undraw_travelers_qlt1.png"%>
+            <% end %>
+          </div>
+          <div>
+          <%= link_to "start", step_path(step_number = 1), class: 'btn btn-danger mybutton-lg home' %>
+           </div>
       </div>
-    <div>
+</div>
+
+
  <%# FOOTER %>
     <%= render 'shared/footer' %>
-</div>
+
 
 
 
