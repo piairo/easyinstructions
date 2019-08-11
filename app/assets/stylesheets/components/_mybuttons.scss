@@ -6,13 +6,14 @@
 
 .mybutton-lg {
   padding: 0.5rem 1rem;
-  font-size: 3vmax;
+  font-size: 3vh;
   // line-height: 1.5;
   border-radius: 4px;
-  width: 15vmax;
+  width: 15vh;
 
         &.home {
- width: 100%;
+ padding: 1vh;
+ width: 40vh;
 }
 
 }
