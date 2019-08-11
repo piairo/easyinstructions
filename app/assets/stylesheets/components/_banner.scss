@@ -1,30 +1,23 @@
 .banner {
-  // background-image: url('https://images.unsplash.com/photo-1499428665502-503f6c608263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2400&q=80');
-  height: 100vh;
-  max-width: 100%;
-  color: #4a4a4a;
-  text-align: center;
-  padding-top: 10vh; //was padding-top: 40vh
-}
+    // background-image: url('https://images.unsplash.com/photo-1499428665502-503f6c608263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2400&q=80');
+    max-width: 100%;
+    color: #4a4a4a;
+    text-align: center;
+    padding-top: 10vh; //was padding-top: 40vh
+  }
 
-.banner img {
-  width: 25vmax;
-  padding-top: 3vmax;
-}
-
-.banner h1 {
-  font-size: 3.2vmax;
-}
 
 .banner h3 {
   color: #e91e63;
+  font-size: 4.0vmax;
 }
 
   h1 {
     font-size: 3.2vmax;
 
     span {
-      font-size: 4.0vmax;
+      padding-left: 60px;
+      font-size: 7.0vmax;
       font-weight: 100;
       display: block;
 
