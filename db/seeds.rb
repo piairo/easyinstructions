@@ -35,7 +35,7 @@ puts 'Creating "7 steps" - for chocolate nest...'
 
   step1 = Step.new(
     number:   1,
-    description: "make sure you are at: cv312dt brunswick street",
+    description: "make sure you are here📍cv312dt brunswick street",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
     flat_id: 1,
@@ -44,7 +44,7 @@ puts 'Creating "7 steps" - for chocolate nest...'
 
   step2 = Step.new(
     number:   2,
-    description: "stand in front of the main door",
+    description: "go to the main door 🚶‍♀️",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
     flat_id: 1,
@@ -53,7 +53,7 @@ puts 'Creating "7 steps" - for chocolate nest...'
 
   step3 = Step.new(
     number:   3,
-    description: "turn round to find the safe",
+    description: "turn round to find keys 🔑",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
     flat_id: 1,
@@ -72,7 +72,7 @@ puts 'Creating "7 steps" - for chocolate nest...'
 
  step5 = Step.new(
     number:   5,
-    description: "welcome home!",
+    description: "welcome home 🎉",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
     flat_id: 1,
@@ -81,7 +81,7 @@ puts 'Creating "7 steps" - for chocolate nest...'
 
  step6 = Step.new(
     number:   6,
-    description: "here is the free parking for resident",
+    description: "🅿️ here is the free parking for resident",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
     flat_id: 1,
