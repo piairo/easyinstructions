@@ -15,8 +15,10 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker')
 
+// COPY TO CLIPBOARD
+import { initCopyToClipboard } from '../plugins/init_copy_to_clipboard';
+initCopyToClipboard()
 
 
 // TYPEDJS

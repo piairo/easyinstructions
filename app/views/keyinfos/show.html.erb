@@ -4,8 +4,57 @@
     <header class="dashboard">
         <h1 id="typed" data-strings="<%= ["key infos"].to_json %>" data-speed="100" data-loop="false" style="color: #e91e63; display: inline;"></h1>
     </header>
+
+
+
+
+<div class="container" >
+  <br>
+  <br>
+  <br>
+<%#  WIFI %>
+<h3>internet</h3>
+<!-- 💻 -->
+<!-- <br> -->
+<p>name: <strong> <%= @keyinfo.wifiname %> </strong></p>
+
+      <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text fas fa-wifi"></span>
+        </div>
+        <input class="inputCopy form-control" value="<%= @keyinfo.wificode %>" />
+         <div class="input-group-append">
+          <button class="btn btn-primary btn-copy">Copy</button>
+        </div>
+      </div>
 <br>
 <br>
+<%#  CHECK-OUT %>
+<h3>check-out</h3>
+<!-- 🔑 -->
+<!-- <br>
+
+ -->
+ <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text fas fa-clock"></span>
+        </div>
+        <input class="form-control" value="11:00 am" />
+<!-- <#%= @keyinfo.checkout %>
+ -->      </div>
+ <%#  CONTACT %>
+<br>
+<br>
+<h3>contact</h3>
+<!-- 👤 -->
+<!-- <br>
+ -->      <div class="input-group input-group-lg">
+        <div class="input-group-prepend" >
+          <span class="input-group-text fas fa-phone"></span>
+        </div>
+        <input class="form-control" value="<%= @keyinfo.contact %>" />
+        </div>
+</div>
 
 
 
