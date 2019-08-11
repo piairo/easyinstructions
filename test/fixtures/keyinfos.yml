@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  check-out: 2019-08-11 17:17:01
+  wifiname: MyString
+  wificode: MyText
+  contact: MyString
+  flat: one
+
+two:
+  check-out: 2019-08-11 17:17:01
+  wifiname: MyString
+  wificode: MyText
+  contact: MyString
+  flat: two

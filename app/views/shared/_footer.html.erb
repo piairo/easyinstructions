@@ -3,26 +3,26 @@
 
   <!--   BUTTON BACK  --->
     <div>
-          <% if @step.nil? %>
+          <% if @arrival.nil? %>
           <% %>
-         <% elsif @step.number <= 1 %>
+         <% elsif @arrival.number <= 1 %>
             <%= link_to "back", root_path, class: 'btn mybutton-light mybutton-lg' %>
           <% else %>
-          <%= link_to "back", step_path(@step.number - 1), class: 'btn mybutton-light mybutton-lg'%>
+          <%= link_to "back", arrival_path(@arrival.number - 1), class: 'btn mybutton-light mybutton-lg'%>
           <% end %>
     </div>
  <!--   BUTTON INFO  --->
 
     <div>
  <!--   BUTTON NEXT  --->
-          <% if @step.nil? %>
+          <% if @arrival.nil? %>
 
-          <% elsif @step.number == 5 %>
+          <% elsif @arrival.number == 5 %>
            <%= link_to "next", sms_path, method: :get, class: 'btn btn-danger mybutton-lg'%>
-           <% elsif @step.number == 6 %>
-            <%= link_to "end", root_path, class: 'btn btn-danger mybutton-lg' %>
+           <% elsif @arrival.number == 6 %>
+            <%= link_to "key info", keyinfo_path(flat_name = "Chocolate nest"), class: 'btn btn-danger mybutton-lg' %>
           <% else %>
-          <%= link_to "next", step_path(@step.number + 1), class: 'btn btn-danger mybutton-lg' %>
+          <%= link_to "next", arrival_path(@arrival.number + 1), class: 'btn btn-danger mybutton-lg' %>
           <% end %>
     </div>
 </footer>

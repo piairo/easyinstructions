@@ -16,7 +16,7 @@ puts 'Creating 10 fake users...'
     )
   user.save!
 end
-puts 'Finished users!'
+puts 'Finished users! 👤'
 
 
 puts 'Creating "flat" - chocolate nest ...'
@@ -28,73 +28,88 @@ puts 'Creating "flat" - chocolate nest ...'
     )
   flat1.save!
 
-puts 'Chocolate nest finished!'
+puts 'Chocolate nest finished! 🏠'
 
 
-puts 'Creating "7 steps" - for chocolate nest...'
+puts 'Creating "7 arrivals" - for chocolate nest...'
 
-  step1 = Step.new(
+  arrival1 = Arrival.new(
     number:   1,
     description: "make sure you are here📍cv312dt brunswick street",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
     flat_id: 1,
     )
-  step1.save!
+  arrival1.save!
 
-  step2 = Step.new(
+  arrival2 = Arrival.new(
     number:   2,
     description: "go to the main door 🚶‍♀️",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
     flat_id: 1,
     )
-  step2.save!
+  arrival2.save!
 
-  step3 = Step.new(
+  arrival3 = Arrival.new(
     number:   3,
     description: "turn round to find keys 🔑",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
     flat_id: 1,
     )
-  step3.save!
+  arrival3.save!
 
-  step4 = Step.new(
+  arrival4 = Arrival.new(
     number:   4,
     description: "climb till 1st floor",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
     flat_id: 1,
     )
-  step4.save!
+  arrival4.save!
 
 
- step5 = Step.new(
+ arrival5 = Arrival.new(
     number:   5,
     description: "welcome home 🎉",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
     flat_id: 1,
     )
-  step5.save!
+  arrival5.save!
 
- step6 = Step.new(
+ arrival6 = Arrival.new(
     number:   6,
-    description: "🅿️ here is the free parking for resident",
+    description: "here is the free parking for resident",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
     flat_id: 1,
     )
-  step6.save!
+  arrival6.save!
 
- step7 = Step.new(
+ arrival7 = Arrival.new(
     number:   7,
     description: "you live in fron of the best coffee in town",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
     flat_id: 1,
     )
-  step7.save!
+  arrival7.save!
 
-puts 'Finished 7 steps for chocolate nest!'
+puts 'Finished 7 arrivals for chocolate nest! ➡️'
+
+puts 'Creating "keyinfos" - chocolate nest ...'
+
+  keyinfo1 = Keyinfo.new(
+    checkout: "11:00 AM",
+    wifiname: "BTHub6-N7ZN",
+    wificode: "wt64g9Pd9uDy",
+    owner: "katia",
+    contact: "+44 7484 723518",
+    flat_id: 1,
+    )
+  keyinfo1.save!
+
+puts 'Keyinfo1 -chocolate nest finished! 📖'
+

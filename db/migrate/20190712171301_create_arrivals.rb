@@ -1,6 +1,6 @@
-class CreateSteps < ActiveRecord::Migration[5.2]
+class CreateArrivals < ActiveRecord::Migration[5.2]
   def change
-    create_table :steps do |t|
+    create_table :arrivals do |t|
       t.integer :number
       t.text :description
       t.string :picture_url

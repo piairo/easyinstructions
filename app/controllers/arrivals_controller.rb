@@ -1,12 +1,12 @@
 require 'twilio-ruby'
 
-class StepsController < ApplicationController
+class ArrivalsController < ApplicationController
 
   def show
     @flat = Flat.find(1)
-    steps = Step.where(flat_id: 1)
-    selectstep = steps.where(number: params[:number])
-    @step = selectstep[0]
+    arrivals = Arrival.where(flat_id: 1)
+    selectarrival = arrivals.where(number: params[:number])
+    @arrival = selectarrival[0]
   end
 
   def send_sms
@@ -22,7 +22,7 @@ class StepsController < ApplicationController
   to: '+447484723518',
   body: 'chocolate guest: successfuly check-in!'
   )
-  redirect_to step_path(6)
+  redirect_to arrival_path(6)
   end
 
 end
@@ -31,7 +31,7 @@ end
 
 private
 
-def step_params
-    params.require(:step).permit(:number, :description, :picture_url, :status, :flat_id)
+def arrival_params
+    params.require(:arrival).permit(:number, :description, :picture_url, :status, :flat_id)
   end
 

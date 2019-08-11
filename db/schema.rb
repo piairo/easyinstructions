@@ -10,17 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_23_221900) do
+ActiveRecord::Schema.define(version: 2019_08_11_161701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "attachements", force: :cascade do |t|
-    t.string "photo"
-    t.bigint "step_id"
+  create_table "arrivals", force: :cascade do |t|
+    t.integer "number"
+    t.text "description"
+    t.string "picture_url"
+    t.boolean "status"
+    t.bigint "flat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["step_id"], name: "index_attachements_on_step_id"
+    t.index ["flat_id"], name: "index_arrivals_on_flat_id"
+  end
+
+  create_table "attachements", force: :cascade do |t|
+    t.string "photo"
+    t.bigint "arrival_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["arrival_id"], name: "index_attachements_on_arrival_id"
   end
 
   create_table "flats", force: :cascade do |t|
@@ -32,15 +43,16 @@ ActiveRecord::Schema.define(version: 2019_07_23_221900) do
     t.index ["owner_id"], name: "index_flats_on_owner_id"
   end
 
-  create_table "steps", force: :cascade do |t|
-    t.integer "number"
-    t.text "description"
-    t.string "picture_url"
-    t.boolean "status"
+  create_table "keyinfos", force: :cascade do |t|
+    t.time "checkout"
+    t.string "wifiname"
+    t.text "wificode"
+    t.string "owner"
+    t.string "contact"
     t.bigint "flat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["flat_id"], name: "index_steps_on_flat_id"
+    t.index ["flat_id"], name: "index_keyinfos_on_flat_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,7 +63,8 @@ ActiveRecord::Schema.define(version: 2019_07_23_221900) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "attachements", "steps"
+  add_foreign_key "arrivals", "flats"
+  add_foreign_key "attachements", "arrivals"
   add_foreign_key "flats", "users", column: "owner_id"
-  add_foreign_key "steps", "flats"
+  add_foreign_key "keyinfos", "flats"
 end
