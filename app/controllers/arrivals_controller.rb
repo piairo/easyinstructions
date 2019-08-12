@@ -7,10 +7,11 @@ class ArrivalsController < ApplicationController
     arrivals = Arrival.where(flat_id: 1)
     selectarrival = arrivals.where(number: params[:number])
     @arrival = selectarrival[0]
-    @location = request.location.city
+
   end
 
   def send_sms
+  @location = request.location.city
   # put your own credentials here
   account_sid = 'ACe8db3bae886de70e3b2a089489949a30'
   auth_token = 'da03289f9981a213e3c430beea95ad13'
@@ -21,7 +22,7 @@ class ArrivalsController < ApplicationController
   @client.api.account.messages.create(
   from: '+441670432062',
   to: '+447484723518',
-  body: 'chocolate trigger from:  location #{@location}'
+  body: "chocolate trigger from: '#{@location}'"
   )
   redirect_to arrival_path(6)
   end
