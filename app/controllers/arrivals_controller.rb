@@ -7,7 +7,7 @@ class ArrivalsController < ApplicationController
     arrivals = Arrival.where(flat_id: 1)
     selectarrival = arrivals.where(number: params[:number])
     @arrival = selectarrival[0]
-    @location = request.location.city
+    @location = request.safe_location.city
   end
 
   def send_sms
