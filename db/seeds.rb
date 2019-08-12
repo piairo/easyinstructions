@@ -53,7 +53,7 @@ puts 'Creating "7 arrivals" - for chocolate nest...'
 
   arrival3 = Arrival.new(
     number:   3,
-    description: "turn round to find keys 🔑",
+    description: "in the porch, turn round: the safe is behind you 🔑",
     picture_url: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
     status: false,
     flat_id: 1,
