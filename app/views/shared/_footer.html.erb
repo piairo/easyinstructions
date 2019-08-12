@@ -12,9 +12,21 @@
           <% end %>
     </div>
  <!--   BUTTON INFO  --->
-
     <div>
+          <% if params[:controller] == 'keyinfos' %>
+         <%= link_to root_path do %>
+        <h1><i class="fas fa-home" style="color: white"></i></h1>
+          <% end %>
+          <% else %>
+           <%= link_to keyinfo_path (flat_name = "Chocolate nest") do %>
+        <h1><i class="fas fa-info" style="color: white"></i></h1>
+          <% end %>
+           <% end %>
+
+    </div>
+
  <!--   BUTTON NEXT  --->
+   <div>
           <% if @arrival.nil? %>
 
           <% elsif @arrival.number == 5 %>
