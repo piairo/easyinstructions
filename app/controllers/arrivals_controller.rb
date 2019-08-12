@@ -7,6 +7,7 @@ class ArrivalsController < ApplicationController
     arrivals = Arrival.where(flat_id: 1)
     selectarrival = arrivals.where(number: params[:number])
     @arrival = selectarrival[0]
+    @location = request.location.city
   end
 
   def send_sms
@@ -20,7 +21,7 @@ class ArrivalsController < ApplicationController
   @client.api.account.messages.create(
   from: '+441670432062',
   to: '+447484723518',
-  body: 'chocolate guest: successfuly check-in!'
+  body: 'chocolate trigger from:  location #{@location}'
   )
   redirect_to arrival_path(6)
   end
