@@ -6,9 +6,7 @@
     </header>
 
 
-
-
-<div class="container" >
+<div id="keyinfos" class="container" >
   <br>
   <br>
   <br>
@@ -18,15 +16,13 @@
 <!-- <br> -->
 <p>name: <strong> <%= @keyinfo.wifiname %> </strong></p>
 
-        <div class="input-group input-group-lg">
-        <div class="input-group-prepend">
-          <span class="input-group-text fas fa-wifi"></span>
-        </div>
-        <input class="inputCopy form-control" value="<%= @keyinfo.wificode %>" />
-         <div class="input-group-append">
+
+        <div class="container d-flex align-items-center p-0">
+          <h1 class="input-group-text fas fa-wifi"></h1>
+          <h1> <%= @keyinfo.wificode %> </h1>
           <button class="btn btn-primary btn-copy">Copy</button>
         </div>
-      </div>
+
 <br>
 <br>
 <%#  CHECK-OUT %>
@@ -34,14 +30,11 @@
 <!-- 🔑 -->
 <!-- <br>
 
- -->
-        <div class="input-group input-group-lg">
-        <div class="input-group-prepend">
-          <span class="input-group-text fas fa-clock"></span>
+ -->   <div class="container d-flex align-items-center p-0">
+          <h1 class="input-group-text fas fa-clock"></h1>
+          <h1> 11:00 am </h1>
         </div>
-        <input class="form-control" value="11:00 am" />
-<!-- <#%= @keyinfo.checkout %>
- -->      </div>
+
  <%#  CONTACT %>
 <br>
 <br>
@@ -49,11 +42,9 @@
 <!-- 👤 -->
 <!-- <br> -->
 <p>name: <strong> <%= @keyinfo.owner %> </strong></p>
-       <div class="input-group input-group-lg">
-        <div class="input-group-prepend" >
-          <span class="input-group-text fas fa-phone"></span>
-        </div>
-        <input class="form-control" value="<%= @keyinfo.contact %>" />
+       <div class="container d-flex align-items-center p-0">
+          <h1 class="input-group-text fas fa-phone"></h1>
+          <h1> <%= @keyinfo.contact %> </h1>
         </div>
 
 </div>
