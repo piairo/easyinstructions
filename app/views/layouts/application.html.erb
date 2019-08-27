@@ -13,14 +13,14 @@
  <%# NAVBAR %>
     <%= render 'shared/navbar_wagon' %>
     <%= yield %>
-
-  </body>
-</html>
-
-<%# ASYNC JS %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+
+<%# ASYNC JS %>
+
     <%= yield :after_js %>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  </body>
+</html>
