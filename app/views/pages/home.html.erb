@@ -4,14 +4,21 @@
 </div>
 
       <div class="container">
-          <div>
-            <%= link_to arrival_path(arrival_number = 1) do %>
-            <%= image_tag "undraw_travelers_qlt1.png"%>
-            <% end %>
+          <div class="row">
+            <div class="col-12">
+              <%= link_to arrival_path(arrival_number = 1) do %>
+              <%= image_tag "undraw_travelers_qlt1.png", class:"img-fluid"%>
+
+              <% end %>
+            </div>
           </div>
-          <div>
-          <%= link_to "start", arrival_path(arrival_number = 1), class: 'btn btn-danger mybutton-lg home' %>
-           </div>
+
+          <div class="row">
+            <div class="col-12">
+              <%= link_to "start", arrival_path(arrival_number = 1), class: 'btn btn-danger mybutton-lg home' %>
+            </div>
+          </div>
+
       </div>
 
 
