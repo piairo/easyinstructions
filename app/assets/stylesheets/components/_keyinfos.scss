@@ -1,22 +1,47 @@
-#keyinfos h1{
+.keyinfo-card {
+  padding: 3vmax 0;
+  text-align: center;
+  width: 100%;
+  height:auto;
   font-size: 2vmax;
-  padding: 16px;
+}
+
+.keyinfo-card-title{
+  opacity: 0.9;
+  font-size: 3vmax;
+  margin-bottom: 4px;
+ }
+
+
+.keyinfo-card-text {
+  color: RGBA(14,0,0.1,0.7);
+
+}
+
+.keyinfo-card-emoji {
+  font-size: 5vmax;
 }
 
 
-#keyinfos span{
-  font-size: 2vmax;
-  padding: 16px;
+.keyinfo-card .inputCopy{
+  border: none;
+  text-align: center;
+  width: 15vmax;
+}
+
+.keyinfo-card strong{
+  color: $theme;
+}
+
+.keyinfo-card {
+  &.grey{
+  background-color: #f4f4f4;
+ }
 }
 
 
-#keyinfos input{
-  font-size: 2vmax;
-  padding: 16px;
-  width: 18vmax;
-}
-
-
-#keyinfos button{
-  font-size: 1.7vmax;
+.keyinfo-card {
+  &.white{
+  background-color: white;
+  }
 }

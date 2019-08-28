@@ -1,74 +1,69 @@
 
-
-<!-- TITLE -->
-    <header class="dashboard">
+<header class="dashboard">
         <h1 id="typed" data-strings="<%= ["key infos"].to_json %>" data-speed="100" data-loop="false" style="color: #e91e63; display: inline;"></h1>
-    </header>
+</header>
 
 
-<div id="keyinfos" class="container" >
-  <br>
-  <br>
-  <br>
-<%#  WIFI %>
-<h3>internet</h3>
-<!-- 💻 -->
-<!-- <br> -->
-<p>name: <strong> <%= @keyinfo.wifiname %> </strong></p>
+<div class="content">
 
-
-        <div class="container d-flex align-items-center p-0">
-          <h1 class="input-group-text fas fa-wifi"></h1>
-          <input class="inputCopy" value="<%= @keyinfo.wificode %>">  </input>
-          <button class="btn btn-primary btn-copy">Copy</button>
-        </div>
-
-<br>
-<br>
-<%#  CHECK-OUT %>
-<h3>check-out</h3>
-<!-- 🔑 -->
-<!-- <br>
-
- -->   <div class="container d-flex align-items-center p-0">
-          <h1 class="input-group-text fas fa-clock"></h1>
-          <h1> 11:00 am </h1>
-        </div>
-
- <%#  CONTACT %>
-<br>
-<br>
-<h3>contact</h3>
-<!-- 👤 -->
-<!-- <br> -->
-<p>name: <strong> <%= @keyinfo.owner %> </strong></p>
-       <div class="container d-flex align-items-center p-0">
-          <h1 class="input-group-text fas fa-phone"></h1>
-          <h1> <%= @keyinfo.contact %> </h1>
-        </div>
-
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="container">
-  <h3>guide books</h3>
-  <div class="row align-items-center" style="margin-left: 0px">
-      <span class="key-emoji">📺</span>
-      <p>watch netflix</p>
+  <div class="keyinfo-card white">
+    <p class="keyinfo-card-title">internet</p>
+    <p class="keyinfo-card-emoji">📶</p>
+      <div class="container keyinfo-card-text">
+         name:  <%= @keyinfo.wifiname %>
+         <br>
+         pass: <input class="inputCopy" value="<%= @keyinfo.wificode %>"></input>
+         <button class="btn btn-primary btn-copy">Copy</button>
+      </div>
   </div>
-  <div class="row align-items-center" style="margin-left: 0px">
-      <span class="key-emoji">🔥</span>
-      <p>turn-on heater</p>
+<!--
+            <div class="container d-flex justify-content-center align-items-center p-0">
+              <h1 class="input-group-text">pass:</h1>
+              <input class="inputCopy" value="<%= @keyinfo.wificode %>">  </input>
+              <button class="btn btn-primary btn-copy">Copy</button>
+            </div> -->
+
+  <div class="keyinfo-card grey">
+    <p class="keyinfo-card-title">check-out</p>
+    <p class="keyinfo-card-emoji">⏰</p>
+      <div class="container keyinfo-card-text">
+         <strong>11:00am</strong>
+
+      </div>
   </div>
-  <div class="row align-items-center" style="margin-left: 0px">
-      <span class="key-emoji">🛁</span>
-      <p>boost hot water</p>
+
+  <div class="keyinfo-card white">
+    <p class="keyinfo-card-title">contact</p>
+    <p class="keyinfo-card-emoji">👤</p>
+      <div class="container keyinfo-card-text">
+         <%= @keyinfo.owner %>
+         <%= @keyinfo.contact %>
+         <div class="container pt-3 pb-3">
+          <a class="btn btn-flat" href="mailto:katia@bnbletting.co.uk?subject=Contact request"><i class="far fa-paper-plane"></i> send email</a>
+        </div>
+      </div>
   </div>
 </div>
 
-    <%# FOOTER %>
-    <%= render 'shared/footer' %>
+<div class="keyinfo-card grey">
+  <div class="container pt-3 pb-3">
+    <h3><!-- guide books  -->(coming soon)</h3>
+    <div class="row align-items-center" style="margin-left: 0px">
+        <span class="key-emoji">📺</span>
+        <p>watch netflix</p>
+    </div>
+    <div class="row align-items-center" style="margin-left: 0px">
+        <span class="key-emoji">🔥</span>
+        <p>turn-on heater</p>
+    </div>
+    <div class="row align-items-center" style="margin-left: 0px">
+        <span class="key-emoji">🛁</span>
+        <p>boost hot water</p>
+    </div>
+ </div>
+
+
+</div>
+
+
+

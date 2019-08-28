@@ -1,41 +1,15 @@
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram" style="opacity:0.5"></i></a>
+    <a href="https://www.facebook.com/105897947453950"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter" style="opacity:0.5"></i></a>
+  </div>
 
-<footer class="myfooter fixed-bottom">
 
-  <!--   BUTTON BACK  --->
-    <div>
-          <% if @arrival.nil? %>
-          <% %>
-         <% elsif @arrival.number <= 1 %>
-            <%= link_to "back", root_path, class: 'btn mybutton-light mybutton-lg' %>
-          <% else %>
-          <%= link_to "back", arrival_path(@arrival.number - 1), class: 'btn mybutton-light mybutton-lg'%>
-          <% end %>
-    </div>
- <!--   BUTTON INFO  --->
-    <div>
-          <% if params[:controller] == 'keyinfos' %>
-         <%= link_to root_path do %>
-        <h1><i class="fas fa-home" style="color: white"></i></h1>
-          <% end %>
-          <% else %>
-           <%= link_to keyinfo_path (flat_name = "Chocolate nest") do %>
-        <h1><i class="fas fa-info" style="color: white"></i></h1>
-          <% end %>
-           <% end %>
-
-    </div>
-
- <!--   BUTTON NEXT  --->
-   <div>
-          <% if @arrival.nil? %>
-
-          <% elsif @arrival.number == 5 %>
-           <%= link_to "next", sms_path, method: :get, class: 'btn btn-danger mybutton-lg'%>
-           <% elsif @arrival.number == 6 %>
-            <%= link_to "key info", keyinfo_path(flat_name = "Chocolate nest"), class: 'btn btn-danger mybutton-lg' %>
-          <% else %>
-          <%= link_to "next", arrival_path(@arrival.number + 1), class: 'btn btn-danger mybutton-lg' %>
-          <% end %>
-    </div>
-</footer>
+  <div class="container" style="text-align: center">
+  2019 © Copyright. Easyinstructions.
+  All Rights Reserved. Terms & Conditions.
+  Managed & Developed in UK.
+  </div>
+</div>
 

@@ -1,0 +1,41 @@
+
+<footer class="navbar_bottom fixed-bottom">
+
+  <!--   BUTTON BACK  --->
+    <div>
+          <% if @arrival.nil? %>
+          <% %>
+         <% elsif @arrival.number <= 1 %>
+            <%= link_to "back", root_path, class: 'btn mybutton-light mybutton-lg' %>
+          <% else %>
+          <%= link_to "back", arrival_path(@arrival.number - 1), class: 'btn mybutton-light mybutton-lg'%>
+          <% end %>
+    </div>
+ <!--   BUTTON INFO  --->
+    <div>
+          <% if params[:controller] == 'keyinfos' %>
+         <%= link_to root_path do %>
+        <h1><i class="fas fa-home" style="color: white"></i></h1>
+          <% end %>
+          <% else %>
+           <%= link_to keyinfo_path (flat_name = "Chocolate nest") do %>
+        <h1><i class="fas fa-info" style="color: white"></i></h1>
+          <% end %>
+           <% end %>
+
+    </div>
+
+ <!--   BUTTON NEXT  --->
+   <div>
+          <% if @arrival.nil? %>
+
+          <% elsif @arrival.number == 5 %>
+           <%= link_to "next", sms_path, method: :get, class: 'btn btn-danger mybutton-lg'%>
+           <% elsif @arrival.number == 6 %>
+            <%= link_to "key info", keyinfo_path(flat_name = "Chocolate nest"), class: 'btn btn-danger mybutton-lg' %>
+          <% else %>
+          <%= link_to "next", arrival_path(@arrival.number + 1), class: 'btn btn-danger mybutton-lg' %>
+          <% end %>
+    </div>
+</footer>
+
