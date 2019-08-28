@@ -1,20 +1,32 @@
 
 <header class="dashboard">
-        <h1 id="typed" data-strings="<%= ["key infos"].to_json %>" data-speed="100" data-loop="false" style="color: #e91e63; display: inline;"></h1>
+        <h1 id="typed" data-strings="<%= ["infos"].to_json %>" data-speed="100" data-loop="false" style="color: #e91e63; display: inline;"></h1>
 </header>
 
 
 <div class="content">
 
+
+
+  <div class="keyinfo-card grey">
+    <p class="keyinfo-card-title">check-in</p>
+    <p class="keyinfo-card-emoji">🧳</p>
+    <p class="keyinfo-card-text">03:00pm </p>
+  </div>
+
+
   <div class="keyinfo-card white">
+    <p class="keyinfo-card-title">check-out</p>
+    <p class="keyinfo-card-emoji">⏰</p>
+    <p class="keyinfo-card-text">11:30am</p>
+  </div>
+
+<div class="keyinfo-card grey">
     <p class="keyinfo-card-title">internet</p>
     <p class="keyinfo-card-emoji">📶</p>
-      <div class="container keyinfo-card-text">
-         name:  <%= @keyinfo.wifiname %>
-         <br>
-         pass: <input class="inputCopy" value="<%= @keyinfo.wificode %>"></input>
-         <button class="btn btn-primary btn-copy">Copy</button>
-      </div>
+    <p class="keyinfo-card-text">name:  <%= @keyinfo.wifiname %></p>
+    pass: <input class="inputCopy" value="<%= @keyinfo.wificode %>"></input>
+    <button class="btn btn-primary btn-copy">Copy</button>
   </div>
 <!--
             <div class="container d-flex justify-content-center align-items-center p-0">
@@ -23,27 +35,16 @@
               <button class="btn btn-primary btn-copy">Copy</button>
             </div> -->
 
-  <div class="keyinfo-card grey">
-    <p class="keyinfo-card-title">check-out</p>
-    <p class="keyinfo-card-emoji">⏰</p>
-      <div class="container keyinfo-card-text">
-         <strong>11:00am</strong>
-
-      </div>
-  </div>
-
   <div class="keyinfo-card white">
     <p class="keyinfo-card-title">contact</p>
     <p class="keyinfo-card-emoji">👤</p>
-      <div class="container keyinfo-card-text">
-         <%= @keyinfo.owner %>
-         <%= @keyinfo.contact %>
-         <div class="container pt-3 pb-3">
-          <a class="btn btn-flat" href="mailto:katia@bnbletting.co.uk?subject=Contact request"><i class="far fa-paper-plane"></i> send email</a>
-        </div>
+    <p class="keyinfo-card-text"> <%= @keyinfo.owner %> </p>
+    <p><%= @keyinfo.contact %></p>
+       <div class="container pt-3 pb-3">
+        <a class="btn btn-flat" href="mailto:katia@bnbletting.co.uk?subject=Contact request"><i class="far fa-paper-plane"></i> send email</a>
       </div>
   </div>
-</div>
+
 
 <div class="keyinfo-card grey">
   <div class="container pt-3 pb-3">
@@ -61,9 +62,14 @@
         <p>boost hot water</p>
     </div>
  </div>
-
-
 </div>
+ <%# FOOTER %>
+    <%= render 'shared/footer' %>
+
+
+
+
+
 
 
 
