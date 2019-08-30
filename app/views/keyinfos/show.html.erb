@@ -32,7 +32,11 @@
 
   <div class="keyinfo-card white">
     <p class="keyinfo-card-title">contact</p>
-    <p class="keyinfo-card-emoji">👤</p>
+      <div class="row justify-content-center">
+        <div class="col-2">
+          <img src="<%= image_path("Katia_airbnb_avatar.png")%>" alt="katia" class="img-fluid">
+        </div>
+      </div>
     <p class="keyinfo-card-text"> <%= @keyinfo.owner %> </p>
     <p><%= @keyinfo.contact %></p>
        <div class="container pt-3 pb-3">
