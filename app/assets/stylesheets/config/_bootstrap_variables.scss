@@ -6,26 +6,26 @@
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 $light-grey;
-$font-size-base: 1.25rem;
+$body-bg:                 $light-gray;
+$font-size-base: 1rem;
 
 // Modal
 $modal-backdrop-bg: $night;
 
 // Colors
-$body-color: #232425;
-$primary:    $turquoise;
+$body-color: $gray;
+$primary:    $blue;
 $success:    $green;
-$info:       $blue;
+$info:       $yellow;
 $danger:     $red;
-$warning:    $yellow;
+$warning:    $orange;
 $dark:       $night;
-$light:      $light-grey;
+$light:      $light-gray;
 
 // Buttons & inputs' radius
-$border-radius:    4px;
-$border-radius-lg: 4px;
-$border-radius-sm: 4px;
+$border-radius:    2px;
+$border-radius-lg: 2px;
+$border-radius-sm: 2px;
 
 // Override other variables below!
 $transition: all .3s ease-out;

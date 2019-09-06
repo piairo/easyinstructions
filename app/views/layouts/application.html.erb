@@ -11,6 +11,8 @@
       gtag('config', 'UA-118196171-4');
     </script>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Easy Instructions</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -18,7 +20,6 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-
   <body>
  <%# NAVBARS %>
     <%= render 'shared/navbar_wagon' %>
@@ -26,8 +27,6 @@
     <%= yield %>
     <%= javascript_include_tag 'application' %>
      <%= javascript_pack_tag 'application' %>
-
-
 <%# ASYNC JS %>
 
     <%= yield :after_js %>

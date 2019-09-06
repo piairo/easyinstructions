@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'arrival/:number', to: 'arrivals#show', as: :arrival
   get 'about', to: 'pages#about', as: :about
   get 'contact', to: 'pages#contact', as: :contact

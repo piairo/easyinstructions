@@ -15,6 +15,8 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+import "bootstrap";
+
 
 // COPY TO CLIPBOARD
 import { initCopyToClipboard } from '../plugins/init_copy_to_clipboard';

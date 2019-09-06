@@ -6,20 +6,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+separator = "-------------------------------------------------"
 
-puts 'Creating 10 fake users...'
-10.times do
-  user = User.new(
-    first_name: Faker::Name.first_name,
-    last_name:  Faker::Name.first_name,
-    email: Faker::Internet.email
-    )
-  user.save!
+puts separator
+
+puts "1. Creating 4 fake users... "
+pswd = 'sophia'
+# Create team accounts
+team = [
+  {first_name: 'Katia', last_name: 'Obedina', email: 'evobedi@gmail.com', password: pswd, role: 'admin', facebook_picture_url: 'https://avatars2.githubusercontent.com/u/44228371?v=4' },
+  {first_name: 'Michelle', last_name: 'M\'Baga', email: 'michelle@gmail.com', password: pswd, role: 'admin', facebook_picture_url: 'https://res.cloudinary.com/dtwpyokni/image/upload/v1558705228/maxime.jpg' },
+  {first_name: 'Pierre', last_name: 'M\'Baga', email: 'pierrembaga@gmail.com', password: pswd, role: 'admin', facebook_picture_url: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/z32znj9l5x2xy1psb36x.jpg' },
+  {first_name: 'Annette', last_name: 'Thiault', email: 'dareth@gmail.com', password: pswd, role: 'admin', facebook_picture_url: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/gazjce34qg6yvwltrnqq.jpg' }
+]
+team.each do |teamate|
+  User.create!(teamate)
 end
+
 puts 'Finished users! 👤'
 
-
-puts 'Creating "flat" - chocolate nest ...'
+puts separator
+puts '2. Creating "flat" - chocolate nest ...'
 
   flat1 = Flat.new(
     name:    "Chocolate nest",
@@ -30,8 +37,8 @@ puts 'Creating "flat" - chocolate nest ...'
 
 puts 'Chocolate nest finished! 🏠'
 
-
-puts 'Creating "7 arrivals" - for chocolate nest...'
+puts separator
+puts '3. Creating "7 arrivals" - for chocolate nest...'
 
   arrival1 = Arrival.new(
     number:   1,
@@ -99,7 +106,8 @@ puts 'Creating "7 arrivals" - for chocolate nest...'
 
 puts 'Finished 7 arrivals for chocolate nest! ➡️'
 
-puts 'Creating "keyinfos" - chocolate nest ...'
+puts separator
+puts '4. Creating "keyinfos" - chocolate nest ...'
 
   keyinfo1 = Keyinfo.new(
     checkout: "11:00 AM",
