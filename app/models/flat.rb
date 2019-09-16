@@ -1,4 +1,9 @@
 class Flat < ApplicationRecord
-belongs_to :owner, class_name: "User", foreign_key: "owner_id"
-has_many :instructions
+belongs_to :user
+has_many :arrivals
+
+validates :name, uniqueness: true, presence: true
+validates :address, presence: true
 end
+
+

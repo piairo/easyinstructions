@@ -37,10 +37,10 @@ ActiveRecord::Schema.define(version: 2019_08_11_161701) do
   create_table "flats", force: :cascade do |t|
     t.string "name"
     t.text "address"
-    t.bigint "owner_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_id"], name: "index_flats_on_owner_id"
+    t.index ["user_id"], name: "index_flats_on_user_id"
   end
 
   create_table "keyinfos", force: :cascade do |t|
@@ -57,23 +57,20 @@ ActiveRecord::Schema.define(version: 2019_08_11_161701) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.string "role"
-    t.string "phone"
-    t.string "facebook_picture_url"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "arrivals", "flats"
   add_foreign_key "attachements", "arrivals"
-  add_foreign_key "flats", "users", column: "owner_id"
+  add_foreign_key "flats", "users"
   add_foreign_key "keyinfos", "flats"
 end

@@ -10,35 +10,35 @@ separator = "-------------------------------------------------"
 
 puts separator
 
-puts "1. Creating 4 fake users... "
+puts " 1. 👤 Creating 4 fake users... "
 pswd = 'sophia'
 # Create team accounts
 team = [
-  {first_name: 'Katia', last_name: 'Obedina', email: 'evobedi@gmail.com', password: pswd, role: 'admin', facebook_picture_url: 'https://avatars2.githubusercontent.com/u/44228371?v=4' },
-  {first_name: 'Michelle', last_name: 'M\'Baga', email: 'michelle@gmail.com', password: pswd, role: 'admin', facebook_picture_url: 'https://res.cloudinary.com/dtwpyokni/image/upload/v1558705228/maxime.jpg' },
-  {first_name: 'Pierre', last_name: 'M\'Baga', email: 'pierrembaga@gmail.com', password: pswd, role: 'admin', facebook_picture_url: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/z32znj9l5x2xy1psb36x.jpg' },
-  {first_name: 'Annette', last_name: 'Thiault', email: 'dareth@gmail.com', password: pswd, role: 'admin', facebook_picture_url: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/gazjce34qg6yvwltrnqq.jpg' }
+  {first_name: 'Katia', last_name: 'Obedina', email: 'evobedi@gmail.com', password: 'michelle'},
+  {first_name: 'Michelle', last_name: 'M\'Baga', email: 'michelle@gmail.com', password: 'michelle'},
+  {first_name: 'Pierre', last_name: 'M\'Baga', email: 'pierrembaga@gmail.com', password: 'michelle'},
+  {first_name: 'Coach', last_name: 'Destinees', email: 'coachdestinees@gmail.com', password: 'michelle'}
 ]
 team.each do |teamate|
   User.create!(teamate)
 end
 
-puts 'Finished users! 👤'
+puts 'Finished users!'
 
 puts separator
-puts '2. Creating "flat" - chocolate nest ...'
+puts '2. 🏠 Creating "flat" - chocolate nest ...'
 
   flat1 = Flat.new(
     name:    "Chocolate nest",
     address: "2A southborough terrace, cv31 2dt leamington",
-    owner_id: 1,
+    user_id: 1,
     )
   flat1.save!
 
-puts 'Chocolate nest finished! 🏠'
+puts 'Finished Chocolate nest!'
 
 puts separator
-puts '3. Creating "7 arrivals" - for chocolate nest...'
+puts '3. ➡️ Creating "7 arrivals" - for chocolate nest...'
 
   arrival1 = Arrival.new(
     number:   1,
@@ -104,20 +104,20 @@ puts '3. Creating "7 arrivals" - for chocolate nest...'
     )
   arrival7.save!
 
-puts 'Finished 7 arrivals for chocolate nest! ➡️'
+puts 'Finished 7 arrivals for chocolate nest!'
 
 puts separator
-puts '4. Creating "keyinfos" - chocolate nest ...'
+puts '4. 📖 Creating "keyinfos" - chocolate nest ...'
 
   keyinfo1 = Keyinfo.new(
     checkout: "11:00 AM",
-    wifiname: "BTHub6-N7ZN",
-    wificode: "wt64g9Pd9uDy",
+    wifiname: "Onestream TNCAP8D6417",
+    wificode: "577D44B1D2",
     owner: "katia",
     contact: "+44 7484 723518",
     flat_id: 1,
     )
   keyinfo1.save!
 
-puts 'Keyinfo1 -chocolate nest finished! 📖'
+puts 'Finished chocolate nest - Keyinfo1 !'
 

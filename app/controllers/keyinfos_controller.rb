@@ -16,5 +16,5 @@ end
 private
 
 def keyinfo_params
-    params.require(:keyinfo).permit(:checkout, :wifiname, :wificode, :owner, :contact, :flat_id)
+    params.require(:keyinfo).permit(:checkout, :wifiname, :wificode, :contact)
   end
