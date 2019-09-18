@@ -1,0 +1,46 @@
+<div id="bs-canvas-right" class="bs-canvas bs-canvas-right position-fixed h-100">
+  <header class="bs-canvas-header px-3 py-4 overflow-auto">
+    <h4>
+      <%# USER HEADER %>
+      <% if user_signed_in? %>
+        <%= image_tag current_user.avatar, class: "avatar", id: "avatar" %>
+
+        <%#= image_tag "https://res.cloudinary.com/dtwpyokni/image/upload/v1558705228/maxime.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        Hi <%= current_user.first_name %>!
+      <%# GUEST HEADER %>
+      <% else %>
+        You must be logged in
+      <% end %>
+    </h4>
+    <button type="button" class="bs-canvas-close btn close" aria-label="Close" aria-expanded="false">
+      <i class="fas fa-reply"></i>
+    </button>
+  </header>
+  <%# USER MENU %>
+  <% if user_signed_in? %>
+    <h5 class="nav-link text-danger small">Instuctions</h5>
+
+    <%= link_to raw("<i class=\"fas fa-building\"></i> My flats <span class=\"badge badge-pill badge-light\">#{current_user.flats.count}</span>"), flats_path, class: "dropdown-item" %>
+    <%= link_to raw("<i class=\"fas fa-plus-square\"></i> Create new flat"), 'new_flat_path', class: "dropdown-item" %>
+
+    <div class="dropdown-divider"></div>
+
+    <h5 class="nav-link text-danger small">Informations</h5>
+    <%= link_to raw("<i class=\"fas fa-user-edit\"></i> Edit my account"), edit_user_registration_path, class: "dropdown-item" %>
+    <%= link_to raw("<i class=\"fas fa-bolt text-danger\"></i> Upgrade to Premium"), '#', class: "dropdown-item text-danger" %>
+    <div class="dropdown-divider"></div>
+    <%= link_to raw("<i class=\"fas fa-sign-out-alt\"></i> Logout"), destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+  <%# GUESY MENU %>
+  <% else %>
+    <div class="dropdown-item"><%= link_to "Sign in with email", new_user_session_path, class: "btn btn-danger btn-block text-left" %></div>
+  <!--   <#%= render "devise/shared/links-sidebar" %> -->
+    <div class="dropdown-divider"></div>
+    <div class="dropdown-item"><%= link_to "Create an account", new_user_registration_path, class: "btn btn-sm btn-outline-secondary btn-block text-left" %></div>
+  <% end %>
+  <%# COMMON MENU %>
+  <h5 class="nav-link text-danger small mt-5">About Easyinstructions</h5>
+  <%= link_to raw("About us"), '#', class: "dropdown-item small" %>
+  <%= link_to raw("FAQ"), '#', class: "dropdown-item small" %>
+  <%= link_to raw("Contact us"), '#', class: "dropdown-item small" %>
+  <%= link_to raw("Legal notices"), '#', class: "dropdown-item small" %>
+</div>

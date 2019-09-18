@@ -1,4 +1,6 @@
 <% @flats.each do |flat| %>
   <h2><%= flat.name %></h2>
   <p><%= flat.address %></p>
+  <%= link_to raw("<i class=\"fas fa-arrow-right\" style=\"color:#E91E63\"></i> Check-in (arrival steps) <span class=\"badge badge-pill badge-danger\">#{flat.arrivals.count}</span>"), flat_path(flat.id), class: "dropdown-item" %>
 <% end %>
+

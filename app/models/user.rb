@@ -4,4 +4,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :flats, dependent: :destroy
+
+
+
+  def avatar
+      if !avatar_url.nil?
+        avatar_url
+      elsif !facebook_picture_url.nil?
+        facebook_picture_url
+      else
+        "http://placehold.it/90x90"
+      end
+  end
+
 end
