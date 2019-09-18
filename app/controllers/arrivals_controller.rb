@@ -40,9 +40,8 @@ class ArrivalsController < ApplicationController
   def create        # POST /arrivals
     @arrival = Arrival.new(arrival_params)
     @flat = Flat.find(params[:flat_id])
+    @arrival.flat = @flat
 
-    # @user = current_user
-     # @arrival.flat = @flat
     if @arrival.save
       redirect_to flat_path(@flat)
     else

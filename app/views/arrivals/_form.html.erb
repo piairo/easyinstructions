@@ -12,6 +12,12 @@
     </div>
   <% end %>
 
+<!-- DEBUG -->
+    <p>@flat : <%= @flat %></p>
+    <p>@flat.id : <%= @flat.id %></p>
+    <p>current_user.id : <%= current_user.id %></p>
+<!-- // -->
+
   <%= form_for [@flat, @arrival] do |f| %>
 
     <div class="form-group">

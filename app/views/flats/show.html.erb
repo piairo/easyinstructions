@@ -1,12 +1,24 @@
+
 <div class="container">
   <h2><%= @flat.name %></h2>
   <p><%= @flat.address %></p>
 
-  <% if @flat = current_user %>
+ <!--   //DEBUG -->
+    <p>@flat.id : <%= @flat.id %></p>
+    <p>@flat.user_id : <%= @flat.user_id %></p>
+    <p>current_user.id : <%= current_user.id %></p>
+    <p>@arrivals : <%= @arrivals %> </p>
+<!-- // -->
+  <% if @flat.user_id == current_user.id %>
 
-  <%= link_to "Create Check-in (arrival)",  new_flat_arrival_path(@flat), class: 'btn btn-danger' %>
+  <%= link_to "Create new Check-in",  new_flat_arrival_path(@flat), class: 'btn btn-danger' %>
 
-  <%= link_to "Edit Check-in (arrival)",  "#", class: 'btn btn-danger' %>
+  <%= link_to "Edit Check-in",  "#", class: 'btn btn-danger' %>
+
+<%@arrivals.each do |arrival| %>
+  <p> <%=  "#{arrival.number} - #{arrival.description}" %> </p>
+<% end %>
+
   <% end %>
 
 </div>

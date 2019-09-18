@@ -6,6 +6,7 @@ class FlatsController < ApplicationController
 
   def show          # GET /flats/:id
     @flat = Flat.find(params[:id])
+    @arrivals = Arrival.where(flat_id: params[:id])
   end
 
   def new           # GET /flats/new
@@ -16,8 +17,8 @@ class FlatsController < ApplicationController
 
   def create        # POST /flats
     @flat = Flat.new(flat_params)
-    @user = current_user
-    @flat.user = @user
+    @flat.user = current_user
+
     if @flat.save
       redirect_to flat_path(@flat)
     else
