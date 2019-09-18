@@ -1,6 +1,6 @@
 <!-- app/views/flat/_form.html.erb -->
 
-<div class="container padding-top">
+<div class="container pt-3">
   <%= simple_form_for(@flat) do |f| %>
   <% if @flat.errors.any? %>
     <div class="errors-container">
@@ -15,13 +15,9 @@
   <%= form_for(@flat) do |f| %>
 
     <div class="form-group">
-      <%= f.label :user %>
-      <%= f.text_field :user_id, class: 'form-control' %>
-    </div>
-
 
     <div class="form-group">
-      <%= f.label :name %>
+      <%= f.label :'Flat name' %>
       <%= f.text_field :name, class: 'form-control' %>
     </div>
 

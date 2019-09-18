@@ -1,2 +1,13 @@
-<h2><%= @flat.name %></h2>
-<p><%= @flat.address %></p>
+<div class="container">
+  <h2><%= @flat.name %></h2>
+  <p><%= @flat.address %></p>
+
+  <% if @flat = current_user %>
+
+  <%= link_to "Create Check-in (arrival)",  new_flat_arrival_path(@flat), class: 'btn btn-danger' %>
+
+  <%= link_to "Edit Check-in (arrival)",  "#", class: 'btn btn-danger' %>
+  <% end %>
+
+</div>
+

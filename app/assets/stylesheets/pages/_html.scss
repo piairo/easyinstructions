@@ -1,6 +1,6 @@
 body {
   background-color: $quick-change;
-  padding-top: 12vmax
+  padding-top: 10vmax
   ;
 }
 
@@ -23,6 +23,14 @@ section {
       }
     }
   }
+}
+
+.main-content {
+  background-size: cover;
+  background-position: center;
+  max-width: 100%;
+  height: 80vh;
+
 }
 
 // .hide {

@@ -1,0 +1,34 @@
+<!-- app/views/arrivals/_form.html.erb -->
+
+<div class="container pt-3">
+  <%= simple_form_for [@flat, @arrival] do |f| %>
+  <% if @arrival.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @arrival.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_for [@flat, @arrival] do |f| %>
+
+    <div class="form-group">
+
+    <div class="form-group">
+      <%= f.label :'Step number' %>
+      <%= f.text_field :number, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_field :description, class: 'form-control' %>
+    </div>
+
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+
+ <% end %>
+</div>
+<!-- arrival Model :(number, description, picture_url, status) -->

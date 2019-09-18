@@ -1,5 +1,5 @@
 
-<footer class="navbar_bottom fixed-bottom">
+<div class="navbar_bottom fixed-bottom">
 
   <!--   BUTTON BACK  --->
     <div>
@@ -8,7 +8,7 @@
          <% elsif @arrival.number <= 1 %>
             <%= link_to "back", root_path, class: 'btn mybutton-light mybutton-lg' %>
           <% else %>
-          <%= link_to "back", arrival_path(@arrival.number - 1), class: 'btn mybutton-light mybutton-lg'%>
+          <%= link_to "back", flat_arrival_path(@flat, @arrival.number - 1), class: 'btn mybutton-light mybutton-lg'%>
           <% end %>
     </div>
  <!--   BUTTON INFO  --->
@@ -34,8 +34,8 @@
            <% elsif @arrival.number == 6 %>
             <%= link_to "key info", keyinfo_path(flat_name = "Chocolate nest"), class: 'btn btn-danger mybutton-lg' %>
           <% else %>
-          <%= link_to "next", arrival_path(@arrival.number + 1), class: 'btn btn-danger mybutton-lg' %>
+          <%= link_to "next", flat_arrival_path(@flat, @arrival.number + 1), class: 'btn btn-danger mybutton-lg' %>
           <% end %>
     </div>
-</footer>
+</div>
 

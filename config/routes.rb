@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :flats
-  get 'arrival/:number', to: 'arrivals#show', as: :arrival
+  resources :flats do
+  resources :arrivals
+  end
+  # get 'arrival/:number', to: 'arrivals#show', as: :arrival
   get 'about', to: 'pages#about', as: :about
   get 'contact', to: 'pages#contact', as: :contact
   get 'sms', to: 'arrivals#send_sms', as: :sms
