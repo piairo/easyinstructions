@@ -19,14 +19,14 @@ class ArrivalsController < ApplicationController
   redirect_to flat_arrival_path(1, 6)
   end
 
-  def index         # GET /arrivals
-    @flat = Flat.find(params[:id])
-    @arrivals = @flat.arrivals
+  def index         # GET /flats/:flat_id/arrivals
+      @flat = Flat.find(params[:flat_id])
+      @arrivals = Arrival.where(flat_id: params[:flat_id])
   end
 
   def show          # !!MY FIRST PERSO QUICK APP!!:-|
                     # GET /flats/:flat_id/arrivals/:id(.:format)
-    @flat = Flat.find(1)
+    @flat = Flat.find(params[:flat_id])
     @arrival = Arrival.find(params[:id])
 
   end
@@ -43,26 +43,29 @@ class ArrivalsController < ApplicationController
     @arrival.flat = @flat
 
     if @arrival.save
-      redirect_to flat_path(@flat)
+      redirect_to flat_arrivals_path(@flat)
     else
       render :new
     end
   end
 
   def edit          # GET /flats/:flat_id/arrivals/:id/edit(.:format)
-    @flat = Flat.find(params[:id])
+    @flat = Flat.find(params[:flat_id])
+    @arrival = Arrival.find(params[:id])
   end
 
-  def update        # PATCH /arrivals/:id
-    @flat = Flat.find(params[:id])
-    @flat.update(flat_params)
-    redirect_to flat_path(@flat)
+  def update        # PATCH /flats/:flat_id/arrivals/:id(.:format)
+    @flat = Flat.find(params[:flat_id])
+    @arrival = Arrival.find(params[:id])
+    @arrival.update(arrival_params)
+    redirect_to flat_arrivals_path(@flat, @arrival)
   end
 
-  def destroy       # DELETE /arrivals/:id
-    @flat = Flat.find(params[:id])
-    @flat.destroy
-    redirect_to flat_path(@flat)
+  def destroy       # DELETE /flats/:flat_id/arrivals/:id(.:format)
+    @flat = Flat.find(params[:flat_id])
+    @arrival = Arrival.find(params[:id])
+    @arrival.destroy
+    redirect_to flat_arrivals_path(@flat, @arrival)
   end
 
 private

@@ -21,12 +21,14 @@
     <h5 class="nav-link text-danger small">Instuctions</h5>
 
     <%= link_to raw("<i class=\"fas fa-building\"></i> My flats <span class=\"badge badge-pill badge-light\">#{current_user.flats.count}</span>"), flats_path, class: "dropdown-item" %>
-    <%= link_to raw("<i class=\"fas fa-plus-square\"></i> Create new flat"), 'new_flat_path', class: "dropdown-item" %>
+
+    <%= link_to raw("<i class=\"fas fa-plus-square\"></i> Add new flat"), new_flat_path, class: "dropdown-item" %>
 
     <div class="dropdown-divider"></div>
 
     <h5 class="nav-link text-danger small">Informations</h5>
     <%= link_to raw("<i class=\"fas fa-user-edit\"></i> Edit my account"), edit_user_registration_path, class: "dropdown-item" %>
+
     <%= link_to raw("<i class=\"fas fa-bolt text-danger\"></i> Upgrade to Premium"), '#', class: "dropdown-item text-danger" %>
     <div class="dropdown-divider"></div>
     <%= link_to raw("<i class=\"fas fa-sign-out-alt\"></i> Logout"), destroy_user_session_path, method: :delete, class: "dropdown-item" %>

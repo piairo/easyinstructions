@@ -1,6 +1,12 @@
+<div class="container">
 <% @flats.each do |flat| %>
-  <h2><%= flat.name %></h2>
+
+  <h3> <%= link_to "#{flat.name}", flat_path(flat.id), class: 'btn btn-danger' %></h3>
+
   <p><%= flat.address %></p>
-  <%= link_to raw("<i class=\"fas fa-arrow-right\" style=\"color:#E91E63\"></i> Check-in (arrival steps) <span class=\"badge badge-pill badge-danger\">#{flat.arrivals.count}</span>"), flat_path(flat.id), class: "dropdown-item" %>
+
+  <p><%= link_to raw("<i class=\"fas fa-arrow-right\"></i> Check-in steps: <span class=\"badge badge-pill badge-danger\">#{flat.arrivals.count}</span>"), flat_arrivals_path(flat.id), class: "dropdown-item" %></p>
 <% end %>
 
+<%= link_to "+ add new flat",  new_flat_path(@flat), class: 'btn btn-danger' %>
+</div>

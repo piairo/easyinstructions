@@ -3,7 +3,7 @@
 <div class="container pt-3">
   <%= simple_form_for [@flat, @arrival] do |f| %>
   <% if @arrival.errors.any? %>
-    <div class="errors-container">
+    <div class="errors-container" style="color: #e91e63">
       <ul>
         <% @arrival.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -13,9 +13,9 @@
   <% end %>
 
 <!-- DEBUG -->
-    <p>@flat : <%= @flat %></p>
+   <!--  <p>@flat : <%= @flat %></p>
     <p>@flat.id : <%= @flat.id %></p>
-    <p>current_user.id : <%= current_user.id %></p>
+    <p>current_user.id : <%= current_user.id %></p> -->
 <!-- // -->
 
   <%= form_for [@flat, @arrival] do |f| %>
@@ -32,9 +32,12 @@
       <%= f.text_field :description, class: 'form-control' %>
     </div>
 
-    <%= f.submit class: 'btn btn-primary' %>
+    <%= f.submit value: "Create Step", class: 'btn btn-primary' %>
+    <%= link_to "back", flat_arrivals_path(@flat), class: 'btn mybutton-light'%>
+
+
   <% end %>
 
- <% end %>
+  <% end %>
 </div>
 <!-- arrival Model :(number, description, picture_url, status) -->

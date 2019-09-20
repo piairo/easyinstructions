@@ -1,0 +1,11 @@
+<div class="container">
+<%@arrivals.each do |arrival| %>
+  <p> <%=  "#{arrival.number} - #{arrival.description}" %>
+  <%= link_to "edit", edit_flat_arrival_path(arrival.flat_id, arrival.id) %>
+   <%= link_to "delete", flat_arrival_path(arrival.flat_id, arrival.id), data: { confirm: "Are you sure?" }, method: :delete%>
+  </p>
+<% end %>
+
+<%= link_to "Add a step",  new_flat_arrival_path(@flat), class: 'btn btn-danger' %>
+</div>
+
