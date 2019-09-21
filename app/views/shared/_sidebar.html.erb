@@ -18,7 +18,7 @@
   </header>
   <%# USER MENU %>
   <% if user_signed_in? %>
-    <h5 class="nav-link text-danger small">Instuctions</h5>
+    <h5 class="nav-link text-primary small">Instructions</h5>
 
     <%= link_to raw("<i class=\"fas fa-building\"></i> My flats <span class=\"badge badge-pill badge-light\">#{current_user.flats.count}</span>"), flats_path, class: "dropdown-item" %>
 
@@ -26,7 +26,7 @@
 
     <div class="dropdown-divider"></div>
 
-    <h5 class="nav-link text-danger small">Informations</h5>
+    <h5 class="nav-link text-primary small">Informations</h5>
     <%= link_to raw("<i class=\"fas fa-user-edit\"></i> Edit my account"), edit_user_registration_path, class: "dropdown-item" %>
 
     <%= link_to raw("<i class=\"fas fa-bolt text-danger\"></i> Upgrade to Premium"), '#', class: "dropdown-item text-danger" %>
@@ -40,7 +40,7 @@
     <div class="dropdown-item"><%= link_to "Create an account", new_user_registration_path, class: "btn btn-sm btn-outline-secondary btn-block text-left" %></div>
   <% end %>
   <%# COMMON MENU %>
-  <h5 class="nav-link text-danger small mt-5">About Easyinstructions</h5>
+  <h5 class="nav-link text-primary small mt-5">About Easyinstructions</h5>
   <%= link_to raw("About us"), '#', class: "dropdown-item small" %>
   <%= link_to raw("FAQ"), '#', class: "dropdown-item small" %>
   <%= link_to raw("Contact us"), '#', class: "dropdown-item small" %>

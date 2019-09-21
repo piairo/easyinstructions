@@ -24,7 +24,7 @@
 
     <div class="form-group">
       <%= f.label :'Step number' %>
-      <%= f.text_field :number, class: 'form-control' %>
+      <%= f.text_field :number, class: 'form-control', type:"number", min:"0", value: "#{@flat.arrivals.count + 1}" %>
     </div>
 
     <div class="form-group">
@@ -32,10 +32,8 @@
       <%= f.text_field :description, class: 'form-control' %>
     </div>
 
-    <%= f.submit value: "Create Step", class: 'btn btn-primary' %>
     <%= link_to "back", flat_arrivals_path(@flat), class: 'btn mybutton-light'%>
-
-
+    <%= f.submit class: 'btn btn-danger' %>
   <% end %>
 
   <% end %>

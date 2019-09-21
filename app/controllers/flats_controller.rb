@@ -39,7 +39,7 @@ class FlatsController < ApplicationController
   def destroy       # DELETE /flats/:id
     @flat = Flat.find(params[:id])
     @flat.destroy
-    redirect_to flat_path(@flat)
+    redirect_to flats_path(@flat)
   end
 
 private
