@@ -11,31 +11,29 @@
       </ul>
     </div>
   <% end %>
-
 <!-- DEBUG -->
    <!--  <p>@flat : <%= @flat %></p>
     <p>@flat.id : <%= @flat.id %></p>
     <p>current_user.id : <%= current_user.id %></p> -->
 <!-- // -->
 
-  <%= form_for [@flat, @arrival] do |f| %>
+    <div class="form-inputs">
 
-    <div class="form-group">
 
-    <div class="form-group">
       <%= f.label :'Step number' %>
       <%= f.text_field :number, class: 'form-control', type:"number", min:"0", value: "#{@flat.arrivals.count + 1}" %>
-    </div>
 
-    <div class="form-group">
       <%= f.label :description %>
       <%= f.text_field :description, class: 'form-control' %>
-    </div>
 
-    <%= link_to "back", flat_arrivals_path(@flat), class: 'btn mybutton-light'%>
-    <%= f.submit class: 'btn btn-danger' %>
-  <% end %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
 
+    <%#= link_to "back", flat_arrivals_path(@flat), class: 'btn mybutton-light'%>
+    <%= f.button :submit, class: 'btn btn-danger' %>
+
+CLOUDINARY PHOTO
+    <% cl_image_tag @arrival.photo, height: 300, width: 400, crop: :fill %>
   <% end %>
 </div>
 <!-- arrival Model :(number, description, picture_url, status) -->

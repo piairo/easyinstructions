@@ -71,7 +71,7 @@ class ArrivalsController < ApplicationController
 private
 
   def arrival_params
-    params.require(:arrival).permit(:number, :description, :picture_url, :status)
+    params.require(:arrival).permit(:number, :description, :photo, :status)
   end
 
 
