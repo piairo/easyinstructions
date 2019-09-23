@@ -1,18 +1,17 @@
-<div class="banner">  <!-- was banner home -->
+<div class="banner">  <!-- HOME(s)FOR BOOKING Guest-->
           <h1><span><strong>instructions</strong><sup>&trade;</sup></span></h1>
           <h3 id="typed" data-strings="<%= ["step by step"].to_json  %>" data-speed="150" data-loop="true" style="display: inline"></h3>
 
-
-<if
+<h5 class="mt-3"> (to <%= @flat.name %>) </h5>
 
   <div class="row justify-content-center">
-    <%= link_to new_flat_path do %>
+    <%= link_to flat_arrival_path(@flat.id, 1) do %>
     <%= image_tag "undraw_travelers_qlt1.png", id:"travelers",class:"img-fluid"%>
     <% end %>
   </div>
 
   <div class="row justify-content-center">
-    <%= link_to "+ create new", new_flat_path, class: 'btn btn-danger mybutton-lg home' %>
+    <%= link_to "start", flat_arrival_path(@flat.id, 1), class: 'btn btn-danger mybutton-lg home' %>
   </div>
 
 
