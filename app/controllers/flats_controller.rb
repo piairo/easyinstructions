@@ -17,6 +17,7 @@ class FlatsController < ApplicationController
 
   def create        # POST /flats
     @flat = Flat.new(flat_params)
+    @flat.name = @flat.name.downcase
     @flat.user = current_user
 
     if @flat.save

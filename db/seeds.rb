@@ -25,10 +25,10 @@ end
 puts 'Finished users!'
 
 puts separator
-puts '2. 🏠 Creating "flat" - chocolate nest ...'
+puts '2. 🏠 Creating "flat" - chocolate...'
 
   flat1 = Flat.new(
-    name:    "Chocolate nest",
+    name:    "chocolate",
     address: "2A southborough terrace, cv31 2dt leamington",
     user_id: 1,
     )
@@ -42,7 +42,7 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate nest...'
   arrival1 = Arrival.new(
     number:   1,
     description: "make sure you are here📍cv312dt brunswick street",
-    photo: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
+    photo: "image/upload/v1569196336/s8aobunmokswytwyocnp.png",
     status: false,
     flat_id: 1,
     )
@@ -51,7 +51,7 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate nest...'
   arrival2 = Arrival.new(
     number:   2,
     description: "go to the main door 🚶‍♀️",
-    photo: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
+    photo: "image/upload/v1569196346/pmkleiuzmw6ozmxfz5lf.png",
     status: false,
     flat_id: 1,
     )
@@ -60,7 +60,7 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate nest...'
   arrival3 = Arrival.new(
     number:   3,
     description: "in the porch, turn round: the safe is behind you 🔑",
-    photo: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
+    photo: "image/upload/v1569196358/kw95yd837ki05axwrmq7.png",
     status: false,
     flat_id: 1,
     )
@@ -69,7 +69,7 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate nest...'
   arrival4 = Arrival.new(
     number:   4,
     description: "climb till 1st floor",
-    photo: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
+    photo: "image/upload/v1569196370/rl11xaya8efbfnirqttw.png",
     status: false,
     flat_id: 1,
     )
@@ -79,7 +79,7 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate nest...'
  arrival5 = Arrival.new(
     number:   5,
     description: "welcome home 🎉",
-    photo: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
+    photo: "image/upload/v1569196384/dswo3dwrb98ydhhscwek.png",
     status: false,
     flat_id: 1,
     )
@@ -88,7 +88,7 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate nest...'
  arrival6 = Arrival.new(
     number:   6,
     description: "here is the free parking for resident",
-    photo: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
+    photo: "image/upload/v1569196408/akmi7rrtyiunohviyi7r.png",
     status: false,
     flat_id: 1,
     )
@@ -97,7 +97,7 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate nest...'
  arrival7 = Arrival.new(
     number:   7,
     description: "you live in fron of the best coffee in town",
-    photo: Faker::Placeholdit.image('50x50', 'jpg', 'ffffff', '000', 'Some Custom Text'),
+    photo: "image/upload/v1569196437/kphhdnr3whdtfrrnovxi.png",
     status: false,
     flat_id: 1,
     )

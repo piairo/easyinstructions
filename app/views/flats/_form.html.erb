@@ -1,7 +1,7 @@
 <!-- app/views/flat/_form.html.erb -->
 
 <div class="container pt-3">
-  <h4>Add new flat</h4>
+  <h4>my project</h4>
   <br>
   <%= simple_form_for(@flat) do |f| %>
   <% if @flat.errors.any? %>
@@ -23,7 +23,7 @@
 
     <div class="form-actions mt-3">
     <%= link_to "back", flats_path(@flat), class: 'btn mybutton-light'%>
-    <%= f.button :submit, class: 'btn sbtn-danger' %>
+    <%= f.button :submit, class: 'btn btn-danger' %>
     </div>
 
  <% end %>

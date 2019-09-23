@@ -1,7 +1,7 @@
 <!-- app/views/arrivals/_form.html.erb -->
 
 <div class="container pt-3">
-  <h4>Add a step</h4>
+  <h4>my step</h4>
   <br>
   <%= simple_form_for [@flat, @arrival] do |f| %>
   <% if @arrival.errors.any? %>
@@ -29,7 +29,7 @@
     <% end %>
 
       <%= f.label :description %>
-      <%= f.text_field :description, class: 'form-control' %>
+      <%= f.text_field :description, class: 'form-control', style:"border-color: #FF3760" %>
 
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>

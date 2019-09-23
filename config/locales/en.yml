@@ -31,3 +31,17 @@
 
 en:
   hello: "Hello world"
+
+  en:
+  helpers:
+    submit:
+      arrival:
+        create: "Create Step"
+        update: "Update Step"
+
+  en:
+  helpers:
+    submit:
+      flat:
+        create: "Create project"
+        update: "Update project"

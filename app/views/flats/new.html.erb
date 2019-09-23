@@ -1,2 +1,8 @@
-<%= render 'form', flat: @flat %>
-
+<% if user_signed_in? %>
+  <%= render 'form', flat: @flat %>
+<% else %>
+  <div class="container">
+    <h4> you need an account to save your project </h4>
+    <%= link_to "sign-up", new_user_registration_path , class: 'btn btn-danger' %>
+  </div>
+<% end %>
