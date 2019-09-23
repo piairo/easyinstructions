@@ -1,12 +1,16 @@
 
 <div class="container mt-3">
 
-    <h3><%=link_to "#{@flat.name}", edit_flat_path(@flat), class: 'text-primary mr-2'%></h3>
-    <p><%= @flat.address %></p>
-    <p>
+    <div class="container d-flex pl-0">
+      <h4><%=link_to "#{@flat.name}", edit_flat_path(@flat), class: 'text-dark mr-2'%>
+      </h4>
+      <h7>
     <%= link_to "edit flat", edit_flat_path(@flat), class: 'text-primary mr-2'%>
     <%= link_to "delete flat", flat_path(@flat), data: { confirm: "Are you sure you want to delete your flat?" }, method: :delete, class: 'text-secondary'%>
-    </p>
+      </h7>
+    </div>
+    <p><%= @flat.address %></p>
+
  <!--   //DEBUG -->
  <!--    <p>@flat.id : <%= @flat.id %></p>
     <p>@flat.user_id : <%= @flat.user_id %></p>
@@ -14,9 +18,10 @@
 <!--     <p>@arrivals : <%= @arrivals %> </p> -->
 <!-- // -->
 
-
-  <%= link_to "back", flats_path, class: 'btn mybutton-light mt-5'%>
-  <%= link_to "#{@flat.arrivals.count} Steps",  flat_arrivals_path(@flat), class: 'btn btn-danger mt-5' %>
+  <div class="mt-5">
+    <%= link_to "back", flats_path, class: 'btn mybutton-light'%>
+    <%= link_to "see steps (#{@flat.arrivals.count})",  flat_arrivals_path(@flat), class: 'btn btn-danger' %>
+  </div>
 
 </div>
 

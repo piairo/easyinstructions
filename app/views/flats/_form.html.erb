@@ -1,6 +1,8 @@
 <!-- app/views/flat/_form.html.erb -->
 
 <div class="container pt-3">
+  <h4>Add new flat</h4>
+  <br>
   <%= simple_form_for(@flat) do |f| %>
   <% if @flat.errors.any? %>
     <div class="errors-container" style="color: #e91e63">
@@ -12,24 +14,17 @@
     </div>
   <% end %>
 
-
-  <%= simple_form_for(@flat) do |f| %>
-
-    <div class="form-group">
-
-    <div class="form-group">
+    <div class="form-inputs">
       <%= f.label :'Flat name' %>
-      <%= f.text_field :name, class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
+      <%= f.text_field :name, class: 'form-control', placeholder:'Buckingham palace' %>
       <%= f.label :address %>
-      <%= f.text_field :address, class: 'form-control' %>
+      <%= f.text_field :address, class: 'form-control', placeholder:'Westminster, London SW1A 1AA' %>
     </div>
 
+    <div class="form-actions mt-3">
     <%= link_to "back", flats_path(@flat), class: 'btn mybutton-light'%>
-    <%= f.submit class: 'btn btn-danger' %>
-  <% end %>
+    <%= f.button :submit, class: 'btn sbtn-danger' %>
+    </div>
 
  <% end %>
 </div>
