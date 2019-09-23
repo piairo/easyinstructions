@@ -27,7 +27,8 @@ class ArrivalsController < ApplicationController
   def show          # !!MY FIRST PERSO QUICK APP!!:-|
                     # GET /flats/:flat_id/arrivals/:id(.:format)
     @flat = Flat.find(params[:flat_id])
-    @arrival = Arrival.find(params[:id])
+    @arrivals = @flat.arrivals
+    @arrival = @arrivals.find(params[:id])
 
   end
 
