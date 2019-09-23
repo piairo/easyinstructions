@@ -34,10 +34,10 @@ puts '2. 🏠 Creating "flat" - chocolate...'
     )
   flat1.save!
 
-puts 'Finished Chocolate nest!'
+puts 'Finished Chocolate!'
 
 puts separator
-puts '3. ➡️ Creating "7 arrivals" - for chocolate nest...'
+puts '3. ➡️ Creating "7 arrivals" - for chocolate ...'
 
   arrival1 = Arrival.new(
     number:   1,
@@ -103,10 +103,10 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate nest...'
     )
   arrival7.save!
 
-puts 'Finished 7 arrivals for chocolate nest!'
+puts 'Finished 7 arrivals for chocolate!'
 
 puts separator
-puts '4. 📖 Creating "keyinfos" - chocolate nest ...'
+puts '4. 📖 Creating "keyinfos" - chocolate ...'
 
   keyinfo1 = Keyinfo.new(
     checkout: "11:00 AM",
@@ -118,5 +118,61 @@ puts '4. 📖 Creating "keyinfos" - chocolate nest ...'
     )
   keyinfo1.save!
 
-puts 'Finished chocolate nest - Keyinfo1 !'
+puts 'Finished chocolate - Keyinfo1 !'
+
+puts separator
+puts '5. 🏠 Creating "project" - pancakes...'
+
+  flat1 = Flat.new(
+    name:    "pancakes",
+    user_id: 1,
+    )
+  flat1.save!
+
+puts 'Finished pancakes!'
+
+puts separator
+puts '6. ➡️ Creating "5 steps" - for pancakes...'
+
+  arrival1 = Arrival.new(
+    number:   1,
+    description: "3 spoons of cereales",
+    status: false,
+    flat_id: 2,
+    )
+  arrival1.save!
+
+  arrival2 = Arrival.new(
+    number:   2,
+    description: "3 spoons of pumpkin seeds",
+    status: false,
+    flat_id: 2,
+    )
+  arrival2.save!
+
+  arrival3 = Arrival.new(
+    number:   3,
+    description: "1 Egg",
+    status: false,
+    flat_id: 2,
+    )
+  arrival3.save!
+
+  arrival4 = Arrival.new(
+    number:   4,
+    description: "1 spoon of yoghurt",
+    status: false,
+    flat_id: 2,
+    )
+  arrival4.save!
+
+
+ arrival5 = Arrival.new(
+    number:   5,
+    description: "mix everything🎉",
+    status: false,
+    flat_id: 2,
+    )
+  arrival5.save!
+  puts 'Finished 5 steps for pancakes!'
 

@@ -27,8 +27,8 @@ class ArrivalsController < ApplicationController
   def show          # !!MY FIRST PERSO QUICK APP!!:-|
                     # GET /flats/:flat_id/arrivals/:id(.:format)
     @flat = Flat.find(params[:flat_id])
-    @arrivals = Arrival.where(flat_id: params[:flat_id])
-    @arrival = @arrivals.where(number: params[:id])
+    @arrivals = @flat.arrivals
+    @arrival = @arrivals.where(number: params[:id])[0]
 
   end
 
@@ -39,8 +39,8 @@ class ArrivalsController < ApplicationController
   end
 
   def create        # POST /arrivals
-    @arrival = Arrival.new(arrival_params)
     @flat = Flat.find(params[:flat_id])
+    @arrival = Arrival.new(arrival_params)
     @arrival.flat = @flat
 
     if @arrival.save
