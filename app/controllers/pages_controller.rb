@@ -9,6 +9,7 @@ class PagesController < ApplicationController
 
   def home
 
+
   end
 
  def homes_for_booking

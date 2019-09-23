@@ -20,7 +20,11 @@
 
   <div class="mt-5">
     <%= link_to "back", flats_path, class: 'btn mybutton-light'%>
-    <%= link_to "see steps (#{@flat.arrivals.count})",  flat_arrivals_path(@flat), class: 'btn btn-danger' %>
+    <% if @flat.arrivals.count == 0%>
+      <%= link_to "+ add a step",  new_flat_arrival_path(@flat), class: 'btn btn-danger' %>
+    <% else %>
+       <%= link_to "see steps (#{@flat.arrivals.count})",  flat_arrivals_path(@flat), class: 'btn btn-danger' %>
+    <% end %>
   </div>
 
 </div>

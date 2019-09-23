@@ -12,7 +12,6 @@ class FlatsController < ApplicationController
   def new           # GET /flats/new
     @user = current_user
     @flat = Flat.new
-
   end
 
   def create        # POST /flats
