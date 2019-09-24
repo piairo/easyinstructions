@@ -1,23 +1,23 @@
 Rails.application.routes.draw do
   devise_for :users
-  # perso
-  get 'about', to: 'pages#about', as: :about
-  get 'contact', to: 'pages#contact', as: :contact
-  get 'sms', to: 'arrivals#send_sms', as: :sms
-  get 'keyinfos/:flat_name', to: 'keyinfos#show', as: :keyinfos
-  get ':flat_name', to: 'pages#homes_for_booking', as: :homes_for_booking
-  root to: 'pages#home'
 
   #arrivals based on number (not ID like in resources)
   get 'flats/:flat_id/arrivals/:number/edit', to: 'arrivals#edit', as: :edit_flat_arrival
   get 'flats/:flat_id/arrivals/:number', to: 'arrivals#show', as: :flat_arrival
-  # put 'flats/:flat_id/arrivals/:number', to: 'arrivals#update'
+  # put 'flats/:flat_id/arrivals/:number', to: 'arrivals#update' (WORK ONLY WITH :ID)
   delete 'flats/:flat_id/arrivals/:number', to: 'arrivals#destroy'
 
    resources :flats do
     resources :arrivals, only: [:index, :create, :new, :update]
   end
 
+ # perso
+  get 'about', to: 'pages#about', as: :about
+  get 'contact', to: 'pages#contact', as: :contact
+  get 'sms', to: 'arrivals#send_sms', as: :sms
+  get 'keyinfos/:flat_name', to: 'keyinfos#show', as: :keyinfos
+  get ':flat_name', to: 'pages#homes_for_booking', as: :homes_for_booking
+  root to: 'pages#home'
 end
 
   # my verif of arrivals based on number before resources(:id) VS after (:number)
