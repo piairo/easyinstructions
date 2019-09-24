@@ -1,6 +1,7 @@
 require 'twilio-ruby'
 
 class ArrivalsController < ApplicationController
+  before_action :set_arrival, only: [:show, :edit, :destroy]
 
   def send_sms
   @flat = Flat.find(params[:flat_id])
@@ -22,14 +23,13 @@ class ArrivalsController < ApplicationController
 
   def index         # GET /flats/:flat_id/arrivals
       @flat = Flat.find(params[:flat_id])
-      @arrivals = Arrival.where(flat_id: params[:flat_id])
+      @arrivals = Arrival.where(flat_id: params[:flat_id]).sort_by { |a| a.number }
+
   end
 
   def show          # !!MY FIRST PERSO QUICK APP!!:-|
-                    # GET /flats/:flat_id/arrivals/:id(.:format)
+                    # GET /flats/:flat_id/arrivals/:number(.:format)
     @flat = Flat.find(params[:flat_id])
-    @arrivals = @flat.arrivals
-    @arrival = @arrivals.where(number: params[:number])[0]
      # automatic sms for chocolate
     if @flat.name == "chocolate" && @arrival.number == 5
     send_sms
@@ -43,7 +43,7 @@ class ArrivalsController < ApplicationController
 
   end
 
-  def create        # POST /arrivals
+  def create        # POST /flats/:flat_id/arrivals(.:format)
     @flat = Flat.find(params[:flat_id])
     @arrival = Arrival.new(arrival_params)
     @arrival.flat = @flat
@@ -55,32 +55,32 @@ class ArrivalsController < ApplicationController
     end
   end
 
-  def edit          # GET /flats/:flat_id/arrivals/:id/edit(.:format)
+  def edit          # GET /flats/:flat_id/arrivals/:number/edit(.:format)
     @flat = Flat.find(params[:flat_id])
-    @arrivals = @flat.arrivals
-    @arrival = @arrivals.where(number: params[:number])[0]
+
   end
 
-  def update        # PATCH /flats/:flat_id/arrivals/:id(.:format)
+  def update        # PATCH /flats/:flat_id/arrivals/:number(.:format)
     @flat = Flat.find(params[:flat_id])
-    @arrivals = @flat.arrivals
-    @arrival = @arrivals.where(number: params[:number])[0]
+    @arrival = Arrival.where(flat_id: params[:flat_id], id: params[:id])[0]
     @arrival.update(arrival_params)
     redirect_to flat_arrivals_path(@flat, @arrival)
   end
 
-  def destroy       # DELETE /flats/:flat_id/arrivals/:id(.:format)
+  def destroy       # DELETE /flats/:flat_id/arrivals/:number(.:format)
     @flat = Flat.find(params[:flat_id])
-    @arrivals = @flat.arrivals
-    @arrival = @arrivals.where(number: params[:number])[0]
     @arrival.destroy
     redirect_to flat_arrivals_path(@flat, @arrival)
   end
 
 private
 
+  def set_arrival
+    @arrival = Arrival.where(flat_id: params[:flat_id], number: params[:number])[0]
+  end
+
   def arrival_params
-    params.require(:arrival).permit(:number, :description, :photo, :status)
+    params.require(:arrival).permit(:number, :description, :photo, :status, :photo_cache)
   end
 
 

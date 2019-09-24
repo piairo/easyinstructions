@@ -5,8 +5,8 @@
       <h4><%=link_to "#{@flat.name}", edit_flat_path(@flat), class: 'text-dark mr-2'%>
       </h4>
       <h7>
-    <%= link_to "edit flat", edit_flat_path(@flat), class: 'text-primary mr-2'%>
-    <%= link_to "delete flat", flat_path(@flat), data: { confirm: "Are you sure you want to delete your flat?" }, method: :delete, class: 'text-secondary'%>
+    <%= link_to "edit project", edit_flat_path(@flat), class: 'text-primary mr-2'%>
+    <%= link_to "delete project", flat_path(@flat), data: { confirm: "Are you sure you want to delete your project?" }, method: :delete, class: 'text-secondary'%>
       </h7>
     </div>
     <p><%= @flat.address %></p>
@@ -23,7 +23,7 @@
     <% if @flat.arrivals.count == 0%>
       <%= link_to "+ add a step",  new_flat_arrival_path(@flat), class: 'btn btn-danger' %>
     <% else %>
-       <%= link_to "see steps (#{@flat.arrivals.count})",  flat_arrivals_path(@flat), class: 'btn btn-danger' %>
+       <%= link_to "all steps (#{@flat.arrivals.count})",  flat_arrivals_path(@flat), class: 'btn btn-danger' %>
     <% end %>
     <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), flat_arrival_path(@flat.id, 1), class: "text-success" %>
   </div>

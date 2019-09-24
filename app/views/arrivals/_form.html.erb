@@ -13,30 +13,32 @@
       </ul>
     </div>
   <% end %>
-<!-- DEBUG -->
-   <!--  <p>@flat : <%= @flat %></p>
+DEBUG
+    <p>@flat : <%= @flat %></p>
     <p>@flat.id : <%= @flat.id %></p>
-    <p>current_user.id : <%= current_user.id %></p> -->
-<!-- // -->
+    <br>
+    <p>@arrival: <%= @arrival%></p>
+    <p>@arrival.id: <%= @arrival.id%></p>
+    <p>@arrival.number: <%= @arrival.number%></p>
+    <br>
+    <p>current_user.id : <%= current_user.id %></p>
 
-    <div class="form-inputs">
+
       <%= f.label :'Step number' %>
+        <% if @arrival.number.nil? %>
+          <%= f.text_field :number, class: 'form-control', min:"0", value: "#{@flat.arrivals.count + 1}" %>
+        <% else %>
+        <%= f.text_field :number, class: 'form-control' %>
+        <% end %>
 
-    <% if @arrival.number.nil? %>
-      <%= f.text_field :number, class: 'form-control', type:"number", min:"0", value: "#{@flat.arrivals.count + 1}" %>
-    <% else %>
-    <%= f.text_field :number, class: 'form-control', type:"number", min:"0", value: "#{@arrival.number}" %>
-    <% end %>
-
-      <%= f.label :description %>
+      <%= f.label :'description' %>
       <%= f.text_field :description, class: 'form-control', style:"border-color: #FF3760" %>
 
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>
-    </div>
 
-    <%#= link_to "back", flat_arrivals_path(@flat), class: 'btn mybutton-light'%>
-    <div class="form-actions">
+<!-- BUTTONS -->
+    <div>
     <%= link_to "back", flat_arrivals_path(@flat), class: 'btn mybutton-light'%>
     <%= f.button :submit, class: 'btn btn-danger' %>
     <div>

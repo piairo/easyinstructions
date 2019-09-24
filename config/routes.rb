@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :flats do
-    resources :arrivals, only: [:index, :create, :new]
-  end
   # perso
   get 'about', to: 'pages#about', as: :about
   get 'contact', to: 'pages#contact', as: :contact
@@ -14,20 +11,24 @@ Rails.application.routes.draw do
   #arrivals based on number (not ID like in resources)
   get 'flats/:flat_id/arrivals/:number/edit', to: 'arrivals#edit', as: :edit_flat_arrival
   get 'flats/:flat_id/arrivals/:number', to: 'arrivals#show', as: :flat_arrival
-  patch 'flats/:flat_id/arrivals/:number', to: 'arrivals#update'
-  put 'flats/:flat_id/arrivals/:number', to: 'arrivals#update'
+  # put 'flats/:flat_id/arrivals/:number', to: 'arrivals#update'
   delete 'flats/:flat_id/arrivals/:number', to: 'arrivals#destroy'
+
+   resources :flats do
+    resources :arrivals, only: [:index, :create, :new, :update]
+  end
 
 end
 
   # my verif of arrivals based on number before resources(:id) VS after (:number)
-
+                         #POST   /flats/:flat_id/arrivals(.:format)          arrivals#create
        #edit_flat_arrival GET    /flats/:flat_id/arrivals/:id/edit(.:format) arrivals#edit
             #flat_arrival GET    /flats/:flat_id/arrivals/:id(.:format)      arrivals#show
                          #PATCH  /flats/:flat_id/arrivals/:id(.:format)      arrivals#update
                          #PUT    /flats/:flat_id/arrivals/:id(.:format)      arrivals#update
                          #DELETE /flats/:flat_id/arrivals/:id(.:format)      arrivals#destroy
 
+                         #POST   /flats/:flat_id/arrivals(.:format)              arrivals#create
        #edit_flat_arrival GET    /flats/:flat_id/arrivals/:number/edit(.:format) arrivals#edit
             #flat_arrival GET    /flats/:flat_id/arrivals/:number(.:format)      arrivals#show
                          #PATCH  /flats/:flat_id/arrivals/:number(.:format)      arrivals#update

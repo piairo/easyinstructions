@@ -14,14 +14,14 @@
     </div>
   <% end %>
 
-    <div class="form-inputs">
+
       <%= f.label :'project name' %>
-      <%= f.text_field :name, class: 'form-control', placeholder:'...' %>
+      <%= f.text_field :name, class: 'form-control', placeholder:'...', style:"border-color: #FF3760" %>
       <%= f.label :'project adress (optional)', class: "text-secondary mt-5" %>
       <%= f.text_field :address, class: 'form-control'%>
-    </div>
 
-    <div class="form-actions mt-3">
+
+    <div class="mt-3">
     <%= link_to "back", flats_path(@flat), class: 'btn mybutton-light'%>
     <%= f.button :submit, class: 'btn btn-danger' %>
     </div>
