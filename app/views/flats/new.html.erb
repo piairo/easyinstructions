@@ -2,7 +2,12 @@
   <%= render 'form', flat: @flat %>
 <% else %>
   <div class="container">
-    <h4> you need an account to save your project </h4>
-    <%= link_to "sign-up", new_user_registration_path , class: 'btn btn-danger' %>
+    <h4> You must log in </h4>
+
+    <%= link_to "Log in", new_user_session_path, class: "btn btn-danger" %>
+    </p>
+
+    <%= link_to "sign-up", new_user_registration_path , class: "btn mybutton-light" %>
+
   </div>
 <% end %>
