@@ -6,7 +6,7 @@
           <% if @arrival.nil? %>
 
          <% elsif @arrival.number <= 1 %>
-            <%= link_to "back", homes_for_booking_path(@flat.name), class: 'btn mybutton-light mybutton-lg' %>
+            <%= link_to "home", homes_for_booking_path(@flat.name), class: 'btn mybutton-light mybutton-lg' %>
           <% else %>
           <%= link_to "back", flat_arrival_path(@flat, @arrival.number - 1), class: 'btn mybutton-light mybutton-lg'%>
           <% end %>
@@ -31,8 +31,6 @@
    <div>
           <% if @arrival.nil? %>
 
-          <% elsif @arrival.number == 5 %>
-            <%= link_to "next", sms_path, method: :get, class: 'btn btn-danger mybutton-lg'%>
           <% elsif @arrival.number == 6 %>
             <%= link_to "key info", keyinfos_path(@flat.name), class: 'btn btn-danger mybutton-lg' %>
           <% else %>

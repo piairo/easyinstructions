@@ -4,15 +4,16 @@
 
 <%@arrivals.each do |arrival| %>
   <p>
-  <%= link_to "#{arrival.number}", edit_flat_arrival_path(arrival.flat_id, arrival.id), class: 'badge badge-pill badge-primary' %>
-  <%= link_to "#{arrival.description}", edit_flat_arrival_path(arrival.flat_id, arrival.id), class: 'text-dark'%>
+  <%= link_to "#{arrival.number}", edit_flat_arrival_path(arrival.flat_id, arrival.number), class: 'badge badge-pill badge-primary' %>
+  <%= link_to "#{arrival.description}", edit_flat_arrival_path(arrival.flat_id, arrival.number), class: 'text-dark'%>
 
-   <%= link_to "edit", edit_flat_arrival_path(arrival.flat_id, arrival.id), class: 'text-primary'%>
-  <%= link_to "delete", flat_arrival_path(arrival.flat_id, arrival.id), data: { confirm: "Are you sure you want to delete?" }, method: :delete, class: 'text-secondary'%>
+   <%= link_to "edit", edit_flat_arrival_path(arrival.flat_id, arrival.number), class: 'text-primary'%>
+  <%= link_to "delete", flat_arrival_path(arrival.flat_id, arrival.number), data: { confirm: "Are you sure you want to delete?" }, method: :delete, class: 'text-secondary'%>
   </p>
+
+  <%= link_to edit_flat_arrival_path(@flat, arrival.number) do %>
   <%= cl_image_tag arrival.photo, height:200, width: 200, crop: :fill, class: 'mb-3'%>
-
-
+  <% end %>
 <% end %>
 
 <div class="mt-3">

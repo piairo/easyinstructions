@@ -3,6 +3,7 @@ require 'twilio-ruby'
 class ArrivalsController < ApplicationController
 
   def send_sms
+  @flat = Flat.find(params[:flat_id])
   @location = request.location.city
   # put your own credentials here
   account_sid = 'ACe8db3bae886de70e3b2a089489949a30'
@@ -14,7 +15,7 @@ class ArrivalsController < ApplicationController
   @client.api.account.messages.create(
   from: '+441670432062',
   to: '+447484723518',
-  body: "chocolate trigger from: '#{@location}'"
+  body: "#{@flat.name} trigger from: '#{@location}'"
   )
   redirect_to flat_arrival_path(1, 6)
   end
@@ -28,7 +29,11 @@ class ArrivalsController < ApplicationController
                     # GET /flats/:flat_id/arrivals/:id(.:format)
     @flat = Flat.find(params[:flat_id])
     @arrivals = @flat.arrivals
-    @arrival = @arrivals.where(number: params[:id])[0]
+    @arrival = @arrivals.where(number: params[:number])[0]
+     # automatic sms for chocolate
+    if @flat.name == "chocolate" && @arrival.number == 5
+    send_sms
+    end
 
   end
 
@@ -52,19 +57,22 @@ class ArrivalsController < ApplicationController
 
   def edit          # GET /flats/:flat_id/arrivals/:id/edit(.:format)
     @flat = Flat.find(params[:flat_id])
-    @arrival = Arrival.find(params[:id])
+    @arrivals = @flat.arrivals
+    @arrival = @arrivals.where(number: params[:number])[0]
   end
 
   def update        # PATCH /flats/:flat_id/arrivals/:id(.:format)
     @flat = Flat.find(params[:flat_id])
-    @arrival = Arrival.find(params[:id])
+    @arrivals = @flat.arrivals
+    @arrival = @arrivals.where(number: params[:number])[0]
     @arrival.update(arrival_params)
     redirect_to flat_arrivals_path(@flat, @arrival)
   end
 
   def destroy       # DELETE /flats/:flat_id/arrivals/:id(.:format)
     @flat = Flat.find(params[:flat_id])
-    @arrival = Arrival.find(params[:id])
+    @arrivals = @flat.arrivals
+    @arrival = @arrivals.where(number: params[:number])[0]
     @arrival.destroy
     redirect_to flat_arrivals_path(@flat, @arrival)
   end

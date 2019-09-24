@@ -25,6 +25,7 @@
     <% else %>
        <%= link_to "see steps (#{@flat.arrivals.count})",  flat_arrivals_path(@flat), class: 'btn btn-danger' %>
     <% end %>
+    <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), flat_arrival_path(@flat.id, 1), class: "text-success" %>
   </div>
 
 </div>
