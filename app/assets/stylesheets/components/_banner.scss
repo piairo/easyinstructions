@@ -1,6 +1,6 @@
 .banner {
     // background-image: url('https://images.unsplash.com/photo-1499428665502-503f6c608263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2400&q=80');
-    max-width: 95%;
+    max-width: 96%;
     color: #4a4a4a;
     text-align: center;
   }
@@ -15,14 +15,12 @@
     font-size: 3.2vmax;
 
     span {
-      padding-left: 45px;
       font-size: 6.0vh;
       font-weight: 100;
       display: block;
 
       strong {
         font-weight: 900;
-        margin-right: .25vmax;
       }
     }
   }

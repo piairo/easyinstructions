@@ -4,7 +4,6 @@ class ArrivalsController < ApplicationController
   before_action :set_arrival, only: [:show, :edit, :destroy]
 
   def send_sms
-  @flat = Flat.find(params[:flat_id])
   @location = request.location.city
   # put your own credentials here
   account_sid = 'ACe8db3bae886de70e3b2a089489949a30'
@@ -31,9 +30,6 @@ class ArrivalsController < ApplicationController
                     # GET /flats/:flat_id/arrivals/:number(.:format)
     @flat = Flat.find(params[:flat_id])
      # automatic sms for chocolate
-    if @flat.name == "chocolate" && @arrival.number == 5
-    send_sms
-    end
 
   end
 
