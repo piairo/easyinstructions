@@ -32,7 +32,7 @@
           <% if @arrival.nil? %>
 
           <% elsif @flat.name == "chocolate" && @arrival.number == 5 %>
-          <%= link_to "next", sms_path, method: :get, class: 'btn btn-danger mybutton-lg'%>
+          <%= link_to "next", sms_path(@flat), method: :get, class: 'btn btn-danger mybutton-lg'%>
 
           <% elsif @arrival.number == @flat.arrivals.count %>
             <%= link_to "infos", keyinfos_path(@flat.name), class: 'btn btn-danger mybutton-lg' %>

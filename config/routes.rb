@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     get 'flats/:flat_id/arrivals/new', to: 'arrivals#new', as: :new_flat_arrival
     get 'flats/:flat_id/arrivals/:number/edit', to: 'arrivals#edit', as: :edit_flat_arrival
     get 'flats/:flat_id/arrivals/:number', to: 'arrivals#show', as: :flat_arrival
+    #send sms
+    get 'flats/:flat_id/arrivals/:number/sms', to: 'arrivals#send_sms', as: :sms
+
+
     # attention for update :number does not work but only :id
     patch 'flats/:flat_id/arrivals/:id', to: 'arrivals#update'
     put 'flats/:flat_id/arrivals/:id', to: 'arrivals#update'
@@ -18,7 +22,7 @@ Rails.application.routes.draw do
    # perso
     get 'about', to: 'pages#about', as: :about
     get 'contact', to: 'pages#contact', as: :contact
-    get 'sms', to: 'arrivals#send_sms', as: :sms
+
     get 'keyinfos/:flat_name', to: 'keyinfos#show', as: :keyinfos
     get ':flat_name', to: 'pages#homes_for_booking', as: :homes_for_booking
     root to: 'pages#home'
