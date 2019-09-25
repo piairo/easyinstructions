@@ -23,6 +23,22 @@
     pass: <input class="inputCopy" value="<%= @keyinfo.wificode %>"></input>
    <!--  <button class="btn btn-primary btn-copy ">Copy</button>  -->
   </div>
+
+<div class="keyinfo-card white">
+    <p class="keyinfo-card-title">netflix</p>
+    <p><%= link_to "📺", homes_for_booking_path("netflix"), class: 'keyinfo-card-emoji' %><p>
+    <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">instructions</span>"), homes_for_booking_path("netflix"), class: "text-success" %>
+
+   <!--  <button class="btn btn-primary btn-copy ">Copy</button>  -->
+  </div>
+
+  <div class="keyinfo-card grey">
+    <p class="keyinfo-card-title">heater</p>
+    <p><%= link_to "🛁", homes_for_booking_path("heater"), class: 'keyinfo-card-emoji' %><p>
+    <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">instructions</span>"), homes_for_booking_path("heater"), class: "text-success" %>
+
+   <!--  <button class="btn btn-primary btn-copy ">Copy</button>  -->
+  </div>
 <!--
             <div class="container d-flex justify-content-center align-items-center p-0">
               <h1 class="input-group-text">pass:</h1>

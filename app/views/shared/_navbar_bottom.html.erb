@@ -3,8 +3,9 @@
 
   <!--   BUTTON BACK  --->
     <div>
+
         <% if params[:controller] == 'keyinfos' %>
-          <%= link_to "home", homes_for_booking_path(@flat.name), class: 'btn mybutton-light mybutton-lg' %>
+          <%= link_to "home", homes_for_booking_path(@flat.name), class: 'btn mybutton-light' %>
 
         <% elsif @arrival.nil? %>
 
@@ -19,10 +20,23 @@
 
 
 <%# RESPONSIVE MENU BUTTON %>
-  <div style="font-size: 2rem">
-    <button class="btn navbar-toggler" data-toggle="canvas" data-target="#bs-canvas-right" aria-expanded="false" aria-controls="bs-canvas-right" style="color: white"><h1 class="fas fa-tachometer-alt"></h1></button>
-  </div>
+  <div>
+    <button class="btn navbar-toggler" data-toggle="canvas" data-target="#bs-canvas-right" aria-expanded="false" aria-controls="bs-canvas-right" style="color: white"><h1 class="fas fa-tachometer-alt mr-" style="font-size: 2rem"></h1></button>
 
+          <% if @flat.nil? %>
+          <% elsif params[:controller] == 'keyinfos' %>
+           <%= link_to homes_for_booking_path(@flat.name) do %>
+           <i class="fas fa-home" style="font-size: 1.5rem"></i>
+
+            <% end %>
+
+          <% else %>
+           <%= link_to keyinfos_path (@flat.name) do %>
+           <i class="fas fa-info" style="font-size: 1.5rem"></i>
+
+           <% end %>
+          <% end %>
+  </div>
 
 
  <!--   BUTTON NEXT  --->
