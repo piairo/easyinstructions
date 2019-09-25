@@ -34,7 +34,7 @@
           <% elsif @flat.name == "chocolate" && @arrival.number == 5 %>
           <%= link_to "next", sms_path, method: :get, class: 'btn btn-danger mybutton-lg'%>
 
-          <% elsif @arrival.number == 6 %>
+          <% elsif @arrival.number == @flat.arrivals.count %>
             <%= link_to "infos", keyinfos_path(@flat.name), class: 'btn btn-danger mybutton-lg' %>
           <% else %>
             <%= link_to "next", flat_arrival_path(@flat, @arrival.number + 1), class: 'btn btn-danger mybutton-lg' %>
