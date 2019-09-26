@@ -42,7 +42,7 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate ...'
   arrival1 = Arrival.new(
     number:   1,
     description: "make sure you are here📍cv312dt brunswick street",
-    photo: "image/upload/v1569196336/s8aobunmokswytwyocnp.png",
+    photo: "https://res.cloudinary.com/dsupdin1s/image/upload/v1569346377/uuydxrujofrqtzi4tvze.heic",
     status: false,
     flat_id: 1,
     )
@@ -51,7 +51,7 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate ...'
   arrival2 = Arrival.new(
     number:   2,
     description: "go to the main door 🚶‍♀️",
-    photo: "image/upload/v1569196346/pmkleiuzmw6ozmxfz5lf.png",
+    photo: "chocolate_arrival2.png",
     status: false,
     flat_id: 1,
     )

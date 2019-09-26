@@ -19,7 +19,7 @@
 
 
 
-<%# RESPONSIVE MENU BUTTON %>
+<%# RESPONSIVE MENU BUTTON  + INFO BUTTON%>
   <div>
     <button class="btn navbar-toggler" data-toggle="canvas" data-target="#bs-canvas-right" aria-expanded="false" aria-controls="bs-canvas-right" style="color: white"><h1 class="fas fa-tachometer-alt mr-" style="font-size: 2rem"></h1></button>
 
@@ -31,7 +31,7 @@
             <% end %>
 
           <% else %>
-           <%= link_to keyinfos_path (@flat.name) do %>
+           <%= link_to flat_keyinfo_path(@flat, 1) do %>
            <i class="fas fa-info" style="font-size: 1.5rem"></i>
 
            <% end %>
@@ -47,7 +47,7 @@
           <%= link_to "next", sms_path(@flat), method: :get, class: 'btn btn-danger mybutton-lg'%>
 
           <% elsif @arrival.number == @flat.arrivals.count %>
-            <%= link_to "infos", keyinfos_path(@flat.name), class: 'btn btn-danger mybutton-lg' %>
+            <%= link_to "infos", flat_keyinfo_path(@flat, 1), class: 'btn btn-danger mybutton-lg' %>
           <% else %>
             <%= link_to "next", flat_arrival_path(@flat, @arrival.number + 1), class: 'btn btn-danger mybutton-lg' %>
           <% end %>
