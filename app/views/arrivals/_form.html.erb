@@ -26,15 +26,15 @@
 
       <%= f.label :'Step number' %>
         <% if @arrival.number.nil? %>
-          <%= f.text_field :number, class: 'form-control', min:"0", value: "#{@flat.arrivals.count + 1}" %>
+          <%= f.text_field :number,  min:"0", value: "#{@flat.arrivals.count + 1}", class: 'form-control' %>
         <% else %>
-        <%= f.text_field :number, class: 'form-control' %>
+        <%= f.text_field :number, min:"0", class: 'form-control' %>
         <% end %>
 
       <%= f.label :'description' %>
-      <%= f.text_field :description, class: 'form-control', style:"border-color: #FF3760" %>
+      <%= f.input_field :description, class: 'form-control', style:"border-color: #FF3760" %>
 
-      <%= f.input :photo %>
+      <%= f.input :photo, class: 'form-control' %>
       <%= f.input :photo_cache, as: :hidden %>
 
 <!-- BUTTONS -->

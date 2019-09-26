@@ -26,7 +26,7 @@
 
 <div class="keyinfo-card white">
     <p class="keyinfo-card-title">netflix</p>
-    <p><%= link_to "📺", homes_for_booking_path("netflix"), class: 'keyinfo-card-emoji' %><p>
+    <p><%= link_to "📺", flat_arrival_path(3, 1), class: 'keyinfo-card-emoji' %><p>
     <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">instructions</span>"), homes_for_booking_path("netflix"), class: "text-success" %>
 
    <!--  <button class="btn btn-primary btn-copy ">Copy</button>  -->
@@ -35,7 +35,7 @@
   <div class="keyinfo-card grey">
     <p class="keyinfo-card-title">hot water</p>
     <p><%= link_to "🛁", homes_for_booking_path("hotwater"), class: 'keyinfo-card-emoji' %><p>
-    <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">instructions</span>"), homes_for_booking_path("hotwater"), class: "text-success" %>
+    <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">instructions</span>"), flat_arrival_path(4, 1), class: "text-success" %>
 
    <!--  <button class="btn btn-primary btn-copy ">Copy</button>  -->
   </div>
