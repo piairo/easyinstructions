@@ -3,50 +3,53 @@
 
   <!--   BUTTON BACK  --->
     <div>
-
+<!--        1) for the keyinfo page -->
         <% if params[:controller] == 'keyinfos' %>
-
+          <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
+<!--        2) for the home page    -->
         <% elsif @arrival.nil? %>
 
-          <% else %>
-          <%= link_to "back", flat_arrival_path(@flat, @arrival.number - 1), class: 'btn mybutton-light mybutton-lg'%>
-          <% end %>
+        <% else %>
+          <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
+        <% end %>
     </div>
 
 
 
-<%# RESPONSIVE MENU BUTTON  + INFO BUTTON%>
+<%# RESPONSIVE MENU BUTTON%>
   <div>
     <button class="btn navbar-toggler" data-toggle="canvas" data-target="#bs-canvas-right" aria-expanded="false" aria-controls="bs-canvas-right" style="color: white"><h1 class="fas fa-tachometer-alt mr-" style="font-size: 2rem"></h1></button>
 
-          <% if @flat.nil? %>
-          <% elsif params[:controller] == 'keyinfos' %>
-           <%= link_to homes_for_booking_path(@flat.name) do %>
-           <i class="fas fa-home" style="font-size: 1.5rem"></i>
 
-            <% end %>
+<%# KEY INFO BUTTON%>
+          <%# if @flat.nil? %>
 
-          <% else %>
-           <%= link_to flat_keyinfo_path(@flat, 1) do %>
-           <i class="fas fa-info" style="font-size: 1.5rem"></i>
+          <%# elsif params[:controller] == 'keyinfos' %>
 
-           <% end %>
-          <% end %>
+          <%# else %>
+            <%#= link_to flat_keyinfo_path(@flat, 1) do %>
+<!--             <i class="fas fa-info text-light" style="font-size: 1.5rem"></i> -->
+            <%# end %>
+          <%# end %>
   </div>
 
 
  <!--   BUTTON NEXT  --->
    <div>
-          <% if @arrival.nil? %>
 
-          <% elsif @flat.name == "chocolate" && @arrival.number == 5 %>
-          <%= link_to "next", sms_path(@flat), method: :get, class: 'btn btn-danger mybutton-lg'%>
+<!--        1) for the keyinfo page -->
+          <% if params[:controller] == 'keyinfos' %>
+            <%= link_to "home", homes_for_booking_path(@flat.name), class: 'btn btn-primary mybutton-lg'%>
+<!--        2) for the home page    -->
+          <% elsif @arrival.nil? %>
 
-            <% elsif @arrival.number == @flat.arrivals.count && @flat.keyinfos[0].nil? %>
-
+<!--          SEND SMS FOR CHOCOLATE -->
+           <% elsif @flat.name == "chocolate" && @arrival.number == 5 %>
+          <%= link_to "next", sms_path(@flat), class: 'btn btn-danger mybutton-lg'%>
 
           <% elsif @arrival.number == @flat.arrivals.count %>
-            <%= link_to "infos", flat_keyinfo_path(@flat, 1), class: 'btn btn-danger mybutton-lg' %>
+            <%= link_to "infos", flat_keyinfo_path(@flat, 1), class: 'btn btn-primary mybutton-lg' %>
+
           <% else %>
             <%= link_to "next", flat_arrival_path(@flat, @arrival.number + 1), class: 'btn btn-danger mybutton-lg' %>
           <% end %>

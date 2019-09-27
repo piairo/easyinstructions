@@ -19,7 +19,7 @@
 <!-- // -->
 
   <div class="mt-5">
-    <%= link_to "back", flats_path, class: 'btn mybutton-light'%>
+    <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light'%>
     <% if @flat.arrivals.count == 0%>
       <%= link_to "+ add a step",  new_flat_arrival_path(@flat), class: 'btn btn-danger' %>
     <% else %>
