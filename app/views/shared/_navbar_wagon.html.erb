@@ -15,7 +15,7 @@
   <% else %>
     <%= link_to homes_for_booking_path(@flat), class: "navbar-brand" do %>
       <%= image_tag "logo_easyinstructions3.png" %>
-      <span>easy<strong>instructions</strong> for <%= @flat.name %> nest</span>
+      <span><%= @flat.name %></span>
 
       <% end %>
   <% end %>

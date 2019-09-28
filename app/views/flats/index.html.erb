@@ -21,14 +21,17 @@
     <br>
     <% @all_flats.each do |flat| %>
 
-      <h3> <%= link_to "#{flat.name}", flat_path(flat.id), class: 'btn btn-primary' %></h3>
+      <h3> <%= link_to "#{flat.name}", "flat_arrival_path(flat.id, 1)", class: 'btn btn-primary' %>
+      <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), flat_arrival_path(flat.id, 1), class: "text-success", style: "font-size: 2.5vmax" %>
+      </h3>
+
 
       <p><%= flat.address %></p>
 
       <p>
-     <%= link_to "#{flat.arrivals.count}", flat_arrivals_path(flat.id)%>
-     <%= link_to "steps", flat_arrivals_path(flat.id), class: 'text-dark'%>
-    <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), flat_arrival_path(flat.id, 1), class: "text-success" %>
+     <%= link_to "#{flat.arrivals.count}", "#"%>
+     <%= link_to "steps", "#", class: 'text-dark'%>
+
      </p>
     <% end %>
 
