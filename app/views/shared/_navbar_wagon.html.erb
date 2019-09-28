@@ -1,15 +1,23 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top p-1">
 
-  <% if user_signed_in? %>
+
+  <% if @flat.nil? %>
+    <%= link_to "#", class: "navbar-brand" do %>
+      <%= image_tag "logo_easyinstructions3.png" %>
+      <span>easy<strong>instructions</strong></span>
+      <% end %>
+
+  <% elsif user_signed_in? %>
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo_easyinstructions3.png" %>
       <span>easy<strong>instructions</strong></span>
       <% end %>
   <% else %>
-    <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "logo_easyinstructions3.png" %>
-    <span>easy<strong>instructions</strong></span>
-    <% end %>
+    <%= link_to homes_for_booking_path(@flat), class: "navbar-brand" do %>
+      <%= image_tag "logo_easyinstructions3.png" %>
+      <span>easy<strong>instructions</strong> for <%= @flat.name %> nest</span>
+
+      <% end %>
   <% end %>
 <!--   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

@@ -1,7 +1,8 @@
 class FlatsController < ApplicationController
 
   def index         # GET /flats
-    @flats = Flat.where(user_id: current_user)
+    @user_flats = Flat.where(user_id: current_user)
+    @all_flats = Flat.all
   end
 
   def show          # GET /flats/:id
