@@ -10,7 +10,7 @@
         Hi <%= current_user.first_name %>!
       <%# GUEST HEADER %>
       <% else %>
-        <p>You must</p>
+        <p>you must</p>
         <p>log in</p>
 
       <% end %>
@@ -22,7 +22,7 @@
   </header>
   <%# USER MENU %>
   <% if user_signed_in? %>
-    <h5 class="nav-link text-primary small">Instructions</h5>
+    <h5 class="nav-link text-secondary small">Dashboard</h5>
 
     <%= link_to raw("<i class=\"fas fa-building\"></i> My projects <span class=\"badge badge-pill badge-light\">#{current_user.flats.count}</span>"), flats_path, class: "dropdown-item" %>
 
@@ -30,7 +30,7 @@
 
     <div class="dropdown-divider"></div>
 
-    <h5 class="nav-link text-primary small">Informations</h5>
+    <h5 class="nav-link text-secondary small">Account</h5>
     <%= link_to raw("<i class=\"fas fa-user-edit\"></i> Edit my account"), edit_user_registration_path, class: "dropdown-item" %>
 
     <%= link_to raw("<i class=\"fas fa-bolt\"></i> Upgrade to premium"), '#', class: "dropdown-item text-dark" %>
@@ -49,10 +49,10 @@
   <%= link_to raw("<i class=\"fas fa-search\"></i> Search"), flats_path, class: "dropdown-item" %>
 
 
-  <h5 class="nav-link text-primary small mt-5">About Easyinstructions.com</h5>
+  <h5 class="nav-link text-secondary small mt-5">About Easyinstructions.com</h5>
   <%#= link_to raw("About us"), '#', class: "dropdown-item small" %>
   <%#= link_to raw("FAQ"), '#', class: "dropdown-item small" %>
-  <%= link_to raw("Contact us"), 'https://mobile.facebook.com/105897947453950', class: "dropdown-item small" %>
+  <%= link_to "Contact us", 'https://mobile.facebook.com/105897947453950', class: "dropdown-item small text-primary" %>
   <%#= link_to raw("Legal notices"), '#', class: "dropdown-item small" %>
 
   <!-- TEMPORARY TRICK -->
