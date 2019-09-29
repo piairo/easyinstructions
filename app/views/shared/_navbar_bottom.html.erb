@@ -38,17 +38,29 @@
    <div>
 
 <!--        1) for the keyinfo page -->
-          <% if params[:controller] == 'keyinfos' %>
-            <%= link_to "home", homes_for_booking_path(@flat.name), class: 'btn btn-primary mybutton-lg'%>
+          <%# if params[:controller] == 'keyinfos' %>
+            <%#= link_to "home", homes_for_booking_path(@flat.name), class: 'btn btn-primary mybutton-lg'%>
 <!--        2) for the home page    -->
-          <% elsif @arrival.nil? %>
+          <% if current_page?('/chocolate')%>
+
+
+          <% elsif params[:controller] == 'keyinfos'%>
+
+          <%= link_to "home", homes_for_booking_path("chocolate"), class: 'btn btn-primary mybutton-lg'%>
+
 
 <!--          SEND SMS FOR CHOCOLATE -->
-           <% elsif @flat.name == "chocolate" && @arrival.number == 5 %>
+          <% elsif @flat.name == "chocolate" && @arrival.number == 5 %>
           <%= link_to "next", sms_path(@flat), class: 'btn btn-danger mybutton-lg'%>
 
+
+          <% elsif @arrival.number == @flat.arrivals.count && ["netflix", "hotwater", "frontdoor"].include?(@flat.name) %>
+          <%= link_to "home", homes_for_booking_path("chocolate"), class: 'btn btn-primary mybutton-lg'%>
+
           <% elsif @arrival.number == @flat.arrivals.count %>
-            <%= link_to "infos", flat_keyinfo_path(@flat, 1), class: 'btn btn-primary mybutton-lg' %>
+          <%= link_to "house manual", flat_keyinfo_path(@flat, 1), class: 'btn btn-secondary mybutton-lg auto'%>
+
+
 
           <% else %>
             <%= link_to "next", flat_arrival_path(@flat, @arrival.number + 1), class: 'btn btn-danger mybutton-lg' %>

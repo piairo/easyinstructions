@@ -2,9 +2,9 @@
 
 <div class="banner" style="margin-top: 60px">  <!-- HOME(s)FOR BOOKING Guest-->
 
-          <h3 style="display: inline" id="typed" data-strings="<%= ["step by step"].to_json  %>" data-speed="150" data-loop="true"></h3>
+      <h3 style="display: inline" id="typed" data-strings="<%= ["step by step"].to_json  %>" data-speed="150" data-loop="true"></h3>
 
-<br>
+  <br>
 
   <div class="row justify-content-center mt-3 mb-1">
     <%= link_to flat_arrival_path(@flat.id, 1) do %>
@@ -17,10 +17,11 @@
     <%= link_to "Check-in", flat_arrival_path(@flat.id, 1), class: 'btn btn-danger mybutton-lg home' %>
   </div>
 
-    <div class="row justify-content-center mt-2">
-    <%= link_to "house manual", flat_keyinfo_path((@flat, 1), class: 'btn btn-secondary mybutton-sm home'%>
+  <div class="row justify-content-center mt-2">
+    <%= link_to "house manual", flat_keyinfo_path(@flat, 1), class: 'btn btn-secondary mybutton-sm home'%>
   </div>
 
 </div>
+
 <%= render 'shared/navbar_bottom' %>
 

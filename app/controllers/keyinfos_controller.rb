@@ -3,7 +3,7 @@ class KeyinfosController < ApplicationController
   before_action :set_flat
 
   def show
-    @keyinfo = Keyinfo.where(id: @flat.id)[0]
+    @keyinfo = Keyinfo.where(id: params[:flat_id])[0]
   end
 
   def new           # GET /flats/:id/keyinfos/new(.:format)
