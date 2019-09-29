@@ -55,7 +55,7 @@
 
 
           <% elsif @arrival.number == @flat.arrivals.count && ["netflix", "hotwater", "frontdoor", "chocolate"].include?(@flat.name) %>
-           <%= link_to "house manual", flat_keyinfo_path(@flat, 1), class: 'btn btn-danger mybutton-lg auto'%>
+           <%= link_to "house manual", flat_keyinfo_path(1, 1), class: 'btn btn-danger mybutton-lg auto'%>
 
 
           <% elsif @arrival.number == @flat.arrivals.count %>
