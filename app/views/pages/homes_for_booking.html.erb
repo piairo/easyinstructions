@@ -1,11 +1,12 @@
 <%= render 'shared/navbar_wagon' %>
 
-<div class="banner">  <!-- HOME(s)FOR BOOKING Guest-->
+<div class="banner" style="margin-top: 60px">  <!-- HOME(s)FOR BOOKING Guest-->
 
-          <h3 class="pt-5" id="typed" data-strings="<%= ["step by step"].to_json  %>" data-speed="150" data-loop="true" style="display: inline"></h3>
+          <h3 style="display: inline" id="typed" data-strings="<%= ["step by step"].to_json  %>" data-speed="150" data-loop="true"></h3>
+
 <br>
 
-  <div class="row justify-content-center mt-5 mb-1">
+  <div class="row justify-content-center mt-3 mb-1">
     <%= link_to flat_arrival_path(@flat.id, 1) do %>
     <%= image_tag "undraw_travelers.png", id:"travelers"%>
     <% end %>
@@ -17,17 +18,9 @@
   </div>
 
     <div class="row justify-content-center mt-2">
-    <%= link_to "netflix", flat_arrival_path(3, 1), class: 'btn btn-secondary mybutton-sm home'%>
+    <%= link_to "house manual", flat_keyinfo_path((@flat, 1), class: 'btn btn-secondary mybutton-sm home'%>
   </div>
 
-    <div class="row justify-content-center mt-2">
-    <%= link_to "hot water", flat_arrival_path(8, 1), class: 'btn btn-secondary mybutton-sm home'%>
-  </div>
-
-  <div class="row justify-content-center mt-2 mb-5">
-    <%= link_to "guide book", flat_keyinfo_path(@flat, 1), class: 'btn btn-secondary mybutton-sm home'%>
-  </div>
-  <br>
-
+</div>
 <%= render 'shared/navbar_bottom' %>
 
