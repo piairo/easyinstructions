@@ -13,7 +13,7 @@
       <span>easy<strong>instructions</strong></span>
       <% end %>
   <% else %>
-    <%= link_to homes_for_booking_path(@flat), class: "navbar-brand" do %>
+    <%= link_to homes_for_booking_path(@flat.name), class: "navbar-brand" do %>
       <%= image_tag "logo_easyinstructions3.png" %>
       <span><%= @flat.name %> nest</span>
 
