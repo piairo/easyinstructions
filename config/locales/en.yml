@@ -35,15 +35,10 @@ en:
 en:
   helpers:
     submit:
-      flat:
-        create: 'Create project'
-        update: 'Update project'
-
-en:
-  helpers:
-    submit:
       arrival:
         create: 'Create step'
         update: 'Update step'
-
+      flat:
+        create: 'Create project'
+        update: 'Update project'
 
