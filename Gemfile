@@ -62,6 +62,8 @@ end
 
 group :test do
   gem 'awesome_print'
+# We don't want to share those secret keys on Github, we can use the dotenv gem for security (le wagon knowledge)
+  gem 'dotenv-rails'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'

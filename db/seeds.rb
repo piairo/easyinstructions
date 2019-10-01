@@ -39,6 +39,7 @@ puts 'Finished Chocolate!'
 puts separator
 puts '3. ➡️ Creating "7 arrivals" - for chocolate ...'
 
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569319346/vfremjqeqvfuqp9pwyit.png"
   arrival1 = Arrival.new(
     number:   1,
     description: "make sure you are here📍cv312dt brunswick street",
@@ -46,61 +47,68 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate ...'
     status: false,
     flat_id: 1,
     )
+  arrival1.remote_photo_url = url
   arrival1.save!
 
+  url= "https://res.cloudinary.com/dsupdin1s/image/upload/v1569319358/tmg0m52buniwnwmwkmxd.png"
   arrival2 = Arrival.new(
     number:   2,
     description: "go to the main door 🚶‍♀️",
-    photo: "chocolate_arrival2.png",
     status: false,
     flat_id: 1,
     )
+  arrival2.remote_photo_url = url
   arrival2.save!
 
+  url ="https://res.cloudinary.com/dsupdin1s/image/upload/v1569319369/iifjygazufnwohfwd0mj.png"
   arrival3 = Arrival.new(
     number:   3,
     description: "in the porch, turn round: the safe is behind you 🔑",
-    photo: "image/upload/v1569196358/kw95yd837ki05axwrmq7.png",
     status: false,
     flat_id: 1,
     )
+  arrival3.remote_photo_url = url
   arrival3.save!
 
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569319379/uudo7or9dsi0hkal7vvm.png"
   arrival4 = Arrival.new(
     number:   4,
     description: "climb till 1st floor",
-    photo: "image/upload/v1569196370/rl11xaya8efbfnirqttw.png",
     status: false,
     flat_id: 1,
     )
+  arrival4.remote_photo_url = url
   arrival4.save!
 
-
+ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569319390/gza7jbov0mwprpcdixh0.png"
  arrival5 = Arrival.new(
     number:   5,
     description: "welcome home 🎉",
-    photo: "image/upload/v1569196384/dswo3dwrb98ydhhscwek.png",
     status: false,
     flat_id: 1,
     )
+  arrival5.remote_photo_url = url
   arrival5.save!
 
+ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569319405/c5qnb1wy6ukywjyikujp.png"
  arrival6 = Arrival.new(
     number:   6,
     description: "here is the free parking for resident",
-    photo: "image/upload/v1569196408/akmi7rrtyiunohviyi7r.png",
     status: false,
     flat_id: 1,
     )
+  arrival6.remote_photo_url = url
   arrival6.save!
 
+ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569319418/htuvdmxxeoy2mfijzv3q.png"
  arrival7 = Arrival.new(
     number:   7,
     description: "you live in fron of the best coffee in town",
-    photo: "image/upload/v1569196437/kphhdnr3whdtfrrnovxi.png",
     status: false,
     flat_id: 1,
     )
+  arrival7.remote_photo_url = url
   arrival7.save!
 
 puts 'Finished 7 arrivals for chocolate!'
