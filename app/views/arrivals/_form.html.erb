@@ -26,27 +26,25 @@
 
       <%= f.label :'Step number' %>
         <% if @arrival.number.nil? %>
-          <%= f.text_field :number,  min:"0", value: "#{@flat.arrivals.count + 1}", class: 'form-control' %>
+          <%= f.text_field :number,  min:"0", value: "#{@flat.arrivals.count + 1}", class: 'form-control' , style: 'font-size: 3rem; text-align: center'%>
         <% else %>
         <%= f.text_field :number, min:"0", class: 'form-control' %>
         <% end %>
 
-      <%= f.label :'description' %>
-      <%= f.input_field :description, class: 'form-control', style:"border-color: #FF3760" %>
+      <%= f.label :'add description', class: 'mt-3' %>
+      <%= f.input_field :description, class: 'form-control', placeholder:'...', style:"border-color: #FF3760" %>
+      <br>
 
-      <%= f.input :photo, class: 'form-control' %>
+      <%= f.input :photo, label: :"Add photo", input_html: { class: 'btn btn-danger' }%>
       <%= f.input :photo_cache, as: :hidden %>
 
 <!-- BUTTONS -->
-    <div>
+    <div class="mt-5">
     <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light'%>
     <%= f.button :submit, class: 'btn btn-danger' %>
     <div>
 <br>
 
-<p class="mt-5">CLOUDINARY PHOTO</p>
-
-    <% cl_image_tag @arrival.photo, height: 300, width: 400, crop: :fill, class: 'mt-5'%>
   <% end %>
 </div>
 <!-- arrival Model :(number, description, picture_url, status) -->
