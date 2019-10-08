@@ -1,26 +1,29 @@
 <div class="container pt-3">
-<h4><%= "#{@flat.name} (#{@flat.arrivals.count})"%>
-<p><%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), flat_arrival_path(@flat.id, 1), class: "text-success" %></p>
-</h4>
+    <h4><%= "#{@flat.name}"%><span style="font-size: 1rem"><%= " (#{@flat.arrivals.count} steps)"%></span>
+    <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), flat_arrival_path(@flat.id, 1), class: "text-success" %>
+    </h4>
+    <br>
 
-<br>
+    <%@arrivals.each do |arrival| %>
 
-<%@arrivals.each do |arrival| %>
+      <%= link_to "#{arrival.number}", edit_flat_arrival_path(arrival.flat_id, arrival.number), class: 'badge badge-pill badge-primary mb-2', style: 'font-size: 1rem' %>
+      <%= link_to "#{arrival.description}", edit_flat_arrival_path(arrival.flat_id, arrival.number), class: 'text-dark mr-2'%>
 
+       <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit</span>"), edit_flat_arrival_path(arrival.flat_id, arrival.number), class: "text-primary" %>
 
-  <%= link_to "#{arrival.number}", edit_flat_arrival_path(arrival.flat_id, arrival.number), class: 'badge badge-pill badge-primary' %>
-  <%= link_to "#{arrival.description}", edit_flat_arrival_path(arrival.flat_id, arrival.number), class: 'text-dark'%>
+         <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), flat_arrival_path(arrival.flat_id, arrival.number), data: { confirm: "Are you sure you want to delete?" }, method: :delete, class: "text-danger" %>
+    <br>
+      <%= link_to edit_flat_arrival_path(@flat, arrival.number) do %>
+      <%= cl_image_tag arrival.photo, height:200, width: 200, crop: :fill, class: 'mb-5'%>
+      <% end %>
+    <br>
+    <% end %>
 
-   <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit</span>"), edit_flat_arrival_path(arrival.flat_id, arrival.number), class: "text-primary" %>
+  <div class="mb-5 mt-3 pb-5">
+  <%= link_to "+ add a step",  new_flat_arrival_path(@flat), class: 'btn btn-primary' %>
+  </div>
 
-     <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), flat_arrival_path(arrival.flat_id, arrival.number), data: { confirm: "Are you sure you want to delete?" }, method: :delete, class: "text-danger" %>
-<br>
-  <%= link_to edit_flat_arrival_path(@flat, arrival.number) do %>
-  <%= cl_image_tag arrival.photo, height:200, width: 200, crop: :fill, class: 'mb-3'%>
-  <% end %>
-<br>
-
-<% end %>
+</div>
 
 
 

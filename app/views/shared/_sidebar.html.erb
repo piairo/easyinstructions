@@ -11,7 +11,7 @@
       <%# GUEST HEADER %>
       <% else %>
         <p>you must</p>
-        '<p>'log in</p>
+        <p>log in</p>
 
       <% end %>
 
@@ -24,7 +24,7 @@
   <% if user_signed_in? %>
     <h5 class="nav-link text-secondary small">Dashboard</h5>
 
-    <%= link_to raw("<i class=\"fas fa-building\"></i> My projects <span class=\"badge badge-pill badge-light\">#{current_user.flats.count}</span>"), flats_path, class: "dropdown-item" %>
+    <%= link_to raw("<i class=\"fas fa-book\"></i> My projects <span class=\"badge badge-pill badge-light\">#{current_user.flats.count}</span>"), flats_path, class: "dropdown-item" %>
 
     <%#= link_to raw("<i class=\"fas fa-plus-square\"></i> Add new project"), new_flat_path, class: "dropdown-item" %>
 
@@ -45,7 +45,7 @@
   <% end %>
   <%# COMMON MENU %>
 <br>
-  <%= link_to raw("<i class=\"fas fa-plus-square text-danger\"></i> Add new project"), new_flat_path, class: "dropdown-item" %>
+  <%= link_to raw("<i class=\"fas fa-plus text-danger\"></i> Add new project"), new_flat_path, class: "dropdown-item" %>
   <%= link_to raw("<i class=\"fas fa-search\"></i> Search"), flats_path, class: "dropdown-item" %>
 
 

@@ -1,7 +1,7 @@
 <!-- app/views/arrivals/_form.html.erb -->
 
 <div class="container pt-3">
-  <h4>my step</h4>
+  <h4>New step</h4>
   <br>
   <%= simple_form_for [@flat, @arrival] do |f| %>
   <% if @arrival.errors.any? %>
@@ -32,10 +32,10 @@
         <% end %>
 
       <%= f.label :'add description', class: 'mt-3' %>
-      <%= f.input_field :description, class: 'form-control', placeholder:'...', style:"border-color: #FF3760" %>
+      <%= f.input_field :description, class: 'form-control', placeholder:'...', style:"border-color: #209CCE" %>
       <br>
 
-      <%= f.input :photo, label: :"Add photo", input_html: { class: 'text-danger' }%>
+      <%= f.input :photo, label: :"Add photo", input_html: { class: 'text-primary' }%>
       <%= f.input :photo_cache, as: :hidden %>
 
     <div class="navbar_bottom fixed-bottom">
@@ -49,7 +49,7 @@
         </div>
 
         <!--   BUTTON SUBMIT  --->
-        <%= f.button :submit, class: 'btn btn-danger' %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
     </div>
   <% end %>
 </div>

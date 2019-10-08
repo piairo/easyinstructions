@@ -6,7 +6,7 @@
     <% @user_flats.each do |flat| %>
 
 
-        <h3> <%= link_to "#{flat.name}", flat_path(flat.id), class: 'btn btn-secondary mt-3' %> <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\"></span>"), flat_path(flat.id),style: 'font-size: 0.8rem', class: 'text-secondary'%></h3>
+        <h3> <%= link_to "#{flat.name}", flat_path(flat.id), class: 'btn btn-secondary mt-4' %> <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\"></span>"), flat_path(flat.id),style: 'font-size: 0.8rem', class: 'text-secondary'%></h3>
 
       <p><%= flat.address %></p>
 
@@ -22,8 +22,7 @@
     <br>
     <% @all_flats.each do |flat| %>
 
-      <h3> <%= link_to "#{flat.name}", homes_for_booking_path(flat.name), class: 'btn btn-primary' %>
-      <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"),  homes_for_booking_path(flat.name), class: "text-success", style: "font-size: 2.5vmax" %>
+      <h3> <%= link_to "#{flat.name}", homes_for_booking_path(flat.name), class: 'btn btn-secondary' %>
       </h3>
 
 
@@ -32,11 +31,18 @@
       <p>
      <%= link_to "#{flat.arrivals.count}", "#"%>
      <%= link_to "steps", "#", class: 'text-dark'%>
+     <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"),  homes_for_booking_path(flat.name), class: "text-success" %>
 
      </p>
     <% end %>
 
   <% end %>
+
+
+  <div class="mb-5 mt-3 pb-5">
+  <%= link_to "+ add a project",  new_flat_path(@flat), class: 'btn btn-danger' %>
+  </div>
+
 </div>
 
 <div class="navbar_bottom fixed-bottom">
