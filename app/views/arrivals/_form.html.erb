@@ -38,13 +38,19 @@
       <%= f.input :photo, label: :"Add photo", input_html: { class: 'text-danger' }%>
       <%= f.input :photo_cache, as: :hidden %>
 
-<!-- BUTTONS -->
-    <div class="mt-5">
-    <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light'%>
-    <%= f.button :submit, class: 'btn btn-danger' %>
-    <div>
-<br>
+    <div class="navbar_bottom fixed-bottom">
 
+        <!--   BUTTON BACK  --->
+        <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light'%>
+
+        <%# RESPONSIVE MENU BUTTON%>
+        <div style="text-align: center">
+          <button class="btn navbar-toggler p-0" data-toggle="canvas" data-target="#bs-canvas-right" aria-expanded="false" aria-controls="bs-canvas-right" style="color: white"><h1 class="fas fa-bars m-0" style="font-size: 2rem"></h1></button>
+        </div>
+
+        <!--   BUTTON SUBMIT  --->
+        <%= f.button :submit, class: 'btn btn-danger' %>
+    </div>
   <% end %>
 </div>
 <!-- arrival Model :(number, description, picture_url, status) -->

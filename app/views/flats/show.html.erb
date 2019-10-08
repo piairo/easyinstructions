@@ -1,15 +1,18 @@
 
 <div class="container mt-3">
 
-    <div class="container d-flex pl-0">
-      <h4><%=link_to "#{@flat.name}", edit_flat_path(@flat), class: 'text-dark mr-2'%>
-      </h4>
-      <h7>
-    <%= link_to "edit project", edit_flat_path(@flat), class: 'text-primary mr-2'%>
-    <%= link_to "delete project", flat_path(@flat), data: { confirm: "Are you sure you want to delete your project?" }, method: :delete, class: 'text-secondary'%>
-      </h7>
-    </div>
+
+    <h4><%=link_to "#{@flat.name}", edit_flat_path(@flat), class: 'text-dark'%></h4>
+
     <p><%= @flat.address %></p>
+
+    <div class="container d-flex justify-content-between">
+    <h7><%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit project</span>"), edit_flat_path(@flat), class: "text-primary" %></h7>
+
+      <h7><%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete project</span>"), flat_path(@flat), data: { confirm: "Are you sure you want to delete your project?" }, method: :delete, class: "text-danger" %></h7>
+
+    <h7><%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), flat_arrival_path(@flat.id, 1), class: "text-success" %></h7>
+  </div>
 
  <!--   //DEBUG -->
  <!--    <p>@flat.id : <%= @flat.id %></p>
@@ -18,15 +21,24 @@
 <!--     <p>@arrivals : <%= @arrivals %> </p> -->
 <!-- // -->
 
-  <div class="mt-5">
-    <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light'%>
+</div>
+
+
+<div class="navbar_bottom fixed-bottom">
+
+<!--   BUTTON BACK  --->
+  <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light'%>
+
+<%# RESPONSIVE MENU BUTTON%>
+  <div style="text-align: center">
+    <button class="btn navbar-toggler p-0" data-toggle="canvas" data-target="#bs-canvas-right" aria-expanded="false" aria-controls="bs-canvas-right" style="color: white"><h1 class="fas fa-bars m-0" style="font-size: 2rem"></h1></button>
+  </div>
+
+        <!--   BUTTON ADD STEP  --->
     <% if @flat.arrivals.count == 0%>
       <%= link_to "+ add a step",  new_flat_arrival_path(@flat), class: 'btn btn-danger' %>
     <% else %>
-       <%= link_to "all steps (#{@flat.arrivals.count})",  flat_arrivals_path(@flat), class: 'btn btn-danger' %>
+       <%= link_to "edit steps (#{@flat.arrivals.count})",  flat_arrivals_path(@flat), class: 'btn btn-danger' %>
     <% end %>
-    <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), flat_arrival_path(@flat.id, 1), class: "text-success" %>
-  </div>
-
 </div>
 
