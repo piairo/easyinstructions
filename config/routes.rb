@@ -5,20 +5,26 @@ Rails.application.routes.draw do
     resources :keyinfos
   end
 
-  # resouces :arrivals perso based on number (not ID like in resources)
+  resources :arrivals do
+    collection do
+      patch :sort
+    end
+  end
+
+  # arrivals perso based on position (not ID like in resources)
     get 'flats/:flat_id/arrivals', to: 'arrivals#index', as: :flat_arrivals
     post 'flats/:flat_id/arrivals', to: 'arrivals#create'
     get 'flats/:flat_id/arrivals/new', to: 'arrivals#new', as: :new_flat_arrival
-    get 'flats/:flat_id/arrivals/:number/edit', to: 'arrivals#edit', as: :edit_flat_arrival
-    get 'flats/:flat_id/arrivals/:number', to: 'arrivals#show', as: :flat_arrival
+    get 'flats/:flat_id/arrivals/:position/edit', to: 'arrivals#edit', as: :edit_flat_arrival
+    get 'flats/:flat_id/arrivals/:position', to: 'arrivals#show', as: :flat_arrival
 
-    # attention for update :number does not work but only :id
+    # attention for update :position does not work but only :id
     patch 'flats/:flat_id/arrivals/:id', to: 'arrivals#update'
     put 'flats/:flat_id/arrivals/:id', to: 'arrivals#update'
-    delete 'flats/:flat_id/arrivals/:number', to: 'arrivals#destroy'
+    delete 'flats/:flat_id/arrivals/:position', to: 'arrivals#destroy'
 
  #send sms
-    get 'flats/:flat_id/arrivals/:number/sms', to: 'arrivals#send_sms', as: :sms
+    get 'flats/:flat_id/arrivals/:position/sms', to: 'arrivals#send_sms', as: :sms
 
 
    # perso
@@ -31,7 +37,7 @@ Rails.application.routes.draw do
 
 end
 
-  # my verif of arrivals based on number before resources(:id) VS after (:number)
+  # my verif of arrivals based on position before resources(:id) VS after (:position)
           #flat_arrivals GET    /flats/:flat_id/arrivals(.:format)          arrivals#index
                         #POST   /flats/:flat_id/arrivals(.:format)          arrivals#create
        #new_flat_arrival GET    /flats/:flat_id/arrivals/new(.:format)      arrivals#new
@@ -42,11 +48,11 @@ end
                          #DELETE /flats/:flat_id/arrivals/:id(.:format)      arrivals#destroy
 
                          #POST   /flats/:flat_id/arrivals(.:format)              arrivals#create
-       #edit_flat_arrival GET    /flats/:flat_id/arrivals/:number/edit(.:format) arrivals#edit
-            #flat_arrival GET    /flats/:flat_id/arrivals/:number(.:format)      arrivals#show
-                         #PATCH  /flats/:flat_id/arrivals/:number(.:format)      arrivals#update
-                         #PUT    /flats/:flat_id/arrivals/:number(.:format)      arrivals#update
-                         #DELETE /flats/:flat_id/arrivals/:number(.:format)      arrivals#destroy
+       #edit_flat_arrival GET    /flats/:flat_id/arrivals/:position/edit(.:format) arrivals#edit
+            #flat_arrival GET    /flats/:flat_id/arrivals/:position(.:format)      arrivals#show
+                         #PATCH  /flats/:flat_id/arrivals/:position(.:format)      arrivals#update
+                         #PUT    /flats/:flat_id/arrivals/:position(.:format)      arrivals#update
+                         #DELETE /flats/:flat_id/arrivals/:position(.:format)      arrivals#destroy
 
  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

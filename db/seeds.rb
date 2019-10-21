@@ -41,7 +41,7 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate ...'
 
   url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569319346/vfremjqeqvfuqp9pwyit.png"
   arrival1 = Arrival.new(
-    number:   1,
+    position:   1,
     description: "make sure you are here📍cv312dt brunswick street",
     photo: "https://res.cloudinary.com/dsupdin1s/image/upload/v1569346377/uuydxrujofrqtzi4tvze.heic",
     status: false,
@@ -50,9 +50,9 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate ...'
   arrival1.remote_photo_url = url
   arrival1.save!
 
-  url= "https://res.cloudinary.com/dsupdin1s/image/upload/v1569319358/tmg0m52buniwnwmwkmxd.png"
+  url= "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929949/sgy8n6k6c5gxsmxwo97a.png"
   arrival2 = Arrival.new(
-    number:   2,
+    position:   2,
     description: "go to the main door 🚶‍♀️",
     status: false,
     flat_id: 1,
@@ -60,9 +60,9 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate ...'
   arrival2.remote_photo_url = url
   arrival2.save!
 
-  url ="https://res.cloudinary.com/dsupdin1s/image/upload/v1569319369/iifjygazufnwohfwd0mj.png"
+  url ="https://res.cloudinary.com/dsupdin1s/image/upload/v1569929951/ukdfgfgsyetosnpksf3v.png"
   arrival3 = Arrival.new(
-    number:   3,
+    position:   3,
     description: "in the porch, turn round: the safe is behind you 🔑",
     status: false,
     flat_id: 1,
@@ -71,9 +71,9 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate ...'
   arrival3.save!
 
 
-  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569319379/uudo7or9dsi0hkal7vvm.png"
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929952/qsr36rzwthkikextc9ow.png"
   arrival4 = Arrival.new(
-    number:   4,
+    position:   4,
     description: "climb till 1st floor",
     status: false,
     flat_id: 1,
@@ -81,9 +81,9 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate ...'
   arrival4.remote_photo_url = url
   arrival4.save!
 
- url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569319390/gza7jbov0mwprpcdixh0.png"
+ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929953/msqlm5pw2mf5efjwxewp.png"
  arrival5 = Arrival.new(
-    number:   5,
+    position:   5,
     description: "welcome home 🎉",
     status: false,
     flat_id: 1,
@@ -91,9 +91,9 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate ...'
   arrival5.remote_photo_url = url
   arrival5.save!
 
- url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569319405/c5qnb1wy6ukywjyikujp.png"
+ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929954/unfmdote0dquwlx7dduq.png"
  arrival6 = Arrival.new(
-    number:   6,
+    position:   6,
     description: "here is the free parking for resident",
     status: false,
     flat_id: 1,
@@ -101,9 +101,9 @@ puts '3. ➡️ Creating "7 arrivals" - for chocolate ...'
   arrival6.remote_photo_url = url
   arrival6.save!
 
- url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569319418/htuvdmxxeoy2mfijzv3q.png"
+ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929955/del2lrcpygfipqnahlep.png"
  arrival7 = Arrival.new(
-    number:   7,
+    position:   7,
     description: "you live in fron of the best coffee in town",
     status: false,
     flat_id: 1,
@@ -143,7 +143,7 @@ puts separator
 puts '6. ➡️ Creating "5 steps" - for pancakes...'
 
   arrival1 = Arrival.new(
-    number:   1,
+    position:   1,
     description: "3 spoons of cereales",
     status: false,
     flat_id: 2,
@@ -151,7 +151,7 @@ puts '6. ➡️ Creating "5 steps" - for pancakes...'
   arrival1.save!
 
   arrival2 = Arrival.new(
-    number:   2,
+    position:   2,
     description: "3 spoons of pumpkin seeds",
     status: false,
     flat_id: 2,
@@ -159,7 +159,7 @@ puts '6. ➡️ Creating "5 steps" - for pancakes...'
   arrival2.save!
 
   arrival3 = Arrival.new(
-    number:   3,
+    position:   3,
     description: "1 Egg",
     status: false,
     flat_id: 2,
@@ -167,7 +167,7 @@ puts '6. ➡️ Creating "5 steps" - for pancakes...'
   arrival3.save!
 
   arrival4 = Arrival.new(
-    number:   4,
+    position:   4,
     description: "1 spoon of yoghurt",
     status: false,
     flat_id: 2,
@@ -176,7 +176,7 @@ puts '6. ➡️ Creating "5 steps" - for pancakes...'
 
 
  arrival5 = Arrival.new(
-    number:   5,
+    position:   5,
     description: "mix everything🎉",
     status: false,
     flat_id: 2,

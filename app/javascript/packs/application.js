@@ -31,3 +31,19 @@ initTyped();
 //BANNER_WAGON
 import { initUpdateNavbarOnScroll } from '../plugins/navbar';
 initUpdateNavbarOnScroll();
+
+//SORTABLE
+import { initSortable } from'../plugins/init_sortable.js';
+initSortable();
+
+
+
+
+
+
+
+
+
+
+
+

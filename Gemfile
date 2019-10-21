@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
+gem 'acts_as_list'
+
 gem 'cloudinary', '~> 1.9.1'
 
 gem 'carrierwave', '~> 1.2'
@@ -9,7 +11,8 @@ gem 'carrierwave', '~> 1.2'
 gem 'devise', '~> 4.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'jquery-ui-rails'  #NOT SURE IF TO BE DELETED OR NOT ?
+
 # Cloudinary guide book (knowledge kitt wagon)
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
@@ -52,6 +55,7 @@ gem 'geocoder'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -63,7 +67,6 @@ end
 group :test do
   gem 'awesome_print'
 # We don't want to share those secret keys on Github, we can use the dotenv gem for security (le wagon knowledge)
-  gem 'dotenv-rails'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'

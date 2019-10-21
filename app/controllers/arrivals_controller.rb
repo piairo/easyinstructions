@@ -22,9 +22,18 @@ class ArrivalsController < ApplicationController
   end
 
   def index         # GET /flats/:flat_id/arrivals
-      @arrivals = Arrival.where(flat_id: params[:flat_id]).sort_by { |a| a.number }
+      @arrivals = Arrival.where(flat_id: params[:flat_id]).sort_by { |a| a.position }
 
   end
+
+  def sort
+    params[:arrival].each_with_index do |id, index|
+      Arrival.where(id: id).update_all(position: index + 1)
+    end
+
+    head :ok
+  end
+
 
   def show
 
@@ -46,17 +55,17 @@ class ArrivalsController < ApplicationController
     end
   end
 
-  def edit          # GET /flats/:flat_id/arrivals/:number/edit(.:format)
+  def edit          # GET /flats/:flat_id/arrivals/:position/edit(.:format)
 
   end
 
-  def update        # PATCH /flats/:flat_id/arrivals/:number(.:format)
+  def update        # PATCH /flats/:flat_id/arrivals/:position(.:format)
     @arrival = Arrival.where(flat_id: params[:flat_id], id: params[:id])[0]
     @arrival.update(arrival_params)
     redirect_to flat_arrivals_path(@flat, @arrival)
   end
 
-  def destroy       # DELETE /flats/:flat_id/arrivals/:number(.:format)
+  def destroy       # DELETE /flats/:flat_id/arrivals/:position(.:format)
     @arrival.destroy
     redirect_to flat_arrivals_path(@flat, @arrival)
   end
@@ -69,11 +78,11 @@ private
 
 
   def set_arrival
-    @arrival = Arrival.where(flat_id: params[:flat_id], number: params[:number])[0]
+    @arrival = Arrival.where(flat_id: params[:flat_id], position: params[:position])[0]
   end
 
   def arrival_params
-    params.require(:arrival).permit(:number, :description, :photo, :status, :photo_cache)
+    params.require(:arrival).permit(:position, :description, :photo, :status, :photo_cache)
   end
 
 end

@@ -20,12 +20,12 @@
 <!-- // -->
 
     <div class="form-inputs">
-      <%= f.label :'Step number' %>
+      <%= f.label :'Step position' %>
 
-    <% if @arrival.number.nil? %>
-      <%= f.text_field :number, class: 'form-control', type:"number", min:"0", value: "#{@flat.arrivals.count + 1}" %>
+    <% if @arrival.position.nil? %>
+      <%= f.text_field :position, class: 'form-control', type:"number", min:"0", value: "#{@flat.arrivals.count + 1}" %>
     <% else %>
-    <%= f.text_field :number, class: 'form-control', type:"number", min:"0", value: "#{@arrival.number}" %>
+    <%= f.text_field :position, class: 'form-control', type:"number", min:"0", value: "#{@arrival.position}" %>
     <% end %>
 
       <%= f.label :description %>
@@ -47,4 +47,4 @@
     <% cl_image_tag @arrival.photo, height: 300, width: 400, crop: :fill, class: 'mt-5'%>
   <% end %>
 </div>
-<!-- arrival Model :(number, description, picture_url, status) -->
+<!-- arrival Model :(position, description, picture_url, status) -->

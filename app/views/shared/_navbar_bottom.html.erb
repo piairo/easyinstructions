@@ -49,19 +49,19 @@
 
 
 <!--          SEND SMS FOR CHOCOLATE -->
-          <% elsif @flat.name == "chocolate" && @arrival.number == 5 %>
+          <% elsif @flat.name == "chocolate" && @arrival.position == 5 %>
           <%= link_to "next", sms_path(@flat), class: 'btn btn-danger mybutton-lg'%>
 
 
-          <% elsif @arrival.number == @flat.arrivals.count && ["netflix", "hotwater", "frontdoor", "chocolate"].include?(@flat.name) %>
+          <% elsif @arrival.position == @flat.arrivals.count && ["netflix", "hotwater", "frontdoor", "chocolate"].include?(@flat.name) %>
            <%= link_to "house manual", flat_keyinfo_path(1, 1), class: 'btn btn-danger mybutton-lg auto'%>
 
 
-          <% elsif @arrival.number == @flat.arrivals.count %>
+          <% elsif @arrival.position == @flat.arrivals.count %>
           <%= link_to "home", root_path, class: 'btn btn-primary mybutton-lg'%>
 
           <% else %>
-            <%= link_to "next", flat_arrival_path(@flat, @arrival.number + 1), class: 'btn btn-danger mybutton-lg' %>
+            <%= link_to "next", flat_arrival_path(@flat, @arrival.position + 1), class: 'btn btn-danger mybutton-lg' %>
           <% end %>
     </div>
 
