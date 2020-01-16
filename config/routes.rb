@@ -5,18 +5,20 @@ Rails.application.routes.draw do
     resources :keyinfos
   end
 
-  resources :arrivals do
-    collection do
-      patch :sort
-    end
-  end
+  #GO RAILS sortableJS Tweak (see at 04:33) https://gorails.com/episodes/sortable-drag-and-drop
+    patch 'flats/:flat_id/order/:data_value', to: 'arrivals#sort', as: :sort_flat_order
+
 
   # arrivals perso based on position (not ID like in resources)
     get 'flats/:flat_id/arrivals', to: 'arrivals#index', as: :flat_arrivals
     post 'flats/:flat_id/arrivals', to: 'arrivals#create'
+
+
     get 'flats/:flat_id/arrivals/new', to: 'arrivals#new', as: :new_flat_arrival
     get 'flats/:flat_id/arrivals/:position/edit', to: 'arrivals#edit', as: :edit_flat_arrival
     get 'flats/:flat_id/arrivals/:position', to: 'arrivals#show', as: :flat_arrival
+
+
 
     # attention for update :position does not work but only :id
     patch 'flats/:flat_id/arrivals/:id', to: 'arrivals#update'

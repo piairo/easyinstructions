@@ -2,17 +2,17 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
+#GO RAILS sortableJS https://gorails.com/episodes/sortable-drag-and-drop
 gem 'acts_as_list'
+
+gem 'jquery-ui-rails'  #NOT SURE IF TO BE DELETED OR NOT ?
 
 gem 'cloudinary', '~> 1.9.1'
 
 gem 'carrierwave', '~> 1.2'
 
 gem 'devise', '~> 4.7'
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-
-gem 'jquery-ui-rails'  #NOT SURE IF TO BE DELETED OR NOT ?
-
+# Bundle edge Rails instead: gem 'rails', github: 'rails/ra
 # Cloudinary guide book (knowledge kitt wagon)
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record

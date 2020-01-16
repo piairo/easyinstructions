@@ -1,13 +1,26 @@
+
 <div class="container pt-3">
     <h4><%= "#{@flat.name}"%><span style="font-size: 1rem"><%= " (#{@flat.arrivals.count} steps)"%></span>
     <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), flat_arrival_path(@flat.id, 1), class: "text-success" %>
     </h4>
     <br>
 
-<ul id="arrivals" style="list-style-type:none">
+<!-- START DEBUG
+ -->
+<a>@arrivals:</a>
+    <p><%= @arrivals%></p>
+    <%= @arrivals[0].position%>
+<br>
+  <a style="color: blue">@order:</a>
+  <p style="color: blue"><%= @order%></p>
+<!--  END DEBUG
+ -->
+
+
+<ul id="arrivals" style="list-style-type:none"  data-url="<%=flat_arrivals_path(@flat)%>">
     <%@arrivals.each do |arrival| %>
-      <li data-id="<%= dom_id(arrival) %>">
-      <%#= arrival.id %>
+      <li data-id="<%= arrival.position %>">
+      <%= arrival.id %>
       <%= link_to "#{arrival.position}", edit_flat_arrival_path(arrival.flat_id, arrival.position), class: 'badge badge-pill badge-primary mb-2', style: 'font-size: 1rem' %>
       <%= link_to "#{arrival.description}", edit_flat_arrival_path(arrival.flat_id, arrival.position), class: 'text-dark mr-2'%>
 

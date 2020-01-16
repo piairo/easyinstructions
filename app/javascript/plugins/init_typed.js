@@ -2,7 +2,7 @@ import Typed from 'typed.js';
 
 const initTyped = () => {
   const typedElem = document.querySelector('#typed')
-console.log(typedElem)
+// console.log(typedElem)
 
   if (typedElem == null)
   return

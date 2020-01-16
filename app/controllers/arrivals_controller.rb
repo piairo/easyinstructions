@@ -1,8 +1,11 @@
 require 'twilio-ruby'
 
 class ArrivalsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_arrival, only: [:show, :edit, :destroy]
+  before_action :set_arrivals, only: [:index, :sort]
   before_action :set_flat
+
 
   def send_sms
   @location = request.location.city
@@ -23,15 +26,10 @@ class ArrivalsController < ApplicationController
 
   def index         # GET /flats/:flat_id/arrivals
       @arrivals = Arrival.where(flat_id: params[:flat_id]).sort_by { |a| a.position }
-
-  end
-
-  def sort
-    params[:arrival].each_with_index do |id, index|
-      Arrival.where(id: id).update_all(position: index + 1)
-    end
-
-    head :ok
+      @order  =  []
+      @arrivals.each do |arrival| @order << arrival.position end
+      # Old way (before gem act_as_list)
+    # @arrivals = Arrival.order(flat_id: params[:flat_id]).sort_by { |a| a.position }
   end
 
 
@@ -59,18 +57,28 @@ class ArrivalsController < ApplicationController
 
   end
 
-  def update        # PATCH /flats/:flat_id/arrivals/:position(.:format)
+  def update        # PATCH /flats/:flat_id/arrivals/:id(.:format)
     @arrival = Arrival.where(flat_id: params[:flat_id], id: params[:id])[0]
     @arrival.update(arrival_params)
     redirect_to flat_arrivals_path(@flat, @arrival)
   end
+
+  def sort()   # PATCH /flats/:flat_id/:data_value(.:format)
+      @arrivals = Arrival.where(flat_id: params[:flat_id]).sort_by { |a| a.position }
+      @order = params[:data_value].split(",").map { |s| s.to_i }
+      @arrivals.each_with_index {|arrival, i | arrival.update(position: @order[i]) }
+      redirect_to flat_arrivals_path(@flat)
+
+    head :ok
+  end
+
 
   def destroy       # DELETE /flats/:flat_id/arrivals/:position(.:format)
     @arrival.destroy
     redirect_to flat_arrivals_path(@flat, @arrival)
   end
 
-private
+  private
 
   def set_flat
     @flat = Flat.find(params[:flat_id])
@@ -81,10 +89,17 @@ private
     @arrival = Arrival.where(flat_id: params[:flat_id], position: params[:position])[0]
   end
 
+ def set_arrivals
+    # @arrivals = Arrival.where(flat_id: params[:flat_id]).order(:position)
+
+    # DRY to be done ...Below is OK FOR INDEX ET SORT ;-)
+    # @arrivals = Arrival.where(flat_id: params[:flat_id]).sort_by { |a| a.position }
+  end
+
+
   def arrival_params
     params.require(:arrival).permit(:position, :description, :photo, :status, :photo_cache)
   end
-
 end
 
 
