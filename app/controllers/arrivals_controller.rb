@@ -64,12 +64,17 @@ class ArrivalsController < ApplicationController
   end
 
   def sort()   # PATCH /flats/:flat_id/:data_value(.:format)
-      @arrivals = Arrival.where(flat_id: params[:flat_id]).sort_by { |a| a.position }
-      @order = params[:data_value].split(",").map { |s| s.to_i }
-      @arrivals.each_with_index {|arrival, i | arrival.update(position: @order[i]) }
-      redirect_to flat_arrivals_path(@flat)
+      order = params[:data_value].split(",").map { |s| s.to_i }
+      arrivals = Arrival.where(flat_id: params[:flat_id]).sort_by { |a| order.index a.id }
+      qty = arrivals.length
+      myarray = (1..qty).to_a
+      arrivals.each_with_index {|arrival, i | arrival.update(position: myarray[i]) }
+      respond_to do |format|
+        format.html { redirect_to flat_arrivals_path(@flat) }
+      end
 
-    head :ok
+
+    # # head :ok
   end
 
 
@@ -92,7 +97,6 @@ class ArrivalsController < ApplicationController
  def set_arrivals
     # @arrivals = Arrival.where(flat_id: params[:flat_id]).order(:position)
 
-    # DRY to be done ...Below is OK FOR INDEX ET SORT ;-)
     # @arrivals = Arrival.where(flat_id: params[:flat_id]).sort_by { |a| a.position }
   end
 

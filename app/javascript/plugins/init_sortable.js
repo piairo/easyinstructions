@@ -1,7 +1,7 @@
 import Sortable from 'sortablejs';
 const initSortable = () => {
-  const list = document.querySelector('#arrivals');
-  const baseurl = list.dataset.url.slice(0, -9);
+  var list = document.getElementById('items');
+  var baseurl = list.dataset.url.slice(0, -9);
   console.log(list);
   console.log("list.dataset.url");
   console.log(list.dataset.url);
@@ -10,19 +10,19 @@ const initSortable = () => {
   var sortable = Sortable.create(list, {
   group: "localStorage-easyinstructions",
   store: {
-    /**
-     * Get the order of elements. Called once during initialization.
-     * @param   {Sortable}  sortable
-     * @returns {Array}
-     */
-    get: function (sortable) {
+    // /**
+    //  * Get the order of elements. Called once during initialization.
+    //  * @param   {Sortable}  sortable
+    //  * @returns {Array}
+    //  */
+    // get: function (sortable) {
 
-      var order = localStorage.getItem(sortable.options.group.name);
+    //   var order = localStorage.getItem(sortable.options.group.name);
 
-      return order ? order.split('|') : [];
+    //   return order ? order.split('|') : [];
 
 
-    },
+    // },
 
     /**
      * Save the order of elements. Called onEnd (when the item is dropped).
@@ -33,7 +33,8 @@ const initSortable = () => {
       localStorage.setItem(sortable.options.group.name, order.join('|'));
 
 
-      // PERSO method:"POST" to rails
+
+      // PERSO DEV for method:"POST" to rails
      var myflat_id = baseurl.slice(-10,-9);
 
 
@@ -61,7 +62,6 @@ const initSortable = () => {
       // method: "PATCH",
       // order_by_id: order_by_id
       //    })
-
 var url = `${baseurl}/order/${order_by_id}`
 console.log("url");
 console.log(url);
@@ -74,6 +74,7 @@ console.log(url);
   error: function(data) {}
   });
 
+
       // console.log(path);
       // order.forEach((arrival) => {
       //   const movie = `<li class="list-inline-item">
@@ -82,7 +83,6 @@ console.log(url);
       //   </li>`;
       //        results.insertAdjacentHTML("beforeend", movie);
       // });
-
 
     }
   }

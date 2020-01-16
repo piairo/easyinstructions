@@ -17,9 +17,9 @@
  -->
 
 
-<ul id="arrivals" style="list-style-type:none"  data-url="<%=flat_arrivals_path(@flat)%>">
+<ul id="items" style="list-style-type:none"  data-url="<%=flat_arrivals_path(@flat)%>">
     <%@arrivals.each do |arrival| %>
-      <li data-id="<%= arrival.position %>">
+      <li data-id="<%= dom_id(arrival) %>">
       <%= arrival.id %>
       <%= link_to "#{arrival.position}", edit_flat_arrival_path(arrival.flat_id, arrival.position), class: 'badge badge-pill badge-primary mb-2', style: 'font-size: 1rem' %>
       <%= link_to "#{arrival.description}", edit_flat_arrival_path(arrival.flat_id, arrival.position), class: 'text-dark mr-2'%>
