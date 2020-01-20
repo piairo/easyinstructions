@@ -69,11 +69,6 @@ class ArrivalsController < ApplicationController
       qty = arrivals.length
       myarray = (1..qty).to_a
       arrivals.each_with_index {|arrival, i | arrival.update(position: myarray[i]) }
-      respond_to do |format|
-        format.html { redirect_to flat_arrivals_path(@flat) }
-      end
-
-
     # # head :ok
   end
 

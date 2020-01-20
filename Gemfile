@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
-#GO RAILS sortableJS https://gorails.com/episodes/sortable-drag-and-drop
-gem 'acts_as_list'
 
 gem 'jquery-ui-rails'  #NOT SURE IF TO BE DELETED OR NOT ?
 
