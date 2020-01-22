@@ -10,7 +10,7 @@
 
      <h7 id="trigger"><%= link_to raw("<i class=\"fas fa-sort\"></i><span class=\"badge badge-pill badge-light\">re-order  <i class=\"far fa-hand-paper\"></i></span>"), target: "_blank", class: "text-primary" %></h7>
 
-      <h7><%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete all</span>"), flat_path(@flat), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-danger" %></h7>
+      <h7><%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), flat_arrival_path(@flat, 1), class: "text-success" %></h7>
 
   </div>
 
@@ -39,9 +39,10 @@ START DEBUG
 
          <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), flat_arrival_path(arrival.flat_id, arrival.position), data: { confirm: "Are you sure you want to delete?" }, method: :delete, class: "text-danger"%>
     <br>
-      <%= link_to edit_flat_arrival_path(@flat, arrival.position) do %>
+<!--       <%= link_to edit_flat_arrival_path(@flat, arrival.position) do %>
       <%= cl_image_tag arrival.photo, height:120, width: 120, crop: :fill, class: 'mt-2 mb-3'%>
-      <% end %>
+      <% end %> -->
+            <%= cl_image_tag arrival.photo, height:120, width: 120, crop: :fill, class: 'mt-2 mb-3'%>
     <br>
     </li>
     <% end %>

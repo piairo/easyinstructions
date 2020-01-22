@@ -7,7 +7,8 @@ class FlatsController < ApplicationController
 
   def show          # GET /flats/:id
     @flat = Flat.find(params[:id])
-    @arrivals = Arrival.where(flat_id: params[:id])
+    # @arrivals = Arrival.where(flat_id: params[:id])
+     redirect_to flat_arrivals_path(@flat)
   end
 
   def new           # GET /flats/new
