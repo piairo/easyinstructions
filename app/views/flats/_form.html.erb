@@ -5,7 +5,7 @@
   <br>
   <%= simple_form_for(@flat) do |f| %>
   <% if @flat.errors.any? %>
-    <div class="errors-container" style="color: #e91e63">
+    <div class="errors-container" style="color: #f43761">
       <ul>
         <% @flat.errors.full_messages.each do |message| %>
           <li><%= message %></li>
