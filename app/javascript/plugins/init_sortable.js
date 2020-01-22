@@ -1,5 +1,7 @@
 import Sortable from 'sortablejs';
+
 const initSortable = () => {
+
   var list = document.getElementById('items');
   var baseurl = list.dataset.url.slice(0, -9);
   console.log(list);
@@ -112,7 +114,6 @@ if (confirm('Are you sure you want to move position?')) {
 //     }
 //   });
 // });
-
 };
 
 export { initSortable };

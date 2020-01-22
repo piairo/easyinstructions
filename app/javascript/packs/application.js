@@ -34,7 +34,13 @@ initUpdateNavbarOnScroll();
 
 //SORTABLE
 import { initSortable } from'../plugins/init_sortable.js';
-initSortable();
+
+const trigger = document.querySelector("#trigger");
+  trigger.addEventListener("click", event => {
+  event.preventDefault();
+  alert('you can now drag and drop');
+  initSortable();
+})
 
 
 
