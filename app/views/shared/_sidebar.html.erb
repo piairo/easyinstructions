@@ -35,7 +35,7 @@
 
     <%= link_to raw("<i class=\"fas fa-bolt\"></i> Upgrade to premium"), '#', class: "dropdown-item text-secondary" %>
     <div class="dropdown-divider"></div>
-    <%= link_to raw("<i class=\"fas fa-sign-out-alt\"></i> Logout"), destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+    <%= link_to raw("<i class=\"fas fa-sign-out-alt\"></i> Logout"), destroy_user_session_path, method: :delete, class: "dropdown-item text-secondary" %>
   <%# GUEST MENU %>
   <% else %>
     <div class="dropdown-item"><%= link_to "Log in", new_user_session_path, class: "btn btn-danger btn-block text-left" %></div>
