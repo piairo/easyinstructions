@@ -1,12 +1,12 @@
 
 <div class="container ml-3 mt-3 pb-2 border-bottom">
 
-    <h4><%=link_to raw("#{@flat.name} <span class=\"text-muted\" style=\"font-size:1rem\">(#{@arrivals.count}steps)</span>"), edit_flat_path(@flat), class: 'text-dark', style:"font-size=1rem"%></h4>
+    <h4><%=link_to raw("#{@flat.name} <span class=\"text-muted\" style=\"font-size:1rem\">(#{@arrivals.count} steps)</span>"), edit_flat_path(@flat), class: 'text-dark', style:"font-size=1rem"%></h4>
 
     <h7 class="text-muted"><%= @flat.address %></h7>
 
     <div class="container d-flex justify-content-between pl-0 mt-1">
-    <h7><%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit infos</span>"), edit_flat_path(@flat), class: "text-primary" %></h7>
+    <h7><%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit infos</span>"), edit_flat_path(@flat), class: "text-secondary" %></h7>
 
       <h7><%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete all</span>"), flat_path(@flat), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-danger" %></h7>
 

@@ -40,7 +40,10 @@
           <%# if params[:controller] == 'keyinfos' %>
             <%#= link_to "home", homes_for_booking_path(@flat.name), class: 'btn btn-primary mybutton-lg'%>
 <!--        2) for the home page    -->
-          <% if current_page?('/chocolate') || current_page?('/netflix') || current_page?('/hotwater') || current_page?('/pancakes') || current_page?('/frontdoor') || current_page?('/pooridge') || current_page?('/')%>
+          <% if current_page?('/')%>
+          <%= link_to "+create", new_flat_path, class: 'btn btn-danger' %>
+
+          <% elsif current_page?('/chocolate') || current_page?('/netflix') || current_page?('/hotwater') || current_page?('/pancakes') || current_page?('/frontdoor') || current_page?('/pooridge') || current_page?('/')%>
 
 
           <% elsif params[:controller] == 'keyinfos'%>
