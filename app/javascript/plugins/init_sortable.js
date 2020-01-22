@@ -35,6 +35,8 @@ const initSortable = () => {
 
 
       // PERSO DEV for method:"POST" to rails
+
+
      var myflat_id = baseurl.slice(-10,-9);
 
 
@@ -67,14 +69,19 @@ console.log("url");
 console.log(url);
 // /flats/1/order/6,7,4,5,3,2,1
 
+if (confirm('Are you sure you want to move position?')) {
   Rails.ajax({
   url: url,
   type: "patch",
-  success: function(data) {},
+   success: function() {
+        location.reload();
+        },
   error: function(data) {}
   });
-
-
+}
+  else {
+    window.location.reload();
+  }
       // console.log(path);
       // order.forEach((arrival) => {
       //   const movie = `<li class="list-inline-item">

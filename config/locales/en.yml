@@ -39,6 +39,6 @@ en:
         create: 'Create step'
         update: 'Update step'
       flat:
-        create: 'Create project'
-        update: 'Update project'
+        create: 'Create instruction'
+        update: 'Update instruction'
 

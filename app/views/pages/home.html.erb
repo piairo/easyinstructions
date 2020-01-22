@@ -1,12 +1,12 @@
 <%= render 'shared/navbar_wagon' %>
 <div class="banner">  <!-- was banner home -->
-          <h1 style="padding-top: 60px"><span><strong>instructions</strong></span></h1>
-          <h3 id="typed" data-strings="<%= ["step by step"].to_json  %>" data-speed="150" data-loop="true" style="display: inline"></h3>
+         <!--  <h1><span><strong>instructions</strong></span></h1> -->
+          <h3>step by <span id="typed" data-strings="<%= ["step"].to_json  %>" data-speed="150" data-loop="true" style="display: inline; color:#e91e63"></span></h3>
 
 
   <div class="row justify-content-center">
     <%= link_to new_flat_path do %>
-    <%= image_tag "undraw_travelers.png", id:"travelers",class:"img-fluid mt-3 mb-1"%>
+    <%= image_tag "logo_easyinstructions4_large.png", id:"travelers",class:"img-fluid mt-5 mb-5"%>
     <% end %>
   </div>
 

@@ -1,7 +1,7 @@
 <!-- app/views/flat/_form.html.erb -->
 
 <div class="container pt-3">
-  <h4>New project</h4>
+  <h4>New instruction</h4>
   <br>
   <%= simple_form_for(@flat) do |f| %>
   <% if @flat.errors.any? %>
@@ -15,9 +15,9 @@
   <% end %>
 
 
-      <%= f.label :'project name' %>
+      <%= f.label :'instruction name' %>
       <%= f.text_field :name, class: 'form-control', placeholder:'...', style:"border-color: #FF3760" %>
-      <%= f.label :'project adress (optional)', class: "text-secondary mt-5" %>
+      <%= f.label :'adress (optional)', class: "text-secondary mt-5" %>
       <%= f.text_field :address, class: 'form-control'%>
 
 

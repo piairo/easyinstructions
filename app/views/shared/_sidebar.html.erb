@@ -24,7 +24,7 @@
   <% if user_signed_in? %>
     <h5 class="nav-link text-secondary small">Dashboard</h5>
 
-    <%= link_to raw("<i class=\"fas fa-book\"></i> My projects <span class=\"badge badge-pill badge-light\">#{current_user.flats.count}</span>"), flats_path, class: "dropdown-item" %>
+    <%= link_to raw("<i class=\"fas fa-book\"></i> My instructions <span class=\"badge badge-pill badge-light\">#{current_user.flats.count}</span>"), flats_path, class: "dropdown-item" %>
 
     <%#= link_to raw("<i class=\"fas fa-plus-square\"></i> Add new project"), new_flat_path, class: "dropdown-item" %>
 
@@ -36,7 +36,7 @@
     <%= link_to raw("<i class=\"fas fa-bolt\"></i> Upgrade to premium"), '#', class: "dropdown-item text-dark" %>
     <div class="dropdown-divider"></div>
     <%= link_to raw("<i class=\"fas fa-sign-out-alt\"></i> Logout"), destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-  <%# GUESY MENU %>
+  <%# GUEST MENU %>
   <% else %>
     <div class="dropdown-item"><%= link_to "Log in", new_user_session_path, class: "btn btn-danger btn-block text-left" %></div>
   <!--   <#%= render "devise/shared/links-sidebar" %> -->

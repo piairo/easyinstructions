@@ -1,46 +1,50 @@
 <div class="container mt-3">
   <% if user_signed_in? %>
 
-    <h4>My projects</h4>
+    <h4>My instructions</h4>
     <br>
     <% @user_flats.each do |flat| %>
 
+        <div class="container d-flex justify-content-between">
+          <h5>
+            <%= link_to ("#{flat.name.upcase}"), flat_arrivals_path(flat.id, 1), class: 'btn btn-light', style: 'width:25vmax; text-align:left' %>
 
-        <h3> <%= link_to "#{flat.name}", flat_path(flat.id), class: 'btn btn-secondary mt-4' %> <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\"></span>"), flat_path(flat.id),style: 'font-size: 0.8rem', class: 'text-secondary'%></h3>
+            <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), flat_arrivals_path(flat.id), class: "text-primary" %>
 
-      <p><%= flat.address %></p>
+            <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), flat_arrival_path(flat.id, 1), class: "text-success" %>
+          </h5>
 
-      <p>
-     <%= link_to "#{flat.arrivals.count}", flat_arrivals_path(flat.id)%>
-     <%= link_to "steps", flat_arrivals_path(flat.id), class: 'text-dark'%>
-    <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), flat_arrival_path(flat.id, 1), class: "text-success" %>
-     </p>
+
+        </div>
+
+      <div class="container mb-4 text-muted"> <%= flat.address %></div>
     <% end %>
 
   <% else %>
-  <h4>Projects</h4>
+  <h4>Guides</h4>
     <br>
     <% @all_flats.each do |flat| %>
 
-      <h3> <%= link_to "#{flat.name}", homes_for_booking_path(flat.name), class: 'btn btn-secondary' %>
-      </h3>
+        <div class="container d-flex justify-content-between">
+          <h3> <%= link_to raw("#{flat.name} <i class=\"fas fa-edit\"></i>"), flat_arrivals_path(flat.id, 1), class: 'btn btn-secondary', style:'width:25vmax' %>
+           </h5>
+          <%= link_to "(#{flat.arrivals.count} steps)", flat_arrivals_path(flat.id), class: "text-muted"%>
+          </h5>
+          <h3>
+          <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), flat_arrival_path(flat.id, 1), class: "text-success" %>
+          </h3>
 
 
-      <p><%= flat.address %></p>
 
-      <p>
-     <%= link_to "#{flat.arrivals.count}", "#"%>
-     <%= link_to "steps", "#", class: 'text-dark'%>
-     <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"),  homes_for_booking_path(flat.name), class: "text-success" %>
+        </div>
 
-     </p>
-    <% end %>
-
+      <div class="container mb-4 text-muted"> <%= flat.address %></div>
   <% end %>
 
+<% end %>
 
-  <div class="mb-5 mt-3 pb-5">
-  <%= link_to "+ add a project",  new_flat_path(@flat), class: 'btn btn-danger' %>
+  <div class="mb-5 mt-3 ml-3 pb-5">
+  <%= link_to "+ add instruction",  new_flat_path(@flat), class: 'btn btn-danger' %>
   </div>
 
 </div>
@@ -55,8 +59,8 @@
     <button class="btn navbar-toggler p-0" data-toggle="canvas" data-target="#bs-canvas-right" aria-expanded="false" aria-controls="bs-canvas-right" style="color: white"><h1 class="fas fa-bars m-0" style="font-size: 2rem"></h1></button>
   </div>
 
-        <!--   BUTTON ADD PROJECT  --->
-  <%= link_to "+ add new project",  new_flat_path(@flat), class: 'btn btn-danger' %>
+        <!--   BUTTON ADD INSTRUCTION  --->
+  <%= link_to "+ add instruction",  new_flat_path(@flat), class: 'btn btn-danger' %>
 </div>
 
 
