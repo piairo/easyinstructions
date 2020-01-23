@@ -1,48 +1,48 @@
 class KeyinfosController < ApplicationController
 
-  before_action :set_flat
+  before_action :set_instruction
 
   def show
-    @keyinfo = Keyinfo.where(id: params[:flat_id])[0]
+    @keyinfo = Keyinfo.where(id: params[:instruction_id])[0]
   end
 
-  def new           # GET /flats/:id/keyinfos/new(.:format)
-    @arrival = Arrival.new
+  def new           # GET /instructions/:id/keyinfos/new(.:format)
+    @step = Step.new
 
   end
 
   def create        # POST /keyinfos
-    @arrival = Arrival.new(arrival_params)
-    @arrival.flat = @flat
+    @step = Step.new(step_params)
+    @step.instruction = @instruction
 
-    if @arrival.save
-      redirect_to flat_arrivals_path(@flat)
+    if @step.save
+      redirect_to instruction_steps_path(@instruction)
     else
       render :new
     end
   end
 
-  def edit          # GET /flats/:id/keyinfos/:id/edit(.:format)
-    @arrival = Arrival.find(params[:id])
+  def edit          # GET /instructions/:id/keyinfos/:id/edit(.:format)
+    @step = Step.find(params[:id])
   end
 
-  def update        # PATCH /flats/:id/keyinfos/:id(.:format)
-    @arrival = Arrival.find(params[:id])
-    @arrival.update(arrival_params)
-    redirect_to flat_arrivals_path(@flat, @arrival)
+  def update        # PATCH /instructions/:id/keyinfos/:id(.:format)
+    @step = Step.find(params[:id])
+    @step.update(step_params)
+    redirect_to instruction_steps_path(@instruction, @step)
   end
 
-  def destroy       # DELETE /flats/:id/keyinfos/:id(.:format)
-    @arrival = Arrival.find(params[:id])
-    @arrival.destroy
-    redirect_to flat_arrivals_path(@flat, @arrival)
+  def destroy       # DELETE /instructions/:id/keyinfos/:id(.:format)
+    @step = Step.find(params[:id])
+    @step.destroy
+    redirect_to instruction_steps_path(@instruction, @step)
   end
 
 
 private
 
-  def set_flat
-    @flat = Flat.find(params[:id])
+  def set_instruction
+    @instruction = Instruction.find(params[:id])
   end
 
   def keyinfo_params

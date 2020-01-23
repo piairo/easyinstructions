@@ -1,3 +1,3 @@
 class Attachement < ApplicationRecord
-  belongs_to :arrival
+  belongs_to :step
 end

@@ -3,11 +3,11 @@ import Sortable from 'sortablejs';
 const initSortable = () => {
 
   var list = document.getElementById('items');
-  var baseurl = list.dataset.url.slice(0, -9);
+  var baseurl = list.dataset.url.slice(0, -6);
   console.log(list);
   console.log("list.dataset.url");
   console.log(list.dataset.url);
-  // /flats/1/arrivals
+  // /instructions/1/steps
 
   var sortable = Sortable.create(list, {
   group: "localStorage-easyinstructions",
@@ -39,8 +39,6 @@ const initSortable = () => {
       // PERSO DEV for method:"POST" to rails
 
 
-     var myflat_id = baseurl.slice(-10,-9);
-
 
   // console.log(sortable);
   // console.log(sortable.el.children);
@@ -48,9 +46,9 @@ const initSortable = () => {
   // console.log(sortable.el.children[0].childElementCount);
   // console.log(sortable.el.children[0].baseURI);
       console.log(order);
-      // ["arrival_2", "arrival_3", "arrival_1", "arrival_4", "arrival_5", "arrival_6", "arrival_7"]
+      // ["step_2", "step_3", "step_1", "step_4", "step_5", "step_6", "step_7"]
       var order_by_id = [];
-      order.forEach(element => order_by_id.push(Number(element.slice(element.length -1))));
+      order.forEach(element => order_by_id.push(Number(element.slice(5, element.length))));
 
       console.log("order_by_id");
       console.log(order_by_id);
@@ -58,9 +56,7 @@ const initSortable = () => {
 
       console.log("baseurl");
       console.log(baseurl);
-       // /flats/1
-      console.log(myflat_id);
-      // 1
+       // /instructions/123
 
       // fetch(url, {
       // method: "PATCH",
@@ -69,7 +65,7 @@ const initSortable = () => {
 var url = `${baseurl}/order/${order_by_id}`
 console.log("url");
 console.log(url);
-// /flats/1/order/6,7,4,5,3,2,1
+// /instructions/1/order/6,7,4,5,3,2,1
 
 if (confirm('Are you sure you want to move position?')) {
   Rails.ajax({
@@ -85,7 +81,7 @@ if (confirm('Are you sure you want to move position?')) {
     window.location.reload();
   }
       // console.log(path);
-      // order.forEach((arrival) => {
+      // order.forEach((step) => {
       //   const movie = `<li class="list-inline-item">
       //     <img src="${result.Poster}" alt="">
       //     <p>${result.Title}</p>
@@ -104,7 +100,7 @@ if (confirm('Are you sure you want to move position?')) {
 
 //   document.addEventListener("turbolinks.load",function(){
 
-//   $("#arrivals").sortable({
+//   $("#steps").sortable({
 //     update:function(e, ui){
 //       Rails.ajax({
 //         url: $(this).data("url"),

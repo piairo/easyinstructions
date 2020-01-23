@@ -6,7 +6,7 @@ class CreateKeyinfos < ActiveRecord::Migration[5.2]
       t.text :wificode
       t.string :owner
       t.string :contact
-      t.references :flat, foreign_key: true
+      t.references :instruction, foreign_key: true
 
       t.timestamps
     end

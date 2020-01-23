@@ -1,17 +1,17 @@
-// Place all the styles related to the arrival controller here.
+// Place all the styles related to the step controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-#arrivals li {
+#steps li {
   cursor: grab;
 }
 
-#arrivals li:active {
+#steps li:active {
   cursor: grabbing;
 }
 
-#arrivals li.ghost {
+#steps li.ghost {
   filter: grayscale(1);
   opacity: 0.5;
 }

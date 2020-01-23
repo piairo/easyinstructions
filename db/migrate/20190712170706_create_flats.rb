@@ -1,6 +1,6 @@
-class CreateFlats < ActiveRecord::Migration[5.2]
+class CreateInstructions < ActiveRecord::Migration[5.2]
   def change
-    create_table :flats do |t|
+    create_table :instructions do |t|
       t.string :name
       t.text :address
       t.references :user, foreign_key: true

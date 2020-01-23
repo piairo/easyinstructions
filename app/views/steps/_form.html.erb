@@ -1,13 +1,13 @@
-<!-- app/views/arrivals/_form.html.erb -->
+<!-- app/views/steps/_form.html.erb -->
 
 <div class="container pt-3">
   <h4>Add step</h4>
   <br>
-  <%= simple_form_for [@flat, @arrival] do |f| %>
-  <% if @arrival.errors.any? %>
+  <%= simple_form_for [@instruction, @step] do |f| %>
+  <% if @step.errors.any? %>
     <div class="errors-container" style="color: #f43761">
       <ul>
-        <% @arrival.errors.full_messages.each do |message| %>
+        <% @step.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -16,8 +16,8 @@
 
 
       <%= f.label :'step position' %>
-        <% if @arrival.position.nil? %>
-          <%= f.text_field :position,  min:"0", value: "#{@flat.arrivals.count + 1}", class: 'form-control' , style: 'font-size: 3rem; text-align: center'%>
+        <% if @step.position.nil? %>
+          <%= f.text_field :position,  min:"0", value: "#{@instruction.steps.count + 1}", class: 'form-control' , style: 'font-size: 3rem; text-align: center'%>
         <% else %>
         <%= f.text_field :position, min:"0", class: 'form-control' %>
         <% end %>
@@ -47,4 +47,4 @@ DEBUG END -->
     </div>
   <% end %>
 </div>
-<!-- arrival Model :(position, description, picture_url, status) -->
+<!-- step Model :(position, description, picture_url, status) -->

@@ -1,31 +1,31 @@
-<!-- app/views/arrivals/_form.html.erb -->
+<!-- app/views/steps/_form.html.erb -->
 
 <div class="container pt-3">
   <h4>Add a step</h4>
   <br>
-  <%= simple_form_for [@flat, @arrival] do |f| %>
-  <% if @arrival.errors.any? %>
+  <%= simple_form_for [@instruction, @step] do |f| %>
+  <% if @step.errors.any? %>
     <div class="errors-container" style="color: #f43761">
       <ul>
-        <% @arrival.errors.full_messages.each do |message| %>
+        <% @step.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 <!-- DEBUG -->
-   <!--  <p>@flat : <%= @flat %></p>
-    <p>@flat.id : <%= @flat.id %></p>
+   <!--  <p>@instruction : <%= @instruction %></p>
+    <p>@instruction.id : <%= @instruction.id %></p>
     <p>current_user.id : <%= current_user.id %></p> -->
 <!-- // -->
 
     <div class="form-inputs">
       <%= f.label :'Step position' %>
 
-    <% if @arrival.position.nil? %>
-      <%= f.text_field :position, class: 'form-control', type:"number", min:"0", value: "#{@flat.arrivals.count + 1}" %>
+    <% if @step.position.nil? %>
+      <%= f.text_field :position, class: 'form-control', type:"number", min:"0", value: "#{@instruction.steps.count + 1}" %>
     <% else %>
-    <%= f.text_field :position, class: 'form-control', type:"number", min:"0", value: "#{@arrival.position}" %>
+    <%= f.text_field :position, class: 'form-control', type:"number", min:"0", value: "#{@step.position}" %>
     <% end %>
 
       <%= f.label :description %>
@@ -35,16 +35,16 @@
       <%= f.input :photo_cache, as: :hidden %>
     </div>
 
-    <%#= link_to "back", flat_arrivals_path(@flat), class: 'btn mybutton-light'%>
+    <%#= link_to "back", instruction_steps_path(@instruction), class: 'btn mybutton-light'%>
     <div class="form-actions">
-    <%= link_to "back", flat_arrivals_path(@flat), class: 'btn mybutton-light'%>
+    <%= link_to "back", instruction_steps_path(@instruction), class: 'btn mybutton-light'%>
     <%= f.button :submit, class: 'btn btn-danger' %>
     <div>
 <br>
 
 <p class="mt-5">CLOUDINARY PHOTO</p>
 
-    <% cl_image_tag @arrival.photo, height: 300, width: 400, crop: :fill, class: 'mt-5'%>
+    <% cl_image_tag @step.photo, height: 300, width: 400, crop: :fill, class: 'mt-5'%>
   <% end %>
 </div>
-<!-- arrival Model :(position, description, picture_url, status) -->
+<!-- step Model :(position, description, picture_url, status) -->

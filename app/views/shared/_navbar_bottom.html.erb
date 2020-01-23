@@ -7,7 +7,7 @@
         <% if params[:controller] == 'keyinfos' %>
           <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
 <!--        2) for the home page    -->
-        <% elsif @arrival.nil? %>
+        <% elsif @step.nil? %>
 
         <% else %>
           <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
@@ -21,12 +21,12 @@
     <button class="btn navbar-toggler p-0" data-toggle="canvas" data-target="#bs-canvas-right" aria-expanded="false" aria-controls="bs-canvas-right" style="color: white"><h1 class="fas fa-bars m-0" style="font-size: 2rem"></h1></button>
 
 <%# KEY INFO BUTTON%>
-          <%# if @flat.nil? %>
+          <%# if @instruction.nil? %>
 
           <%# elsif params[:controller] == 'keyinfos' %>
 
           <%# else %>
-            <%#= link_to flat_keyinfo_path(@flat, 1) do %>
+            <%#= link_to instruction_keyinfo_path(@instruction, 1) do %>
 <!--             <i class="fas fa-info text-light" style="font-size: 1.5rem"></i> -->
             <%# end %>
           <%# end %>
@@ -38,10 +38,10 @@
 
 <!--        1) for the keyinfo page -->
           <%# if params[:controller] == 'keyinfos' %>
-            <%#= link_to "home", homes_for_booking_path(@flat.name), class: 'btn btn-primary mybutton-lg'%>
+            <%#= link_to "home", homes_for_booking_path(@instruction.name), class: 'btn btn-primary mybutton-lg'%>
 <!--        2) for the home page    -->
           <% if current_page?('/')%>
-          <%= link_to "+create", new_flat_path, class: 'btn btn-danger' %>
+          <%= link_to "+create", new_instruction_path, class: 'btn btn-danger' %>
 
           <% elsif current_page?('/chocolate') || current_page?('/netflix') || current_page?('/hotwater') || current_page?('/pancakes') || current_page?('/frontdoor') || current_page?('/pooridge') || current_page?('/')%>
 
@@ -52,19 +52,19 @@
 
 
 <!--          SEND SMS FOR CHOCOLATE -->
-          <% elsif @flat.name == "chocolate" && @arrival.position == 5 %>
-          <%= link_to "next", sms_path(@flat), class: 'btn btn-danger mybutton-lg'%>
+          <% elsif @instruction.name == "chocolate" && @step.position == 5 %>
+          <%= link_to "next", sms_path(@instruction), class: 'btn btn-danger mybutton-lg'%>
 
 
-          <% elsif @arrival.position == @flat.arrivals.count && ["netflix", "hotwater", "frontdoor", "chocolate"].include?(@flat.name) %>
-           <%= link_to "house manual", flat_keyinfo_path(1, 1), class: 'btn btn-danger mybutton-lg auto'%>
+          <% elsif @step.position == @instruction.steps.count && ["netflix", "hotwater", "frontdoor", "chocolate"].include?(@instruction.name) %>
+           <%= link_to "house manual", instruction_keyinfo_path(1, 1), class: 'btn btn-danger mybutton-lg auto'%>
 
 
-          <% elsif @arrival.position == @flat.arrivals.count %>
+          <% elsif @step.position == @instruction.steps.count %>
           <%= link_to "home", root_path, class: 'btn btn-primary mybutton-lg'%>
 
           <% else %>
-            <%= link_to "next", flat_arrival_path(@flat, @arrival.position.to_i + 1), class: 'btn btn-danger mybutton-lg' %>
+            <%= link_to "next", instruction_step_path(@instruction, @step.position.to_i + 1), class: 'btn btn-danger mybutton-lg' %>
           <% end %>
     </div>
 

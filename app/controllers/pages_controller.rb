@@ -13,11 +13,11 @@ class PagesController < ApplicationController
   end
 
  def homes_for_booking
-    @flat = Flat.where(name: params[:flat_name])[0]
+    @instruction = Instruction.where(name: params[:instruction_name])[0]
   end
 
 end
 
- def arrival_params
-    params.require(:flat).permit(:name)
+ def step_params
+    params.require(:instruction).permit(:name)
   end

@@ -7,18 +7,18 @@
   <br>
 
   <div class="row justify-content-center mt-3 mb-1">
-    <%= link_to flat_arrival_path(@flat.id, 1) do %>
+    <%= link_to instruction_step_path(@instruction.id, 1) do %>
     <%= image_tag "logo_easyinstructions4_large.png", id:"travelers"%>
     <% end %>
   </div>
 
 
   <div class="row justify-content-center">
-    <%= link_to "Check-in", flat_arrival_path(@flat.id, 1), class: 'btn btn-danger mybutton-lg home' %>
+    <%= link_to "Check-in", instruction_step_path(@instruction.id, 1), class: 'btn btn-danger mybutton-lg home' %>
   </div>
 
   <div class="row justify-content-center mt-2">
-    <%= link_to "house manual", flat_keyinfo_path(@flat, 1), class: 'btn btn-secondary mybutton-sm home'%>
+    <%= link_to "house manual", instruction_keyinfo_path(@instruction, 1), class: 'btn btn-secondary mybutton-sm home'%>
   </div>
 
 </div>

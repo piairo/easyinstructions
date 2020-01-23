@@ -1,10 +1,10 @@
-class CreateArrivals < ActiveRecord::Migration[5.2]
+class CreateSteps < ActiveRecord::Migration[5.2]
   def change
-    create_table :arrivals do |t|
+    create_table :steps do |t|
       t.integer :description
       t.text :description
       t.boolean :status
-      t.references :flat, foreign_key: true
+      t.references :instruction, foreign_key: true
 
       t.timestamps
     end

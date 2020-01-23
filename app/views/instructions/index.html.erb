@@ -1,0 +1,72 @@
+<div class="container mt-3">
+  <% if user_signed_in? %>
+
+    <h4>My instructions</h4>
+    <br>
+    <% @user_instructions.each do |instruction| %>
+
+        <div class="container d-flex pl-0 pr-0 justify-content-between">
+
+
+            <div>
+            <%= link_to ("#{instruction.name.upcase}"), instruction_steps_path(instruction.id), style: ' text-align:left; font-weight: bold; color: #f43761' %>
+            </div>
+
+            <div id="buttons" class="container d-flex justify-content-between m-0 p-0" style="width: 53vw">
+            <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), instruction_steps_path(instruction.id), class: "text-secondary" %>
+
+            <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), instruction_path(instruction.id), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-secondary" %>
+
+            <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), instruction_step_path(instruction.id, 1), class: "text-success" %>
+            </div>
+
+
+
+        </div>
+
+      <p class="mt-2 mb-5 text-muted"> <%= instruction.address %></p>
+    <% end %>
+
+  <% else %>
+  <h4>Public instructions</h4>
+    <br>
+    <% @all_instructions.each do |instruction| %>
+
+        <div class="container d-flex justify-content-between">
+          <h5>
+            <%= link_to ("#{instruction.name.upcase}"), instruction_steps_path(instruction.id), class: 'btn', style: 'min-width:20vmax; text-align:left; color: #f43761' %>
+
+            <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), instruction_steps_path(instruction.id), class: "text-secondary" %>
+
+            <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), instruction_step_path(instruction.id, 1), class: "text-success" %>
+          </h5>
+
+
+        </div>
+
+      <div class="container mb-4 text-muted"> <%= instruction.address %></div>
+  <% end %>
+
+<% end %>
+
+  <div class="mb-5 mt-3 ml-3 pb-5">
+  <%= link_to "+ add instruction",  new_instruction_path(@instruction), class: 'btn btn-danger', style:'width:85vw' %>
+  </div>
+
+</div>
+
+<div class="navbar_bottom fixed-bottom">
+
+<!--   BUTTON BACK  --->
+  <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light'%>
+
+<%# RESPONSIVE MENU BUTTON%>
+  <div style="text-align: center">
+    <button class="btn navbar-toggler p-0" data-toggle="canvas" data-target="#bs-canvas-right" aria-expanded="false" aria-controls="bs-canvas-right" style="color: white"><h1 class="fas fa-bars m-0" style="font-size: 2rem"></h1></button>
+  </div>
+
+        <!--   BUTTON ADD INSTRUCTION  --->
+  <%= link_to "+ add instruction",  new_instruction_path(@instruction), class: 'btn btn-danger' %>
+</div>
+
+

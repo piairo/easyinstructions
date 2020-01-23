@@ -5,11 +5,11 @@ one:
   wifiname: MyString
   wificode: MyText
   contact: MyString
-  flat: one
+  instruction: one
 
 two:
   check-out: 2019-08-11 17:17:01
   wifiname: MyString
   wificode: MyText
   contact: MyString
-  flat: two
+  instruction: two

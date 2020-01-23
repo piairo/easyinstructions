@@ -1,0 +1,13 @@
+<!-- TITLE -->
+    <header>
+
+        <h1 id="typed" data-strings="<%= ([] << @step.description).to_json %>" data-speed="100" data-loop="false" style="color: #f43761; display: inline;"></h1>
+    </header>
+
+
+  <div class="main-content" style="background-image: url('<%= cl_image_path @step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
+  </div>
+
+<%= render 'shared/navbar_bottom' %>
+
+

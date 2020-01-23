@@ -25,93 +25,93 @@ end
 puts 'Finished users!'
 
 puts separator
-puts '2. 🏠 Creating "flat" - chocolate...'
+puts '2. 🏠 Creating "instruction" - chocolate...'
 
-  flat1 = Flat.new(
+  instruction1 = Instruction.new(
     name:    "chocolate",
     address: "2A southborough terrace, cv31 2dt leamington",
     user_id: 1,
     )
-  flat1.save!
+  instruction1.save!
 
 puts 'Finished Chocolate!'
 
 puts separator
-puts '3. ➡️ Creating "7 arrivals" - for chocolate ...'
+puts '3. ➡️ Creating "7 steps" - for chocolate ...'
 
   url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569319346/vfremjqeqvfuqp9pwyit.png"
-  arrival1 = Arrival.new(
+  step1 = Step.new(
     position:   1,
     description: "make sure you are here📍cv312dt brunswick street",
     photo: "https://res.cloudinary.com/dsupdin1s/image/upload/v1569346377/uuydxrujofrqtzi4tvze.heic",
     status: false,
-    flat_id: 1,
+    instruction_id: 1,
     )
-  arrival1.remote_photo_url = url
-  arrival1.save!
+  step1.remote_photo_url = url
+  step1.save!
 
   url= "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929949/sgy8n6k6c5gxsmxwo97a.png"
-  arrival2 = Arrival.new(
+  step2 = Step.new(
     position:   2,
     description: "go to the main door 🚶‍♀️",
     status: false,
-    flat_id: 1,
+    instruction_id: 1,
     )
-  arrival2.remote_photo_url = url
-  arrival2.save!
+  step2.remote_photo_url = url
+  step2.save!
 
   url ="https://res.cloudinary.com/dsupdin1s/image/upload/v1569929951/ukdfgfgsyetosnpksf3v.png"
-  arrival3 = Arrival.new(
+  step3 = Step.new(
     position:   3,
     description: "in the porch, turn round: the safe is behind you 🔑",
     status: false,
-    flat_id: 1,
+    instruction_id: 1,
     )
-  arrival3.remote_photo_url = url
-  arrival3.save!
+  step3.remote_photo_url = url
+  step3.save!
 
 
   url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929952/qsr36rzwthkikextc9ow.png"
-  arrival4 = Arrival.new(
+  step4 = Step.new(
     position:   4,
     description: "climb till 1st floor",
     status: false,
-    flat_id: 1,
+    instruction_id: 1,
     )
-  arrival4.remote_photo_url = url
-  arrival4.save!
+  step4.remote_photo_url = url
+  step4.save!
 
  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929953/msqlm5pw2mf5efjwxewp.png"
- arrival5 = Arrival.new(
+ step5 = Step.new(
     position:   5,
     description: "welcome home 🎉",
     status: false,
-    flat_id: 1,
+    instruction_id: 1,
     )
-  arrival5.remote_photo_url = url
-  arrival5.save!
+  step5.remote_photo_url = url
+  step5.save!
 
  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929954/unfmdote0dquwlx7dduq.png"
- arrival6 = Arrival.new(
+ step6 = Step.new(
     position:   6,
     description: "here is the free parking for resident",
     status: false,
-    flat_id: 1,
+    instruction_id: 1,
     )
-  arrival6.remote_photo_url = url
-  arrival6.save!
+  step6.remote_photo_url = url
+  step6.save!
 
  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929955/del2lrcpygfipqnahlep.png"
- arrival7 = Arrival.new(
+ step7 = Step.new(
     position:   7,
     description: "you live in fron of the best coffee in town",
     status: false,
-    flat_id: 1,
+    instruction_id: 1,
     )
-  arrival7.remote_photo_url = url
-  arrival7.save!
+  step7.remote_photo_url = url
+  step7.save!
 
-puts 'Finished 7 arrivals for chocolate!'
+puts 'Finished 7 steps for chocolate!'
 
 puts separator
 puts '4. 📖 Creating "keyinfos" - chocolate ...'
@@ -122,7 +122,7 @@ puts '4. 📖 Creating "keyinfos" - chocolate ...'
     wificode: "577D44B1D2",
     owner: "katia",
     contact: "+44 7484 723518",
-    flat_id: 1,
+    instruction_id: 1,
     )
   keyinfo1.save!
 
@@ -131,56 +131,56 @@ puts 'Finished chocolate - Keyinfo1 !'
 puts separator
 puts '5. 🏠 Creating "project" - pancakes...'
 
-  flat1 = Flat.new(
+  instruction1 = Instruction.new(
     name:    "pancakes",
     user_id: 1,
     )
-  flat1.save!
+  instruction1.save!
 
 puts 'Finished pancakes!'
 
 puts separator
 puts '6. ➡️ Creating "5 steps" - for pancakes...'
 
-  arrival1 = Arrival.new(
+  step1 = Step.new(
     position:   1,
     description: "3 spoons of cereales",
     status: false,
-    flat_id: 2,
+    instruction_id: 2,
     )
-  arrival1.save!
+  step1.save!
 
-  arrival2 = Arrival.new(
+  step2 = Step.new(
     position:   2,
     description: "3 spoons of pumpkin seeds",
     status: false,
-    flat_id: 2,
+    instruction_id: 2,
     )
-  arrival2.save!
+  step2.save!
 
-  arrival3 = Arrival.new(
+  step3 = Step.new(
     position:   3,
     description: "1 Egg",
     status: false,
-    flat_id: 2,
+    instruction_id: 2,
     )
-  arrival3.save!
+  step3.save!
 
-  arrival4 = Arrival.new(
+  step4 = Step.new(
     position:   4,
     description: "1 spoon of yoghurt",
     status: false,
-    flat_id: 2,
+    instruction_id: 2,
     )
-  arrival4.save!
+  step4.save!
 
 
- arrival5 = Arrival.new(
+ step5 = Step.new(
     position:   5,
     description: "mix everything🎉",
     status: false,
-    flat_id: 2,
+    instruction_id: 2,
     )
-  arrival5.save!
+  step5.save!
   puts 'Finished 5 steps for pancakes!'
 
