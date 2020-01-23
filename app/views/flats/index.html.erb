@@ -7,12 +7,12 @@
 
         <div class="container d-flex justify-content-between">
           <h7>
-            <%= link_to ("#{flat.name.upcase}"), flat_arrivals_path(flat.id, 1), class: 'btn mybutton-light mb-2', style: 'min-width:100%; text-align:left; font-weight: bold' %>
+            <%= link_to ("#{flat.name.upcase}"), flat_arrivals_path(flat.id, 1), class: 'btn mybutton-light mb-2', style: 'width:85vw; text-align:left; font-weight: bold' %>
             <br>
 
             <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), flat_arrivals_path(flat.id), class: "text-secondary" %>
 
-            <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), flat_path(flat.id), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-danger" %>
+            <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), flat_path(flat.id), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-secondary" %>
 
             <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), flat_arrival_path(flat.id, 1), class: "text-success" %>
           </h7>
@@ -46,7 +46,7 @@
 <% end %>
 
   <div class="mb-5 mt-3 ml-3 pb-5">
-  <%= link_to "+ add instruction",  new_flat_path(@flat), class: 'btn btn-danger' %>
+  <%= link_to "+ add instruction",  new_flat_path(@flat), class: 'btn btn-danger', style:'width:85vw' %>
   </div>
 
 </div>
