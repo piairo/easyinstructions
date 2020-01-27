@@ -28,9 +28,14 @@ DEBUG END -->
       <%= f.label :'step description', class: 'mt-3' %>
       <%= f.input_field :description, class: 'form-control', placeholder:'...', style:"border-color: #209CCE" %>
       <br>
-
       <%= f.input :photo, label: :"Add photo", input_html: { class: 'text-primary' }%>
       <%= f.input :photo_cache, as: :hidden %>
+
+  <div id="thumb" style="background-image: url('<%= cl_image_path @step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
+  </div>
+<!-- <img src="https://cloudinary.com/images/v1/thumb/AZERRT9876dfgh2345PO.jpg" alt="AZERRT9876dfgh2345PO"> -->
+
+
 
     <div class="navbar_bottom fixed-bottom">
 
