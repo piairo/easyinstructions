@@ -31,8 +31,11 @@ DEBUG END -->
       <%= f.input :photo, label: :"Add photo", input_html: { class: 'text-primary' }%>
       <%= f.input :photo_cache, as: :hidden %>
 
-  <div id="thumb" style="background-image: url('<%= cl_image_path @step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
-  </div>
+<!-- https://stackoverflow.com/questions/26815793/dont-display-field-of-form-if-action-is-edit
+ -->  <% if @step.persisted? %>
+   <div id="thumb" style="background-image: url('<%= cl_image_path @step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
+    </div>
+  <% end %>
 <!-- <img src="https://cloudinary.com/images/v1/thumb/AZERRT9876dfgh2345PO.jpg" alt="AZERRT9876dfgh2345PO"> -->
 
 

@@ -7,21 +7,17 @@
 
         <div class="container d-flex pl-0 pr-0 justify-content-between">
 
+            <div class="container d-flex align-items-center">
+            <%= cl_image_tag Step.where(instruction_id: instruction.id).last.photo, height:50, width: 50, crop: :fill, class: 'rounded-circle mr-2'%>
 
-            <div>
-            <%= link_to ("#{instruction.name.upcase}"), instruction_steps_path(instruction.id), style: ' text-align:left; font-weight: bold; color: #f43761' %>
+            <%= link_to ("#{instruction.name.upcase}"), instruction_step_path(instruction.id, 1), style: ' text-align:left; font-weight: bold; color: #f43761' %>
             </div>
+             <div id="buttons" class="container d-flex justify-content-between m-0 p-0" style="width: 50vw">
+                <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), instruction_steps_path(instruction.id), class: "text-secondary" %>
 
-            <div id="buttons" class="container d-flex justify-content-between m-0 p-0" style="width: 53vw">
-            <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), instruction_steps_path(instruction.id), class: "text-secondary" %>
+                <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), instruction_path(instruction.id), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-secondary" %>
 
-            <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), instruction_path(instruction.id), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-secondary" %>
-
-            <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), instruction_step_path(instruction.id, 1), class: "text-success" %>
             </div>
-
-
-
         </div>
 
       <p class="mt-2 mb-5 text-muted"> <%= instruction.address %></p>
@@ -32,18 +28,20 @@
     <br>
     <% @all_instructions.each do |instruction| %>
 
-        <div class="container d-flex justify-content-between">
-          <h5>
-            <%= link_to ("#{instruction.name.upcase}"), instruction_steps_path(instruction.id), class: 'btn', style: 'min-width:20vmax; text-align:left; color: #f43761' %>
+    <div class="container d-flex pl-0 pr-0 justify-content-between">
 
-            <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), instruction_steps_path(instruction.id), class: "text-secondary" %>
+            <div class="container d-flex align-items-center">
+            <%= cl_image_tag Step.where(instruction_id: instruction.id).last.photo, height:50, width: 50, crop: :fill, class: 'rounded-circle mr-2'%>
 
-            <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), instruction_step_path(instruction.id, 1), class: "text-success" %>
-          </h5>
+            <%= link_to ("#{instruction.name.upcase}"), instruction_step_path(instruction.id, 1), style: ' text-align:left; font-weight: bold; color: #f43761' %>
+            </div>
 
+            <div id="buttons" class="container d-flex justify-content-between m-0 p-0" style="width: 50vw">
+                                <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), instruction_steps_path(instruction.id), class: "text-secondary" %>
 
-        </div>
+                <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), instruction_path(instruction.id), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-secondary" %>
 
+            </div>
       <div class="container mb-4 text-muted"> <%= instruction.address %></div>
   <% end %>
 

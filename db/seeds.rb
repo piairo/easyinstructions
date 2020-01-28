@@ -871,6 +871,228 @@ puts '14. ➡️ Creating "10 steps" - for Katia tajine...'
 
 puts 'Finished 10 steps for Katia tajine!'
 
+puts separator
+puts '15. 🏠 Creating "instruction7" - bertie...'
+
+      instruction7 = Instruction.new(
+        name:    "bertie",
+        address: "Flat1, 8 Bertie terrace CV32 5BL leamington",
+        user_id: 1,
+        )
+      instruction7.save!
+
+puts 'Finished "instruction7" - Bertie!'
+
+puts separator
+puts '16. ➡️ Creating "4 steps" - for bertie ...'
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580228298/Seeds/wczzaq9iitxvzzsuxqoj_rwempz.jpg"
+  step1 = Step.new(
+    position:   1,
+    description: "🦶 make sure you are on Union road",
+    status: false,
+    instruction_id: 7,
+    )
+  step1.remote_photo_url = url
+  step1.save!
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580228297/Seeds/mnrhxmp2aikgtgpqjfui_obke4p.jpg"
+  step2 = Step.new(
+    position:   2,
+    description: "🦶 go through the garder door",
+    status: false,
+    instruction_id: 7,
+    )
+  step2.remote_photo_url = url
+  step2.save!
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580228298/Seeds/sjdtes6kxvgklxleiyvr_feykud.jpg"
+  step3 = Step.new(
+    position:   3,
+    description: "🦶 turn left",
+    status: false,
+    instruction_id: 7,
+    )
+  step3.remote_photo_url = url
+  step3.save!
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580228297/Seeds/grn5afvrclypzqcfdkj3_h4ktua.jpg"
+  step4 = Step.new(
+    position:   4,
+    description: "🎉 you arrived in flat 1",
+    status: false,
+    instruction_id: 7,
+    )
+  step4.remote_photo_url = url
+  step4.save!
+
+puts 'Finished 4 steps for Bertie!'
+
+puts separator
+puts '17. 📺 Creating "instruction8" - netflix...'
+
+  instruction8 = Instruction.new(
+    name:    "netflix",
+    address: "2A southborough terrace, cv31 2dt leamington",
+    user_id: 1,
+    )
+  instruction8.save!
+
+puts 'Finished "instruction8" - netflix!'
+
+puts separator
+puts '18. ➡️ Creating "4 steps" - for netflix ...'
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569450480/Seeds/wkj7nasswnpuovfz4azd.jpg"
+  step1 = Step.new(
+    position:   1,
+    description: "🦶 press on Input",
+    status: false,
+    instruction_id: 8,
+    )
+  step1.remote_photo_url = url
+  step1.save!
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569578255/Seeds/syrlf0zpadiu9bucyhbc.png"
+  step2 = Step.new(
+    position:   2,
+    description: "🦶 select HDMI2",
+    status: false,
+    instruction_id: 8,
+    )
+  step2.remote_photo_url = url
+  step2.save!
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569450446/Seeds/opszztrvlguyiugfv7of.jpg"
+  step3 = Step.new(
+    position:   3,
+    description: "🦶 use black remote to navigate",
+    status: false,
+    instruction_id: 8,
+    )
+  step3.remote_photo_url = url
+  step3.save!
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569450126/Seeds/lzql6fb5vwxxlkswsjyg.jpg"
+  step4 = Step.new(
+    position:   4,
+    description: "🎉 Enjoy netflix",
+    status: false,
+    instruction_id: 8,
+    )
+  step4.remote_photo_url = url
+  step4.save!
+
+
+puts 'Finished 4 steps for Netflix!'
+
+puts separator
+puts '19. 🛁 Creating "instruction9" - hot water...'
+
+  instruction9 = Instruction.new(
+    name:    "hot water",
+    address: "2A southborough terrace, cv31 2dt leamington",
+    user_id: 1,
+    )
+  instruction9.save!
+
+puts 'Finished "instruction9" - hot water!'
+
+puts separator
+puts '20. ➡️ Creating "4 steps" - for hot water ...'
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569454002/Seeds/xtslhnvcb0irkdvclaqt.jpg"
+  step1 = Step.new(
+    position:   1,
+    description: "🦶 open the wardrobe",
+    status: false,
+    instruction_id: 9,
+    )
+  step1.remote_photo_url = url
+  step1.save!
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569454046/Seeds/hxorgatssyboixasmjmx.jpg"
+  step2 = Step.new(
+    position:   2,
+    description: "🦶 thermostat is the left side",
+    status: false,
+    instruction_id: 9,
+    )
+  step2.remote_photo_url = url
+  step2.save!
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569454105/Seeds/a4wtzkhh6wgp3d64ik7y.jpg"
+  step3 = Step.new(
+    position:   3,
+    description: "🦶 turn 1/4 left",
+    status: false,
+    instruction_id: 9,
+    )
+  step3.remote_photo_url = url
+  step3.save!
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569580575/Seeds/zdb3q6wg0otrshnlrbxn.png"
+  step4 = Step.new(
+    position:   4,
+    description: "⏳ wait 1h for hot water to be ready",
+    status: false,
+    instruction_id: 9,
+    )
+  step4.remote_photo_url = url
+  step4.save!
+
+puts 'Finished 4 steps for Hotwater!'
+
+puts separator
+puts '21. 🚪 Creating "instruction10" - Closing door...'
+
+  instruction10 = Instruction.new(
+    name:    "closing door",
+    address: "2A southborough terrace, cv31 2dt leamington",
+    user_id: 1,
+    )
+  instruction10.save!
+
+puts 'Finished "instruction10" - closing door!'
+
+puts separator
+puts '22. ➡️ Creating "3 steps" - for closing door ...'
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569584328/Seeds/r2zxx29ufyahrodzp2dg.png"
+  step1 = Step.new(
+    position:   1,
+    description: "🦶 Key should be vertical",
+    status: false,
+    instruction_id: 10,
+    )
+  step1.remote_photo_url = url
+  step1.save!
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569584402/Seeds/rt8eigspo4awbh4dtoup.png"
+  step2 = Step.new(
+    position:   2,
+    description: "🦶 lift handle up",
+    status: false,
+    instruction_id: 10,
+    )
+  step2.remote_photo_url = url
+  step2.save!
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569584454/Seeds/ddvj0t0i3xpm6jwz2io2.png"
+  step3 = Step.new(
+    position:   3,
+    description: "🦶 turn the key to close",
+    status: false,
+    instruction_id: 10,
+    )
+  step3.remote_photo_url = url
+  step3.save!
+
+
+puts 'Finished 3 steps for Closing door!'
+
+
+
 # puts '15. 🍲 Creating "instruction7" - Sara tajine...'
 
 #     instruction7 = Instruction.new(

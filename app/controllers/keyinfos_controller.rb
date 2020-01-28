@@ -4,6 +4,11 @@ class KeyinfosController < ApplicationController
 
   def show
     @keyinfo = Keyinfo.where(id: params[:instruction_id])[0]
+    # perso for chocolate
+    @netflix = Instruction.where(name: "netflix")[0]
+    @hotwater = Instruction.where(name: "hot water")[0]
+    @closingdoor = Instruction.where(name: "closing door")[0]
+
   end
 
   def new           # GET /instructions/:id/keyinfos/new(.:format)

@@ -3,7 +3,7 @@ belongs_to :user
 has_many :steps, dependent: :destroy
 has_many :keyinfos, dependent: :destroy
 
-validates :name, uniqueness: true, presence: true
+validates :name, presence: true
 end
 
 
