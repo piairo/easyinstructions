@@ -2,7 +2,7 @@ class InstructionsController < ApplicationController
 
   def index         # GET /instructions
     @user_instructions = Instruction.where(user_id: current_user)
-    @all_instructions = Instruction.all
+    @all_instructions = Instruction.all.sort_by { |a| a.id }
   end
 
   def show          # GET /instructions/:id

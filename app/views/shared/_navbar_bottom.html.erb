@@ -8,7 +8,7 @@
           <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
 <!--        2) for the home page    -->
         <% elsif @step.nil? %>
-
+          <%= link_to '-------', '#', class: 'btn btn-dark text-dark'%>
         <% else %>
           <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
         <% end %>
@@ -41,7 +41,7 @@
             <%#= link_to "home", homes_for_booking_path(@instruction.name), class: 'btn btn-primary mybutton-lg'%>
 <!--        2) for the home page    -->
           <% if current_page?('/')%>
-          <%= link_to "+create", new_instruction_path, class: 'btn btn-danger' %>
+          <%= link_to "+ create", new_instruction_path, class: 'btn btn-danger' %>
 
           <% elsif current_page?('/chocolate') || current_page?('/netflix') || current_page?('/hotwater') || current_page?('/pancakes') || current_page?('/frontdoor') || current_page?('/pooridge') || current_page?('/')%>
 
