@@ -3,25 +3,28 @@
 
     <h4>My instructions</h4>
     <br>
-    <% @user_instructions.each do |instruction| %>
+ <div class="recettes_cards">
 
-        <div class="container d-flex pl-0 pr-0 justify-content-between">
+       <% @all_instructions.each do |instruction| %>
 
-            <div class="container d-flex align-items-center">
-            <%= cl_image_tag Step.where(instruction_id: instruction.id).last.photo, height:50, width: 50, crop: :fill, class: 'rounded-circle mr-2'%>
+<div class="recette">
+    <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
 
-            <%= link_to ("#{instruction.name.upcase}"), instruction_step_path(instruction.id, 1), style: ' text-align:left; font-weight: bold; color: #f43761' %>
-            </div>
-             <div id="buttons" class="container d-flex justify-content-between m-0 p-0" style="width: 50vw">
-                <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), instruction_steps_path(instruction.id), class: "text-secondary" %>
 
-                <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), instruction_path(instruction.id), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-secondary" %>
+            <%= link_to ("#{instruction.name.upcase}"), instruction_step_path(instruction.id, 1), style: ' text-align:left; font-weight: bold; color: white; margin: 10px; text-shadow: 1px 1px 3px rgba(7,0,5,0.8)' %>
 
-            </div>
-        </div>
+    </div>
 
-      <p class="mt-2 mb-5 text-muted"> <%= instruction.address %></p>
-    <% end %>
+    <div class="recette-buttons">
+            <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), instruction_steps_path(instruction.id), class: "text-primary" %>
+
+            <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), instruction_path(instruction.id), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-danger" %>
+    </div>
+
+  </div>
+      <% end %>
+
+</div>
 
   <% else %>
   <h4>Public instructions</h4>
@@ -33,19 +36,15 @@
 <div class="recette">
     <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
 
-            <%= link_to instruction_step_path(instruction.id, 1) do %>
-   <%= cl_image_tag Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto"  %>
-<% end %>
 
-
-            <%= link_to ("#{instruction.name.upcase}"), instruction_step_path(instruction.id, 1), style: ' text-align:left; font-weight: bold; color: white; margin: 10px; text-shadow: 1px 1px 3px rgba(7,0,5,0.8)' %>
+            <%= link_to ("#{instruction.name.upcase}"), instruction_step_path(instruction.id, 1), style: ' text-align:left; font-weight: bold; color: white; padding: 50px; text-shadow: 1px 1px 3px rgba(7,0,5,0.8)' %>
 
     </div>
 
-    <div class="recette-buttons">
-            <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), instruction_steps_path(instruction.id), class: "text-white" %>
+    <div class="recette-buttons text-secondary" >
 
-            <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), instruction_path(instruction.id), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-white" %>
+      <%= "👣 #{instruction.steps.count} steps" %>
+
     </div>
 
 
