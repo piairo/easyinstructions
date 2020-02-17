@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div class="container mt-2">
   <% if user_signed_in? %>
 
     <h4>My instructions</h4>
@@ -26,29 +26,39 @@
   <% else %>
   <h4>Public instructions</h4>
     <br>
-    <% @all_instructions.each do |instruction| %>
+    <div class="recettes_cards">
 
-    <div class="container d-flex pl-0 pr-0 justify-content-between">
+       <% @all_instructions.each do |instruction| %>
 
-            <div class="container d-flex align-items-center">
-            <%= cl_image_tag Step.where(instruction_id: instruction.id).last.photo, height:50, width: 50, crop: :fill, class: 'rounded-circle mr-2'%>
+<div class="recette">
+    <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
 
-            <%= link_to ("#{instruction.name.upcase}"), instruction_step_path(instruction.id, 1), style: ' text-align:left; font-weight: bold; color: #f43761' %>
-            </div>
+            <%= link_to instruction_step_path(instruction.id, 1) do %>
+   <%= cl_image_tag Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto"  %>
+<% end %>
 
-            <div id="buttons" class="container d-flex justify-content-between m-0 p-0" style="width: 50vw">
-                                <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), instruction_steps_path(instruction.id), class: "text-secondary" %>
 
-                <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), instruction_path(instruction.id), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-secondary" %>
+            <%= link_to ("#{instruction.name.upcase}"), instruction_step_path(instruction.id, 1), style: ' text-align:left; font-weight: bold; color: white; margin: 10px; text-shadow: 1px 1px 3px rgba(7,0,5,0.8)' %>
 
-            </div>
-      <div class="container mb-4 text-muted"> <%= instruction.address %></div>
-  <% end %>
+    </div>
+
+    <div class="recette-buttons">
+            <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), instruction_steps_path(instruction.id), class: "text-white" %>
+
+            <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), instruction_path(instruction.id), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-white" %>
+    </div>
+
+
+  </div>
+
+      <% end %>
+    </div>
+
 
 <% end %>
 
   <div class="mb-5 mt-3 ml-3 pb-5">
-  <%= link_to "+ add instruction",  new_instruction_path(@instruction), class: 'btn btn-danger', style:'width:85vw' %>
+  <%= link_to "+ add instruction",  new_instruction_path(@instruction), class: 'btn btn-danger', style:'width: 100%' %>
   </div>
 
 </div>
