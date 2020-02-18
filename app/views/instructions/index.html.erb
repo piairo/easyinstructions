@@ -3,7 +3,7 @@
 
     <h4 class="m-2">My instructions</h4>
     <br>
-<div class="container p-2">
+<div class="container p-4">
      <div class="recettes_cards">
 
            <% @all_instructions.each do |instruction| %>
@@ -16,7 +16,7 @@
 
         </div>
 
-        <div class="recette-buttons">
+        <div class="recette-buttons p-2">
 
                 <a class="text-secondary"><%= "👣 #{instruction.steps.count} steps" %></a>
 
@@ -37,7 +37,7 @@
 
       <h4 class="m-2">Public instructions</h4>
         <br>
-<div class="container p-2">
+<div class="container p-4">
         <div class="recettes_cards">
 
            <% @all_instructions.each do |instruction| %>
@@ -49,7 +49,7 @@
 
         </div>
 
-        <div class="recette-buttons">
+        <div class="recette-buttons p-2">
 
                 <a class="text-secondary"><%= "👣 #{instruction.steps.count} steps" %></a>
 

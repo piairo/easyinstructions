@@ -12,7 +12,7 @@
   border-radius: 5px 5px 0 0;
   background-size: cover;
   background-position: center;
-  height: 150px;
+  height: 180px;
 }
 
 .recette-buttons{
@@ -28,7 +28,7 @@ justify-content: space-between;
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .recettes_cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
