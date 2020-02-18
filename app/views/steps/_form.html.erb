@@ -43,15 +43,20 @@ DEBUG END -->
     <div class="navbar_bottom fixed-bottom">
 
         <!--   BUTTON BACK  --->
+        <div class="d-flex justify-content-center align-items-center">
         <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light'%>
+        </div>
 
         <%# RESPONSIVE MENU BUTTON%>
-        <div style="text-align: center">
+        <div class="d-flex justify-content-center align-items-center">
           <button class="btn navbar-toggler p-0" data-toggle="canvas" data-target="#bs-canvas-right" aria-expanded="false" aria-controls="bs-canvas-right" style="color: white"><h1 class="fas fa-bars m-0" style="font-size: 2rem"></h1></button>
         </div>
 
+        <div class="d-flex justify-content-center align-items-center">
         <!--   BUTTON SUBMIT  --->
         <%= f.button :submit, class: 'btn btn-primary' %>
+      </div>
+
     </div>
   <% end %>
 </div>
