@@ -1,79 +1,69 @@
-<div class="container mt-2">
+
   <% if user_signed_in? %>
 
-    <h4>My instructions</h4>
+    <h4 class="m-2">My instructions</h4>
     <br>
- <div class="recettes_cards">
+<div class="container p-2">
+     <div class="recettes_cards">
 
-       <% @all_instructions.each do |instruction| %>
+           <% @all_instructions.each do |instruction| %>
 
-<div class="recette">
-    <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
+    <div class="recette">
+        <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
 
 
-            <%= link_to ("#{instruction.name.upcase}"), instruction_step_path(instruction.id, 1), style: ' text-align:left; font-weight: bold; color: white; padding: 50px; text-shadow: 1px 1px 3px rgba(7,0,5,0.8)' %>
+                <%= link_to ("#{instruction.name.upcase}"), instruction_step_path(instruction.id, 1), style: ' text-align:left; font-weight: bold; color: white; padding: 50px; text-shadow: 1px 1px 3px rgba(7,0,5,0.8)' %>
+
+        </div>
+
+        <div class="recette-buttons">
+
+                <a class="text-secondary"><%= "👣 #{instruction.steps.count} steps" %></a>
+
+                <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), instruction_steps_path(instruction.id), class: "text-primary" %>
+
+
+                <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), instruction_path(instruction.id), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-danger" %>
+        </div>
+
+      </div>
+          <% end %>
 
     </div>
-
-    <div class="recette-buttons">
-
-            <a class="text-secondary"><%= "👣 #{instruction.steps.count} steps" %></a>
-
-            <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), instruction_steps_path(instruction.id), class: "text-primary" %>
-
-
-            <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), instruction_path(instruction.id), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-danger" %>
-    </div>
-
-  </div>
-      <% end %>
-
 </div>
 
-  <% else %>
-  <h4>Public instructions</h4>
-    <br>
-    <div class="recettes_cards">
 
-       <% @all_instructions.each do |instruction| %>
-<div class="recette">
-    <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
+      <% else %>
+
+      <h4 class="m-2">Public instructions</h4>
+        <br>
+<div class="container p-2">
+        <div class="recettes_cards">
+
+           <% @all_instructions.each do |instruction| %>
+    <div class="recette">
+        <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
 
 
-            <%= link_to ("#{instruction.name.upcase}"), instruction_step_path(instruction.id, 1), style: ' text-align:left; font-weight: bold; color: white; padding: 50px; text-shadow: 1px 1px 3px rgba(7,0,5,0.8)' %>
+                <%= link_to ("#{instruction.name.upcase}"), instruction_step_path(instruction.id, 1), style: ' text-align:left; font-weight: bold; color: white; padding: 50px; text-shadow: 1px 1px 3px rgba(7,0,5,0.8)' %>
 
-    </div>
+        </div>
 
-    <div class="recette-buttons">
+        <div class="recette-buttons">
 
-            <a class="text-secondary"><%= "👣 #{instruction.steps.count} steps" %></a>
+                <a class="text-secondary"><%= "👣 #{instruction.steps.count} steps" %></a>
 
-    </div>
+        </div>
 
-  </div>
-      <% end %>
-    </div>
+      </div>
+          <% end %>
+        </div>
+</div>
 
-<% end %>
+    <% end %>
 
-  <div class="mb-5 mt-3 ml-3 pb-5">
+  <div class="container mb-5 mt-3 pb-5">
   <%= link_to "+ create",  new_instruction_path(@instruction), class: 'btn btn-danger', style:'width: 100%' %>
   </div>
 
-</div>
-
-<div class="navbar_bottom fixed-bottom">
-
-<!--   BUTTON BACK  --->
-  <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light'%>
-
-<%# RESPONSIVE MENU BUTTON%>
-  <div style="text-align: center">
-    <button class="btn navbar-toggler p-0" data-toggle="canvas" data-target="#bs-canvas-right" aria-expanded="false" aria-controls="bs-canvas-right" style="color: white"><h1 class="fas fa-bars m-0" style="font-size: 2rem"></h1></button>
-  </div>
-
-        <!--   BUTTON ADD INSTRUCTION  --->
-  <%= link_to "+ create",  new_instruction_path(@instruction), class: 'btn btn-danger' %>
-</div>
-
-
+<%= render 'shared/navbar_bottom' %>

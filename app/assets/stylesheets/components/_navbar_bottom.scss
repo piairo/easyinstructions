@@ -1,7 +1,7 @@
 .navbar_bottom {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr .5fr 1fr;
+  grid-gap: 8px;
   height: 68px;
   background-color: $night;
 }

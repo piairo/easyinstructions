@@ -2,13 +2,13 @@
 <div class="navbar_bottom fixed-bottom">
 
   <!--   BUTTON BACK  --->
-    <div>
+    <div class="d-flex justify-content-center align-items-center">
 <!--        1) for the keyinfo page -->
         <% if params[:controller] == 'keyinfos' %>
           <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
 <!--        2) for the home page    -->
         <% elsif @step.nil? %>
-          <%= link_to '-------', '#', class: 'btn btn-dark text-dark'%>
+
         <% else %>
           <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
         <% end %>
@@ -17,7 +17,7 @@
 
 
 <%# RESPONSIVE MENU BUTTON%>
-  <div style="text-align: center">
+  <div class="d-flex justify-content-center align-items-center">
     <button class="btn navbar-toggler p-0" data-toggle="canvas" data-target="#bs-canvas-right" aria-expanded="false" aria-controls="bs-canvas-right" style="color: white"><h1 class="fas fa-bars m-0" style="font-size: 2rem"></h1></button>
 
 <%# KEY INFO BUTTON%>
@@ -34,7 +34,7 @@
 
 
  <!--   BUTTON NEXT  --->
-   <div>
+   <div class="d-flex justify-content-center align-items-center">
 
 <!--        1) for the keyinfo page -->
           <%# if params[:controller] == 'keyinfos' %>
@@ -50,6 +50,9 @@
 
           <%= link_to "home", homes_for_booking_path("chocolate"), class: 'btn btn-primary mybutton-lg'%>
 
+          <% elsif params[:controller] == 'instructions'%>
+
+          <%= link_to "+ create", new_instruction_path, class: 'btn btn-danger' %>
 
 <!--          SEND SMS FOR CHOCOLATE -->
           <% elsif @instruction.name == "chocolate" && @step.position == 5 %>
