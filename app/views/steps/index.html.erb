@@ -36,7 +36,7 @@ START DEBUG
   <p style="color: blue"><%= @order%></p>
  END DEBUG -->
 
-<div class="container ml-2 mt-4">
+<div class="container mt-4">
 
 <ul id="items" style="list-style-type:none; margin:0px; padding:0px"  data-url="<%=instruction_steps_path(@instruction)%>" class="steps-cards">
     <%@steps.each do |step| %>
@@ -47,7 +47,7 @@ START DEBUG
           <h3 class="text-white"> <%="#{step.position}" %> </h3>
         </div>
 
-        <div class="text-muted mr-2 mb-5"> <%= "#{step.description.slice(0,18)}..."%> </div>
+        <div class="text-muted mr-2 mb-5"> <%= "#{step.description.slice(0,17)}..."%> </div>
 
          <div class="step-buttons pt-0">
            <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit</span>"), edit_instruction_step_path(step.instruction_id, step.position), class: "text-primary" %>
