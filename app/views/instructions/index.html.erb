@@ -12,13 +12,13 @@
               <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
 
 
-                  <%= link_to ("#{instruction.name.upcase}"), instruction_step_path(instruction.id, 1), style: 'color: white' %>
+                  <h3><%= link_to ("#{instruction.name.upcase}"), instruction_step_path(instruction.id, 1), style: 'color: white' %></h3>
 
                 <div class="privacy-buttons">
                   <% if instruction.private? %>
-                  <h6 class='badge badge-pill ml-1 text-success'> private 🔐</h6>
+                  <h6 class='ml-1 text-success'> private 🔐</h6>
                   <% else %>
-                  <h6 class='badge badge-pill ml-1 text-danger'> public 👀</h6>
+                  <h6 class='ml-1 text-danger'> public 👀</h6>
                   <% end %>
                 </div>
               </div>
@@ -51,7 +51,7 @@
                 <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
 
 
-                        <%= link_to ("#{instruction.name.upcase}"), instruction_step_path(instruction.id, 1), style: ' text-align:left; font-weight: bold; color: white; padding: 50px; text-shadow: 1px 1px 3px rgba(7,0,5,0.8)' %>
+                        <h2><%= link_to ("#{instruction.name.upcase}"), instruction_step_path(instruction.id, 1), style: ' text-align:left; font-weight: bold; color: white; padding: 50px; text-shadow: 1px 1px 3px rgba(7,0,5,0.8)' %></h2>
 
                 </div>
 
