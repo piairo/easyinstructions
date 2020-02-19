@@ -13,49 +13,59 @@
   background-size: cover;
   background-position: center;
   height: 180px;
+  position: relative;
 }
 
 .recette-buttons{
 display: flex;
 justify-content: space-between;
+padding: 0.5rem;
 }
 
-.recettes_cards {
+.privacy-buttons{
+position: absolute;
+top:5px;
+right:5px;
+}
+
+
+
+.recettes-cards {
     display: grid;
     grid-gap: 16px;
   }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
-  .recettes_cards {
+  .recettes-cards {
     grid-template-columns: 1fr;
   }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  .recettes_cards {
+  .recettes-cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .recettes_cards {
+  .recettes-cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  .recettes_cards {
+  .recettes-cards {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  .recettes_cards {
+  .recettes-cards {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
