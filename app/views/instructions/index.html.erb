@@ -6,7 +6,7 @@
 <div class="container p-4">
      <div class="recettes_cards">
 
-           <% @all_instructions.each do |instruction| %>
+           <% @user_instructions.each do |instruction| %>
 
     <div class="recette">
         <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
@@ -40,7 +40,7 @@
 <div class="container p-4">
         <div class="recettes_cards">
 
-           <% @all_instructions.each do |instruction| %>
+           <% @public_instructions.each do |instruction| %>
     <div class="recette">
         <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
 

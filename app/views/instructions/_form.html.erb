@@ -17,8 +17,12 @@
 
       <%= f.label :'instruction name' %>
       <%= f.text_field :name, class: 'form-control', placeholder:'...', style:"border-color: #FF3760" %>
+
       <%= f.label :'address (optional)', class: "text-secondary mt-5" %>
       <%= f.text_field :address, class: 'form-control'%>
+
+      <%= f.label :'privacy (optional)', class: "text-secondary mt-5" %>
+      <%= f.input :private %>
 
 
     <div class="navbar_bottom fixed-bottom">

@@ -1,7 +1,10 @@
 
 <div class="container ml-3 mt-3 pb-2 border-bottom">
 
-    <h4><%=link_to raw("#{@instruction.name} <span class=\"text-muted\" style=\"font-size:1rem\">(#{@steps.count} steps)</span>"), edit_instruction_path(@instruction), class: 'text-dark', style: 'font-size:1rem'%></h4>
+    <div class="container d-flex align-items-center pl-0">
+        <h6><%=link_to raw("#{@instruction.name} <span class=\"text-muted\" style=\"font-size:1rem\">(#{@steps.count} steps)</span>"), edit_instruction_path(@instruction), class: 'text-dark'%></h6>
+        <h6 class='ml-1 text-success'>  <%= @instruction.private ? "- private" : "- public" %> </h6>
+    </div>
 
     <h7 class="text-muted"><%= @instruction.address %></h7>
 
@@ -58,14 +61,19 @@ START DEBUG
 
 <div class="navbar_bottom fixed-bottom">
 
+
 <!--   BUTTON BACK  --->
+  <div class="d-flex justify-content-center align-items-center">
   <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light'%>
+  </div>
 
 <%# RESPONSIVE MENU BUTTON%>
-  <div style="text-align: center">
+  <div class="d-flex justify-content-center align-items-center">
     <button class="btn navbar-toggler p-0" data-toggle="canvas" data-target="#bs-canvas-right" aria-expanded="false" aria-controls="bs-canvas-right" style="color: white"><h1 class="fas fa-bars m-0" style="font-size: 2rem"></h1></button>
   </div>
 
         <!--   BUTTON ADD STEP  --->
+  <div class="d-flex justify-content-center align-items-center">
   <%= link_to "+ add a step",  new_instruction_step_path(@instruction), class: 'btn btn-primary' %>
+  </div>
 </div>

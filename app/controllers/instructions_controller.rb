@@ -2,6 +2,7 @@ class InstructionsController < ApplicationController
 
   def index         # GET /instructions
     @user_instructions = Instruction.where(user_id: current_user)
+    @public_instructions = Instruction.where(private: false).sort_by { |a| a.id }
     @all_instructions = Instruction.all.sort_by { |a| a.id }
   end
 
@@ -49,7 +50,7 @@ private
   def instruction_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:instruction).permit(:name, :address)
+    params.require(:instruction).permit(:name, :address, :private)
   end
 end
 
