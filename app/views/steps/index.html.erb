@@ -1,5 +1,5 @@
 
-<div class="container ml-3 mt-3 pb-2 border-bottom">
+<div class="container ml-2 mt-3 pb-2 border-bottom">
 
     <div class="container d-flex justify-content-between pl-0">
         <h6><%=link_to raw("#{@instruction.name} <span class=\"text-muted\" style=\"font-size:1rem\">(#{@steps.count} steps)</span>"), edit_instruction_path(@instruction), class: 'text-dark'%>
@@ -36,7 +36,7 @@ START DEBUG
   <p style="color: blue"><%= @order%></p>
  END DEBUG -->
 
-<div class="container mt-4">
+<div class="container pt-4" style="background-color: aliceblue">
 
 <ul id="items" style="list-style-type:none; margin:0px; padding:0px"  data-url="<%=instruction_steps_path(@instruction)%>" class="steps-cards">
     <%@steps.each do |step| %>
