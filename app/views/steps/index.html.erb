@@ -47,11 +47,11 @@ START DEBUG
           <h3 class="text-white"> <%="#{step.position}" %> </h3>
         </div>
 
-        <div class="text-muted mr-2 mb-5"> <%= "#{step.description.slice(0,17)}..."%> </div>
+        <div class="text-muted mr-2 pb-2 mb-4" style="font-size: 0.7rem"> <%= "#{step.description.slice(0,17)}..."%> </div>
 
          <div class="step-buttons pt-0">
-           <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit</span>"), edit_instruction_step_path(step.instruction_id, step.position), class: "text-primary" %>
-             <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), instruction_step_path(step.instruction_id, step.position), data: { confirm: "Are you sure you want to delete?" }, method: :delete, class: "text-danger"%>
+           <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit</span>"), edit_instruction_step_path(step.instruction_id, step.position), class: "text-primary", style: "font-size: 0.7rem" %>
+             <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), instruction_step_path(step.instruction_id, step.position), data: { confirm: "Are you sure you want to delete?" }, method: :delete, class: "text-danger", style: "font-size: 0.7rem"%>
         </div>
       </li>
     <% end %>
