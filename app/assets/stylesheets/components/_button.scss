@@ -47,8 +47,9 @@
   width: 15vmax;
 
         &.home {
- padding: 1vh;
+ padding: 3vh;
  width: 60%;
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
         &.auto {
