@@ -1,7 +1,10 @@
 .banner {
-    // background-image: url('https://images.unsplash.com/photo-1499428665502-503f6c608263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2400&q=80');
-    max-width: 96%;
-    color: #4a4a4a;
+    // background-image: url(./logo_easyinstructions4_large.png);
+   // background: linear-gradient(150deg,rgba(0,0,0,0.7) 0%,transparent 80%);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 40vh;
     text-align: center;
     padding-top: 10vmax;
   }
@@ -12,6 +15,31 @@
   font-weight: bold;
 
 }
+
+.wave
+{
+  width: 100%;
+  position: relative;
+  background: linear-gradient(150deg, gray, black);
+  color: white;
+  height: 20vmax;
+  text-align: center;
+  padding-top: 5vmax;
+}
+
+.wave::before
+{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: url(wave2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 
   h1 {
     font-size: 3.2vmax;
