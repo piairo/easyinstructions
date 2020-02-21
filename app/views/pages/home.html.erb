@@ -1,17 +1,22 @@
 <%= render 'shared/navbar_wagon' %>
-<!-- <div class="banner mt-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path 'logo_easyinstructions4_large.png';%>');"> -->
+<!-- <div class="banner mt-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path 'logo_easyinstructions4_large.png'%>');"> -->
 
-  <div class= "wave">
+  <div class= "wave-video">
+          <%= cl_video_tag("1037365913-preview_mcuded", :loop => true, :autoplay => true, muted: true, :width=>414, :fallback_content => "Your browser does not support HTML5 video tags") %>
+  <div class=wave-transparent style="background-image: url('<%= image_path 'wave2.png' %>');"></div>
+
+          <div class="container wave-video-text">
           <h1><span><strong>instructions</strong></span></h1>
-          <h4>step by <span id="typed" data-strings="<%= ["step"].to_json  %>" data-speed="150" data-loop="true" style="display: inline; color:#f43761"></span></h4>
+          <h4 style="text-shadow: 1px 1px 3px rgba(7,0,5,0.8)">step by <span id="typed" data-strings="<%= ["step"].to_json  %>" data-speed="150" data-loop="true" style="display: inline; color:#f43761"></span></h4>
+          </div>
 
 </div>
 
-  <div class="container d-flex align-items-center justify-content-center" style='height: 30vh'>
+  <div class="container d-flex align-items-center justify-content-center" style='height: 45vh'>
 <%#= link_to new_instruction_path do %>
     <%#= image_tag "logo_easyinstructions4_large.png", id:"travelers",class:"img-fluid mt-5 mb-5"%>
     <%# end %>
-    <%= link_to "🔍 search", instructions_path, class: 'btn btn-primary mybutton-lg home' %>
+    <%= link_to "🔍 search", instructions_path, class: 'btn btn-danger mybutton-lg home' %>
 
   </div>
 
