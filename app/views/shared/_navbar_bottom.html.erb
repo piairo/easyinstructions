@@ -10,7 +10,7 @@
         <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
 
         <% else %>
-          <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light'%>
+          <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
         <% end %>
     </div>
 
@@ -52,7 +52,7 @@
 
           <% elsif params[:controller] == 'instructions'%>
 
-          <%= link_to "+ create", new_instruction_path, class: 'btn btn-danger' %>
+          <%= link_to "+create", new_instruction_path, class: 'btn btn-danger mybutton-lg' %>
 
 <!--          SEND SMS FOR CHOCOLATE -->
           <% elsif @instruction.name == "chocolate" && @step.position == 5 %>

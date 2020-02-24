@@ -48,7 +48,7 @@ if (document.querySelector("#trigger")) {
   initTrigger();
 }
 
-//BLINK MODE (home button)
+// BLINK MODE (home button)
 import { initBlink } from'../plugins/init_blink.js';
 
 if (document.querySelector("#blinkbutton")) {

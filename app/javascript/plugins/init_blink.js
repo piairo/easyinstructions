@@ -7,8 +7,8 @@ blinking($("#blinkbutton"));
 function blinking(elm) {
     timer = setInterval(blink, 10);
     function blink() {
-        elm.fadeOut(600, function() {
-           elm.fadeIn(600);
+        elm.fadeOut(700, function() {
+           elm.fadeIn(700);
         });
     }
 }
