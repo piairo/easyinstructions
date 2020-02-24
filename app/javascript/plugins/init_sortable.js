@@ -31,6 +31,7 @@ const initSortable = () => {
      * @param {Sortable}  sortable
      */
     set: function (sortable) {
+
       var order = sortable.toArray();
       localStorage.setItem(sortable.options.group.name, order.join('|'));
 
@@ -45,6 +46,7 @@ const initSortable = () => {
   // console.log(sortable.el.children[0].dataset);
   // console.log(sortable.el.children[0].childElementCount);
   // console.log(sortable.el.children[0].baseURI);
+
       console.log(order);
       // ["step_2", "step_3", "step_1", "step_4", "step_5", "step_6", "step_7"]
       var order_by_id = [];

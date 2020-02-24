@@ -35,12 +35,25 @@ initUpdateNavbarOnScroll();
 //SORTABLE
 import { initSortable } from'../plugins/init_sortable.js';
 
-const trigger = document.querySelector("#trigger");
+const initTrigger = () => {
+   const trigger = document.querySelector("#trigger");
   trigger.addEventListener("click", event => {
   event.preventDefault();
   alert('you can now drag and drop');
   initSortable();
-})
+  })
+};
+
+if (document.querySelector("#trigger")) {
+  initTrigger();
+}
+
+//BLINK MODE (home button)
+import { initBlink } from'../plugins/init_blink.js';
+
+if (document.querySelector("#blinkbutton")) {
+  initBlink();
+}
 
 
 

@@ -3,7 +3,7 @@
 <div class="container pt-3">
   <h4>Create instruction</h4>
   <br>
-  <%= simple_form_for(@instruction) do |f| %>
+  <%= form_for (@instruction) do |f| %>
   <% if @instruction.errors.any? %>
     <div class="errors-container" style="color: #f43761">
       <ul>
@@ -15,6 +15,7 @@
   <% end %>
 
 
+
       <%= f.label :'instruction name' %>
       <%= f.text_field :name, class: 'form-control', placeholder:'...', style:"border-color: #FF3760" %>
 
@@ -22,7 +23,11 @@
       <%= f.text_field :address, class: 'form-control'%>
 
       <%= f.label :'privacy (optional)', class: "text-secondary mt-5" %>
-      <%= f.input :private %>
+
+      <div class="custom-control custom-switch">
+        <%= f.check_box :private, class: 'custom-control-input', id: 'customSwitch1' %>
+        <%= f.label :'private', for: 'customSwitch1', class: 'custom-control-label text-secondary' %>
+      </div>
 
 
     <div class="navbar_bottom fixed-bottom">
