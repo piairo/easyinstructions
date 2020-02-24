@@ -4,9 +4,9 @@
   <!--   BUTTON BACK  --->
     <div class="d-flex justify-content-center align-items-center">
 <!--        1) for the home page -->
-        <% if current_page?('/') %>
+        <% if current_page?('/chocolate') || current_page?('/netflix') || current_page?('/hotwater') || current_page?('/pancakes') || current_page?('/frontdoor') || current_page?('/pooridge') || current_page?('/') %>
 
-        <% elsif @step %>
+        <% elsif @step || params[:controller] == 'keyinfos' %>
         <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
 
         <% else %>

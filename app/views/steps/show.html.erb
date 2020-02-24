@@ -1,12 +1,60 @@
-<!-- TITLE -->
-    <header>
+<!-- ORIGINAL -->
+  <header>
+    <h1 id="typed" data-strings="<%= ([] << @step.description).to_json %>" data-speed="100" data-loop="false" style="color: #f43761; display: inline;"></h1>
+  </header>
 
-        <h1 id="typed" data-strings="<%= ([] << @step.description).to_json %>" data-speed="100" data-loop="false" style="color: #f43761; display: inline;"></h1>
-    </header>
-
-
+<!--
   <div class="main-content" style="background-image: url('<%= cl_image_path @step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
+  </div> -->
+
+<!-- CAROUSEL -->
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false" data-touch="true">
+
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <% qty = 0 %>
+          <%(@steps.length - 1).times do%>
+          <% qty += 1 %>
+    <li data-target="#carouselExampleIndicators" data-slide-to="<%="#{qty}"%>"></li>
+          <% end %>
+  </ol>
+
+  <div class="carousel-inner">
+
+     <div class="main-content carousel-item active" style="background-image: url('<%= cl_image_path @step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')" alt="first slide">
+
+
+          <div class="carousel-caption d-none d-md-block">
+          <h1 id="typed" data-strings="<%= ([] << @step.description).to_json %>" data-speed="100" data-loop="false" style="color: #f43761; display: inline;"></h1>
+          </div>
+
+    </div>
+
+    <% @steps.drop(1).each do |step| %>
+     <div class="main-content carousel-item" style="background-image: url('<%= cl_image_path step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')" alt="first slide">
+
+      <div class="carousel-caption d-none d-md-block">
+            <h5> testx </h5>
+            <p> lalalaa</p>
+      </div>
+    </div>
+    <% end %>
   </div>
+
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+<!-- NAVBAR BOTTOM -->
 
 <%= render 'shared/navbar_bottom' %>
 
