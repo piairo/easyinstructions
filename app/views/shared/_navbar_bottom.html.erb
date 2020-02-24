@@ -3,14 +3,14 @@
 
   <!--   BUTTON BACK  --->
     <div class="d-flex justify-content-center align-items-center">
-<!--        1) for the keyinfo page -->
-        <% if params[:controller] == 'keyinfos' %>
-          <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
-<!--        2) for the home page    -->
-        <% elsif @step.nil? %>
+<!--        1) for the home page -->
+        <% if current_page?('/') %>
+
+        <% elsif @step %>
+        <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
 
         <% else %>
-          <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
+          <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light'%>
         <% end %>
     </div>
 

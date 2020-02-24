@@ -1,24 +1,28 @@
 <%= render 'shared/navbar_wagon' %>
 
-<div class="banner">  <!-- HOME(s)FOR BOOKING Guest-->
+<div class="banner mb-3">  <!-- HOME(s)FOR BOOKING Guest-->
 
       <h3 style="display: inline" id="typed" data-strings="<%= ["step by step"].to_json  %>" data-speed="150" data-loop="true"></h3>
 
   <br>
 
-  <div class="row justify-content-center mb-4">
+  <div class="row justify-content-center mt-3">
     <%= link_to instruction_step_path(@instruction.id, 1) do %>
     <%= image_tag "logo_easyinstructions4_large.png", id:"home-img"%>
     <% end %>
   </div>
 
 
-  <div class="row justify-content-center">
-    <%= link_to "Check-in", instruction_step_path(@instruction.id, 1), class: 'btn btn-danger mybutton-lg home', id: 'blink' %>
-  </div>
+  <div class="container d-flex align-items-center justify-content-center" style='height: 25vh'>
 
-  <div class="row justify-content-center mt-2">
-    <%= link_to "house manual", instruction_keyinfo_path(@instruction, 1), class: 'btn btn-secondary mybutton-sm home'%>
+
+    <%= link_to "Check-in", instruction_step_path(@instruction.id, 1), class: 'btn btn-danger mybutton-lg home', id: 'blinkbutton' %>
+      </div>
+
+  <div class="container d-flex align-items-center justify-content-center">
+
+  <%= link_to "house manual", instruction_keyinfo_path(@instruction, 1), class: 'btn btn-secondary mybutton-sm home'%>
+
   </div>
 
 </div>
