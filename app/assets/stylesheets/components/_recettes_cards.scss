@@ -4,6 +4,10 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.recette a:hover {
+ text-decoration: none;
+}
+
 
 .recette-image {
   display: flex;
@@ -20,6 +24,9 @@
   font-weight: bold;
   padding: 20px
 }
+
+
+
 
 .recette-buttons{
 display: flex;
