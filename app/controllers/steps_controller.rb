@@ -74,7 +74,7 @@ class StepsController < ApplicationController
 
   def destroy       # DELETE /instructions/:instruction_id/steps/:position(.:format)
     @step.destroy
-    redirect_to instruction_steps_path(@instruction, @step)
+    redirect_to instruction_steps_path(@instruction)
   end
 
   private

@@ -42,7 +42,7 @@ class InstructionsController < ApplicationController
   def destroy       # DELETE /instructions/:id
     @instruction = Instruction.find(params[:id])
     @instruction.destroy
-    redirect_to instruction_path(@instruction)
+    redirect_to instructions_path
   end
 
 private

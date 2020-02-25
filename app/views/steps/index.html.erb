@@ -59,7 +59,7 @@ START DEBUG
 </div>
 
   <div class="container ml-3 mb-5 mt-3 pb-5">
-  <%= link_to "+ add a step",  new_instruction_step_path(@instruction), class: 'btn btn-primary' %>
+  <%= link_to "+ add a step",  new_instruction_step_path(@instruction), class: 'badge badge-pill badge-primary' %>
   </div>
 
 
@@ -71,7 +71,7 @@ START DEBUG
 
 <!--   BUTTON BACK  --->
   <div class="d-flex justify-content-center align-items-center">
-  <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light'%>
+  <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
   </div>
 
 <%# RESPONSIVE MENU BUTTON%>
@@ -81,6 +81,6 @@ START DEBUG
 
         <!--   BUTTON ADD STEP  --->
   <div class="d-flex justify-content-center align-items-center">
-  <%= link_to "+ add a step",  new_instruction_step_path(@instruction), class: 'btn btn-primary' %>
+  <%= link_to "+ add",  new_instruction_step_path(@instruction), class: 'btn btn-primary mybutton-lg' %>
   </div>
 </div>

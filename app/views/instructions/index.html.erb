@@ -8,13 +8,11 @@
 
         <% @user_instructions.each do |instruction| %>
 
-
-
           <div class="recette">
 
-              <%= link_to instruction_step_path(instruction.id, 1) do %>
+            <% if Step.where(instruction_id: instruction.id).last && Step.where(instruction_id: instruction.id).last.photo?  %>
 
-                        <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
+                        <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto",:default_image => "logo_easyinstructions4_small.png" %>')">
 
 
                             <h3> <%= instruction.name.downcase %></h3>
@@ -27,8 +25,27 @@
                             <% end %>
                           </div>
                         </div>
+            <% else %>
+
+
+              <%= link_to instruction_step_path(instruction.id, 1) do %>
+
+                                    <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../images/logo_easyinstructions4_large.png')">
+
+                            <h3> <%= instruction.name.downcase %></h3>
+
+                          <div class="privacy-buttons">
+                            <% if instruction.private? %>
+                            <h6 class='ml-1 text-success'> private 🔐</h6>
+                            <% else %>
+                            <h6 class='ml-1 text-danger'> public 👀</h6>
+                            <% end %>
+                          </div>
+                        </div>
+
               <% end %>
 
+            <% end %>
               <div class="recette-buttons">
 
                 <a class="text-secondary"><%= "👣 #{instruction.steps.count} steps" %></a>
@@ -49,33 +66,69 @@
       <% else %>
 
       <h4 class="m-2">Public instructions</h4>
-        <br>
+     <br>
 <div class="container p-5" style="background-color: aliceblue">
-        <div class="recettes-cards">
-           <% @public_instructions.each do |instruction| %>
-            <div class="recette">
-                <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
+     <div class="recettes-cards">
+
+        <% @public_instructions.each do |instruction| %>
+
+          <div class="recette">
+
+            <% if Step.where(instruction_id: instruction.id).last && Step.where(instruction_id: instruction.id).last.photo?  %>
+
+                        <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto",:default_image => "logo_easyinstructions4_small.png" %>')">
 
 
-                        <h3><%= link_to ("#{instruction.name.downcase}"), instruction_step_path(instruction.id, 1), style: 'color: white' %></h3>
+                            <h3> <%= instruction.name.downcase %></h3>
 
-                </div>
+                          <div class="privacy-buttons">
+                            <% if instruction.private? %>
+                            <h6 class='ml-1 text-success'> private 🔐</h6>
+                            <% else %>
+                            <h6 class='ml-1 text-danger'> public 👀</h6>
+                            <% end %>
+                          </div>
+                        </div>
+            <% else %>
 
-                <div class="recette-buttons">
-                    <h6 class="text-secondary"><%= "👣 #{instruction.steps.count} steps" %></h6>
-                    <a class="fas fa-share text-primary"></a>
 
-                </div>
+              <%= link_to instruction_step_path(instruction.id, 1) do %>
+
+                                    <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../images/logo_easyinstructions4_large.png')">
+
+                            <h3> <%= instruction.name.downcase %></h3>
+
+                          <div class="privacy-buttons">
+                            <% if instruction.private? %>
+                            <h6 class='ml-1 text-success'> private 🔐</h6>
+                            <% else %>
+                            <h6 class='ml-1 text-danger'> public 👀</h6>
+                            <% end %>
+                          </div>
+                        </div>
+
+              <% end %>
+
+            <% end %>
+              <div class="recette-buttons">
+
+                <a class="text-secondary"><%= "👣 #{instruction.steps.count} steps" %></a>
+
+                  <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), instruction_steps_path(instruction.id), class: "text-primary" %>
+
+
+                  <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), instruction_path(instruction.id), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-danger" %>
+              </div>
 
             </div>
-          <% end %>
-        </div>
-</div>
 
+          <% end %>
+    </div>
+</div>
     <% end %>
 
   <div class="container mb-5 mt-3 pb-5">
-  <%= link_to "+ create",  new_instruction_path(@instruction), class: 'btn btn-danger', style:'width: 100%' %>
+  <%= link_to "+ create",  new_instruction_path(@instruction), class: 'badge badge-pill badge-danger', style:'width: 100%' %>
   </div>
 
 <%= render 'shared/navbar_bottom' %>
