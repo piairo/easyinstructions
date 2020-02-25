@@ -52,6 +52,12 @@
 box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+        &.home:hover {
+  background: light-red;
+  color: white;
+  border: none;
+
+}
         &.auto {
  padding: 1vh;
  width: auto;

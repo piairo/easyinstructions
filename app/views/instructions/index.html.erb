@@ -8,20 +8,26 @@
 
         <% @user_instructions.each do |instruction| %>
 
+
+
           <div class="recette">
-              <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
+
+              <%= link_to instruction_step_path(instruction.id, 1), :action => 'go' do %>
+
+                        <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
 
 
-                  <h3><%= link_to ("#{instruction.name.downcase}"), instruction_step_path(instruction.id, 1), style: 'color: white' %></h3>
+                            <h3> <%= instruction.name.downcase %></h3>
 
-                <div class="privacy-buttons">
-                  <% if instruction.private? %>
-                  <h6 class='ml-1 text-success'> private 🔐</h6>
-                  <% else %>
-                  <h6 class='ml-1 text-danger'> public 👀</h6>
-                  <% end %>
-                </div>
-              </div>
+                          <div class="privacy-buttons">
+                            <% if instruction.private? %>
+                            <h6 class='ml-1 text-success'> private 🔐</h6>
+                            <% else %>
+                            <h6 class='ml-1 text-danger'> public 👀</h6>
+                            <% end %>
+                          </div>
+                        </div>
+              <% end %>
 
               <div class="recette-buttons">
 
