@@ -12,6 +12,8 @@
 
             <% if Step.where(instruction_id: instruction.id).last && Step.where(instruction_id: instruction.id).last.photo?  %>
 
+               <%= link_to instruction_step_path(instruction.id, 1) do %>
+
                         <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto",:default_image => "logo_easyinstructions4_small.png" %>')">
 
 
@@ -25,6 +27,8 @@
                             <% end %>
                           </div>
                         </div>
+              <% end %>
+
             <% else %>
 
 
@@ -66,8 +70,8 @@
       <% else %>
 
       <h4 class="m-2">Public instructions</h4>
-     <br>
-<div class="container p-5" style="background-color: aliceblue">
+     <<br>
+<div class="container p-4" style="background-color: aliceblue">
      <div class="recettes-cards">
 
         <% @public_instructions.each do |instruction| %>
@@ -75,6 +79,8 @@
           <div class="recette">
 
             <% if Step.where(instruction_id: instruction.id).last && Step.where(instruction_id: instruction.id).last.photo?  %>
+
+               <%= link_to instruction_step_path(instruction.id, 1) do %>
 
                         <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto",:default_image => "logo_easyinstructions4_small.png" %>')">
 
@@ -89,6 +95,8 @@
                             <% end %>
                           </div>
                         </div>
+              <% end %>
+
             <% else %>
 
 

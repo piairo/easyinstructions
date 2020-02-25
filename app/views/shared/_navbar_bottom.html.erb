@@ -9,6 +9,9 @@
         <% elsif @step || params[:controller] == 'keyinfos' %>
         <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
 
+        <% elsif @step || params[:controller] == 'instructions' %>
+        <%= link_to 'Back', root_path, class: 'btn mybutton-light mybutton-lg'%>
+
         <% else %>
           <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
         <% end %>
