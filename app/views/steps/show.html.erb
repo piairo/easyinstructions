@@ -27,7 +27,7 @@
 
 
           <div class="carousel-caption d-md-block ">
-          <header><h1 style="color: #f43761"> <%= @step.description %> </h1></header>
+          <header><h1 class="text-success"> <%= @step.description %> </h1></header>
           </div>
 
     </div>
@@ -36,7 +36,7 @@
      <div class="main-content carousel-item" style="background-image: url('<%= cl_image_path step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')" alt="first slide">
 
       <div class="carousel-caption d-md-block">
-            <header><h1 style="color: #f43761"> <%= step.description %> </h1></header>
+            <header><h1 class="text-success"> <%= step.description %> </h1></header>
       </div>
     </div>
     <% end %>

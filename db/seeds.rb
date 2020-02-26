@@ -105,7 +105,7 @@ puts '3. ➡️ Creating "7 steps" - for chocolate ...'
  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929955/Seeds/del2lrcpygfipqnahlep.png"
  step7 = Step.new(
     position:   7,
-    description: " ☕ you live in fron of the best coffee in town",
+    description: " ☕ you live in front of the best coffee in town",
     status: false,
     instruction_id: 1,
     )
