@@ -56,7 +56,11 @@ if (document.querySelector("#blinkbutton")) {
 }
 
 
-
+// FULL SCREEN MODE (Step caroussels)
+import { initFullScreen } from'../plugins/init_FullScreen.js';
+if (document.querySelector("#carouselExampleIndicators")) {
+  initFullScreen();
+}
 
 
 
