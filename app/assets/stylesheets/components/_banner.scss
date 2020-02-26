@@ -20,7 +20,22 @@
 .wave-video
 {
   position: relative;
+  margin-top-top: 54px;
   // background: linear-gradient(150deg, gray, black);
+
+}
+
+.wave-photo
+{
+  background: linear-gradient(150deg, gray, black);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 35vh;
+  text-align: center;
+  margin-top: 54px;
+  position: relative;
+
 
 }
 
@@ -30,7 +45,7 @@
   padding-top: 5vmax;
   width: 100%;
   position: absolute;
-  bottom: 17px;
+  bottom: 100px;
   left: 0;
   width: 100%;
 }
@@ -50,7 +65,7 @@
 {
   // content: '';
   position: absolute;
-  bottom: 6px;
+  bottom: 0px;
   left: 0;
   width: 100%;
   height: 20px;

@@ -1,8 +1,11 @@
 <%= render 'shared/navbar_wagon' %>
 <!-- <div class="banner mt-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path 'logo_easyinstructions4_large.png'%>');"> -->
 
-  <div class= "wave-video">
-          <%= cl_video_tag("1037365913-preview_mcuded", :loop => true, :autoplay => true, muted: true, :width=>414, :fallback_content => "Your browser does not support HTML5 video tags") %>
+  <!-- <div class= "wave-video">
+          <%= cl_video_tag("1037365913-preview_mcuded", :loop => true, :autoplay => true, muted: true, :width=>414, :fallback_content => "Your browser does not support HTML5 video tags") %> -->
+
+ <div class="wave-photo">
+
   <div class=wave-transparent style="background-image: url('<%= image_path 'wave2.png' %>');"></div>
 
           <div class="container wave-video-text">
@@ -12,7 +15,7 @@
 
 </div>
 
-  <div class="container d-flex align-items-center justify-content-center" style='height: 45vh'>
+  <div class="container d-flex align-items-center justify-content-center" style='height: 40vh'>
 <%#= link_to new_instruction_path do %>
     <%#= image_tag "logo_easyinstructions4_large.png", id:"travelers",class:"img-fluid mt-5 mb-5"%>
     <%# end %>
