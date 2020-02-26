@@ -1,8 +1,8 @@
 <!-- ORIGINAL -->
-  <header>
+<!--   <header>
     <h1 id="typed" data-strings="<%= ([] << @step.description).to_json %>" data-speed="100" data-loop="false" style="color: #f43761; display: inline;"></h1>
   </header>
-
+ -->
 <!--
   <div class="main-content" style="background-image: url('<%= cl_image_path @step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
   </div> -->
@@ -26,8 +26,8 @@
      <div class="main-content carousel-item active" style="background-image: url('<%= cl_image_path @step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')" alt="first slide">
 
 
-          <div class="carousel-caption d-none d-md-block">
-          <h1 id="typed" data-strings="<%= ([] << @step.description).to_json %>" data-speed="100" data-loop="false" style="color: #f43761; display: inline;"></h1>
+          <div class="carousel-caption d-md-block ">
+          <header><h1 style="color: #f43761"> <%= @step.description %> </h1></header>
           </div>
 
     </div>
@@ -35,9 +35,8 @@
     <% @steps.drop(1).each do |step| %>
      <div class="main-content carousel-item" style="background-image: url('<%= cl_image_path step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')" alt="first slide">
 
-      <div class="carousel-caption d-none d-md-block">
-            <h5> testx </h5>
-            <p> lalalaa</p>
+      <div class="carousel-caption d-md-block">
+            <header><h1 style="color: #f43761"> <%= step.description %> </h1></header>
       </div>
     </div>
     <% end %>
@@ -54,8 +53,28 @@
 </div>
 
 
-<!-- NAVBAR BOTTOM -->
-
 <%= render 'shared/navbar_bottom' %>
+
+<!-- NAVBAR BOTTOM FOR CARROUSEL
+<div class="navbar_bottom fixed-bottom">
+
+      <div class="d-flex justify-content-center align-items-center">
+
+          <a class="btn mybutton-light mybutton-lg" href="#carouselExampleIndicators" role="button" data-slide="prev">Back</a>
+      </div>
+
+
+      <div class="d-flex justify-content-center align-items-center">
+        <button class="btn navbar-toggler p-0" data-toggle="canvas" data-target="#bs-canvas-right" aria-expanded="false" aria-controls="bs-canvas-right" style="color: white"><h1 class="fas fa-bars m-0" style="font-size: 2rem"></h1></button>
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center">
+
+        <a class="btn btn-primary mybutton-lg" href="#carouselExampleIndicators" role="button" data-slide="next">Next</a>
+      </div>
+
+</div> -->
+
+
 
 

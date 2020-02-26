@@ -7,10 +7,11 @@
         <% if current_page?('/chocolate') || current_page?('/netflix') || current_page?('/hotwater') || current_page?('/pancakes') || current_page?('/frontdoor') || current_page?('/pooridge') || current_page?('/') %>
 
         <% elsif @step || params[:controller] == 'keyinfos' %>
-        <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
+      <!--  NO need for carousel
+        <%= link_to 'home', root_path, class: 'btn mybutton-light2 mybutton-lg'%> -->
 
         <% elsif @step || params[:controller] == 'instructions' %>
-        <%= link_to 'Back', root_path, class: 'btn mybutton-light mybutton-lg'%>
+        <%= link_to 'Home', root_path, class: 'btn mybutton-light2 mybutton-lg'%>
 
         <% else %>
           <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
@@ -67,10 +68,11 @@
 
 
           <% elsif @step.position == @instruction.steps.count %>
-          <%= link_to "home", root_path, class: 'btn btn-primary mybutton-lg'%>
+          <%= link_to "close", root_path, class: 'btn btn-success mybutton-lg'%>
 
           <% else %>
-            <%= link_to "next", instruction_step_path(@instruction, @step.position.to_i + 1), class: 'btn btn-danger mybutton-lg' %>
+          <!-- No need for carousel
+            <%= link_to "close", root_path, class: 'btn btn-success mybutton-lg' %> -->
           <% end %>
     </div>
 

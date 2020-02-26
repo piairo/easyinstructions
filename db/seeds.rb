@@ -564,7 +564,7 @@ puts 'Finished to create "instruction5"- Amani soup !'
 
 
 puts separator
-puts '12. ➡️ Creating "18steps" - for Amani soup...'
+puts '12. ➡️ Creating "17steps" - for Amani soup...'
 
 url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/9b80666f-01d4-4825-a0e0-a012694afc7c_sszb1z.jpg"
       step1 = Step.new(
@@ -638,50 +638,53 @@ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/9b806
       step7.remote_photo_url = url
       step7.save!
 
-      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068235/Seeds/16cf7e8b-2b9e-4e3c-ad36-90c585069999_mhkefo.jpg"
+
+
+      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068235/Seeds/88a24d08-c112-4ba0-8fd4-ce086782e85a_gaqw7z.jpg"
       step8= Step.new(
         position:   8,
-        description: "🦶 at this point this is ready",
+        description: "🥔+🍠 take 2 potatoes",
         status: false,
         instruction_id: 5,
         )
       step8.remote_photo_url = url
       step8.save!
 
-      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068235/Seeds/88a24d08-c112-4ba0-8fd4-ce086782e85a_gaqw7z.jpg"
+      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068235/Seeds/b2489bd3-2e21-4486-a137-28f90371adb1_xtsadm.jpg"
       step9= Step.new(
         position:   9,
-        description: "🥔+🍠 take 2 potatoes",
+        description: "🔪 cut in cubes",
         status: false,
         instruction_id: 5,
         )
       step9.remote_photo_url = url
       step9.save!
 
-      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068235/Seeds/b2489bd3-2e21-4486-a137-28f90371adb1_xtsadm.jpg"
+      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068235/Seeds/2667e1e8-0498-4d04-9669-12139635b58c_chxh4l.jpg"
       step10= Step.new(
         position:   10,
-        description: "🔪 cut in cubes",
+        description: "🦶 cook with onions and carrots",
         status: false,
         instruction_id: 5,
         )
       step10.remote_photo_url = url
       step10.save!
 
-      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068235/Seeds/2667e1e8-0498-4d04-9669-12139635b58c_chxh4l.jpg"
+      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068235/Seeds/16e6d03f-e5d1-4a43-a399-7000b1ecc53b_dzdris.jpg"
       step11= Step.new(
         position:   11,
-        description: "🦶 cook with onions and carrots",
+        description: "🦶 poor half a cup of lentils",
         status: false,
         instruction_id: 5,
         )
       step11.remote_photo_url = url
       step11.save!
 
-      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068235/Seeds/16e6d03f-e5d1-4a43-a399-7000b1ecc53b_dzdris.jpg"
+
+      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/7124f56b-dc62-4665-8298-b304e8a6085b_ns2txj.jpg"
       step12= Step.new(
         position:   12,
-        description: "🦶 poor half a cup of lentils",
+        description: "🦶 wash them with water",
         status: false,
         instruction_id: 5,
         )
@@ -689,10 +692,10 @@ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/9b806
       step12.save!
 
 
-      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/7124f56b-dc62-4665-8298-b304e8a6085b_ns2txj.jpg"
+      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/2bbdfeb7-9256-4350-a30a-9d6208b92f28_fzg5qn.jpg"
       step13= Step.new(
         position:   13,
-        description: "🦶 wash them with water",
+        description: "🦶 add lentils to potatoes",
         status: false,
         instruction_id: 5,
         )
@@ -700,59 +703,48 @@ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/9b806
       step13.save!
 
 
-      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/2bbdfeb7-9256-4350-a30a-9d6208b92f28_fzg5qn.jpg"
+      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068233/Seeds/82b9c3f4-4c6d-435d-bc4c-6f25a8c0451e_yhuvrh.jpg"
       step14= Step.new(
         position:   14,
-        description: "🦶 add lentils to potatoes",
+        description: "⌛ cook 1h with water",
         status: false,
         instruction_id: 5,
         )
       step14.remote_photo_url = url
       step14.save!
 
-
-      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068233/Seeds/82b9c3f4-4c6d-435d-bc4c-6f25a8c0451e_yhuvrh.jpg"
+      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/863c871d-8a3b-4a75-92c5-753377505f53_cqgxmp.jpg"
       step15= Step.new(
         position:   15,
-        description: "⌛ cook 1h with water",
+        description: "🦶 add Turmeric + Cumin ",
         status: false,
         instruction_id: 5,
         )
       step15.remote_photo_url = url
       step15.save!
 
-      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/863c871d-8a3b-4a75-92c5-753377505f53_cqgxmp.jpg"
+
+      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582714662/Seeds/IMG_3866_f4rrbm.jpg"
       step16= Step.new(
         position:   16,
-        description: "🦶 add Turmeric + Cumin ",
+        description: "🦶 mix everything",
         status: false,
         instruction_id: 5,
         )
       step16.remote_photo_url = url
       step16.save!
 
-
-      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580070004/Seeds/IMG_3866_fu4l37.heic"
+            url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068249/Seeds/lentille-soup_e7sqch.jpg"
       step17= Step.new(
         position:   17,
-        description: "🦶 mix everything",
+        description: "🎉 enjoy a healthy soup!",
         status: false,
         instruction_id: 5,
         )
       step17.remote_photo_url = url
       step17.save!
 
-            url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068249/Seeds/lentille-soup_e7sqch.jpg"
-      step18= Step.new(
-        position:   18,
-        description: "🎉 enjoy a healthy soup!",
-        status: false,
-        instruction_id: 5,
-        )
-      step18.remote_photo_url = url
-      step18.save!
-
-puts 'Finished 18 steps for Amani soup!'
+puts 'Finished 17 steps for Amani soup!'
 
 puts '13. 🍲 Creating "instruction6" - Katia tajine...'
 
