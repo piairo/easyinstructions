@@ -243,7 +243,7 @@ puts '8. ➡️ Creating "14 steps" - for Michelle dressing...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579731634/Seeds/hbyd3fldhjctwwikohjl.jpg"
       step2 = Step.new(
         position:   2,
-        description: "🥄 2 spoons of dijon mustard",
+        description: "x1 🥄 small spoon of dijon mustard",
         status: false,
         instruction_id: 3,
         )
@@ -253,7 +253,7 @@ puts '8. ➡️ Creating "14 steps" - for Michelle dressing...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579731667/Seeds/l8pcjyzxh62sbmomfnhi.jpg"
       step3 = Step.new(
         position:   3,
-        description: "🥄 2 spoons of wholegrain mustard",
+        description: "x1 🥄 small spoon of wholegrain mustard",
         status: false,
         instruction_id: 3,
         )
@@ -263,7 +263,7 @@ puts '8. ➡️ Creating "14 steps" - for Michelle dressing...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579731704/Seeds/s1slngs5giqjtks6t1lu.jpg"
       step4 = Step.new(
         position:   4,
-        description: "🥄 2 spoons of honey",
+        description: "x2 🥄 small spoons of honey",
         status: false,
         instruction_id: 3,
         )
@@ -273,7 +273,7 @@ puts '8. ➡️ Creating "14 steps" - for Michelle dressing...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579731734/Seeds/tnysuu5hcgqbm7grhinv.jpg"
       step5 = Step.new(
         position:   5,
-        description: "1 shot of olive oil",
+        description: "x2 shots of olive oil",
         status: false,
         instruction_id: 3,
         )
@@ -283,7 +283,7 @@ puts '8. ➡️ Creating "14 steps" - for Michelle dressing...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579731762/Seeds/yvxfih86uvtxqxlltss7.jpg"
       step6 = Step.new(
         position:   6,
-        description: "1 shot of sesame oil",
+        description: "x1 shot of sesame oil",
         status: false,
         instruction_id: 3,
         )
@@ -293,7 +293,7 @@ puts '8. ➡️ Creating "14 steps" - for Michelle dressing...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579731903/Seeds/zrqtkirybeqxphievysp.jpg"
       step7 = Step.new(
         position:   7,
-        description: "1 shot of vinegar",
+        description: "x1 shot of vinegar",
         status: false,
         instruction_id: 3,
         )
@@ -303,7 +303,7 @@ puts '8. ➡️ Creating "14 steps" - for Michelle dressing...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579731947/Seeds/vt1srkwx7fdutnhxe9ja.jpg"
       step8 = Step.new(
         position:   8,
-        description: "1 shot of cider vinegar",
+        description: "half shot of cider vinegar",
         status: false,
         instruction_id: 3,
         )
@@ -336,7 +336,7 @@ puts '8. ➡️ Creating "14 steps" - for Michelle dressing...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579732090/Seeds/ywkqhfqrhnalziuhnkze.jpg"
       step11 = Step.new(
         position:   11,
-        description: "✂️scisser finely",
+        description: "✂️ scisser finely",
         status: false,
         instruction_id: 3,
         )
