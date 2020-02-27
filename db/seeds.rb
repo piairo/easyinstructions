@@ -103,7 +103,7 @@ puts '3. ➡️ Creating "7 steps" - for chocolate ...'
   step6.remote_photo_url = url
   step6.save!
 
- url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929955/Seeds/del2lrcpygfipqnahlep.png"
+ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582833324/Seeds/IMG_4793_qjbpgg.jpg"
  step7 = Step.new(
     position:   7,
     description: "☕ you live in front of the best coffee in town",

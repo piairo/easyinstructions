@@ -1,6 +1,6 @@
 
 const initSms = () => {
-var control_btn = document.querySelector(".carousel-control-next");
+  var control_btn = document.querySelector(".carousel-control-next");
 
   control_btn.addEventListener("click", function () {
 
@@ -8,15 +8,22 @@ var control_btn = document.querySelector(".carousel-control-next");
     console.log("ceci est la caption active");
     console.log(caption_active);
     if (caption_active.innerHTML.includes('climb till 1st floor')) {
-      console.log("you are on chocolate - climb till 1st...");
-    Rails.ajax({
-    url: "/chocolate-sms",
-    type: "post",
-    error: function(data) {}
-    });
-    console.log("FIN de ajax initSms");
+      console.log('elle contient "climb till 1st..."');
+    ajaxSms();
+    } else {
+    console.log('elle contient:');
+    console.log(caption_active.innerHTML);
     };
+  });
 
- });
- };
+  const ajaxSms = () => {
+      Rails.ajax({
+      url: "/chocolate-sms",
+      type: "post",
+      error: function(data) {}
+      })
+      console.log(" !! FIN de ajaxSms !!");
+  };
+
+};
 export {initSms} ;

@@ -59,8 +59,8 @@ if (document.querySelector("#blinkbutton")) {
 
 import { initSms } from'../plugins/init_sms.js';
 
-if (document.querySelector(".main-content.carousel-item.active")) {
-  console.log("we are on searching in active caption");
+if (document.URL.includes('instructions/1/steps')) {
+  console.log("we are on searching in instructions/1/steps (chocolate)");
   initSms();
 }
 

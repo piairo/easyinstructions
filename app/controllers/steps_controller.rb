@@ -4,7 +4,7 @@ class StepsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_step, only: [:show, :edit, :destroy]
   before_action :set_steps, only: [:index, :show]
-  before_action :set_instruction, only: [:show, :edit, :destroy]
+  before_action :set_instruction, only: [:index, :show, :edit, :update, :destroy]
 
 
   def send_sms

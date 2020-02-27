@@ -33,16 +33,17 @@
     </div>
 
      <% @steps[1..-2].each do |step| %>
-     <div class="main-content carousel-item" style="background-image: url('<%= cl_image_path step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')" alt="first slide">
+     <div class="main-content carousel-item" style="background-image: url('<%= cl_image_path step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')" alt="middle slides">
 
       <div class="carousel-caption d-md-block">
             <header class="p-3"><h1> <%= step.description %> </h1></header>
       </div>
+
     </div>
     <% end %>
 
 
-      <div class="main-content carousel-item" style="background-image: url('<%= cl_image_path @steps.last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')" alt="first slide">
+      <div class="main-content carousel-item" style="background-image: url('<%= cl_image_path @steps.last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')" alt="last slide">
 
         <div class="carousel-caption d-md-block">
             <header class="p-3"> <h1> <%= @steps.last.description %> </h1> </header>
@@ -63,8 +64,8 @@
   </a>
 </div>
 
-
 <%= render 'shared/navbar_bottom' %>
+
 
 <!-- NAVBAR BOTTOM FOR CARROUSEL
 <div class="navbar_bottom fixed-bottom">

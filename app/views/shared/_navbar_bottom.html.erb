@@ -7,8 +7,7 @@
         <% if current_page?('/chocolate') || current_page?('/netflix') || current_page?('/hotwater') || current_page?('/pancakes') || current_page?('/frontdoor') || current_page?('/pooridge') || current_page?('/') %>
 
         <% elsif @step || params[:controller] == 'keyinfos' %>
-      <!--  NO need for carousel
-        <%= link_to 'home', root_path, class: 'btn mybutton-light2 mybutton-lg'%> -->
+        <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light2 mybutton-lg'%>
 
         <% elsif @step || params[:controller] == 'instructions' %>
         <%= link_to 'Home', root_path, class: 'btn mybutton-light2 mybutton-lg'%>
