@@ -1079,7 +1079,6 @@ puts '23. 🚪 Creating "instruction11 - pierre 🍞bread...'
 
   instruction11 = Instruction.new(
     name:    "Pierre's 🍞 bread",
-    address:
     user_id: 1,
     )
   instruction11.save!
@@ -1227,7 +1226,6 @@ puts '25. 🚪 Creating "instruction12 - Sara 🍲 tajine...'
 
   instruction12 = Instruction.new(
     name:    "Pierre's 🍞 bread",
-    address:
     user_id: 1,
     )
   instruction12.save!
