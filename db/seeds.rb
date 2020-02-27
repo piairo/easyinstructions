@@ -1075,20 +1075,20 @@ puts '22. ➡️ Creating "3 steps" - for closing door ...'
 puts 'Finished 3 steps for Closing door!'
 
 puts separator
-puts '23. 🚪 Creating "instruction11 - pierre 🍞bread...'
+puts '23.  🍞 Creating "instruction11 - pierre bread...'
 
   instruction11 = Instruction.new(
-    name:    "Pierre's 🍞 bread",
+    name:    "Pierre 🍞 bread",
     user_id: 1,
     )
   instruction11.save!
 
-puts 'Finished "instruction11" - pierre 🍞bread!'
+puts 'Finished "instruction11" - pierre bread!'
 
 puts separator
-puts '24. ➡️ Creating "13 steps" - for pierre 🍞bread'
+puts '24. ➡️ Creating "13 steps" - for pierre bread'
 
-  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582052005/ye441je2webzsl7mxogl.jpg"
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579819110/Seeds/qdauazgcdwohpma8io3a.jpg"
   step1 = Step.new(
     position:   1,
     description: "🦶 500g of flour",
@@ -1219,13 +1219,13 @@ puts '24. ➡️ Creating "13 steps" - for pierre 🍞bread'
   step13.save!
 
 
-puts 'Finished 13 steps for pierre 🍞 bread!'
+puts 'Finished 13 steps for pierre bread!'
 
 puts separator
-puts '25. 🚪 Creating "instruction12 - Sara 🍲 tajine...'
+puts '25. 🍲 Creating "instruction12 - Sara tajine...'
 
   instruction12 = Instruction.new(
-    name:    "Pierre's 🍞 bread",
+    name:    "Sara tajine",
     user_id: 1,
     )
   instruction12.save!
@@ -1343,7 +1343,7 @@ puts '26. ➡️ Creating "11 steps" - Sara 🍲 tajine'
     url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793090/Seeds/IMG_0916_qlrawv.jpg"
   step11 = Step.new(
     position:   11,
-    description: "🎉 enjoy Sara 🍲 tajine",
+    description: "🎉 enjoy Sara tajine!",
     status: false,
     instruction_id: 12,
     )
@@ -1353,6 +1353,6 @@ puts '26. ➡️ Creating "11 steps" - Sara 🍲 tajine'
 
 
 
-puts 'Finished 11 steps for Sara 🍲 tajine!'
+puts 'Finished 11 steps for Sara tajine!'
 
 
