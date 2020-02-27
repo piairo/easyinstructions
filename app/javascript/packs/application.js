@@ -55,12 +55,22 @@ if (document.querySelector("#blinkbutton")) {
   initBlink();
 }
 
+// TRIGGER SMS
+
+import { initSms } from'../plugins/init_sms.js';
+
+if (document.querySelector(".main-content.carousel-item.active")) {
+  console.log("we are on searching in active caption");
+  initSms();
+}
+
+
 
 // FULL SCREEN MODE (Step caroussels)
-import { initFullScreen } from'../plugins/init_FullScreen.js';
-if (document.querySelector(".recette-image")) {
-  initFullScreen();
-}
+// import { initFullScreen } from'../plugins/init_FullScreen.js';
+// if (document.querySelector(".recette-image")) {
+//   initFullScreen();
+// }
 
 
 

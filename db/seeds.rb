@@ -884,7 +884,7 @@ puts '16. ➡️ Creating "4 steps" - for bertie ...'
   url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580228297/Seeds/mnrhxmp2aikgtgpqjfui_obke4p.jpg"
   step2 = Step.new(
     position:   2,
-    description: "🦶 go through the garder door",
+    description: "🦶 go through the garden door",
     status: false,
     instruction_id: 7,
     )

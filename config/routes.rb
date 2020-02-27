@@ -26,7 +26,10 @@ Rails.application.routes.draw do
     delete 'instructions/:instruction_id/steps/:position', to: 'steps#destroy'
 
  #send sms
-    get 'instructions/:instruction_id/steps/:position/sms', to: 'steps#send_sms', as: :sms
+ # BEFORE CAROUSEL touch slide (Navbar buttons)
+ #    get 'instructions/:instruction_id/steps/:position/sms', to: 'steps#send_sms', as: :sms
+
+    post 'chocolate-sms', to: 'steps#send_sms', as: :sms
 
 
    # perso
