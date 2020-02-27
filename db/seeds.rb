@@ -758,7 +758,7 @@ puts 'Finished to create "instruction6"- Katia tajine !'
 
 
 puts separator
-puts '14. ➡️ Creating "10 steps" - for Katia tajine...'
+puts '14. ➡️ Creating "9 steps" - for Katia tajine...'
 
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580070377/Seeds/d7a83c2f-1d3a-4593-b5c3-88b3c1f7fe6b_o8t1uu.jpg"
       step1= Step.new(
@@ -810,58 +810,49 @@ puts '14. ➡️ Creating "10 steps" - for Katia tajine...'
       step5.remote_photo_url = url
       step5.save!
 
+
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580070376/Seeds/16606c42-e2fa-45fc-8110-0f70694e4dd0_q1ugnz.jpg"
       step6= Step.new(
         position:   6,
-        description: "⏳ cook for 2 min",
+        description: "⏳ after 2 min add parsley",
         status: false,
         instruction_id: 6,
         )
       step6.remote_photo_url = url
       step6.save!
 
-      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580070376/Seeds/16606c42-e2fa-45fc-8110-0f70694e4dd0_q1ugnz.jpg"
+      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580070377/Seeds/b8ee8aba-89ba-4f8b-9da9-726233d58429_erlggx.jpg"
       step7= Step.new(
         position:   7,
-        description: "🦶 add parsley",
+        description: "🦶 add apples",
         status: false,
         instruction_id: 6,
         )
       step7.remote_photo_url = url
       step7.save!
 
-      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580070377/Seeds/b8ee8aba-89ba-4f8b-9da9-726233d58429_erlggx.jpg"
+
+      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580071434/Seeds/P4170189_fzm13f.jpg"
       step8= Step.new(
         position:   8,
-        description: "🦶 add apples",
+        description: "⏳ cook for 1 hour",
         status: false,
         instruction_id: 6,
         )
       step8.remote_photo_url = url
       step8.save!
 
-
-      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580071434/Seeds/P4170189_fzm13f.jpg"
+      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580071445/Seeds/Screenshot_2020-01-26_at_20.43.40_zx2fpr.png"
       step9= Step.new(
         position:   9,
-        description: "⏳ cook for 1 hour",
+        description: "🎉 enjoy a good tajine with semoule",
         status: false,
         instruction_id: 6,
         )
       step9.remote_photo_url = url
       step9.save!
 
-      url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580071445/Seeds/Screenshot_2020-01-26_at_20.43.40_zx2fpr.png"
-      step10= Step.new(
-        position:   10,
-        description: "🎉 enjoy a good tajine with semoule",
-        status: false,
-        instruction_id: 6,
-        )
-      step10.remote_photo_url = url
-      step10.save!
-
-puts 'Finished 10 steps for Katia tajine!'
+puts 'Finished 9 steps for Katia tajine!'
 
 puts separator
 puts '15. 🏠 Creating "instruction7" - bertie...'
@@ -1083,29 +1074,287 @@ puts '22. ➡️ Creating "3 steps" - for closing door ...'
 
 puts 'Finished 3 steps for Closing door!'
 
+puts separator
+puts '23. 🚪 Creating "instruction11 - pierre 🍞bread...'
+
+  instruction11 = Instruction.new(
+    name:    "Pierre's 🍞 bread",
+    address:
+    user_id: 1,
+    )
+  instruction11.save!
+
+puts 'Finished "instruction11" - pierre 🍞bread!'
+
+puts separator
+puts '24. ➡️ Creating "13 steps" - for pierre 🍞bread'
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582052005/ye441je2webzsl7mxogl.jpg"
+  step1 = Step.new(
+    position:   1,
+    description: "🦶 500g of flour",
+    status: false,
+    instruction_id: 11,
+    )
+  step1.remote_photo_url = url
+  step1.save!
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582052050/wkregd9tp3owewhgbi6r.jpg"
+  step2 = Step.new(
+    position:   2,
+    description: "🦶 1 bag of baker powder",
+    status: false,
+    instruction_id: 11,
+    )
+  step2.remote_photo_url = url
+  step2.save!
+
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582052095/reekfahrwmqpbkuvansl.jpg"
+  step3 = Step.new(
+    position:   3,
+    description: "🥄 1big spoon of salt",
+    status: false,
+    instruction_id: 11,
+    )
+  step3.remote_photo_url = url
+  step3.save!
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582052153/pwymm1dvzuxxb7owe6bl.jpg"
+  step4 = Step.new(
+    position:   4,
+    description: "🦶 add 400ml of Hot water",
+    status: false,
+    instruction_id: 11,
+    )
+  step4.remote_photo_url = url
+  step4.save!
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582052208/co2mhzgi7bqhogeq2qyc.jpg"
+  step5 = Step.new(
+    position:   5,
+    description: "🦶 mix slowly",
+    status: false,
+    instruction_id: 11,
+    )
+  step5.remote_photo_url = url
+  step5.save!
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582052257/xae1szmnj1pwi34qqeir.jpg"
+  step6 = Step.new(
+    position:   6,
+    description: "⏰ Cover 12h with a wet tissue",
+    status: false,
+    instruction_id: 11,
+    )
+  step6.remote_photo_url = url
+  step6.save!
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582052322/d87rhrvtz4wy7k9qzjxg.jpg"
+  step7 = Step.new(
+    position:   7,
+    description: "After 12h prepare table",
+    status: false,
+    instruction_id: 11,
+    )
+  step7.remote_photo_url = url
+  step7.save!
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582052393/fkwjshqmmqwh8hvvv17h.jpg"
+  step8 = Step.new(
+    position:   8,
+    description: "🦶 Roll the dough 4 times",
+    status: false,
+    instruction_id: 11,
+    )
+  step8.remote_photo_url = url
+  step8.save!
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582052444/yupbuvujcaei1uz7fsxc.jpg"
+  step9 = Step.new(
+    position:   9,
+    description: "🦶 warm oven + pan at 220 deg",
+    status: false,
+    instruction_id: 11,
+    )
+  step9.remote_photo_url = url
+  step9.save!
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582052480/aykckuxr4srarlsdu9ik.jpg"
+  step10 = Step.new(
+    position:   10,
+    description: "🦶 Put the dough in the burning pan",
+    status: false,
+    instruction_id: 11,
+    )
+  step10.remote_photo_url = url
+  step10.save!
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582052544/epuhtzgsegbg6dbqcpry.jpg"
+  step11 = Step.new(
+    position:   11,
+    description: "⏰ bake 35min at 220deg",
+    status: false,
+    instruction_id: 11,
+    )
+  step11.remote_photo_url = url
+  step11.save!
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582052594/zvkneqxmhvgogbfxnr5f.jpg"
+  step12 = Step.new(
+    position:   12,
+    description: "⏰ remove lid and bake 15min more",
+    status: false,
+    instruction_id: 11,
+    )
+  step12.remote_photo_url = url
+  step12.save!
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582052680/inkdxusazwgwvnfdmex3.jpg"
+  step13 = Step.new(
+    position:   13,
+    description: "🎉 enjoy your home made bread!",
+    status: false,
+    instruction_id: 11,
+    )
+  step13.remote_photo_url = url
+  step13.save!
 
 
-# puts '15. 🍲 Creating "instruction7" - Sara tajine...'
+puts 'Finished 13 steps for pierre 🍞 bread!'
 
-#     instruction7 = Instruction.new(
-#       name:    "Sara tajine",
-#       user_id: 1,
-#       )
-#     instruction7.save!
+puts separator
+puts '25. 🚪 Creating "instruction12 - Sara 🍲 tajine...'
 
-# puts 'Finished to create "instruction7"- Sara tajine !'
+  instruction12 = Instruction.new(
+    name:    "Pierre's 🍞 bread",
+    address:
+    user_id: 1,
+    )
+  instruction12.save!
+
+puts 'Finished "instruction12" - Sara 🍲 tajine'
+
+puts separator
+puts '26. ➡️ Creating "11 steps" - Sara 🍲 tajine'
 
 
-# puts separator
-# puts '16. ➡️ Creating "10 steps" - for Sara tajine...'
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793097/Seeds/IMG_0903_clqnit.heic"
+  step1 = Step.new(
+    position:   1,
+    description: "🦶 grill the meat with olive oil & salt",
+    status: false,
+    instruction_id: 12,
+    )
+  step1.remote_photo_url = url
+  step1.save!
 
-#       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580070377/Seeds/d7a83c2f-1d3a-4593-b5c3-88b3c1f7fe6b_o8t1uu.jpg"
-#       step1= Step.new(
-#         position:   1,
-#         description: "🦶 cut 4 garlics + parsley",
-#         status: false,
-#         instruction_id: 7,
-#         )
-#       step1.remote_photo_url = url
-#       step1.save!
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793101/Seeds/IMG_0905_dljwpq.heic"
+  step2 = Step.new(
+    position:   2,
+    description: "🦶 add Turmeric",
+    status: false,
+    instruction_id: 12,
+    )
+  step2.remote_photo_url = url
+  step2.save!
+
+
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793096/Seeds/IMG_0906_iuogte.heic"
+  step3 = Step.new(
+    position:   3,
+    description: "🦶 add pepper",
+    status: false,
+    instruction_id: 12,
+    )
+  step3.remote_photo_url = url
+  step3.save!
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793098/Seeds/IMG_0907_l453gc.heic"
+  step4 = Step.new(
+    position:   4,
+    description: "🔪 cut oignons",
+    status: false,
+    instruction_id: 12,
+    )
+  step4.remote_photo_url = url
+  step4.save!
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793101/Seeds/IMG_0908_digcbk.heic"
+  step5 = Step.new(
+    position:   5,
+    description: "🦶 add water",
+    status: false,
+    instruction_id: 12,
+    )
+  step5.remote_photo_url = url
+  step5.save!
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793077/Seeds/IMG_0909_tonelc.heic"
+  step6 = Step.new(
+    position:   6,
+    description: "🦶 grill the almounds",
+    status: false,
+    instruction_id: 12,
+    )
+  step6.remote_photo_url = url
+  step6.save!
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793083/Seeds/IMG_0910_yj7ibk.heic"
+  step7 = Step.new(
+    position:   7,
+    description: "🦶 Bake prunes + brown Sugar",
+    status: false,
+    instruction_id: 12,
+    )
+  step7.remote_photo_url = url
+  step7.save!
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793094/Seeds/IMG_0912_b4sdkr.heic"
+  step8 = Step.new(
+    position:   8,
+    description: "🦶 add cinnamon",
+    status: false,
+    instruction_id: 12,
+    )
+  step8.remote_photo_url = url
+  step8.save!
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793075/Seeds/IMG_0913_nv3psm.heic"
+  step89 = Step.new(
+    position:   9,
+    description: " ✅ check that meat is ready",
+    status: false,
+    instruction_id: 12,
+    )
+  step9.remote_photo_url = url
+  step9.save!
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793077/Seeds/IMG_0915_mpeset.heic"
+  step10 = Step.new(
+    position:   10,
+    description: "🦶 final touch: add almounds",
+    status: false,
+    instruction_id: 12,
+    )
+  step10.remote_photo_url = url
+  step10.save!
+
+
+
+    url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793090/Seeds/IMG_0916_qlrawv.heic"
+  step11 = Step.new(
+    position:   11,
+    description: "🎉 enjoy Sara 🍲 tajine",
+    status: false,
+    instruction_id: 12,
+    )
+  step11.remote_photo_url = url
+  step11.save!
+
+
+
+
+puts 'Finished 11 steps for Sara 🍲 tajine!'
+
 

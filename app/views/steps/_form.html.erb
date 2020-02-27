@@ -33,7 +33,7 @@ DEBUG END -->
 
 <!-- https://stackoverflow.com/questions/26815793/dont-display-field-of-form-if-action-is-edit
  -->  <% if @step.persisted? %>
-   <div id="thumb" style="background-image: url('<%= cl_image_path @step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')">
+   <div id="thumb" style="background-image: url('<%= cl_image_path @step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>'); border-radius: 8px">
     </div>
   <% end %>
 <!-- <img src="https://cloudinary.com/images/v1/thumb/AZERRT9876dfgh2345PO.jpg" alt="AZERRT9876dfgh2345PO"> -->
