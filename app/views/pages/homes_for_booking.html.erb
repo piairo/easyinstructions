@@ -20,7 +20,11 @@
 
   <div class="container d-flex align-items-center justify-content-center">
 
-  <%= link_to "house manual", instruction_keyinfo_path(@instruction, 1), class: 'btn btn-secondary mybutton-sm home'%>
+       <% if @keyinfo.empty? %>
+
+       <% else %>
+        <%= link_to "house manual", instruction_keyinfo_path(@instruction, 1), class: 'btn btn-secondary mybutton-sm home'%>
+       <% end %>
 
   </div>
 
