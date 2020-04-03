@@ -12,6 +12,11 @@ public/packs-test
 node_modules
 yarn-error.log
 .byebug_history
+<<<<<<< HEAD
+=======
+.env
+.env*
+>>>>>>> 0a6550597da1ee0cf6ad03b52a7e698d5e38ccfd
 
 /public/packs
 /public/packs-test
@@ -22,4 +27,3 @@ yarn-debug.log*
 
 # Ignore .env file containing credentials.
 .env*
-dead
