@@ -14,14 +14,17 @@ class StepsController < ApplicationController
   account_sid = ENV['TWILIO_ACCOUNT_SID']
   auth_token = ENV['TWILIO_AUTH_TOKEN']
   # set up a client to talk to the Twilio REST API
-  @client = Twilio::REST::Client.new(account_sid, auth_token)
+  begin
+  @client = Twilio::REST::Client.new account_sid, auth_token
 
-  @client.api.account.messages.create(
-  from: '+441670432062',
+   message = @client.messages.create(
+  body: "Chocolate trigger from: '#{@location}'",
   to: '+447484723518',
-  body: "Chocolate trigger from: '#{@location}'"
-  )
+  from: '+441670432062')
+  rescue Twilio::REST::TwilioError => e
+    puts e.message
   end
+end
 
   def index         # GET /instructions/:instruction_id/steps
       @order  =  []
