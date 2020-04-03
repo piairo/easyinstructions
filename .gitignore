@@ -12,8 +12,6 @@ public/packs-test
 node_modules
 yarn-error.log
 .byebug_history
-.env
-.env*
 
 /public/packs
 /public/packs-test
@@ -21,3 +19,6 @@ yarn-error.log
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# Ignore .env file containing credentials.
+.env*
