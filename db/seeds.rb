@@ -871,7 +871,7 @@ puts 'Finished "instruction7" - Bertie!'
 puts separator
 puts '16. ➡️ Creating "4 steps" - for bertie ...'
 
-  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580228298/Seeds/wczzaq9iitxvzzsuxqoj_rwempz.jpg"
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1583491334/Seeds/4C4C1E18-20D4-43B9-B733-A46A0DC98D0C_ssnl9p.jpg"
   step1 = Step.new(
     position:   1,
     description: "🦶 make sure you are on Union road",
@@ -881,7 +881,7 @@ puts '16. ➡️ Creating "4 steps" - for bertie ...'
   step1.remote_photo_url = url
   step1.save!
 
-  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580228297/Seeds/mnrhxmp2aikgtgpqjfui_obke4p.jpg"
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1583491334/Seeds/5770AF36-95EA-4E7D-A867-BDC01BEC74CD_mo55ak.jpg"
   step2 = Step.new(
     position:   2,
     description: "🦶 go through the garden door",
@@ -891,7 +891,7 @@ puts '16. ➡️ Creating "4 steps" - for bertie ...'
   step2.remote_photo_url = url
   step2.save!
 
-  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580228298/Seeds/sjdtes6kxvgklxleiyvr_feykud.jpg"
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1583491334/Seeds/4D278113-9FBB-443B-B873-BEB185F55E6B_allpk8.jpg"
   step3 = Step.new(
     position:   3,
     description: "🦶 turn left",
@@ -901,7 +901,7 @@ puts '16. ➡️ Creating "4 steps" - for bertie ...'
   step3.remote_photo_url = url
   step3.save!
 
-  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580228297/Seeds/grn5afvrclypzqcfdkj3_h4ktua.jpg"
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1583491338/Seeds/8164A26D-4F0B-48FF-B81C-232BC7B8EB5B_fcwuvm.jpg"
   step4 = Step.new(
     position:   4,
     description: "🎉 you arrived in flat 1",

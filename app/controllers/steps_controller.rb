@@ -9,12 +9,9 @@ class StepsController < ApplicationController
 
   def send_sms
   @location = request.location.city
-  # put your own credentials here
-  account_sid = 'ACe8db3bae886de70e3b2a089489949a30'
-  auth_token = 'da03289f9981a213e3c430beea95ad13'
 
   # set up a client to talk to the Twilio REST API
-  @client = Twilio::REST::Client.new account_sid, auth_token
+  @client = Twilio::REST::Client.new twilio_account_sid, twilio_auth_token
 
   @client.api.account.messages.create(
   from: '+441670432062',
