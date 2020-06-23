@@ -27,7 +27,7 @@
 
 
           <div class="carousel-caption d-md-block ">
-          <header class="p-3"><h1> <%= @step.description %> </h1></header>
+          <header class="p-3"><h1> <%= @step.description %></h1></header>
           </div>
 
     </div>
@@ -47,7 +47,7 @@
 
         <div class="carousel-caption d-md-block">
             <header class="p-3"> <h1> <%= @steps.last.description %> </h1> </header>
-            <%= link_to "CLOSE", root_path, class: 'btn btn-success mybutton-lg home text-white mt-5', id: 'blinkbutton' %>
+             <%= link_to "House manual 📙", instruction_keyinfo_path(1, 1), class: 'btn btn-secondary mybutton-lg home text-white mt-5', id: 'blinkbutton' %>
         </div>
       </div>
 
@@ -67,7 +67,7 @@
 <%= render 'shared/navbar_bottom' %>
 
 
-<!-- NAVBAR BOTTOM FOR CARROUSEL
+NAVBAR BOTTOM FOR CARROUSEL
 <div class="navbar_bottom fixed-bottom">
 
       <div class="d-flex justify-content-center align-items-center">
@@ -82,10 +82,11 @@
 
       <div class="d-flex justify-content-center align-items-center">
 
-        <a class="btn btn-primary mybutton-lg" href="#carouselExampleIndicators" role="button" data-slide="next">Next</a>
+            <a class="btn btn-danger mybutton-lg" href="#carouselExampleIndicators" role="button" data-slide="next">Next</a>
+
       </div>
 
-</div> -->
+</div>
 
 
 

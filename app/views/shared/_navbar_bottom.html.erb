@@ -7,7 +7,8 @@
         <% if current_page?('/chocolate') || current_page?('/netflix') || current_page?('/hotwater') || current_page?('/pancakes') || current_page?('/frontdoor') || current_page?('/pooridge') ||current_page?('/bertie') ||current_page?('/ranelagh') || current_page?('/') %>
 
         <% elsif @step %>
-       <%= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
+        <!--no need for carousel-->
+       <%#= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
 
         <% elsif @step || params[:controller] == 'instructions' %>
         <%= link_to 'Home', root_path, class: 'btn mybutton-light2 mybutton-lg'%>
@@ -70,7 +71,7 @@
 
           <% else %>
           <!--no need for carousel-->
-          <%= link_to "next", instruction_step_path(@instruction, @step.position + 1), class: 'btn btn-danger mybutton-lg text-white' %>
+          <%#= link_to "next", instruction_step_path(@instruction, @step.position + 1), class: 'btn btn-danger mybutton-lg text-white' %>
 
          <% end %>
     </div>
