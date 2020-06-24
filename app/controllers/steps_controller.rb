@@ -18,9 +18,9 @@ class StepsController < ApplicationController
   @client = Twilio::REST::Client.new account_sid, auth_token
 
    message = @client.messages.create(
-  body: "Chocolate trigger from: '#{@location}'",
+  body: "Chocolate check-in from: '#{@location}'",
   to: '+447484723518',
-  from: '+441670432062')
+  from: '+17868861464')
   rescue Twilio::REST::TwilioError => e
     puts e.message
   end

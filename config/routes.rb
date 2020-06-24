@@ -27,10 +27,10 @@ Rails.application.routes.draw do
 
  #send sms
  # OLD WITHOUT CAROUSEL touch slide (Navbar buttons)
-    post 'instructions/:instruction_id/steps/:position', to: 'steps#send_sms', as: :sms
+    post 'instructions/:instruction_id/steps/:position', to: 'steps#send_sms', as: :sms1
 
 # WITH CAROUSEL
-    # post 'chocolate-sms', to: 'steps#send_sms', as: :sms
+    post 'chocolate-sms', to: 'steps#send_sms', as: :sms
 
 
    # perso

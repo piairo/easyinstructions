@@ -59,7 +59,7 @@
 
 <!--          SEND SMS FOR CHOCOLATE -->
           <% elsif @instruction.name == "chocolate" && @step.position == 5 %>
-          <%= link_to "next", sms_path(@instruction, @step.position + 1), class: 'btn btn-danger mybutton-lg'%>
+          <%= link_to "next", sms1_path(@instruction, @step.position + 1), class: 'btn btn-danger mybutton-lg'%>
 
 
           <% elsif @step.position == @instruction.steps.count && ["netflix", "hotwater", "frontdoor", "chocolate"].include?(@instruction.name) %>
