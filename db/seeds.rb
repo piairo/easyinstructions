@@ -62,7 +62,7 @@ puts '3. ➡️ Creating "7 steps" - for chocolate ...'
   step2.remote_photo_url = url
   step2.save!
 
-  url ="https://res.cloudinary.com/dsupdin1s/image/upload/v1569929951/Seeds/ukdfgfgsyetosnpksf3v.png"
+  url ="https://res.cloudinary.com/dsupdin1s/image/upload/v1599904938/Seeds/xh0ed0kt8qmhixqwhfyi.png"
   step3 = Step.new(
     position:   3,
     description: "🔑 in the porch, turn round: the safe is behind you ",
@@ -120,8 +120,8 @@ puts '4. 📖 Creating "keyinfos" - chocolate ...'
 
   keyinfo1 = Keyinfo.new(
     checkout: "11:00 AM",
-    wifiname: "Onestream TNCAP8D6417",
-    wificode: "577D44B1D2",
+    wifiname: "CHOCOLATE",
+    wificode: "chocolatenest2020",
     owner: "katia",
     contact: "+44 7484 723518",
     instruction_id: 1,
