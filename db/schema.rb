@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_25_02_132754) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "private", default: false, null: false
-    t.index ["user_id"], name: "index_instruction_on_user_id"
+    t.index ["user_id"], name: "index_instructions_on_user_id"
   end
 
   create_table "keyinfos", force: :cascade do |t|

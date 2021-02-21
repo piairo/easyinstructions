@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'twilio-ruby'
 
 class StepsController < ApplicationController
@@ -20,7 +21,7 @@ class StepsController < ApplicationController
    message = @client.messages.create(
   body: "Chocolate check-in from: '#{@location}'",
   to: '+447484723518',
-  from: '+17868861464')
+  from: '+13852557020')
   rescue Twilio::REST::TwilioError => e
     puts e.message
   end
