@@ -242,7 +242,7 @@ puts '8. ➡️ Creating "14 steps" - for Michelle dressing...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579731575/Seeds/raxahygff2ia9vzveykt.jpg"
       step1 = Step.new(
         position:   1,
-        description: "🦶 prepare all ingredients",
+        description: "prepare all ingredients",
         status: false,
         instruction_id: 3,
         )
@@ -402,7 +402,7 @@ puts '10. ➡️ Creating "16 steps" - for Salmon quiche...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579818005/Seeds/l1l7ihgt4tnecgwvuk6p.jpg"
       step1 = Step.new(
         position:   1,
-        description: "🦶 prepare all ingredients",
+        description: "prepare all ingredients",
         status: false,
         instruction_id: 4,
         )
@@ -412,7 +412,7 @@ puts '10. ➡️ Creating "16 steps" - for Salmon quiche...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579818188/Seeds/b9mur4ntodwrwsrvpcsy.jpg"
       step2 = Step.new(
         position:   2,
-        description: "🦶 Preheat oven at 180deg",
+        description: "Preheat oven at 180deg",
         status: false,
         instruction_id: 4,
         )
@@ -422,7 +422,7 @@ puts '10. ➡️ Creating "16 steps" - for Salmon quiche...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579818236/Seeds/i5k6vinbpawlq6dpxmp7.jpg"
       step3 = Step.new(
         position:   3,
-        description: "🦶 boil water in a pan",
+        description: "boil water in a pan",
         status: false,
         instruction_id: 4,
         )
@@ -442,7 +442,7 @@ puts '10. ➡️ Creating "16 steps" - for Salmon quiche...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579818524/Seeds/fjlpdzwfpvbto9hzcoiq.jpg"
       step5 = Step.new(
         position:   5,
-        description: "🦶add 200g of crème fraîche",
+        description: "add 200g of crème fraîche",
         status: false,
         instruction_id: 4,
         )
@@ -452,7 +452,7 @@ puts '10. ➡️ Creating "16 steps" - for Salmon quiche...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579818711/Seeds/quvljcqkurqs1qhks0mg.jpg"
       step6 = Step.new(
         position:   6,
-        description: " 🦶 grate 120g of cheese",
+        description: "grate 120g of cheese",
         status: false,
         instruction_id: 4,
         )
@@ -462,7 +462,7 @@ puts '10. ➡️ Creating "16 steps" - for Salmon quiche...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579818775/Seeds/wi1xnflljcywf5i7r3md.jpg"
       step7 = Step.new(
         position:   7,
-        description: "🦶 incorporate grated cheese",
+        description: "incorporate grated cheese",
         status: false,
         instruction_id: 4,
         )
@@ -472,7 +472,7 @@ puts '10. ➡️ Creating "16 steps" - for Salmon quiche...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579819055/Seeds/jphe4yxqqeywkghd5zcz.jpg"
       step8 = Step.new(
         position:   8,
-        description: "🦶 turn off fire and drop brocolis",
+        description: "turn off fire and drop brocolis",
         status: false,
         instruction_id: 4,
         )
@@ -492,7 +492,7 @@ puts '10. ➡️ Creating "16 steps" - for Salmon quiche...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579819163/Seeds/olquv2bct2l4bywnrli3.jpg"
       step10 = Step.new(
         position:   10,
-        description: "🦶 put olive oil in the plate",
+        description: "put olive oil in the plate",
         status: false,
         instruction_id: 4,
         )
@@ -502,7 +502,7 @@ puts '10. ➡️ Creating "16 steps" - for Salmon quiche...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579819264/Seeds/jswbrdjgjsn7hj2b6wmb.jpg"
       step11 = Step.new(
         position:   11,
-        description: "🦶 unroll the pastry",
+        description: "unroll the pastry",
         status: false,
         instruction_id: 4,
         )
@@ -512,7 +512,7 @@ puts '10. ➡️ Creating "16 steps" - for Salmon quiche...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579819313/Seeds/fhph3jwu1qegtc4yorow.jpg"
       step12 = Step.new(
         position:   12,
-        description: "🦶 add the brocolis",
+        description: "add the brocolis",
         status: false,
         instruction_id: 4,
         )
@@ -522,7 +522,7 @@ puts '10. ➡️ Creating "16 steps" - for Salmon quiche...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579819416/Seeds/issupyl4jhuxyqr6ftpg.jpg"
       step13 = Step.new(
         position:   13,
-        description: "🦶 add 120g of salmon",
+        description: "add 120g of salmon",
         status: false,
         instruction_id: 4,
         )
@@ -532,7 +532,7 @@ puts '10. ➡️ Creating "16 steps" - for Salmon quiche...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579819562/Seeds/vlsazautcpwvmnalwxtj.jpg"
       step14 = Step.new(
         position:   14,
-        description: "🦶 poor the mixture cream",
+        description: "poor the mixture cream",
         status: false,
         instruction_id: 4,
         )
@@ -542,7 +542,7 @@ puts '10. ➡️ Creating "16 steps" - for Salmon quiche...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1579819635/Seeds/kkhhw0ouop1sswacwxh0.jpg"
       step15 = Step.new(
         position:   15,
-        description: "🦶 bake for 25 min",
+        description: "⏰ bake for 25 min",
         status: false,
         instruction_id: 4,
         )
@@ -579,7 +579,7 @@ puts '12. ➡️ Creating "17steps" - for Amani soup...'
 url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/9b80666f-01d4-4825-a0e0-a012694afc7c_sszb1z.jpg"
       step1 = Step.new(
         position:   1,
-        description: "🦶 cut 3 oignons",
+        description: "cut 3 oignons",
         status: false,
         instruction_id: 5,
         )
@@ -589,7 +589,7 @@ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/9b806
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068235/Seeds/fc71d06d-c007-40f5-a5d5-4996072cb31c_vbslf2.jpg"
       step2 = Step.new(
         position:   2,
-        description: "🦶 warm olive oil",
+        description: "warm olive oil",
         status: false,
         instruction_id: 5,
         )
@@ -600,7 +600,7 @@ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/9b806
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/5bd03e02-525d-495f-b399-16901c96418e_uzmday.jpg"
       step3= Step.new(
         position:   3,
-        description: "🦶 fry the oignons",
+        description: "fry the oignons",
         status: false,
         instruction_id: 5,
         )
@@ -621,7 +621,7 @@ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/9b806
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/0d601a92-03b4-42da-a6e4-7ae6002461df_ikiecy.jpg"
       step5= Step.new(
         position:   5,
-        description: "🦶 cut the carrots",
+        description: "🔪 cut the carrots",
         status: false,
         instruction_id: 5,
         )
@@ -631,7 +631,7 @@ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/9b806
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/5edb10e9-60ec-43cc-b876-c4446042d6b4_rk8jdg.jpg"
       step6= Step.new(
         position:   6,
-        description: "🦶 finish to fry with oignons",
+        description: "finish to fry with oignons",
         status: false,
         instruction_id: 5,
         )
@@ -641,7 +641,7 @@ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/9b806
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068235/Seeds/16cf7e8b-2b9e-4e3c-ad36-90c585069999_mhkefo.jpg"
       step7= Step.new(
         position:   7,
-        description: "🦶 at this point this is ready",
+        description: "at this point this is ready",
         status: false,
         instruction_id: 5,
         )
@@ -673,7 +673,7 @@ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/9b806
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068235/Seeds/2667e1e8-0498-4d04-9669-12139635b58c_chxh4l.jpg"
       step10= Step.new(
         position:   10,
-        description: "🦶 cook with onions and carrots",
+        description: "cook with onions and carrots",
         status: false,
         instruction_id: 5,
         )
@@ -683,7 +683,7 @@ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/9b806
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068235/Seeds/16e6d03f-e5d1-4a43-a399-7000b1ecc53b_dzdris.jpg"
       step11= Step.new(
         position:   11,
-        description: "🦶 poor half a cup of lentils",
+        description: "pour half a cup of lentils",
         status: false,
         instruction_id: 5,
         )
@@ -694,7 +694,7 @@ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/9b806
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/7124f56b-dc62-4665-8298-b304e8a6085b_ns2txj.jpg"
       step12= Step.new(
         position:   12,
-        description: "🦶 wash them with water",
+        description: "🚿 wash them with water",
         status: false,
         instruction_id: 5,
         )
@@ -705,7 +705,7 @@ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/9b806
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/2bbdfeb7-9256-4350-a30a-9d6208b92f28_fzg5qn.jpg"
       step13= Step.new(
         position:   13,
-        description: "🦶 add lentils to potatoes",
+        description: "add lentils to potatoes",
         status: false,
         instruction_id: 5,
         )
@@ -716,7 +716,7 @@ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/9b806
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068233/Seeds/82b9c3f4-4c6d-435d-bc4c-6f25a8c0451e_yhuvrh.jpg"
       step14= Step.new(
         position:   14,
-        description: "⌛ cook 1h with water",
+        description: "⏰ cook 1h with water",
         status: false,
         instruction_id: 5,
         )
@@ -726,7 +726,7 @@ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/9b806
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/863c871d-8a3b-4a75-92c5-753377505f53_cqgxmp.jpg"
       step15= Step.new(
         position:   15,
-        description: "🦶 add Turmeric + Cumin ",
+        description: "add Turmeric + Cumin ",
         status: false,
         instruction_id: 5,
         )
@@ -737,7 +737,7 @@ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580068234/Seeds/9b806
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582714662/Seeds/IMG_3866_f4rrbm.jpg"
       step16= Step.new(
         position:   16,
-        description: "🦶 mix everything",
+        description: "mix everything",
         status: false,
         instruction_id: 5,
         )
@@ -773,7 +773,7 @@ puts '14. ➡️ Creating "9 steps" - for Katia tajine...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580070377/Seeds/d7a83c2f-1d3a-4593-b5c3-88b3c1f7fe6b_o8t1uu.jpg"
       step1= Step.new(
         position:   1,
-        description: "🦶 cut 4 garlics + parsley",
+        description: "🔪 cut 4 garlics + parsley",
         status: false,
         instruction_id: 6,
         )
@@ -793,7 +793,7 @@ puts '14. ➡️ Creating "9 steps" - for Katia tajine...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580070376/Seeds/265b3c2e-50f5-477d-8e08-5176e41831d6_l9m2wh.jpg"
       step3= Step.new(
         position:   3,
-        description: "🦶 fry garlics with olive oil",
+        description: "fry garlics with olive oil",
         status: false,
         instruction_id: 6,
         )
@@ -803,7 +803,7 @@ puts '14. ➡️ Creating "9 steps" - for Katia tajine...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580070380/Seeds/e23ee0c6-3499-426b-8a55-4d2fc2c6b2b9_jytzo4.jpg"
       step4= Step.new(
         position:   4,
-        description: "🦶 add 8 chicken thighs + parsley",
+        description: "add 8 chicken thighs + parsley",
         status: false,
         instruction_id: 6,
         )
@@ -813,7 +813,7 @@ puts '14. ➡️ Creating "9 steps" - for Katia tajine...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580070380/Seeds/e23ee0c6-3499-426b-8a55-4d2fc2c6b2b9_jytzo4.jpg"
       step5= Step.new(
         position:   5,
-        description: "🦶 add 8 chicken thighs",
+        description: "🍗 add 8 chicken thighs",
         status: false,
         instruction_id: 6,
         )
@@ -824,7 +824,7 @@ puts '14. ➡️ Creating "9 steps" - for Katia tajine...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580070376/Seeds/16606c42-e2fa-45fc-8110-0f70694e4dd0_q1ugnz.jpg"
       step6= Step.new(
         position:   6,
-        description: "⏳ after 2 min add parsley",
+        description: "⏰ after 2 min add parsley",
         status: false,
         instruction_id: 6,
         )
@@ -834,7 +834,7 @@ puts '14. ➡️ Creating "9 steps" - for Katia tajine...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580070377/Seeds/b8ee8aba-89ba-4f8b-9da9-726233d58429_erlggx.jpg"
       step7= Step.new(
         position:   7,
-        description: "🦶 add apples",
+        description: "add apples 🍎 ",
         status: false,
         instruction_id: 6,
         )
@@ -845,7 +845,7 @@ puts '14. ➡️ Creating "9 steps" - for Katia tajine...'
       url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1580071434/Seeds/P4170189_fzm13f.jpg"
       step8= Step.new(
         position:   8,
-        description: "⏳ cook for 1 hour",
+        description: "⏰ cook for 1 hour",
         status: false,
         instruction_id: 6,
         )
@@ -940,7 +940,7 @@ puts '18. ➡️ Creating "4 steps" - for netflix ...'
   url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569450480/Seeds/wkj7nasswnpuovfz4azd.jpg"
   step1 = Step.new(
     position:   1,
-    description: "🦶 press on Input",
+    description: "press on Input",
     status: false,
     instruction_id: 8,
     )
@@ -950,7 +950,7 @@ puts '18. ➡️ Creating "4 steps" - for netflix ...'
   url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569578255/Seeds/syrlf0zpadiu9bucyhbc.png"
   step2 = Step.new(
     position:   2,
-    description: "🦶 select HDMI2",
+    description: "select HDMI2",
     status: false,
     instruction_id: 8,
     )
@@ -960,7 +960,7 @@ puts '18. ➡️ Creating "4 steps" - for netflix ...'
   url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569450446/Seeds/opszztrvlguyiugfv7of.jpg"
   step3 = Step.new(
     position:   3,
-    description: "🦶 use black remote to navigate",
+    description: "use black remote to navigate",
     status: false,
     instruction_id: 8,
     )
@@ -998,7 +998,7 @@ puts '20. ➡️ Creating "4 steps" - for hot water ...'
   url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569454002/Seeds/xtslhnvcb0irkdvclaqt.jpg"
   step1 = Step.new(
     position:   1,
-    description: "🦶 open the wardrobe",
+    description: "open the wardrobe",
     status: false,
     instruction_id: 9,
     )
@@ -1008,7 +1008,7 @@ puts '20. ➡️ Creating "4 steps" - for hot water ...'
   url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569454046/Seeds/hxorgatssyboixasmjmx.jpg"
   step2 = Step.new(
     position:   2,
-    description: "🦶 thermostat is the left side",
+    description: "thermostat is the left side",
     status: false,
     instruction_id: 9,
     )
@@ -1018,7 +1018,7 @@ puts '20. ➡️ Creating "4 steps" - for hot water ...'
   url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569454105/Seeds/a4wtzkhh6wgp3d64ik7y.jpg"
   step3 = Step.new(
     position:   3,
-    description: "🦶 turn 1/4 left",
+    description: "turn 1/4 left",
     status: false,
     instruction_id: 9,
     )
@@ -1055,7 +1055,7 @@ puts '22. ➡️ Creating "3 steps" - for closing door ...'
   url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569584328/Seeds/r2zxx29ufyahrodzp2dg.png"
   step1 = Step.new(
     position:   1,
-    description: "🦶 Key should be vertical",
+    description: "Key should be vertical",
     status: false,
     instruction_id: 10,
     )
@@ -1065,7 +1065,7 @@ puts '22. ➡️ Creating "3 steps" - for closing door ...'
   url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569584402/Seeds/rt8eigspo4awbh4dtoup.png"
   step2 = Step.new(
     position:   2,
-    description: "🦶 lift handle up",
+    description: "⤴️ lift handle up",
     status: false,
     instruction_id: 10,
     )
@@ -1075,7 +1075,7 @@ puts '22. ➡️ Creating "3 steps" - for closing door ...'
   url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569584454/Seeds/ddvj0t0i3xpm6jwz2io2.png"
   step3 = Step.new(
     position:   3,
-    description: "🦶 turn the key to close",
+    description: "turn the key to close",
     status: false,
     instruction_id: 10,
     )
@@ -1102,7 +1102,7 @@ puts '24. ➡️ Creating "13 steps" - for pierre bread'
   url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582796832/Seeds/IMG_4256_gkj8v2.jpg"
   step1 = Step.new(
     position:   1,
-    description: "🦶 500g of flour",
+    description: "500g of flour",
     status: false,
     instruction_id: 11,
     )
@@ -1112,7 +1112,7 @@ puts '24. ➡️ Creating "13 steps" - for pierre bread'
   url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582796820/Seeds/IMG_4257_l64jo1.jpg"
   step2 = Step.new(
     position:   2,
-    description: "🦶 1 bag of baker powder",
+    description: "1 bag of baker powder",
     status: false,
     instruction_id: 11,
     )
@@ -1132,7 +1132,7 @@ puts '24. ➡️ Creating "13 steps" - for pierre bread'
     url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582796995/Seeds/IMG_4261_uzlclf.jpg"
   step4 = Step.new(
     position:   4,
-    description: "🦶 add 400ml of Hot water",
+    description: "add 400ml of Hot water",
     status: false,
     instruction_id: 11,
     )
@@ -1142,7 +1142,7 @@ puts '24. ➡️ Creating "13 steps" - for pierre bread'
     url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582796819/Seeds/IMG_4262_jaoqaj.jpg"
   step5 = Step.new(
     position:   5,
-    description: "🦶 mix slowly",
+    description: "mix slowly",
     status: false,
     instruction_id: 11,
     )
@@ -1172,7 +1172,7 @@ puts '24. ➡️ Creating "13 steps" - for pierre bread'
     url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582796755/Seeds/IMG_4270_unme51.jpg"
   step8 = Step.new(
     position:   8,
-    description: "🦶 Roll the dough 4 times",
+    description: "Roll the dough 4 times",
     status: false,
     instruction_id: 11,
     )
@@ -1192,7 +1192,7 @@ puts '24. ➡️ Creating "13 steps" - for pierre bread'
     url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582796794/Seeds/IMG_4274_a6if3i.jpg"
   step10 = Step.new(
     position:   10,
-    description: "🦶 Put the dough in the burning pan",
+    description: "Put the dough in the burning pan",
     status: false,
     instruction_id: 11,
     )
@@ -1251,7 +1251,7 @@ puts '26. ➡️ Creating "11 steps" - Sara 🍲 tajine'
 
   step1 = Step.new(
     position:   1,
-    description: "🦶 grill the meat with olive oil & salt",
+    description: "grill the meat with olive oil & salt",
     status: false,
     instruction_id: 12,
     )
@@ -1261,7 +1261,7 @@ puts '26. ➡️ Creating "11 steps" - Sara 🍲 tajine'
     url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793101/Seeds/IMG_0905_dljwpq.jpg"
   step2 = Step.new(
     position:   2,
-    description: "🦶 add Turmeric",
+    description: "add Turmeric",
     status: false,
     instruction_id: 12,
     )
@@ -1273,7 +1273,7 @@ puts '26. ➡️ Creating "11 steps" - Sara 🍲 tajine'
     url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793096/Seeds/IMG_0906_iuogte.jpg"
   step3 = Step.new(
     position:   3,
-    description: "🦶 add pepper",
+    description: "add pepper",
     status: false,
     instruction_id: 12,
     )
@@ -1293,7 +1293,7 @@ puts '26. ➡️ Creating "11 steps" - Sara 🍲 tajine'
     url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793101/Seeds/IMG_0908_digcbk.jpg"
   step5 = Step.new(
     position:   5,
-    description: "🦶 add water",
+    description: "🚰 add water",
     status: false,
     instruction_id: 12,
     )
@@ -1303,7 +1303,7 @@ puts '26. ➡️ Creating "11 steps" - Sara 🍲 tajine'
     url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793077/Seeds/IMG_0909_tonelc.jpg"
   step6 = Step.new(
     position:   6,
-    description: "🦶 grill the almounds",
+    description: "grill the almounds",
     status: false,
     instruction_id: 12,
     )
@@ -1313,7 +1313,7 @@ puts '26. ➡️ Creating "11 steps" - Sara 🍲 tajine'
     url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793083/Seeds/IMG_0910_yj7ibk.jpg"
   step7 = Step.new(
     position:   7,
-    description: "🦶 Bake prunes + brown Sugar",
+    description: "Bake prunes + brown Sugar",
     status: false,
     instruction_id: 12,
     )
@@ -1323,7 +1323,7 @@ puts '26. ➡️ Creating "11 steps" - Sara 🍲 tajine'
     url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793094/Seeds/IMG_0912_b4sdkr.jpg"
   step8 = Step.new(
     position:   8,
-    description: "🦶 add cinnamon",
+    description: "add cinnamon",
     status: false,
     instruction_id: 12,
     )
@@ -1343,7 +1343,7 @@ puts '26. ➡️ Creating "11 steps" - Sara 🍲 tajine'
     url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582793077/Seeds/IMG_0915_mpeset.jpg"
   step10 = Step.new(
     position:   10,
-    description: "🦶 final touch: add almounds",
+    description: "final touch: add almounds",
     status: false,
     instruction_id: 12,
     )
