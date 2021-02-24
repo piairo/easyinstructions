@@ -3,18 +3,18 @@
 
   <% if @instruction.nil? %>
     <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "logo_easyinstructions4_small.png" %>
+      <%= image_tag "logo_easyinstructions6_small.png" %>
       <span>easy<strong>instructions</strong></span>
       <% end %>
 
   <% elsif user_signed_in? %>
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logo_easyinstructions4_small.png" %>
+      <%= image_tag "logo_easyinstructions6_small.png" %>
       <span>easy<strong>instructions</strong></span>
       <% end %>
   <% else %>
     <%= link_to homes_for_booking_path(@instruction.name), class: "navbar-brand" do %>
-      <%= image_tag "logo_easyinstructions4_small.png" %>
+      <%= image_tag "logo_easyinstructions6_small.png" %>
       <span><%= @instruction.name %> nest</span>
 
       <% end %>

@@ -38,7 +38,7 @@ puts '2. 🏠 Creating "instruction1" - chocolate...'
 puts 'Finished "instruction1" - Chocolate!'
 
 puts separator
-puts '3. ➡️ Creating "7 steps" - for chocolate ...'
+puts '3. ➡️ Creating "8 steps" - for chocolate ...'
 
   url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929948/Seeds/dyndwlezxtdg479pzy99.png"
 
@@ -72,48 +72,57 @@ puts '3. ➡️ Creating "7 steps" - for chocolate ...'
   step3.remote_photo_url = url
   step3.save!
 
-
-  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929952/Seeds/qsr36rzwthkikextc9ow.png"
+ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1604249031/Seeds/inshmu3qhqe2r8arj0cq.jpg"
   step4 = Step.new(
     position:   4,
-    description: "🦶 climb till 1st floor ",
+    description: "⚠️ pull back a little (one dent backward) ",
     status: false,
     instruction_id: 1,
     )
   step4.remote_photo_url = url
   step4.save!
 
- url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929953/Seeds/msqlm5pw2mf5efjwxewp.png"
- step5 = Step.new(
+  url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929952/Seeds/qsr36rzwthkikextc9ow.png"
+  step5 = Step.new(
     position:   5,
-    description: "🎉 welcome home ",
+    description: "🦶 climb till 1st floor ",
     status: false,
     instruction_id: 1,
     )
   step5.remote_photo_url = url
   step5.save!
 
- url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929954/Seeds/unfmdote0dquwlx7dduq.png"
+ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929953/Seeds/msqlm5pw2mf5efjwxewp.png"
  step6 = Step.new(
     position:   6,
-    description: "🅿️ here is the free parking for resident ",
+    description: "🎉 welcome home ",
     status: false,
     instruction_id: 1,
     )
   step6.remote_photo_url = url
   step6.save!
 
- url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582833324/Seeds/IMG_4793_qjbpgg.jpg"
+ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929954/Seeds/unfmdote0dquwlx7dduq.png"
  step7 = Step.new(
     position:   7,
-    description: "☕ you live in front of the best coffee in town",
+    description: "🅿️ here is the free parking for resident ",
     status: false,
     instruction_id: 1,
     )
   step7.remote_photo_url = url
   step7.save!
 
-puts 'Finished 7 steps for chocolate!'
+ url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1582833324/Seeds/IMG_4793_qjbpgg.jpg"
+ step8 = Step.new(
+    position:   8,
+    description: "☕ you live in front of the best coffee in town",
+    status: false,
+    instruction_id: 1,
+    )
+  step8.remote_photo_url = url
+  step8.save!
+
+puts 'Finished 8 steps for chocolate!'
 
 puts separator
 puts '4. 📖 Creating "keyinfos" - chocolate ...'
