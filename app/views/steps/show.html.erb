@@ -23,7 +23,7 @@
 
   <div class="carousel-inner">
 
-     <div class="main-content carousel-item active" style="background-image: url('<%= cl_image_path @step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')" alt="first slide">
+     <div class="main-content carousel-item active" style="background-image: url('<%= cl_image_path @step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')" alt="first slide" id=first>
 
 
           <div class="carousel-caption d-md-block ">
@@ -33,7 +33,7 @@
     </div>
 
      <% @steps[1..-2].each do |step| %>
-     <div class="main-content carousel-item" style="background-image: url('<%= cl_image_path step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')" alt="middle slides">
+     <div class="main-content carousel-item" style="background-image: url('<%= cl_image_path step.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto" %>')" alt="middle slides" id= <%= step.position %> >
 
       <div class="carousel-caption d-md-block">
             <header class="p-3"><h1> <%= step.description %> </h1></header>
@@ -72,7 +72,8 @@
 <!-- BUTTON BACK -->
       <div class="d-flex justify-content-center align-items-center">
 
-          <a class="btn mybutton-light mybutton-lg" href="#carouselExampleIndicators" role="button" data-slide="prev">Back</a>
+            <a class="btn mybutton-light mybutton-lg" href="#carouselExampleIndicators" role="button" data-slide="prev">Back</a>
+
       </div>
 
 <!-- CENTRAL ICON -->
@@ -88,7 +89,6 @@
       </div>
 
 </div>
-
 
 
 

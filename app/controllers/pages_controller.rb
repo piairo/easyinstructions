@@ -15,6 +15,7 @@ class PagesController < ApplicationController
  def homes_for_booking
     @instruction = Instruction.where(name: params[:instruction_name])[0]
     @keyinfo = Keyinfo.where(instruction_id: @instruction.id)
+
   end
 
 end
