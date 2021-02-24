@@ -4,7 +4,7 @@
   <!--   BUTTON BACK  --->
     <div class="d-flex justify-content-center align-items-center">
 <!--        1) for the home page -->
-        <% if current_page?('/chocolate') || current_page?('/netflix') || current_page?('/hotwater') || current_page?('/pancakes') || current_page?('/frontdoor') || current_page?('/pooridge') ||current_page?('/bertie') ||current_page?('/ranelagh') || current_page?('/') %>
+        <% if current_page?('/checkin') || current_page?('/netflix') || current_page?('/hotwater') || current_page?('/pancakes') || current_page?('/frontdoor') || current_page?('/pooridge') ||current_page?('/bertie') ||current_page?('/ranelagh') || current_page?('/') %>
 
 
         <% elsif @step %>
@@ -48,7 +48,7 @@
           <% if current_page?('/')%>
        <!--    <%= link_to raw("<i class=\"fas fa-search\"></i> search"), instructions_path, class: "btn btn-danger" %> -->
 
-          <% elsif current_page?('/chocolate') || current_page?('/netflix') || current_page?('/hotwater') || current_page?('/pancakes') || current_page?('/frontdoor') || current_page?('/pooridge') || current_page?('/bertie') || current_page?('/ranelagh') ||current_page?('/')%>
+          <% elsif current_page?('/checkin') || current_page?('/netflix') || current_page?('/hotwater') || current_page?('/pancakes') || current_page?('/frontdoor') || current_page?('/pooridge') || current_page?('/bertie') || current_page?('/ranelagh') ||current_page?('/')%>
 
           <% elsif params[:controller] == 'keyinfos'%>
 
@@ -59,11 +59,11 @@
           <%= link_to "+create", new_instruction_path, class: 'btn btn-danger mybutton-lg' %>
 
 <!--          SEND SMS FOR CHOCOLATE -->
-          <% elsif @instruction.name == "chocolate" && @step.position == 5 %>
+          <% elsif @instruction.name == "checkin" && @step.position == 5 %>
           <%= link_to "next", sms1_path(@instruction, @step.position + 1), class: 'btn btn-danger mybutton-lg'%>
 
 
-          <% elsif @step.position == @instruction.steps.count && ["netflix", "hotwater", "frontdoor", "chocolate"].include?(@instruction.name) %>
+          <% elsif @step.position == @instruction.steps.count && ["netflix", "hotwater", "frontdoor", "checkin"].include?(@instruction.name) %>
            <%= link_to "house manual", instruction_keyinfo_path(1, 1), class: 'btn btn-danger mybutton auto'%>
 
 
