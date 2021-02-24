@@ -20,7 +20,7 @@ class StepsController < ApplicationController
 
    message = @client.messages.create(
   body: "Chocolate check-in from: '#{@location}'",
-  to: '+447484723518',
+  to: '+447485145896',
   from: '+13852557020')
   rescue Twilio::REST::TwilioError => e
     puts e.message
