@@ -14,11 +14,14 @@
           </div>
 </div>
 
-  <div class="container d-flex align-items-center justify-content-center" style='height: 40vh'>
+  <div class="container" style='height: 40vh; text-align:center'>
 <%#= link_to new_instruction_path do %>
-    <%#= image_tag "logo_easyinstructions4_large.png", id:"travelers",class:"img-fluid mt-5 mb-5"%>
+    <div> <%= image_tag "logo_easyinstructions6_large.png", id:"main-home-img",class:"m-5"%>
     <%# end %>
+    </div>
+     <div>
     <%= link_to "🔍 search", instructions_path, class: 'btn btn-danger mybutton-lg home',id: 'blinkbutton' %>
+    </div>
   </div>
 
   <!-- <div class="row justify-content-center">
