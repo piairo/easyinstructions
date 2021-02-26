@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :instructions do
+  resources :fields
+    resources :instructions do
     resources :keyinfos
   end
 

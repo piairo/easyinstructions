@@ -10,8 +10,27 @@ separator = "-------------------------------------------------"
 
 puts separator
 
+puts " 0.🧑‍🍳 Creating 2 fake field (category)... "
+# Create team accounts
+
+url= "https://res.cloudinary.com/dsupdin1s/image/upload/v1614357459/Seeds/recipes_ld85cy.jpg"
+field1 = Field.new(
+    name: "recipes",
+    )
+  field1.remote_photo_url = url
+  field1.save!
+
+url= "https://res.cloudinary.com/dsupdin1s/image/upload/v1614357458/Seeds/Lost-tourist-e1520344931169_akkemk.jpg"
+field2 = Field.new(
+    name: "directions",
+    )
+  field2.remote_photo_url = url
+  field2.save!
+
+puts 'Finished 2 fields (categories)!'
+puts separator
+
 puts " 1. 👤 Creating 3 fake users... "
-pswd = 'sophia'
 # Create team accounts
 team = [
   {first_name: 'Pierre', last_name: 'M\'Baga', email: 'pierrembaga@gmail.com', password: 'michelle', facebook_picture_url: 'https://scontent.flhr4-2.fna.fbcdn.net/v/t1.0-9/11010628_840617416027523_944689620296317714_n.jpg?_nc_cat=109&_nc_ohc=totJjaRPBj4AX8QebuH&_nc_ht=scontent.flhr4-2.fna&oh=0fcf008c07dde37cf1bb05def3cb2082&oe=5E9B5CC4'},
@@ -23,8 +42,8 @@ team.each do |teamate|
 end
 
 puts 'Finished users!'
-
 puts separator
+
 puts '2. 🏠 Creating "instruction1" - chocolate...'
 
   instruction1 = Instruction.new(
@@ -32,6 +51,7 @@ puts '2. 🏠 Creating "instruction1" - chocolate...'
     address: "2A southborough terrace, cv31 2dt leamington",
     private: true,
     user_id: 1,
+    field_id: 2,
     )
   instruction1.save!
 
@@ -41,7 +61,6 @@ puts separator
 puts '3. ➡️ Creating "8 steps" - for chocolate ...'
 
   url = "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929948/Seeds/dyndwlezxtdg479pzy99.png"
-
   step1 = Step.new(
     position:   1,
     description: "🦶 make sure you are here: cv312dt brunswick street",
@@ -52,7 +71,6 @@ puts '3. ➡️ Creating "8 steps" - for chocolate ...'
   step1.save!
 
   url= "https://res.cloudinary.com/dsupdin1s/image/upload/v1569929949/Seeds/sgy8n6k6c5gxsmxwo97a.png"
-
   step2 = Step.new(
     position:   2,
     description: "🦶 go to the main door ",
@@ -145,6 +163,7 @@ puts '5. 🍲 Creating "instruction2"- pancakes...'
   instruction2 = Instruction.new(
     name:    "pancakes",
     user_id: 1,
+    field_id: 1,
     )
   instruction2.save!
 
@@ -230,6 +249,7 @@ puts '7. 🍲 Creating "instruction3" - Michelle dressing...'
   instruction3 = Instruction.new(
     name:    "Michelle dressing",
     user_id: 1,
+    field_id: 1,
     )
   instruction3.save!
 
@@ -391,6 +411,7 @@ puts '9. 🍲 Creating "instruction5" - Salmon quiche...'
     instruction4 = Instruction.new(
       name:    "salmon quiche",
       user_id: 1,
+      field_id: 1,
       )
     instruction4.save!
 
@@ -567,6 +588,7 @@ puts '11. 🍲 Creating "instruction5" - Amani soup...'
     instruction5 = Instruction.new(
       name:    "Amani soup",
       user_id: 1,
+      field_id: 1,
       )
     instruction5.save!
 
@@ -761,6 +783,7 @@ puts '13. 🍲 Creating "instruction6" - Katia tajine...'
     instruction6 = Instruction.new(
       name:    "Katia tajine",
       user_id: 1,
+      field_id: 1,
       )
     instruction6.save!
 
@@ -872,6 +895,7 @@ puts '15. 🏠 Creating "instruction7" - bertie...'
         address: "Flat1, 8 Bertie terrace CV32 5BL leamington",
         private: true,
         user_id: 1,
+        field_id: 1,
         )
       instruction7.save!
 
@@ -929,6 +953,7 @@ puts '17. 📺 Creating "instruction8" - netflix...'
     name:    "netflix",
     address: "2A southborough terrace, cv31 2dt leamington",
     user_id: 1,
+    field_id: 1,
     )
   instruction8.save!
 
@@ -987,6 +1012,7 @@ puts '19. 🛁 Creating "instruction9" - hot water...'
     name:    "hot water",
     address: "2A southborough terrace, cv31 2dt leamington",
     user_id: 1,
+    field_id: 1,
     )
   instruction9.save!
 
@@ -1044,6 +1070,7 @@ puts '21. 🚪 Creating "instruction10" - Closing door...'
     name:    "closing door",
     address: "2A southborough terrace, cv31 2dt leamington",
     user_id: 1,
+    field_id: 1,
     )
   instruction10.save!
 
@@ -1091,6 +1118,7 @@ puts '23.  🍞 Creating "instruction11 - pierre bread...'
   instruction11 = Instruction.new(
     name:    "Pierre 🍞 bread",
     user_id: 1,
+    field_id: 1,
     )
   instruction11.save!
 
@@ -1238,6 +1266,7 @@ puts '25. 🍲 Creating "instruction12 - Sara tajine...'
   instruction12 = Instruction.new(
     name:    "Sara tajine",
     user_id: 1,
+    field_id: 1,
     )
   instruction12.save!
 

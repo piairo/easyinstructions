@@ -1,0 +1,39 @@
+    <div class="navbar navbar-light navbar-lewagon fixed-top p-2">
+         <%= link_to root_path, class: "navbar-brand" do %>
+            <%= image_tag "logo_easyinstructions6_small.png" %>
+            <span><strong>All </strong>categories</span>
+          <% end %>
+    </div>
+    <br>
+<div class="container pl-5 pr-5" style="background-color: aliceblue; padding-top: 54px;">
+     <div class="recettes-cards">
+
+        <% @fields.each do |field| %>
+
+          <div class="recette">
+
+
+
+               <%= link_to field_path(field.id) do %>
+
+                        <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Field.where(id: field.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto",:default_image => "logo_easyfields6_small.png" %>')">
+
+
+                            <h3> <%= field.name.downcase %></h3>
+
+                        </div>
+                <% end %>
+
+              <div class="recette-buttons">
+
+                <a class="text-secondary"><%= "#{Instruction.where(field_id: field.id).count} instructions" %></a>
+
+              </div>
+
+            </div>
+
+          <% end %>
+    </div>
+</div>
+
+

@@ -6,18 +6,19 @@
 
     <p><%= @instruction.address %></p>
 
-    <div class="container d-flex justify-content-between">
-    <h7><%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit project</span>"), edit_instruction_path(@instruction), class: "text-primary" %></h7>
+ <% if user_signed_in? %>
 
-      <h7><%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete project</span>"), instruction_path(@instruction), data: { confirm: "Are you sure you want to delete your project?" }, method: :delete, class: "text-danger" %></h7>
+    <div class="container d-flex justify-content-between">
+    <h7><%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit instruction</span>"), edit_instruction_path(@instruction), class: "text-primary" %></h7>
+
+      <h7><%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete instruction</span>"), instruction_path(@instruction), data: { confirm: "Are you sure you want to delete your instruction?" }, method: :delete, class: "text-danger" %></h7>
+  <% end %>
 
     <h7><%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), instruction_step_path(@instruction.id, 1), class: "text-success" %></h7>
   </div>
 
  <!--   //DEBUG -->
- <!--    <p>@instruction.id : <%= @instruction.id %></p>
-    <p>@instruction.user_id : <%= @instruction.user_id %></p>
-    <p>current_user.id : <%= current_user.id %></p> -->
+ <!--    <p>@instruction.id : <%= @instruction.id %></p> -->
 <!--     <p>@steps : <%= @steps %> </p> -->
 <!-- // -->
 

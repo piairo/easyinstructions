@@ -31,6 +31,7 @@ class InstructionsController < ApplicationController
 
   def edit          # GET /instructions/:id/edit
     @instruction = Instruction.find(params[:id])
+    @field = Field.where(id: @instruction.field_id)[0]
   end
 
   def update        # PATCH /instructions/:id
@@ -51,6 +52,7 @@ private
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
     params.require(:instruction).permit(:name, :address, :private)
+
   end
 end
 

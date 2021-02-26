@@ -11,7 +11,7 @@
 <div class="container pl-5 pr-5" style="background-color: aliceblue; padding-top: 54px;">
      <div class="recettes-cards">
 
-        <% @user_instructions.each do |instruction| %>
+        <% @field_user_instructions.each do |instruction| %>
 
           <div class="recette">
 
@@ -85,7 +85,7 @@
 <div class="container pl-5 pr-5" style="background-color: aliceblue; padding-top: 54px;">
      <div class="recettes-cards">
 
-        <% @public_instructions.each do |instruction| %>
+        <% @field_public_instructions.each do |instruction| %>
 
           <div class="recette">
 
@@ -142,8 +142,5 @@
 </div>
     <% end %>
 
-  <div class="container mb-5 mt-3 pb-5">
-  <%= link_to "+ create",  new_instruction_path(@instruction), class: 'badge badge-pill badge-danger', style:'width: 100%' %>
-  </div>
 
 <%= render 'shared/navbar_bottom' %>
