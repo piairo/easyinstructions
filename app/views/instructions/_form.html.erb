@@ -16,7 +16,7 @@
 
     <%= form_for (@field) do |f| %>
       <%= f.label :'category (field)', class: "text-secondary"  %>
-      <%= f.text_field :name, class: 'form-control mb-5',disabled: !user_signed_in?, placeholder:'...' %>
+      <%= f.text_field :name, class: 'form-control mb-3',disabled: !user_signed_in?, placeholder:'...' %>
         <% end %>
 
       <%= f.label :'instruction name' %>

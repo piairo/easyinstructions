@@ -4,7 +4,7 @@
   <!-- <div class= "wave-video">
           <%= cl_video_tag("1037365913-preview_mcuded", :loop => true, :autoplay => true, muted: true, :width=>414, :fallback_content => "Your browser does not support HTML5 video tags") %> -->
 
- <div class="wave-photo" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url('<%= image_path 'woman-hands-pressing-smartphone3.png'%>');">
+ <div class="wave-photo mb-5" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url('<%= image_path 'woman-hands-pressing-smartphone3.png'%>');">
 
   <div class=wave-transparent style="background-image: url('<%= image_path 'wave2.png' %>');"></div>
 
@@ -15,12 +15,11 @@
 </div>
 
   <div class="container" style='height: 40vh; text-align:center'>
-<%#= link_to new_instruction_path do %>
      <div>
-  <%= link_to "🔍 search", fields_path, class: 'btn btn-danger mybutton-lg home mt-5',id: 'blinkbutton' %>
+  <%= link_to "🔍 search", fields_path, class: 'btn btn-danger mybutton-lg home m-5',id: 'blinkbutton' %>
     </div>
-        <div> <%= image_tag "logo_easyinstructions6_large.png", id:"main-home-img",class:"m-3"%>
-    <%# end %>
+    <div>
+      <%= image_tag "logo_easyinstructions6_small.png", id:"main-home-img",class:"m-5", style:"height:5vh"%>
     </div>
   </div>
 

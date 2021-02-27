@@ -10,7 +10,7 @@ separator = "-------------------------------------------------"
 
 puts separator
 
-puts " 0.🧑‍🍳 Creating 2 fake field (category)... "
+puts " 0.🧑‍🍳 Creating 4 fake field (category)... "
 # Create team accounts
 
 url= "https://res.cloudinary.com/dsupdin1s/image/upload/v1614357459/Seeds/recipes_ld85cy.jpg"
@@ -27,7 +27,23 @@ field2 = Field.new(
   field2.remote_photo_url = url
   field2.save!
 
-puts 'Finished 2 fields (categories)!'
+
+url= "https://res.cloudinary.com/dsupdin1s/image/upload/v1614384835/Seeds/flat-pack-furniture_cmxneh.jpg"
+field3 = Field.new(
+    name: "manuals",
+    )
+  field3.remote_photo_url = url
+  field3.save!
+
+url= "https://res.cloudinary.com/dsupdin1s/image/upload/v1614384596/Seeds/woman-reading-medicine-instructions-lea-paterson_sw3wlh.jpg"
+field4 = Field.new(
+    name: "medication",
+    )
+  field4.remote_photo_url = url
+  field4.save!
+
+
+puts 'Finished 4 fields (categories)!'
 puts separator
 
 puts " 1. 👤 Creating 3 fake users... "
@@ -953,7 +969,7 @@ puts '17. 📺 Creating "instruction8" - netflix...'
     name:    "netflix",
     address: "2A southborough terrace, cv31 2dt leamington",
     user_id: 1,
-    field_id: 1,
+    field_id: 3,
     )
   instruction8.save!
 
@@ -1012,7 +1028,7 @@ puts '19. 🛁 Creating "instruction9" - hot water...'
     name:    "hot water",
     address: "2A southborough terrace, cv31 2dt leamington",
     user_id: 1,
-    field_id: 1,
+    field_id: 3,
     )
   instruction9.save!
 
@@ -1070,7 +1086,7 @@ puts '21. 🚪 Creating "instruction10" - Closing door...'
     name:    "closing door",
     address: "2A southborough terrace, cv31 2dt leamington",
     user_id: 1,
-    field_id: 1,
+    field_id: 3,
     )
   instruction10.save!
 
