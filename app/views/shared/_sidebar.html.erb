@@ -23,7 +23,7 @@
   <%# USER MENU %>
   <% if user_signed_in? %>
     <h5 class="nav-link text-secondary small">Dashboard</h5>
-    <%= link_to raw("<i class=\"fas fa-book\"></i> My instructions <span class=\"badge badge-pill badge-light\">#{current_user.instructions.count}</span>"), instructions_path, class: "dropdown-item" %>
+    <%= link_to raw("<i class=\"fas fa-book\"></i> My instructions <span class=\"badge badge-pill badge-light\">#{current_user.instructions.count}</span>"), fields_path, class: "dropdown-item" %>
 
     <%#= link_to raw("<i class=\"fas fa-plus-square\"></i> Add new project"), new_instruction_path, class: "dropdown-item" %>
 
@@ -46,8 +46,8 @@
   <% end %>
   <%# COMMON MENU %>
 <br>
-  <%= link_to raw("<i class=\"fas fa-plus text-danger\"></i>New instruction"), new_instruction_path, class: "dropdown-item" %>
-  <%= link_to raw("<i class=\"fas fa-search\"></i> Search"), instructions_path, class: "dropdown-item" %>
+  <%= link_to raw("<i class=\"fas fa-plus text-danger\"></i>New instruction"), fields_path, class: "dropdown-item" %>
+  <%= link_to raw("<i class=\"fas fa-search\"></i> Search"), fields_path, class: "dropdown-item" %>
   <%= link_to raw("<i class=\"fas fa-home\"></i> Home"), root_path, class: "dropdown-item" %>
 
 

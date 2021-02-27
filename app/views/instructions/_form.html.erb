@@ -3,7 +3,7 @@
 <div class="container pt-3">
   <h4>Create instruction</h4>
   <br>
-  <%= form_for (@instruction) do |f| %>
+  <%= form_for [@field, @instruction] do |f| %>
   <% if @instruction.errors.any? %>
     <div class="errors-container" style="color: #f43761">
       <ul>
@@ -13,15 +13,17 @@
       </ul>
     </div>
   <% end %>
-
-    <%= form_for (@field) do |f| %>
-      <%= f.label :'category (field)', class: "text-secondary"  %>
-      <%= f.text_field :name, class: 'form-control mb-3',disabled: !user_signed_in?, placeholder:'...' %>
-        <% end %>
-
+        <div>
+          <%= f.fields_for :field do |section| %>
+          <%= f.label :'Categorie' %>
+          <%= f.collection_select :name, Field::CATEGORIES, :to_s, :to_s,:include_blank => true,style:"border-color: #FF3760", prompt:':name'
+            %>
+          <% end %>
+        </div>
+        <br>
       <%= f.label :'instruction name' %>
       <%= f.text_field :name, class: 'form-control', placeholder:'...', style:"border-color: #FF3760" %>
-
+      <br>
 
       <%= f.label :'address (optional)', class: "text-secondary mt-5" %>
       <%= f.text_field :address, class: 'form-control'%>

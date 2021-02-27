@@ -1,17 +1,16 @@
 class FieldsController < ApplicationController
 
   def index         # GET /fields
-    @fields = Field.all.sort_by { |a| a.name }
+    @fields = Field.all.sort_by { |a, b| b <=> a  }
+
   end
 
-  def show          # GET /fields/:id
+  def show          # Redirect to 'instructions#index'
     @field = Field.find(params[:id])
-    @field_user_instructions = Instruction.where(user_id: current_user, field_id: @field.id).sort_by { |a| a.id }
-    @field_public_instructions = Instruction.where(private: false, field_id: @field.id).sort_by { |a| a.id }
-    # redirect_to instructions_path(@field)
-
+    redirect_to field_instructions_path(@field)
 
   end
+
 
   def instruction_params
     # *Strong params*: You need to *whitelist* what can be updated by the user

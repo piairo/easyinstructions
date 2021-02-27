@@ -1,34 +1,34 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :fields
+  resources :fields do
     resources :instructions do
-    resources :keyinfos
+      resources :keyinfos
+    end
   end
-
   #GO RAILS sortableJS Tweak (see at 04:33) https://gorails.com/episodes/sortable-drag-and-drop
-    patch 'instructions/:instruction_id/order/:data_value', to: 'steps#sort', as: :sort_instruction_order
+    patch '/fields/:field_id/instructions/:instruction_id/order/:data_value', to: 'steps#sort', as: :sort_instruction_order
 
 
   # steps perso based on position (not ID like in resources)
-    get 'instructions/:instruction_id/steps', to: 'steps#index', as: :instruction_steps
-    post 'instructions/:instruction_id/steps', to: 'steps#create'
+    get '/fields/:field_id/instructions/:instruction_id/steps', to: 'steps#index', as: :steps
+    post '/fields/:field_id/instructions/:instruction_id/steps', to: 'steps#create'
 
 
-    get 'instructions/:instruction_id/steps/new', to: 'steps#new', as: :new_instruction_step
-    get 'instructions/:instruction_id/steps/:position/edit', to: 'steps#edit', as: :edit_instruction_step
-    get 'instructions/:instruction_id/steps/:position', to: 'steps#show', as: :instruction_step
+    get '/fields/:field_id/instructions/:instruction_id/steps/new', to: 'steps#new', as: :new_step
+    get '/fields/:field_id/instructions/:instruction_id/steps/:position/edit', to: 'steps#edit', as: :edit_step
+    get '/fields/:field_id/instructions/:instruction_id/steps/:position', to: 'steps#show', as: :step
 
 
 
     # attention for update :position does not work but only :id
-    patch 'instructions/:instruction_id/steps/:id', to: 'steps#update'
-    put 'instructions/:instruction_id/steps/:id', to: 'steps#update'
-    delete 'instructions/:instruction_id/steps/:position', to: 'steps#destroy'
+    patch '/fields/:field_id/instructions/:instruction_id/steps/:id', to: 'steps#update'
+    put '/fields/:field_id/instructions/:instruction_id/steps/:id', to: 'steps#update'
+    delete '/fields/:field_id/instructions/:instruction_id/steps/:position', to: 'steps#destroy'
 
  #send sms
  # OLD WITHOUT CAROUSEL touch slide (Navbar buttons)
-    post 'instructions/:instruction_id/steps/:position', to: 'steps#send_sms', as: :sms1
+    post '/fields/:field_id/instructions/:instruction_id/steps/:position', to: 'steps#send_sms', as: :sms1
 
 # WITH CAROUSEL
     post 'chocolate-sms', to: 'steps#send_sms', as: :sms

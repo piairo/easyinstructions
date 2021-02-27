@@ -17,7 +17,7 @@
 
             <% if Step.where(instruction_id: instruction.id).last && Step.where(instruction_id: instruction.id).last.photo?  %>
 
-               <%= link_to instruction_step_path(instruction.id, 1) do %>
+               <%= link_to step_path(@field,instruction.id, 1) do %>
 
                         <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto",:default_image => "logo_easyinstructions6_small.png" %>')">
 
@@ -59,10 +59,10 @@
 
                 <a class="text-secondary"><%= "👣 #{instruction.steps.count} steps" %></a>
 
-                  <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), instruction_steps_path(instruction.id), class: "text-primary" %>
+                  <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), edit_field_instruction_path(@field, instruction.id), class: "text-primary" %>
 
 
-                  <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), instruction_path(instruction.id), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-danger" %>
+                  <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), field_instruction_path(@field, instruction.id), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-danger" %>
               </div>
 
             </div>
@@ -143,7 +143,7 @@
     <% end %>
 
   <div class="container mb-5 mt-3 pb-5">
-  <%= link_to "+ create",  new_instruction_path(@instruction), class: 'badge badge-pill badge-danger', style:'width: 100%' %>
+  <%= link_to "+ create",  new_field_instruction_path(@field, @instruction), class: 'badge badge-pill badge-danger', style:'width: 100%' %>
   </div>
 
 <%= render 'shared/navbar_bottom' %>

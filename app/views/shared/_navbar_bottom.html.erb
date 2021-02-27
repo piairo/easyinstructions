@@ -46,7 +46,7 @@
             <%#= link_to "home", homes_for_booking_path(@instruction.name), class: 'btn btn-primary mybutton-lg'%>
 <!--        2) for the home page    -->
           <% if current_page?('/')%>
-       <!--    <%= link_to raw("<i class=\"fas fa-search\"></i> search"), instructions_path, class: "btn btn-danger" %> -->
+       <!--    <%= link_to raw("<i class=\"fas fa-search\"></i> search"), fields_path, class: "btn btn-danger" %> -->
 
           <% elsif current_page?('/checkin') || current_page?('/netflix') || current_page?('/hotwater') || current_page?('/pancakes') || current_page?('/frontdoor') || current_page?('/pooridge') || current_page?('/bertie') || current_page?('/ranelagh') ||current_page?('/')%>
 
@@ -54,12 +54,10 @@
 
           <%= link_to "home", homes_for_booking_path("chocolate"), class: 'btn btn-primary mybutton-lg'%>
 
-          <% elsif params[:controller] == 'instructions'%>
+          <% elsif params[:controller] == 'instructions' || params[:controller] == 'fields'%>
 
-          <%= link_to "+create", new_instruction_path, class: 'btn btn-danger mybutton-lg' %>
+          <%= link_to "+create", new_field_instruction_path(1), class: 'btn btn-danger mybutton-lg' %>
 
-          <% elsif params[:controller] == 'fields'%>
-<!--             do nothing   -->
 
 <!--          SEND SMS FOR CHOCOLATE -->
           <% elsif @instruction.name == "checkin" && @step.position == 5 %>
