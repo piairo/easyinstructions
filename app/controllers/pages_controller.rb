@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   end
 
  def homes_for_booking
-    @field = Field.find(params[:id])
+    @field = Field.find(1)
     @instruction = Instruction.where(name: params[:instruction_name])[0]
     @keyinfo = Keyinfo.where(instruction_id: @instruction.id)
 

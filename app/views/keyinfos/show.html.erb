@@ -11,17 +11,6 @@
     <p class="keyinfo-card-text">11:30am</p>
   </div>
 
-<!-- <div class="container d-flex justify-content-between">
-
-    <%= link_to "netflix", instruction_step_path(3, 1), class: 'btn btn-secondary mybutton-sm home'%>
-
-    <%= link_to "hot water", instruction_step_path(8, 1), class: 'btn btn-secondary mybutton-sm home'%>
-
-    <%= link_to "closing door", instruction_step_path(42, 1), class: 'btn btn-secondary mybutton-sm home'%>
-
-
-</div>
- -->
 
 
 <div class="keyinfo-card grey">
@@ -34,20 +23,20 @@
 
 <div class="keyinfo-card white">
     <p class="keyinfo-card-title">netflix</p>
-    <p><%= link_to "📺", instruction_step_path(@netflix, 1), class: 'keyinfo-card-emoji' %><p>
-    <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">instructions</span>"), instruction_step_path(@netflix, 1), class: "text-success" %>
+    <p><%= link_to "📺", step_path(1, @netflix, 1), class: 'keyinfo-card-emoji' %><p>
+    <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">instructions</span>"), step_path(1, @netflix, 1), class: "text-success" %>
   </div>
 
   <div class="keyinfo-card grey">
     <p class="keyinfo-card-title">hot water</p>
-    <p><%= link_to "🛁", instruction_step_path(@hotwater, 1), class: 'keyinfo-card-emoji' %><p>
-    <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">instructions</span>"), instruction_step_path(@hotwater, 1), class: "text-success" %>
+    <p><%= link_to "🛁",step_path(1, @hotwater, 1), class: 'keyinfo-card-emoji' %><p>
+    <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">instructions</span>"),step_path(1, @hotwater, 1), class: "text-success" %>
   </div>
 
   <div class="keyinfo-card white">
     <p class="keyinfo-card-title">closing door</p>
-    <p><%= link_to "🚪", instruction_step_path(@closingdoor, 1), class: 'keyinfo-card-emoji' %><p>
-    <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">instructions</span>"), instruction_step_path(@closingdoor, 1), class: "text-success" %>
+    <p><%= link_to "🚪", step_path(1, @closingdoor, 1), class: 'keyinfo-card-emoji' %><p>
+    <%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">instructions</span>"),step_path(1, @closingdoor, 1), class: "text-success" %>
   </div>
 <!--
             <div class="container d-flex justify-content-center align-items-center p-0">

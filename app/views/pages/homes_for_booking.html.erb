@@ -7,7 +7,7 @@
   <br>
 
   <div class="row justify-content-center mb-3">
-    <%= link_to instruction_step_path(@instruction.id, 1) do %>
+    <%= link_to step_path(@field, @instruction.id,1) do %>
     <%= image_tag "logo_easyinstructions6_large.png", id:"home-img"%>
     <% end %>
   </div>
@@ -15,7 +15,7 @@
 
   <div class="container d-flex align-items-center justify-content-center" style='height: 20vh'>
 
-      <%= link_to "Check-in", instruction_step_path(@instruction.id, 1), class: 'btn btn-danger mybutton-lg home', id: 'blinkbutton' %>
+      <%= link_to "Check-in", step_path(@field, @instruction.id,1), class: 'btn btn-danger mybutton-lg home', id: 'blinkbutton' %>
   </div>
 
   <div class="container d-flex align-items-center justify-content-center">
@@ -23,7 +23,7 @@
        <% if @keyinfo.empty? %>
 
        <% else %>
-        <%= link_to "house manual", instruction_keyinfo_path(@instruction, 1), class: 'btn btn-secondary mybutton-sm home'%>
+        <%= link_to "house manual", field_instruction_keyinfo_path(@field, @instruction,1), class: 'btn btn-secondary mybutton-sm home'%>
        <% end %>
 
   </div>
