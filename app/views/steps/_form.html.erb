@@ -3,7 +3,7 @@
 <div class="container pt-3">
   <h4>Add step</h4>
   <br>
-  <%= simple_form_for [@instruction, @step] do |f| %>
+  <%= simple_form_for [@step] do |f| %>
   <% if @step.errors.any? %>
     <div class="errors-container" style="color: #f43761">
       <ul>

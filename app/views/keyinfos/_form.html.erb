@@ -35,9 +35,9 @@
       <%= f.input :photo_cache, as: :hidden %>
     </div>
 
-    <%#= link_to "back", instruction_steps_path(@instruction), class: 'btn mybutton-light'%>
+    <%#= link_to "back", steps_path(@field, @instruction), class: 'btn mybutton-light'%>
     <div class="form-actions">
-    <%= link_to "back", instruction_steps_path(@instruction), class: 'btn mybutton-light'%>
+    <%= link_to "back", steps_path(@field, @instruction), class: 'btn mybutton-light'%>
     <%= f.button :submit, class: 'btn btn-danger' %>
     <div>
 <br>

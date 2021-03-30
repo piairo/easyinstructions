@@ -1,6 +1,7 @@
 class KeyinfosController < ApplicationController
 
   before_action :set_instruction
+  before_action :set_field, only: [:update, :destroy, :create]
 
   def show
     @keyinfo = Keyinfo.where(id: params[:instruction_id])[0]
@@ -21,7 +22,7 @@ class KeyinfosController < ApplicationController
     @step.instruction = @instruction
 
     if @step.save
-      redirect_to instruction_steps_path(@instruction)
+      redirect_to steps_path(@field, @instruction)
     else
       render :new
     end
@@ -34,17 +35,21 @@ class KeyinfosController < ApplicationController
   def update        # PATCH /instructions/:id/keyinfos/:id(.:format)
     @step = Step.find(params[:id])
     @step.update(step_params)
-    redirect_to instruction_steps_path(@instruction, @step)
+    redirect_to steps_path(@field, @instruction, @step)
   end
 
   def destroy       # DELETE /instructions/:id/keyinfos/:id(.:format)
     @step = Step.find(params[:id])
     @step.destroy
-    redirect_to instruction_steps_path(@instruction, @step)
+    redirect_to steps_path(@field, @instruction, @step)
   end
 
 
 private
+
+  def set_field
+    @field = Field.find(params[:field_id])
+  end
 
   def set_instruction
     @instruction = Instruction.find(params[:id])

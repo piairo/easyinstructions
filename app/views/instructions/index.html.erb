@@ -4,7 +4,7 @@
     <div class="navbar navbar-light navbar-lewagon fixed-top p-2">
          <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "logo_easyinstructions6_small.png" %>
-        <span><strong>My</strong> instructions</span>
+        <span>My <strong class="text-danger"><%= @field.name %></strong></span>
         <% end %>
     </div>
     <br>
@@ -37,7 +37,7 @@
             <% else %>
 
 
-              <%= link_to instruction_step_path(instruction.id, 1) do %>
+              <%= link_to step_path(@field, instruction.id, 1) do %>
 
                                     <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../images/logo_easyinstructions6_large.png')">
 
@@ -59,7 +59,7 @@
 
                 <a class="text-secondary"><%= "👣 #{instruction.steps.count} steps" %></a>
 
-                  <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), edit_field_instruction_path(@field, instruction.id), class: "text-primary" %>
+                  <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit </span>"), steps_path(@field, instruction.id), class: "text-primary" %>
 
 
                   <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), field_instruction_path(@field, instruction.id), data: { confirm: "Are you sure you want to delete all your project?" }, method: :delete, class: "text-danger" %>
@@ -141,9 +141,5 @@
     </div>
 </div>
     <% end %>
-
-  <div class="container mb-5 mt-3 pb-5">
-  <%= link_to "+ create",  new_field_instruction_path(@field, @instruction), class: 'badge badge-pill badge-danger', style:'width: 100%' %>
-  </div>
 
 <%= render 'shared/navbar_bottom' %>

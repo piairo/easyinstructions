@@ -1,27 +1,21 @@
 <!-- app/views/instruction/_form.html.erb -->
 
 <div class="container pt-3">
-  <h4>Create instruction</h4>
+  <h4><%= @title %><span class="text-danger"><%= @field.name %></span></h4>
   <br>
   <%= form_for [@field, @instruction] do |f| %>
-  <% if @instruction.errors.any? %>
-    <div class="errors-container" style="color: #f43761">
-      <ul>
-        <% @instruction.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-        <div>
-          <%= f.fields_for :field do |section| %>
-          <%= f.label :'Categorie' %>
-          <%= f.collection_select :name, Field::CATEGORIES, :to_s, :to_s,:include_blank => true,style:"border-color: #FF3760", prompt:':name'
-            %>
-          <% end %>
+      <% if @instruction.errors.any? %>
+        <div class="errors-container" style="color: #f43761">
+          <ul>
+            <% @instruction.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
         </div>
-        <br>
-      <%= f.label :'instruction name' %>
+      <% end %>
+
+      <br>
+      <%= f.label :'name' %>
       <%= f.text_field :name, class: 'form-control', placeholder:'...', style:"border-color: #FF3760" %>
       <br>
 

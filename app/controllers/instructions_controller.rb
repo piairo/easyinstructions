@@ -17,15 +17,18 @@ class InstructionsController < ApplicationController
   def new           # GET /instructions/new
     @user = current_user
     @instruction = Instruction.new
+    @title = "New "
   end
 
   def create        # POST /instruction
     @instruction = Instruction.new(instruction_params)
+    @instruction.field_id = @field.id
     @instruction.name = @instruction.name.downcase
     @instruction.user = current_user
+    @title = "Create "
 
     if @instruction.save
-      redirect_to instruction_path(@instruction)
+      redirect_to field_instructions_path(@field)
     else
       render :new
     end
@@ -33,18 +36,21 @@ class InstructionsController < ApplicationController
 
   def edit          # GET /instructions/:id/edit
     @instruction = Instruction.find(params[:id])
+    @title = "Edit "
   end
 
   def update        # PATCH /instructions/:id
     @instruction = Instruction.find(params[:id])
     @instruction.update(instruction_params)
     redirect_to instruction_path(@instruction)
+    @title = "Update "
   end
 
   def destroy       # DELETE /instructions/:id
     @instruction = Instruction.find(params[:id])
     @instruction.destroy
     redirect_to field_instructions_path
+    @title = "destroy"
   end
 
 private
@@ -53,16 +59,11 @@ def set_field
     @field = Field.find(params[:field_id])
 end
 
-def set_instruction
-    @instruction = Instruction.find(params[:id])
-end
-
 
   def instruction_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
     params.require(:instruction).permit(:name, :address, :private)
-    params.require(:field).permit(:name)
 
   end
 end

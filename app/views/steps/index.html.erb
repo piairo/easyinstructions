@@ -5,7 +5,7 @@
 
         <%= link_to root_path, class: "navbar-brand" do %>
          <%= image_tag "logo_easyinstructions6_small.png" %>
-       <h6><%=link_to raw("#{@instruction.name} <span class=\"text-muted\" style=\"font-size:1rem\">(#{@steps.count} steps)</span>"), edit_instruction_path(@instruction), class: 'text-dark'%>
+       <h6><%=link_to raw("#{@instruction.name} <span class=\"text-muted\" style=\"font-size:1rem\">(#{@steps.count} steps)</span>"), edit_field_instruction_path(@field, @instruction), class: 'text-dark'%>
         </h6>
       <% end %>
 
@@ -21,10 +21,10 @@
     <h7 class="text-muted"><%= @instruction.address %></h7>
 <% if user_signed_in? %>
     <div class="container d-flex justify-content-between pl-0 mt-1" style="width: 65%">
-    <h7><%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit</span>"), edit_instruction_path(@instruction), class: "text-secondary" %></h7>
+    <h7><%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit</span>"), edit_field_instruction_path(@field, @instruction), class: "text-secondary" %></h7>
      <h7 id="trigger"><%= link_to raw("<i class=\"fas fa-sort\"></i><span class=\"badge badge-pill badge-light\">re-order  <i class=\"far fa-hand-paper\"></i></span>"), target: "_blank", class: "text-primary" %></h7>
 <% end %>
-      <h7><%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), instruction_step_path(@instruction, 1), class: "text-success" %></h7>
+      <h7><%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), step_path(@field, @instruction, 1), class: "text-success" %></h7>
 
      </div>
 </div>
@@ -42,7 +42,7 @@ START DEBUG
 
 <div class="container pb-5" style="background-color: aliceblue; padding-top: 120px">
 
-<ul id="items" style="list-style-type:none; margin:0px; padding:0px"  data-url="<%=instruction_steps_path(@instruction)%>" class="steps-cards">
+<ul id="items" style="list-style-type:none; margin:0px; padding:0px"  data-url="<%=steps_path(@field, @instruction)%>" class="steps-cards">
     <%@steps.each do |step| %>
       <li data-id="<%= dom_id(step) %>" class="step">
 
@@ -54,8 +54,8 @@ START DEBUG
         <div class="text-muted mr-2 pb-2 mb-4" style="font-size: 0.7rem"> <%= "#{step.description.slice(0,17)}..."%> </div>
 <% if user_signed_in? %>
          <div class="step-buttons pt-0">
-           <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit</span>"), edit_instruction_step_path(step.instruction_id, step.position), class: "text-primary", style: "font-size: 0.7rem" %>
-             <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), instruction_step_path(step.instruction_id, step.position), data: { confirm: "Are you sure you want to delete?" }, method: :delete, class: "text-danger", style: "font-size: 0.7rem"%>
+           <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit</span>"), edit_step_path(step.instruction.field, step.instruction_id, step.position), class: "text-primary", style: "font-size: 0.7rem" %>
+             <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), step_path(step.instruction.field, step.instruction_id, step.position), data: { confirm: "Are you sure you want to delete?" }, method: :delete, class: "text-danger", style: "font-size: 0.7rem"%>
         </div>
 <% end %>
       </li>
@@ -64,7 +64,7 @@ START DEBUG
 </div>
 
   <div class="container ml-3 mb-5 mt-3 pb-5">
-  <%= link_to "+ add a step",  new_instruction_step_path(@instruction), class: 'badge badge-pill badge-primary' %>
+  <%= link_to "+ add a step",  new_step_path(@field, @instruction), class: 'badge badge-pill badge-primary' %>
   </div>
 
 
@@ -76,7 +76,7 @@ START DEBUG
 
 <!--   BUTTON BACK  --->
   <div class="d-flex justify-content-center align-items-center">
-  <%= link_to "Back",  instructions_path, class: 'btn mybutton-light mybutton-lg' %>
+  <%= link_to "Back",  field_instructions_path, class: 'btn mybutton-light mybutton-lg' %>
   </div>
 
 <%# RESPONSIVE MENU BUTTON%>
@@ -86,6 +86,6 @@ START DEBUG
 
         <!--   BUTTON ADD STEP  --->
   <div class="d-flex justify-content-center align-items-center">
-  <%= link_to "+ add",  new_instruction_step_path(@instruction), class: 'btn btn-primary mybutton-lg' %>
+  <%= link_to "+ add",  new_step_path(@field, @instruction), class: 'btn btn-primary mybutton-lg' %>
   </div>
 </div>

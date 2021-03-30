@@ -51,7 +51,7 @@ end
     @step.instruction = @instruction
 
     if @step.save
-      redirect_to instruction_steps_path(@instruction)
+      redirect_to steps_path(@field, @instruction)
     else
       render :new
     end
@@ -64,7 +64,7 @@ end
   def update        # PATCH /instructions/:instruction_id/steps/:id(.:format)
     @step = Step.where(instruction_id: params[:instruction_id], id: params[:id])[0]
     @step.update(step_params)
-    redirect_to instruction_steps_path(@instruction, @step)
+    redirect_to steps_path(@field, @instruction, @step)
   end
 
   def sort()   # PATCH /instructions/:instruction_id/:data_value(.:format)
@@ -79,7 +79,7 @@ end
 
   def destroy       # DELETE /instructions/:instruction_id/steps/:position(.:format)
     @step.destroy
-    redirect_to instruction_steps_path(@instruction)
+    redirect_to steps_path(@field, @instruction)
   end
 
   private
@@ -106,7 +106,6 @@ end
 
   def step_params
     params.require(:step).permit(:position, :description, :photo, :status, :photo_cache)
-    params.require(:field).permit(:name)
   end
 end
 

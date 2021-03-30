@@ -11,7 +11,7 @@
         <!-- navbar buttons are active in "Step Show.html" below the carousel-->
        <%#= link_to 'Back', 'javascript:history.back()', class: 'btn mybutton-light mybutton-lg'%>
 
-        <% elsif @step || params[:controller] == 'instructions' %>
+        <% elsif @step || params[:controller] == 'fields' %>
         <%= link_to 'Home', root_path, class: 'btn mybutton-light2 mybutton-lg'%>
 
         <% else %>
@@ -48,7 +48,7 @@
           <% if current_page?('/')%>
        <!--    <%= link_to raw("<i class=\"fas fa-search\"></i> search"), fields_path, class: "btn btn-danger" %> -->
 
-          <% elsif current_page?('/chocolate') || current_page?('/netflix') || current_page?('/hotwater') || current_page?('/pancakes') || current_page?('/frontdoor') || current_page?('/pooridge') || current_page?('/bertie') || current_page?('/ranelagh') ||current_page?('/')%>
+          <% elsif current_page?('/chocolate') || current_page?('/netflix') || current_page?('/hotwater') || current_page?('/pancakes') || current_page?('/frontdoor') || current_page?('/pooridge') || current_page?('/bertie') || current_page?('/ranelagh') ||current_page?('/fields') ||current_page?('/')%>
 
           <% elsif params[:controller] == 'keyinfos'%>
 
@@ -56,7 +56,7 @@
 
           <% elsif params[:controller] == 'instructions' || params[:controller] == 'fields'%>
 
-          <%= link_to "+create", new_field_instruction_path(1), class: 'btn btn-danger mybutton-lg' %>
+          <%= link_to "+create", new_field_instruction_path(@field), class: 'btn btn-danger mybutton-lg' %>
 
 
 <!--          SEND SMS FOR CHOCOLATE -->
