@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     post '/fields/:field_id/instructions/:instruction_id/steps', to: 'steps#create'
     get '/fields/:field_id/instructions/:instruction_id/steps/new', to: 'steps#new', as: :new_step
 
-    get '/fields/:field_id/instructions/:instruction_id/steps/:id', to: 'steps#show', as: :step
+    get '/fields/:field_id/instructions/:instruction_id/steps/:position', to: 'steps#show', as: :step
     get   '/fields/:field_id/instructions/:instruction_id/steps/:id/edit', to: 'steps#edit', as: :edit_step
 
     # attention for update :position does not work but only :id

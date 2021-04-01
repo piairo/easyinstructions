@@ -24,7 +24,7 @@
     <h7><%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit</span>"), edit_field_instruction_path(@field, @instruction), class: "text-secondary" %></h7>
      <h7 id="trigger"><%= link_to raw("<i class=\"fas fa-sort\"></i><span class=\"badge badge-pill badge-light\">re-order  <i class=\"far fa-hand-paper\"></i></span>"), target: "_blank", class: "text-primary" %></h7>
 <% end %>
-      <h7><%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), edit_step_path(@field, @instruction, 1), class: "text-success" %></h7>
+      <h7><%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), step_path(@field, @instruction, 1), class: "text-success" %></h7>
 
      </div>
 </div>
