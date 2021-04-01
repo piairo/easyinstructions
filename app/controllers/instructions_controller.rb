@@ -43,7 +43,6 @@ class InstructionsController < ApplicationController
     @instruction = Instruction.find(params[:id])
     @instruction.update(instruction_params)
     redirect_to instruction_path(@instruction)
-    @title = "Update "
   end
 
   def destroy       # DELETE /instructions/:id

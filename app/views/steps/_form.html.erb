@@ -1,9 +1,15 @@
 <!-- app/views/steps/_form.html.erb -->
 
 <div class="container pt-3">
-  <h4>Add step</h4>
+  <h4><%= @title %>step</h4>
+
+  <h4>field id: <%= @step.instruction.field.id %></h4>
+  <h4>field id bis: <%= @step.instruction.field_id %></h4>
+  <h4>field id bis bis: <%= @field.id %></h4>
+  <h4>step id: <%= @step.id %></h4>
+
   <br>
-  <%= simple_form_for [@step] do |f| %>
+  <%= simple_form_for @step, url: update_step_url(@step.instruction.field_id, @step.instruction.id, @step.id), method: :put do |f|%>
   <% if @step.errors.any? %>
     <div class="errors-container" style="color: #f43761">
       <ul>
@@ -21,10 +27,7 @@
         <% else %>
         <%= f.text_field :position, min:"0", class: 'form-control' %>
         <% end %>
-<!--  DEBUG  START
- <%= f.label :'Step id' %>
- <%= f.text_field :id, class: 'form-control'%>
-DEBUG END -->
+
       <%= f.label :'step description', class: 'mt-3' %>
       <%= f.input_field :description, class: 'form-control', placeholder:'...', style:"border-color: #209CCE" %>
       <br>

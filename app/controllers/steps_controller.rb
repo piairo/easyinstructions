@@ -3,9 +3,9 @@ require 'twilio-ruby'
 
 class StepsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :set_field, only: [:index, :show, :edit, :update, :destroy, :new, :create]
+  before_action :set_field, only: [:index, :show, :destroy, :new, :update, :edit,:create]
   before_action :set_instruction, only: [:index, :show, :edit, :update, :destroy, :new, :create]
-  before_action :set_step, only: [:show, :edit, :destroy]
+  before_action :set_step, only: [:show, :destroy]
   before_action :set_steps, only: [:index, :show]
 
 
@@ -43,6 +43,7 @@ end
 
   def new           # GET /instructions/:instruction_id/steps/new(.:format)
     @step = Step.new
+    @title = "Add "
 
   end
 
@@ -57,14 +58,15 @@ end
     end
   end
 
-  def edit          # GET /instructions/:instruction_id/steps/:position/edit(.:format)
-
+  def edit          # GET /fields/:field_id/instructions/:instruction_id/steps/:id/edit(.:format)
+    @step = Step.find(params[:id])
   end
 
-  def update        # PATCH /instructions/:instruction_id/steps/:id(.:format)
-    @step = Step.where(instruction_id: params[:instruction_id], id: params[:id])[0]
+  def update        #  PATCH  /fields/:field_id/instructions/:instruction_id/steps/:id(.:format)
+    @step = Step.find(params[:id])
     @step.update(step_params)
-    redirect_to steps_path(@field, @instruction, @step)
+    redirect_to steps_path(@step.instruction.field.id, @instruction)
+
   end
 
   def sort()   # PATCH /instructions/:instruction_id/:data_value(.:format)
@@ -80,6 +82,7 @@ end
   def destroy       # DELETE /instructions/:instruction_id/steps/:position(.:format)
     @step.destroy
     redirect_to steps_path(@field, @instruction)
+    @title = "Destroy "
   end
 
   private

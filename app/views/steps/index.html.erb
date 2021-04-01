@@ -24,7 +24,7 @@
     <h7><%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit</span>"), edit_field_instruction_path(@field, @instruction), class: "text-secondary" %></h7>
      <h7 id="trigger"><%= link_to raw("<i class=\"fas fa-sort\"></i><span class=\"badge badge-pill badge-light\">re-order  <i class=\"far fa-hand-paper\"></i></span>"), target: "_blank", class: "text-primary" %></h7>
 <% end %>
-      <h7><%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), step_path(@field, @instruction, 1), class: "text-success" %></h7>
+      <h7><%= link_to raw("<i class=\"fas fa-play-circle\"></i><span class=\"badge badge-pill badge-light\">play</span>"), edit_step_path(@field, @instruction, 1), class: "text-success" %></h7>
 
      </div>
 </div>
@@ -54,7 +54,7 @@ START DEBUG
         <div class="text-muted mr-2 pb-2 mb-4" style="font-size: 0.7rem"> <%= "#{step.description.slice(0,17)}..."%> </div>
 <% if user_signed_in? %>
          <div class="step-buttons pt-0">
-           <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit</span>"), edit_step_path(step.instruction.field, step.instruction_id, step.position), class: "text-primary", style: "font-size: 0.7rem" %>
+           <%= link_to raw("<i class=\"fas fa-edit\"></i><span class=\"badge badge-pill badge-light\">edit</span>"), edit_step_path(step.instruction.field_id, step.instruction_id, step.id), class: "text-primary", style: "font-size: 0.7rem" %>
              <%= link_to raw("<i class=\"fas fa-trash\"></i><span class=\"badge badge-pill badge-light\">delete</span>"), step_path(step.instruction.field, step.instruction_id, step.position), data: { confirm: "Are you sure you want to delete?" }, method: :delete, class: "text-danger", style: "font-size: 0.7rem"%>
         </div>
 <% end %>
@@ -62,13 +62,6 @@ START DEBUG
     <% end %>
 </ul>
 </div>
-
-  <div class="container ml-3 mb-5 mt-3 pb-5">
-  <%= link_to "+ add a step",  new_step_path(@field, @instruction), class: 'badge badge-pill badge-primary' %>
-  </div>
-
-
-
 
 
 <div class="navbar_bottom fixed-bottom">

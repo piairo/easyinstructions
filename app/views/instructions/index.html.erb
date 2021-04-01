@@ -91,7 +91,7 @@
 
             <% if Step.where(instruction_id: instruction.id).last && Step.where(instruction_id: instruction.id).last.photo?  %>
 
-               <%= link_to instruction_step_path(instruction.id, 1) do %>
+               <%= link_to step_path(instruction.field_id, instruction.id, 1) do %>
 
                         <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path Step.where(instruction_id: instruction.id).last.photo, :dpr => "auto", :responsive => true, :width => "auto", :quality=> "auto", :fetch_format=> "auto",:default_image => "logo_easyinstructions6_small.png" %>')">
 
@@ -111,7 +111,7 @@
             <% else %>
 
 
-              <%= link_to instruction_step_path(instruction.id, 1) do %>
+              <%= link_to step_path(instruction.field_id, instruction.id, 1) do %>
 
                                     <div class="recette-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../images/logo_easyinstructions6_large.png')">
 
