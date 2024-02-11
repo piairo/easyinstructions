@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
+ruby '2.7.0'
 
 gem 'cloudinary', '~> 1.9.1'
 
@@ -10,7 +10,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'devise', '~> 4.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/ra
 # Cloudinary guide book (knowledge kitt wagon)
-gem 'rails', '~> 5.2.3'
+gem 'rails', '~> 6.1', '>= 6.1.2'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -77,6 +77,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "webpacker", "~> 4.0"
+gem "webpacker"
 
-gem "rails-i18n", "~> 5.1"
+gem "rails-i18n"
