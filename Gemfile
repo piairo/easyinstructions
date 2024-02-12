@@ -10,7 +10,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'devise', '~> 4.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/ra
 # Cloudinary guide book (knowledge kitt wagon)
-gem 'rails', '~> 6.1', '>= 6.1.2'
+gem 'rails', '~> 7.1', '>= 7.1.3'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
