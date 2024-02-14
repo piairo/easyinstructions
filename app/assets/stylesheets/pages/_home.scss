@@ -38,7 +38,7 @@
 
   form {
     .btn[type="submit"], .btn.social-connect {
-      @extend .btn-block;
+      @extend .btn-block !optional
     }
 
     & + a {

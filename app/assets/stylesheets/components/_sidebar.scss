@@ -26,12 +26,12 @@
 
   .dropdown-item {
     .fas.text-primary {
-      @extend .text-primary;
+      @extend .text-primary !optional;
     }
 
     .fas {
       color: $mygrey;
-      @extend .mr-1;
+      @extend .mr-1 !optional;
       width: 20px;
     }
   }
@@ -53,8 +53,8 @@
 }
 
 .bs-canvas-header {
-  @extend .d-flex;
-  @extend .justify-content-between;
+  @extend .d-flex !optional;
+  @extend .justify-content-between !optional;
   align-items: center;
   background: rgba($light-gray, .5);
 
@@ -63,7 +63,7 @@
     transition: $transition;
   }
   .fas {
-    @extend .text-muted;
+    @extend .text-muted !optional;
   }
 }
 
