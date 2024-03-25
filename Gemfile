@@ -5,7 +5,7 @@ ruby '3.2.3'
 
 gem 'cloudinary', '~> 1.9.1'
 
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 2.2'
 
 gem 'devise', '~> 4.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/ra
